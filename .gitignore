@@ -1,0 +1,13 @@
+/build/coverage
+/build/logs
+/vendor
+/docs
+/stubs
+/public/assets/css
+/public/assets/js
+.idea
+.DS_Store
+.sass-cache
+composer.phar
+composer.lock
+phpunit.xml
