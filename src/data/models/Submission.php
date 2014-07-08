@@ -218,6 +218,9 @@
 
 			if(!$this->exists())
 			{
+				// Create a directory to keep the Submission's assets in.
+				mkdir($this->path(), 0777);
+
 				// Notify the contest owner.
 				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
 				{

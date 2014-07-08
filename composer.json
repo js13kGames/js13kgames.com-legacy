@@ -16,7 +16,8 @@
 
 	"require": {
 		"php": ">=5.5.5",
-		"nyx/nyx": "*"
+		"nyx/nyx": "*",
+		"imagine/imagine": "*"
 	},
 
 	"require-dev": {

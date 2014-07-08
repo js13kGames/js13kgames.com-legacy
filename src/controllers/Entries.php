@@ -1,5 +1,8 @@
 <?php namespace js13kgames\controllers;
 
+	// External dependencies
+	use Imagine;
+
 	// Internal dependencies
 	use js13kgames\data\models;
 
@@ -139,17 +142,18 @@
 				]);
 			}
 
+			// Also ensure the images were uploaded correctly.
+			if(!Input::file('small_screenshot')->isValid()or !Input::file('big_screenshot')->isValid())
+			{
+				App::abort(500, 'Invalid/failed image uploads.');
+			}
 
+			// Save the submission so all directories and other dependencies get properly created.
+			$submission->save();
+
+			// Now push the images to the Submission's assets directory.
 			$imagine = new Imagine\Gd\Imagine();
 
-			if(!Input::file('file')->isValid()
-				or !Input::file('small_screenshot')->isValid()
-				or !Input::file('big_screenshot')->isValid()) App::abort(500);
-
-			// Create the directory.
-			mkdir($submission->path(), 0777);
-
-			// Images.
 			$imagine->open(Input::file('small_screenshot')->getRealPath())
 				->resize(new Imagine\Image\Box(160, 160))
 				->save($submission->path().'__small.jpg');
@@ -158,21 +162,12 @@
 				->resize(new Imagine\Image\Box(400, 250))
 				->save($submission->path().'__big.jpg');
 
-			// Move the zip to the game directory.
-			Input::file('file')->move($submission->path(), $submission->slug.'.zip');
+			// Assign the categories to the database entry.
+			foreach(Input::get('categories') as $inputCat) $submission->categories()->attach($inputCat);
 
-			$submission->save();
-
-			// Asign the categories to the database entry.
-			foreach(Input::get('categories') as $inputCat) {
-				$submission->categories()->attach($inputCat);
-			};
-
-			$submission->save();
-
-			return View::make('submit.success', array(
+			return View::make('submit.success', [
 				'submission' => $submission
-			));
+			]);
 		}
 
 		/**
