@@ -175,12 +175,6 @@
 
 			$submission->save();
 
-			// Notify the contest owner.
-			Mail::send('emails.submit.owner-note', array('submission' => $submission), function($message)
-			{
-				$message->to(Config::get('games.mail'))->subject('[Js13kgames] New submission.');
-			});
-
 			return View::make('submit.success', array(
 				'submission' => $submission
 			));

@@ -4,7 +4,7 @@
 	use nyx\utils;
 
 	// Aliases
-	use Config, Validator;
+	use Config, Mail, Validator;
 
 	/**
 	 * Submission Model
@@ -215,6 +215,15 @@
 
 			// Auto-generate the slug.
 			$this->slug = utils\Str::slug($this->title);
+
+			if(!$this->exists())
+			{
+				// Notify the contest owner.
+				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
+				{
+					$message->to(Config::get('games.mail'))->subject('[Js13kgames] New submission.');
+				});
+			}
 
 			parent::save($options);
 		}
