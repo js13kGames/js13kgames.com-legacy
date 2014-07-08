@@ -1,5 +1,8 @@
 <?php namespace js13kgames\controllers;
 
+	// Aliases
+	use Config, View;
+
 	/**
 	 * Home Page Controller
 	 *
@@ -18,10 +21,12 @@
 
 		public function index()
 		{
-			$submitter = new SubmitController();
+			// Which template are we to use?
+			$current = Config::get('games.edition_slug');
+			$chosen  = $this->getChosenEdition();
 
-			return View::make('index', array(
-				'form' => $submitter->prepareForm()
-			));
+			return View::make('home.'.($chosen === $current ? 'current' : $chosen), [
+				'form' => (new Entries)->prepareForm()
+			]);
 		}
 	}

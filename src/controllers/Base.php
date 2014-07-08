@@ -1,7 +1,7 @@
 <?php namespace js13kgames\controllers;
 
 	// Aliases
-	use View;
+	use Config, View;
 
 	/**
 	 * Abstract Base Controller
@@ -13,8 +13,17 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	abstract class Base extends \Controller
+	abstract class Base extends \Illuminate\Routing\Controller
 	{
+		/**
+		 *
+		 */
+
+		protected function getChosenEdition()
+		{
+			return $_SERVER['JS13K_EDITION'] ?: Config::get('games.edition_slug');
+		}
+
 		/**
 		 * {@inheritDoc}
 		 */
