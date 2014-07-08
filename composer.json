@@ -18,7 +18,11 @@
 		"php": ">=5.5.5",
 		"nyx/nyx": "*",
 		"imagine/imagine": "*",
-		"hybridauth/hybridauth": "*"
+		"hybridauth/hybridauth": "*",
+		"guzzlehttp/guzzle": "~4.0",
+		"mailgun/mailgun-php": "*",
+		"iron-io/iron_mq": "*",
+		"raven/raven": "*"
 	},
 
 	"require-dev": {
