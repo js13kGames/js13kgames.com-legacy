@@ -1,5 +1,8 @@
 <?php namespace js13kgames\data\models;
 
+	// External dependencies
+	use js13kgames\utils;
+
 	/**
 	 * Category Model
 	 *
@@ -30,7 +33,7 @@
 
 		public function uri()
 		{
-			return $this->edition->uri().'/'.$this->id;
+			return '/entries/'.$this->slug;
 		}
 
 		/**
@@ -49,5 +52,16 @@
 		public function submissions()
 		{
 			return $this->belongsToMany('js13kgames\data\models\Submission');
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+
+		public function save(array $options = [])
+		{
+			$this->slug = utils\Str::slug($this->title);
+
+			parent::save($options);
 		}
 	}

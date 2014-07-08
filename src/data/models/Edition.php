@@ -1,7 +1,7 @@
 <?php namespace js13kgames\data\models;
 
 	// Aliases
-	use nyx\utils;
+	use js13kgames\utils;
 
 	/**
 	 * Edition Model
