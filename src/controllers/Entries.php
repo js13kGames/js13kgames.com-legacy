@@ -1,5 +1,11 @@
 <?php namespace js13kgames\controllers;
 
+	// Internal dependencies
+	use js13kgames\data\models;
+
+	// Aliases
+	use App, Config, View;
+
 	/**
 	 * Contest Entries Controller
 	 *
@@ -18,30 +24,39 @@
 
 		public function index($edition = null, $category = null)
 		{
+			// Default index, ie. current edition and no specified category.
 			if(null === $edition) $edition = Config::get('games.edition_slug');
 
-			if(!$edition = Edition::where('slug', '=', trim($edition, '/'))->first()) {
-				App::abort(404);
+			// Grab the Edition by slug.
+			if(!$edition = models\Edition::where('slug', '=', trim($edition, '/'))->first()) {
+				App::abort(404, 'The requested edition does not exist.');
 			}
 
-			if(null === $category) {
+			// Grab the default Category for the given Edition if none was given...
+			if(null === $category)
+			{
 				$category = $edition->categories()->first();
-			} else {
-				$category = Category::find($category);
+			}
+			// ... or find the actual requested Category.
+			else
+			{
+				$category = models\Category::find($category);
 			}
 
+			// Ensure we've actually got a Category.
 			if(null === $category) {
-				App::abort(404);
+				App::abort(404, 'The requested category does not exist.');
 			}
 
-			return View::make('entries.index', array(
-				'editions' => Edition::all(),
-				'edition' => $edition,
-				'categories' => $edition->categories,
-				'category' => $category,
-				'submissions' => $category->submissions()->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(array('title', 'slug', 'author')),
-				'title' => $edition->title .' | '.$category->title.' Entries | js13kGames'
-			));
+			// Display the index.
+			return View::make('entries.index', [
+				'editions'    => models\Edition::all(),
+				'edition'     => $edition,
+				'categories'  => $edition->categories,
+				'category'    => $category,
+				'submissions' => $category->submissions()->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(['title', 'slug', 'author']),
+				'title'       => $edition->title .' | '.$category->title.' Entries | js13kGames'
+			]);
 		}
 
 		/**
@@ -50,20 +65,22 @@
 
 		public function show($slug)
 		{
-			// Check if we hit a reserved edition slug first.
-			foreach(Edition::all() as $edition)
+			// Check if we hit a reserved Edition slug first. If so, show the index instead.
+			if(null !== $edition = models\Edition::where('slug', '=', trim($slug, '/'))->first())
 			{
-				if($slug === $edition->slug) return $this->showIndex($edition->slug);
+				return $this->index($edition->slug);
 			}
 
-			if(!$submission = Submission::where('slug', '=', trim($slug, '/'))->first())
+			// Ensure we've actually got a Submission with the given slug.
+			if(!$submission = models\Submission::where('slug', '=', trim($slug, '/'))->first())
 			{
-				App::abort(404);
+				App::abort(404, 'The requested game does not exist.');
 			}
 
-			return View::make('entries.view', array(
+			// Display the entry.
+			return View::make('entries.view', [
 				'entry' => $submission,
 				'title' => $submission->title.' | js13kGames'
-			));
+			]);
 		}
 	}
