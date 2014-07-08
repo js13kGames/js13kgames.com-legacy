@@ -141,7 +141,6 @@
 
 
 			$imagine = new Imagine\Gd\Imagine();
-			$zippy = Alchemy\Zippy\Zippy::load();
 
 			if(!Input::file('file')->isValid()
 				or !Input::file('small_screenshot')->isValid()
@@ -161,10 +160,6 @@
 
 			// Move the zip to the game directory.
 			Input::file('file')->move($submission->path(), $submission->slug.'.zip');
-
-			// Extract it.
-			$archive = $zippy->open($submission->path().$submission->slug.'.zip');
-			$archive->extract($submission->path());
 
 			$submission->save();
 
