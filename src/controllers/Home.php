@@ -25,7 +25,7 @@
 			$current = Config::get('games.edition_slug');
 			$chosen  = $this->getChosenEdition();
 
-			return View::make('home.'.($chosen === $current ? 'current' : $chosen), [
+			return $this->display('home.'.($chosen === $current ? 'current' : $chosen), [
 				'form' => (new Entries)->prepareForm()
 			]);
 		}

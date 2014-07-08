@@ -25,6 +25,19 @@
 		}
 
 		/**
+		 *
+		 */
+
+		protected function display($view, array $data = [])
+		{
+			$global = [
+				'menu' => View::make('layouts.menus.'.$this->getChosenEdition())
+			];
+
+			return View::make($view, array_merge($global, $data));
+		}
+
+		/**
 		 * {@inheritDoc}
 		 */
 
