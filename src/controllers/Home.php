@@ -19,7 +19,7 @@
 		public function index()
 		{
 			// Which template are we to use?
-			return $this->display('home.'.$this->getChosenEdition(), [
+			return $this->display('home.'.$this->getEdition()->slug, [
 				'form' => (new Entries)->prepareForm()
 			]);
 		}

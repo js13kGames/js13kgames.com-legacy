@@ -1,7 +1,7 @@
 <?php namespace js13kgames\data\models;
 
-	// External dependencies
-	use nyx\utils;
+	// Internal dependencies
+	use js13kgames\utils;
 
 	// Aliases
 	use Config, Mail, Validator;
@@ -49,7 +49,7 @@
 				'spam.required' => 'You didn\'t do the math. Please fill the spam protection field.',
 				'spam.spam'     => 'Your math is off. Please try again. Harder, this time.',
 				'unique_slug'   => 'A game with the same name has already been submitted. Please choose a different name.',
-				'reserved_slug' => 'The title of the game must not be one of: 2012, 2013 or 2014.',
+				'reserved_slug' => 'The title of the game must not be one of: desktop, mobile or server.',
 				'if_server'     => 'A valid URL to the deployed game and a .zip with the server code must be provided for a game in the "Server" category.',
 			];
 		}
@@ -97,7 +97,7 @@
 
 				Validator::extend('reserved_slug', function($attribute, $value, $parameters)
 				{
-					return !in_array($value, ['2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012']);
+					return !in_array($value, ['desktop', 'mobile', 'server']);
 				});
 			}
 

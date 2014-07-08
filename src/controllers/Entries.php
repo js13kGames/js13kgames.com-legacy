@@ -25,40 +25,17 @@
 		 *
 		 */
 
-		public function index($edition = null, $category = null)
+		public function index(models\Category $category = null)
 		{
-			// Default index, ie. current edition and no specified category.
-			if(null === $edition) $edition = $this->getChosenEdition();
-
-			// Grab the Edition by slug.
-			if(!$edition = models\Edition::where('slug', '=', trim($edition, '/'))->first()) {
-				App::abort(404, 'The requested edition does not exist.');
-			}
-
-			// Grab the default Category for the given Edition if none was given...
-			if(null === $category)
-			{
-				$category = $edition->categories()->first();
-			}
-			// ... or find the actual requested Category.
-			else
-			{
-				$category = models\Category::find($category);
-			}
-
-			// Ensure we've actually got a Category.
-			if(null === $category) {
-				App::abort(404, 'The requested category does not exist.');
-			}
+			// Grab the default Category for the given Edition if none was given.
+			if(null === $category) $category = $this->getEdition()->categories()->first();
 
 			// Display the index.
 			return $this->display('entries.index', [
 				'editions'    => models\Edition::all(),
-				'edition'     => $edition,
-				'categories'  => $edition->categories,
 				'category'    => $category,
 				'submissions' => $category->submissions()->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(['title', 'slug', 'author']),
-				'title'       => $edition->title .' | '.$category->title.' Entries | js13kGames'
+				'title'       => $category->title.' Entries | js13kGames'
 			]);
 		}
 
@@ -68,10 +45,10 @@
 
 		public function show($slug)
 		{
-			// Check if we hit a reserved Edition slug first. If so, show the index instead.
-			if(null !== $edition = models\Edition::where('slug', '=', trim($slug, '/'))->first())
+			// Check if we hit a reserved Category slug first. If so, show the index instead.
+			if(null !== $category = models\Category::where('slug', '=', trim($slug, '/'))->first())
 			{
-				return $this->index($edition->slug);
+				return $this->index($category);
 			}
 
 			// Ensure we've actually got a Submission with the given slug.

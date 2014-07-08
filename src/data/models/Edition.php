@@ -1,6 +1,6 @@
 <?php namespace js13kgames\data\models;
 
-	// Aliases
+	// Internal dependencies
 	use js13kgames\utils;
 
 	/**

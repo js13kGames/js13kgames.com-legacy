@@ -3,8 +3,8 @@
 <section id="entries">
 	<h2>Entries ({{ $submissions->count() }} in total)</h2>
 	<ul class="editions">
-@if($categories->count() > 1)
-	@foreach($categories as $entry)
+@if($edition->categories->count() > 1)
+	@foreach($edition->categories as $entry)
 		@if($entry->id === $category->id)
 		<li><b>{{ $entry->title }}</b></li>
 		@else

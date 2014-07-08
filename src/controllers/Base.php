@@ -1,7 +1,10 @@
 <?php namespace js13kgames\controllers;
 
+	// Internal dependencies
+	use js13kgames\data\models;
+
 	// Aliases
-	use Config, View;
+	use App, Config, View;
 
 	/**
 	 * Abstract Base Controller
@@ -16,12 +19,33 @@
 	abstract class Base extends \Illuminate\Routing\Controller
 	{
 		/**
+		 * @var models\Edition
+		 */
+
+		private $edition;
+
+		/**
 		 *
 		 */
 
-		protected function getChosenEdition()
+		protected function getEdition()
 		{
-			return $_SERVER['JS13K_EDITION'] ?: Config::get('games.edition_slug');
+			if(null !== $this->edition) return $this->edition;
+
+			// @todo Hardcoded the editions to avoid an additional DB query.
+			if(!$_SERVER['JS13K_EDITION'] or !in_array($_SERVER['JS13K_EDITION'], ['2014', '2013', '2012']))
+			{
+				$_SERVER['JS13K_EDITION'] = Config::get('games.edition_slug');
+			}
+
+			// Cut down on boiler plates since all of the Controllers rely on this being available anyway, so might
+			// as well check it right here.
+			if(null === $this->edition = models\Edition::where('slug', '=', $_SERVER['JS13K_EDITION'])->first())
+			{
+				App::abort(404, 'The requested edition does not exist.');
+			}
+
+			return $this->edition;
 		}
 
 		/**
@@ -30,8 +54,11 @@
 
 		protected function display($view, array $data = [])
 		{
+			$edition = $this->getEdition();
+
 			$global = [
-				'menu' => View::make('layouts.menus.'.$this->getChosenEdition())
+				'menu'    => View::make('layouts.menus.'.$edition->slug),
+				'edition' => $edition
 			];
 
 			return View::make($view, array_merge($global, $data));
