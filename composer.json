@@ -22,7 +22,8 @@
 		"guzzlehttp/guzzle": "~4.0",
 		"mailgun/mailgun-php": "*",
 		"iron-io/iron_mq": "*",
-		"raven/raven": "*"
+		"raven/raven": "*",
+		"tijsverkoyen/css-to-inline-styles": "*"
 	},
 
 	"require-dev": {
