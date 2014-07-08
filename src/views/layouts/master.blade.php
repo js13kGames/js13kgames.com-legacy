@@ -15,7 +15,7 @@
 <body>
 <header>
 	<nav>
-		<a class="logo" href="/">js13kGames</a>
+		<a class="logo" href="http://js13kgames.com">js13kGames</a>
 {{ $menu }}
 	</nav>
 </header>
