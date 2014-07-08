@@ -38,28 +38,23 @@
 			// once during the social auth procedure.
 			if(!Session::has('url.intended')) Session::put('url.intended', Request::server('HTTP_REFERER'));
 
-
 			$adapter = (new \Hybrid_Auth(Config::get('auth')))->authenticate($provider);
 
-			dd($adapter);
-
-			$fetchedProfile = $adapter->getUserProfile();
+			$externalProfile = $adapter->getUserProfile();
 
 			// Define the model we are going to use to either retrieve or store the user's social profile.
 			$profileModelClass = '\js13kgames\data\models\user\social\profiles\\'.$adapter->id;
 
 			// If we've already got a stored profile for the given unique ID within the given network, retrieve the
 			// underlying User model.
-			if($profile = $profileModelClass::with('user')->where('uid', '=', $fetchedProfile->identifier)->first())
+			if($profile = $profileModelClass::with('user')->where('uid', '=', $externalProfile->identifier)->first())
 			{
 				$this->user = $profile->user;
 			}
 			else
 			{
-				$this->user = $profileModelClass::bind($fetchedProfile, models\User::findByEmail($fetchedProfile->emailVerified ?: $fetchedProfile->email));
+				$this->user = $profileModelClass::bind($externalProfile, models\User::findByEmail($externalProfile->emailVerified ?: $externalProfile->email));
 			}
-
-			$adapter->logout();
 
 			$this->transparentLogin($this->user);
 

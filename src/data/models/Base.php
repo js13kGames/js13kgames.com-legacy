@@ -12,5 +12,9 @@
 
 	class Base extends \Illuminate\Database\Eloquent\Model
 	{
+		/**
+		 * @var array   The attributes that are not mass assignable.
+		 */
 
+		protected $guarded = [];
 	}

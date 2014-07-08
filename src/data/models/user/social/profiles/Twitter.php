@@ -1,5 +1,8 @@
 <?php namespace js13kgames\data\models\user\social\profiles;
 
+	// External dependencies
+	use Hybrid_User_Profile as ExternalProfile;
+
 	// Internal dependencies
 	use js13kgames\data\models;
 
@@ -16,4 +19,16 @@
 	class Twitter extends models\user\social\Profile
 	{
 		const TYPE = models\user\social\Profile::TYPE_TWITTER;
+
+		/**
+		 *
+		 */
+
+		protected static function createFromExternalProfile(ExternalProfile $profile)
+		{
+			$model = parent::createFromExternalProfile($profile);
+			$model->login = $profile->displayName;
+
+			return $model;
+		}
 	}

@@ -16,7 +16,7 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Profile extends models\Typable
+	abstract class Profile extends models\Typable
 	{
 		/**
 		 * The types a Social Profile can be of.
@@ -41,21 +41,15 @@
 		 * {@inheritDoc}
 		 */
 
-		public static function bind(ExternalProfile $profile, models\User $user = null, array $attributes = [])
+		public static function bind(ExternalProfile $profile, models\User $user = null)
 		{
 			// If we were not given a User, we need to create one.
-			$user = null === $user ? static::createUserFromProfile($profile) : static::populateUserFromProfile($user, $profile);
+			if(null === $user) $user = static::createUserFromExternalProfile($profile);
 
 			// Build the Social Profile model.
-			$model = new static(array_merge(
-			[
-				'user_id'  => $user->id,
-				'uid'      => $profile->identifier,
-				'email'    => $profile->emailVerified ?: $profile->email,
-				'avatar'   => $profile->photoURL
+			$model = static::createFromExternalProfile($profile);
 
-			], $attributes));
-
+			$model->user_id = $user->id;
 			$model->save();
 
 			// We are actually going to return the User, not the Profile.
@@ -66,30 +60,24 @@
 		 *
 		 */
 
-		protected static function createUserFromProfile(ExternalProfile $profile)
+		protected static function createFromExternalProfile(ExternalProfile $profile)
 		{
-			$user = new models\User;
-
-			$user->email  = $profile->emailVerified ?: $profile->email;
-			$user->active = $profile->emailVerified !== '';
-
-			// Populate the User model based on the data in the external profile.
-			static::populateUserFromProfile($user, $profile);
-
-			// Set up a unique hash.
-			$user->save();
-
-			return $user;
+			return new static([
+				'uid'      => $profile->identifier,
+				'email'    => $profile->emailVerified ?: $profile->email,
+				'avatar'   => $profile->photoURL
+			]);
 		}
 
 		/**
 		 *
 		 */
 
-		protected static function populateUserFromProfile(models\User $user, ExternalProfile $profile)
+		public static function createUserFromExternalProfile(ExternalProfile $profile)
 		{
-			$user->name     = $user->name     ?: ($profile->firstName ?: null);
-			$user->surname  = $user->surname  ?: ($profile->lastName ?: null);
+			$user = new models\User;
+			$user->email = $profile->emailVerified ?: $profile->email;
+			$user->save();
 
 			return $user;
 		}
