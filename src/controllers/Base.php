@@ -25,6 +25,12 @@
 		private $edition;
 
 		/**
+		 * @var models\User
+		 */
+
+		protected $user;
+
+		/**
 		 *
 		 */
 

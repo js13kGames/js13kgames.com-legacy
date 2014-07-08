@@ -1,4 +1,4 @@
-<?php namespace js13kgames\models;
+<?php namespace js13kgames\data\models;
 
 	/**
 	 * Abstract Typable Base Model

@@ -22,6 +22,15 @@
 		protected $table = 'users';
 
 		/**
+		 * @return  User
+		 */
+
+		public static function findByEmail($email)
+		{
+			return static::where('email', '=', $email)->first();
+		}
+
+		/**
 		 * Returns the column name for the "remember me" token.
 		 *
 		 * @return  string

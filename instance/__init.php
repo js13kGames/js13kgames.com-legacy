@@ -26,6 +26,14 @@
 				$router->get('',       'Entries@index');
 				$router->get('{slug}', 'Entries@show')->where('slug', ".+");
 			});
+
+			// Account.
+			$router->group(['prefix' => 'account'], function() use($router)
+			{
+				// Social auth.
+				$router->get('social/callback',         'account\Social@endpoint');
+				$router->get('social/login/{provider}', 'account\Social@login');
+			});
 		});
 	});
 
