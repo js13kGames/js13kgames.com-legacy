@@ -15,7 +15,7 @@
 			</li>
 		</ul>
 	</div>
-	<img class="avatar" src="http://js13kgames.com/img/avatar.png" />
+	<img class="avatar" src="/assets/img/avatar.png" />
 	<div class="intro">
 		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. The main theme for 2013 is <strong>bad luck</strong>, though it's not mandatory. Competition started at <strong>13:00 CEST, 13th August 2013</strong><br /> and ended at <strong>13:00 CEST, 13th September 2013</strong>.</p>
 		<p>The competition is organized by <a target="_blank" href="http://twitter.com/end3r">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>. See the <a href="#rules">Rules</a> section for detailed info about the official rules of the competition.</p>
@@ -25,11 +25,11 @@
 
 <section id="sponsors">
 	<h2>Sponsors</h2>
-	<a class="partner" href="http://boostermedia.com/"><img src="img/sponsors/boostermedia.png"></a>
-	<a class="partner" href="http://www.gamemix.com/"><img src="img/sponsors/gamemix.png"></a>
-	<a class="partner" href="https://modulus.io/"><img src="img/sponsors/modulus.png"></a>
-	<a class="partner" href="http://www.mozilla.org/"><img src="img/sponsors/mozilla.png"></a>
-	<a class="partner" href="http://www.spilgames.com/"><img src="img/sponsors/spilgames.png"></a>
+	<a class="partner" href="http://boostermedia.com/"><img src="assets/img/partners/2013/boostermedia.png"></a>
+	<a class="partner" href="http://www.gamemix.com/"><img src="assets/img/partners/2013/gamemix.png"></a>
+	<a class="partner" href="https://modulus.io/"><img src="assets/img/partners/2013/modulus.png"></a>
+	<a class="partner" href="http://www.mozilla.org/"><img src="assets/img/partners/2013/mozilla.png"></a>
+	<a class="partner" href="http://www.spilgames.com/"><img src="assets/img/partners/2013/spilgames.png"></a>
 	<p>Share the love for HTML5 games and support the js13kGames competition!<br />See the <a href="#contact">Contact</a> section for more details on how to get in touch.</p>
 	<a class="up" href="/"></a>
 </section>
@@ -37,7 +37,7 @@
 <section id="judges">
 	<h2>Judges</h2>
 	<article class="judge" id="andrzej">
-		<img src="img/judges/andrzej_mazur2.png" alt="Andrzej Mazur" />
+		<img src="assets/img/judges/2013/andrzej_mazur2.png" alt="Andrzej Mazur" />
 		<div>
 			<h3>Andrzej Mazur</h3>
 			<p>Mobile HTML5 games developer, <a target="_blank" href="http://dev.end3r.com/">blogger</a>, speaker, founder of the Indie Game Development studio <a target="_blank" href="http://enclavegames.com/">Enclave Games</a> (authors of the <a target="_blank" href="http://enclavegames.com/games/captain-rogers/">Captain Rogers</a> game and <a target="_blank" href="http://html5devstarter.enclavegames.com/">HTML5 Gamedev Starter</a> list), creator of the <strong>js13kGames</strong> competition and <a target="_blank" href="http://gamedevjs.com/">Gamedev.js</a> Meetups organizer.</p>
@@ -45,7 +45,7 @@
 		</div>
 	</article>
 	<article class="judge right" id="richard">
-		<img src="img/judges/richard_davey.png" alt="Richard Davey" />
+		<img src="assets/img/judges/2013/richard_davey.png" alt="Richard Davey" />
 		<div>
 			<h3>Richard Davey</h3>
 			<p>Director of the HTML5 Game Development company <a target="_blank" href="http://www.photonstorm.com/">Photon Storm</a>, who have released just over 50 HTML5 games (and counting!). Developers of the <a target="_blank" href="http://www.photonstorm.com/phaser/">Phaser</a> game framework, retro game addicts, old skool demosceners and admins of the <a target="_blank" href="http://www.html5gamedevs.com/">HTML5 Game Developers Forum</a>.</p>
@@ -53,7 +53,7 @@
 		</div>
 	</article>
 	<article class="judge" id="louis">
-		<img src="img/judges/louis_stowasser.png" alt="Louis Stowasser" />
+		<img src="assets/img/judges/2013/louis_stowasser.png" alt="Louis Stowasser" />
 		<div>
 			<h3>Louis Stowasser</h3>
 			<p>Partner Engineer at <a target="_blank" href="https://www.mozilla.org/">Mozilla</a>. Creator of <a target="_blank" href="http://craftyjs.com/">CraftyJS</a>, the open-source HTML5 game engine. Maintainer of <a target="_blank" href="http://gamedevweekly.com/">Gamedev Weekly</a>, a newsletter for everything gamedev.</p>
@@ -61,7 +61,7 @@
 		</div>
 	</article>
 	<article class="judge right" id="christer">
-		<img src="img/judges/christer_kaitila.png" alt="Christer Kaitila" />
+		<img src="assets/img/judges/2013/christer_kaitila.png" alt="Christer Kaitila" />
 		<div>
 			<h3>Christer Kaitila</h3>
 			<p>Organizer of <a target="_blank" href="http://www.onegameamonth.com/">One Game A Month</a> and the <a target="_blank" href="http://www.charitygamejam.com/">Charity Game Jam</a>, editor at <a target="_blank" href="http://gamedev.tutsplus.com/">Gamedevtuts+</a>, and creator of <a target="_blank" href="http://mcfunkypants.com/">30 games</a>, <a target="_blank" href="http://soundcloud.com/McFunkypants">20 songs</a>, <a target="_blank" href="http://www.amazon.com/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;field-author=Christer%20Kaitila&amp;search-alias=digital-text&amp;sort=relevancerank">2 books</a>, and an HTML5 <a target="_blank" href="https://github.com/Mcfunkypants/Ludus">platformer game starter kit</a>, McFunkypants is an optimist disco viking and child of the arcade era. He has been an indie gamedev for over a decade.</p>
@@ -69,7 +69,7 @@
 		</div>
 	</article>
 	<article class="judge" id="elle">
-		<img src="img/judges/elle_chen.png" alt="Elle Chen" />
+		<img src="assets/img/judges/2013/elle_chen.png" alt="Elle Chen" />
 		<div>
 			<h3>Elle Chen</h3>
 			<p>Elle Chen is the License Manager of <a target="_blank" href="http://www.boostermedia.com/">BoosterMedia Network B.V.</a>, the leading HTML5 game publisher. She has licensed hundreds of HTML5 games and also the initiator of <a target="_blank" href="http://www.doctorhtml5games.com/">DoctorHTML5games.com</a> blog.</p>
@@ -77,7 +77,7 @@
 		</div>
 	</article>
 	<article class="judge right" id="jesse">
-		<img src="img/judges/jesse_freeman.png" alt="Jesse Freeman" />
+		<img src="assets/img/judges/2013/jesse_freeman.png" alt="Jesse Freeman" />
 		<div>
 			<h3>Jesse Freeman</h3>
 			<p>Jesse Freeman is a Technology Evangelist at <a target="_blank" href="http://www.microsoft.com/">Microsoft</a> focusing on Windows 8 gaming. Before joining Microsoft, Jesse was a consultant building large scale web and mobile apps for some of New York most prestigious companies such as HBO, MLB, the New York Jets and more. In his spare time he is an Indie game developer and artist.</p>
@@ -90,245 +90,245 @@
 <section id="prizes">
 	<h2>Prizes</h2>
 	<article class="prize" id="impactjs">
-		<img src="img/prizes/impactjs.png" alt="ImpactJS" />
+		<img src="assets/img/prizes/2013/impactjs.png" alt="ImpactJS" />
 		<div>
 			<h3>5 &times; ImpactJS game engine</h3>
 			<p>Five licenses for <a href="http://impactjs.com/">ImpactJS</a> game engine created by <a href="http://www.phoboslab.org/">Dominic Szablewski</a>.</p>
 		</div>
 	</article>
 	<article class="prize specialPrize" id="ogs13">
-		<img src="img/prizes/ongamestart.png" alt="onGameStart tickets" />
+		<img src="assets/img/prizes/2013/ongamestart.png" alt="onGameStart tickets" />
 		<div>
 			<h3>onGameStart tickets 35% cheaper</h3>
 			<p>Everyone can get <a href="http://ongamestart.com/">onGameStart conference</a> tickets for 35% less when using '<strong>js13kgames</strong>' promo code. <a href="http://www.amiando.com/KMZNKJK.html">Get them</a> while they last!</p>
 		</div>
 	</article>
 	<article class="prize" id="construct2">
-		<img src="img/prizes/construct2.png" alt="Construct 2" />
+		<img src="assets/img/prizes/2013/construct2.png" alt="Construct 2" />
 		<div>
 			<h3>5 &times; Construct 2 game engine</h3>
 			<p>Two business and three personal licenses for <a href="https://www.scirra.com/construct2">Construct 2</a> game engine created by <a href="https://www.scirra.com/">Scirra</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="pusher">
-		<img src="img/prizes/pusher.png" alt="Pusher" />
+		<img src="assets/img/prizes/2013/pusher.png" alt="Pusher" />
 		<div>
 			<h3>3 &times; Pusher plans</h3>
 			<p>Three different <a href="http://pusher.com/">Pusher</a> plans: 6 months Startup, 6 months Bootstrap and 3 months Bootstrap.</p>
 		</div>
 	</article>
 	<article class="prize" id="kendoui">
-		<img src="img/prizes/kendoui.png" alt="Kendo UI Complete" />
+		<img src="assets/img/prizes/2013/kendoui.png" alt="Kendo UI Complete" />
 		<div>
 			<h3>3 &times; Kendo UI Complete</h3>
 			<p>Three licenses for <a href="http://www.kendoui.com/">Kendo UI Complete</a>, with 1 year of upgrades and commercial support.</p>
 		</div>
 	</article>
 	<article class="prize" id="jetbrains">
-		<img src="img/prizes/jetbrains.png" alt="JetBrains" />
+		<img src="assets/img/prizes/2013/jetbrains.png" alt="JetBrains" />
 		<div>
 			<h3>6 &times; JetBrains product license</h3>
 			<p>Six licenses for one of the many various <a href="http://www.jetbrains.com/">JetBrains</a> professional development tools.</p>
 		</div>
 	</article>
 	<article class="prize" id="modulus">
-		<img src="img/prizes/modulus.png" alt="Modulus" />
+		<img src="assets/img/prizes/2013/modulus.png" alt="Modulus" />
 		<div>
 			<h3>5 &times; Modulus $100 credit</h3>
 			<p>Five promo codes worth $100 each for <a href="https://modulus.io/">Modulus</a> services.</p>
 		</div>
 	</article>
 	<article class="prize" id="clayio">
-		<img src="img/prizes/clayio.png" alt="Clay.io" />
+		<img src="assets/img/prizes/2013/clayio.png" alt="Clay.io" />
 		<div>
 			<h3>Advertisement on Clay.io</h3>
 			<p>Advertising of the three winning entries (one from every category) on the <a href="http://clay.io/">Clay.io</a> marketplace and one chosen entry on their homepage.</p>
 		</div>
 	</article>
 	<article class="prize" id="moneywithhtml5">
-		<img src="img/prizes/moneywithhtml5.png" alt="Making money with HTML5" />
+		<img src="assets/img/prizes/2013/moneywithhtml5.png" alt="Making money with HTML5" />
 		<div>
 			<h3>9 &times; Making money with HTML5 ebook</h3>
 			<p>Top 3 entries from every category will win a copy of this <a href="http://www.truevalhalla.com/blog/ebook/">ebook</a> by <a href="http://www.truevalhalla.com/">Matthew Bowden</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="zeroappstore">
-		<img src="img/prizes/zeroappstore.png" alt="From zero to the appstore" />
+		<img src="assets/img/prizes/2013/zeroappstore.png" alt="From zero to the appstore" />
 		<div>
 			<h3>From Zero to the Appstore ebook</h3>
 			<p>Unlimited <a href="http://indiegamr.com/zerotoappstore/">ebooks</a> by <a href="http://indiegamr.com/">Olaf Horstmann</a> for <strong>every participant</strong> and 30 packages with resources and assets worth $59 each.</p>
 		</div>
 	</article>
 	<article class="prize" id="playcanvas">
-		<img src="img/prizes/playcanvas.png" alt="PlayCanvas" />
+		<img src="assets/img/prizes/2013/playcanvas.png" alt="PlayCanvas" />
 		<div>
 			<h3>10 &times; PlayCanvas Pro account</h3>
 			<p>Ten 12-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro accounts offering cloud-hosted game development and publishing tools.</p>
 		</div>
 	</article>
 	<article class="prize" id="isogenic">
-		<img src="img/prizes/isogenic.png" alt="Isogenic Engine" />
+		<img src="assets/img/prizes/2013/isogenic.png" alt="Isogenic Engine" />
 		<div>
 			<h3>8 &times; Isogenic Engine premium license</h3>
 			<p>Eight premium licenses for <a href="http://www.isogenicengine.com/">Isogenic Game Engine</a> created by <a href="http://irrelon.com/">Irrelon Software</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="html5gamedevs">
-		<img src="img/prizes/html5gamedevs.png" alt="HTML5 Game Devs forums" />
+		<img src="assets/img/prizes/2013/html5gamedevs.png" alt="HTML5 Game Devs forums" />
 		<div>
 			<h3>$100 USD Amazon gift voucher</h3>
 			<p>$100 worth <a href="http://www.amazon.com/">Amazon</a> voucher card sponsored by the <a href="http://www.html5gamedevs.com/">HTML5 Game Devs forum</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="thefew">
-		<img src="img/prizes/thefew.png" alt="The Few" />
+		<img src="assets/img/prizes/2013/thefew.png" alt="The Few" />
 		<div>
 			<h3>The Few game and 3 T-shirts</h3>
 			<p>Unlimited copies of <a href="https://www.facebook.com/thefewgame">The Few</a> game by <a href="http://blackmoondev.com/">Blackmoon Design</a> for <strong>every participant</strong> and the t-shirts for the winners of every category.</p>
 		</div>
 	</article>
 	<article class="prize" id="mcpixel">
-		<img src="img/prizes/mcpixel.png" alt="McPixel" />
+		<img src="assets/img/prizes/2013/mcpixel.png" alt="McPixel" />
 		<div>
 			<h3>McPixel game</h3>
 			<p>Unlimited copies of the <a href="http://mcpixel.net/">McPixel</a> game by <a href="http://sos.gd/">Sos Sosowski</a> for <strong>every participant</strong> of the competition.</p>
 		</div>
 	</article>
 	<article class="prize" id="qbqbqb">
-		<img src="img/prizes/qbqbqb.png" alt="QbQbQb" />
+		<img src="assets/img/prizes/2013/qbqbqb.png" alt="QbQbQb" />
 		<div>
 			<h3>QbQbQb game</h3>
 			<p>Unlimited copies of the <a href="http://qbqbqb.rezoner.net/">QbQbQb</a> game by <a href="http://rezoner.net/">Rezoner Sikorski</a> for <strong>every participant</strong> of the competition.</p>
 		</div>
 	</article>
 	<article class="prize" id="jessereview">
-		<img src="img/prizes/jesse.png" alt="Jesse Freeman online review" />
+		<img src="assets/img/prizes/2013/jesse.png" alt="Jesse Freeman online review" />
 		<div>
 			<h3>Online review time with Jesse Freeman</h3>
 			<p>One hour of one-on-one online review time with <a href="http://jessefreeman.com/">Jesse Freeman</a> for any of the top4 winners about helping them monetize and publish their games.</p>
 		</div>
 	</article>
 	<article class="prize" id="boostermedia">
-		<img src="img/prizes/boostermedia.png" alt="BoosterMedia" />
+		<img src="assets/img/prizes/2013/boostermedia.png" alt="BoosterMedia" />
 		<div>
 			<h3>Advertisement on BoosterMedia</h3>
 			<p><a href="http://www.boostermedia.com/">BoosterMedia</a> will license the winning game from the Mobile category and provide the exclusive promotion on featured game position.</p>
 		</div>
 	</article>
 	<article class="prize" id="marketjs">
-		<img src="img/prizes/marketjs.png" alt="MarketJS" />
+		<img src="assets/img/prizes/2013/marketjs.png" alt="MarketJS" />
 		<div>
 			<h3>Advertisement on MarketJS</h3>
 			<p>One month advertising of the winning games from every category on the <a href="http://marketjs.com/">MarketJS</a> website.</p>
 		</div>
 	</article>
 	<article class="prize" id="nihilogic">
-		<img src="img/prizes/nihilogic-html5games.png" alt="HTML5 Games" />
+		<img src="assets/img/prizes/2013/nihilogic-html5games.png" alt="HTML5 Games" />
 		<div>
 			<h3>3 &times; HTML5 Games: Creating Fun with HTML5, CSS3 and WebGL</h3>
 			<p>Three <a href="http://www.wiley.com/buy/9781119975083">books</a> by <a href="http://nihilogic.dk/">Jacob Seidelin</a> published by <a href="http://wiley.com/">Wiley</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="nodejitsu">
-		<img src="img/prizes/nodejitsu2.png" alt="Nodejitsu account" />
+		<img src="assets/img/prizes/2013/nodejitsu2.png" alt="Nodejitsu account" />
 		<div>
 			<h3>5 &times; Nodejitsu Micro plan</h3>
 			<p>Five 1-Year Individual Micro plans (worth $108 each) from <a href="http://nodejitsu.com/">Nodejitsu</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="isometricebook">
-		<img src="img/prizes/isometric-games.png" alt="Isometric Games" />
+		<img src="assets/img/prizes/2013/isometric-games.png" alt="Isometric Games" />
 		<div>
 			<h3>30 &times; Making Isometric Social Real-Time Games with HTML5, CSS3 and JavaScript ebook</h3>
 			<p>Thirty <a href="http://shop.oreilly.com/product/0636920020011.do">ebooks</a> by <a href="http://www.andrespagella.com/">Andrés Pagella</a> published by <a href="http://oreilly.com/">O'Reilly Media</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="jsbin">
-		<img src="img/prizes/jsbin.png" alt="JS Bin" />
+		<img src="assets/img/prizes/2013/jsbin.png" alt="JS Bin" />
 		<div>
 			<h3>3 &times; JS Bin pro account</h3>
 			<p>Three <a href="http://jsbin.com/">JS Bin</a> pro accounts from <a href="http://remysharp.com/">Remy&nbsp;Sharp</a> - for free, <strong>for life</strong>.</p>
 		</div>
 	</article>
 	<article class="prize" id="learnprog">
-		<img src="img/prizes/learning-programming.png" alt="Learning HTML5 Game Programming" />
+		<img src="assets/img/prizes/2013/learning-programming.png" alt="Learning HTML5 Game Programming" />
 		<div>
 			<h3>5 &times; Learning HTML5 Game Programming</h3>
 			<p>Five printed <a href="http://www.amazon.com/Learning-HTML5-Game-Programming-Hands/dp/0321767365">books</a> by <a href="http://jameswilliams.be/">James L. Williams</a> published by <a href="http://www.informit.com/">Addison-Wesley Professional</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="github">
-		<img src="img/prizes/github.png" alt="GitHub" />
+		<img src="assets/img/prizes/2013/github.png" alt="GitHub" />
 		<div>
 			<h3>30 &times; GitHub 6 month medium account</h3>
 			<p>Thirty paid <a href="https://github.com/">GitHub</a> plans - medium accounts for six months.</p>
 		</div>
 	</article>
 	<article class="prize" id="cykod">
-		<img src="img/prizes/cykod.png" alt="Professional HTML5 Mobile Game Development" />
+		<img src="assets/img/prizes/2013/cykod.png" alt="Professional HTML5 Mobile Game Development" />
 		<div>
 			<h3>5 &times; Professional HTML5 Mobile Game Development book</h3>
 			<p>Five printed copies of the <a href="http://www.amazon.com/gp/product/B0094P2TU6/">book</a> by <a href="http://www.html5gamedevelopment.com/">Pascal&nbsp;Rettig</a> published by <a href="http://wiley.com/">Wiley</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="cookbook">
-		<img src="img/prizes/cookbook.png" alt="The Web Game Developer's Cookbook" />
+		<img src="assets/img/prizes/2013/cookbook.png" alt="The Web Game Developer's Cookbook" />
 		<div>
 			<h3>10 &times; The Web Game Developer's Cookbook</h3>
 			<p>Ten bundles of <a href="http://www.informit.com/store/web-game-developers-cookbook-using-javascript-and-html5-9780321898388">printed book with ebook</a> by <a href="http://evanburchard.com">Evan Burchard</a> published by <a href="http://www.informit.com/">Addison-Wesley Professional</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="impactjsbook">
-		<img src="img/prizes/impactjsbook.png" alt="Building HTML5 Games with ImpactJS" />
+		<img src="assets/img/prizes/2013/impactjsbook.png" alt="Building HTML5 Games with ImpactJS" />
 		<div>
 			<h3>5 &times; Building HTML5 Games with ImpactJS book</h3>
 			<p>Five printed <a href="http://www.amazon.com/Introducing-HTML5-Development-Jesse-Freeman/dp/1449315178">books</a> by <a href="http://jessefreeman.com/">Jesse Freeman</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="win8games">
-		<img src="img/prizes/win8games.png" alt="Releasing HTML5 Games for Windows 8" />
+		<img src="assets/img/prizes/2013/win8games.png" alt="Releasing HTML5 Games for Windows 8" />
 		<div>
 			<h3>5 &times; Releasing HTML5 Games for Windows 8 ebook</h3>
 			<p>Five digital <a href="http://shop.oreilly.com/product/0636920028833.do">advanced review copies</a> by <a href="http://jessefreeman.com/">Jesse Freeman</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="html5video">
-		<img src="img/prizes/html5video.png" alt="HTML5 Animation and Transition" />
+		<img src="assets/img/prizes/2013/html5video.png" alt="HTML5 Animation and Transition" />
 		<div>
 			<h3>10 &times; HTML5 Animation and Transition video</h3>
 			<p>Ten <a href="http://www.packtpub.com/html5-animation-and-transition/video">videos</a> run by <a href="http://www.andrespagella.com/">Andrés Pagella</a> published by <a href="http://www.packtpub.com/">Packt Publishing</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="gmstudio">
-		<img src="img/prizes/gmstudio.png" alt="GameMaker: Studio" />
+		<img src="assets/img/prizes/2013/gmstudio.png" alt="GameMaker: Studio" />
 		<div>
 			<h3>GameMaker: Studio professional + HTML5 Module</h3>
 			<p>One license for <a href="http://yoyogames.com/gamemaker/studio/professional">GameMaker: Studio professional</a> with HTML5 Module from <a href="http://yoyogames.com">YoYo Games</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="html5inaction">
-		<img src="img/prizes/html5inaction.png" alt="HTML5 in Action" />
+		<img src="assets/img/prizes/2013/html5inaction.png" alt="HTML5 in Action" />
 		<div>
 			<h3>5 &times; HTML5 in Action book</h3>
 			<p>Five printed <a href="http://www.manning.com/crowther2/">books</a> by <a href="http://twitter.com/robertc">Rob Crowther</a> published by <a href="http://www.manning.com/">Manning Publications</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="jsninja">
-		<img src="img/prizes/jsninja.png" alt="Secrets of the JavaScript Ninja" />
+		<img src="assets/img/prizes/2013/jsninja.png" alt="Secrets of the JavaScript Ninja" />
 		<div>
 			<h3>5 &times; Secrets of the JavaScript Ninja book</h3>
 			<p>Five printed <a href="http://www.manning.com/resig/">books</a> by <a href="http://ejohn.org/">John Resig</a> published by <a href="http://www.manning.com/">Manning Publications</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="hellohtml5">
-		<img src="img/prizes/hellohtml5.png" alt="Hello! HTML5 and CSS3" />
+		<img src="assets/img/prizes/2013/hellohtml5.png" alt="Hello! HTML5 and CSS3" />
 		<div>
 			<h3>5 &times; Hello! HTML5 and CSS3 book</h3>
 			<p>Five printed <a href="http://www.manning.com/crowther/">books</a> by <a href="http://twitter.com/robertc">Rob Crowther</a> published by <a href="http://www.manning.com/">Manning Publications</a>.</p>
 		</div>
 	</article>
 	<article class="prize" id="mapping">
-		<img src="img/prizes/mapping.png" alt="Developing Mobile Mapping Applications" />
+		<img src="assets/img/prizes/2013/mapping.png" alt="Developing Mobile Mapping Applications" />
 		<div>
 			<h3>Developing Mobile Mapping Applications ebook</h3>
 			<p>Unlimited <a href="http://www.manning.com/free/excerpt_mobilemini.html">ebooks</a> for every participant of the competition.</p>
@@ -341,21 +341,21 @@
 	<p>There will be <strong>three different categories</strong> with <strong>top 10 games</strong> in every category.<br />You can submit your game to one, two or all three categories - it's up to you.</p>
 	<p>There will be a <strong>Twitter</strong>, <strong>Facebook</strong> and <strong>Google+ Specials</strong> just like a year ago.</p>
 	<article class="prize">
-		<img src="img/category-desktop.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<img src="assets/img/category-desktop.png" style="width: 150px; height: 150px;" alt="Prize" />
 		<div>
 			<h3>Desktop</h3>
 			<p>Full power of the hardware.</p>
 		</div>
 	</article>
 	<article class="prize">
-		<img src="img/category-mobile.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<img src="assets/img/category-mobile.png" style="width: 150px; height: 150px;" alt="Prize" />
 		<div>
 			<h3>Mobile</h3>
 			<p>Mobile touch devices.</p>
 		</div>
 	</article>
 	<article class="prize">
-		<img src="img/category-server.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<img src="assets/img/category-server.png" style="width: 150px; height: 150px;" alt="Prize" />
 		<div>
 			<h3>Server</h3>
 			<p>Node.js multiplayer.</p>

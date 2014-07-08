@@ -2,28 +2,21 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>{{ isset($title) ? $title : 'js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes' }}</title>
+	<title>{{ $title or 'js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes' }}</title>
 	<meta name="author" content="end3r">
-	<link rel="shortcut icon" href="/img/favicon.png">
-	<link rel="stylesheet" href="/style.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.png">
+	<link rel="stylesheet" href="/assets/css/style.css">
 	<meta name="description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes. The main theme for 2013 is bad luck, though it is not mandatory." />
-	<meta property="og:image" content="http://js13kgames.com/img/avatar.png"/>
-	<meta property="og:url" content="http://js13kgames.com"/>
-	<meta property="og:title" content="js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes"/>
+	<meta property="og:image" content="http://js13kgames.com/assets/img/avatar.png" />
+	<meta property="og:url" content="http://js13kgames.com" />
+	<meta property="og:title" content="js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes" />
 	<meta property="og:description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes. The main theme for 2013 is bad luck, though it is not mandatory."/>
 </head>
 <body>
 <header>
 	<nav>
 		<a class="logo" href="/">js13kGames</a>
-		<ul>
-			<li><a href="/entries/">Entries</a></li>
-			<li><a href="/#judges">Judges</a></li>
-			<li><a href="/#prizes">Prizes</a></li>
-			<li><a href="/#rules">Rules</a></li>
-			<li><a href="/#contact">Contact</a></li>
-			<li><a href="http://2012.js13kgames.com/">2012</a></li>
-		</ul>
+{{ $menu }}
 	</nav>
 </header>
 
@@ -35,7 +28,7 @@
 
 <footer>
 	<div>
-		&copy; js13kGames 2013.
+		&copy; js13kGames 2012-2014.
 		<p>Created and maintained by <a target="_blank" href="http://twitter.com/end3r">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>.</p>
 	</div>
 </footer>

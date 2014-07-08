@@ -10,7 +10,7 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Base extends \Eloquent
+	class Base extends \Illuminate\Database\Eloquent\Model
 	{
 
 	}
