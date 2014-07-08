@@ -13,8 +13,14 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Submission extends Base
+	class Submission extends Base implements interfaces\Validatable
 	{
+		/**
+		 * The traits of a Submission model instance.
+		 */
+
+		use traits\Validatable;
+
 		/**
 		 * @var array   The name of the table associated with the model.
 		 */
@@ -31,7 +37,7 @@
 		}
 
 		/**
-		 *
+		 * {@inheritDoc}
 		 */
 
 		public static function getValidationMessages()
@@ -46,7 +52,7 @@
 		}
 
 		/**
-		 *
+		 * {@inheritDoc}
 		 */
 
 		public static function getValidationRules()

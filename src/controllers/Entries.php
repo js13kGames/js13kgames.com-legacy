@@ -151,7 +151,7 @@
 
 
 
-			$validator = Validator::make(Input::all(), $rules, $messages);
+
 
 			if($validator->fails())
 			{
