@@ -33,6 +33,12 @@
 
 				$exception = $inspector->getException();
 
+				// Since we're in dev, we are going to ignore HTTP Exceptions without messages (as those are automated) for now.
+				if($exception instanceof Symfony\Component\HttpKernel\Exception\HttpException and !$exception->getMessage())
+				{
+					return;
+				}
+
 				$log->error($exception->getMessage(), [
 					'exception' => $exception
 				]);
@@ -66,6 +72,5 @@
 	$kernel->on(nyx\framework\definitions\Events::RESPONSE_SENT, function($event) use($kernel) {
 		if($kernel->bound('log.buffer')) $kernel->make('log.buffer')->flush();
 	});
-
 
 	return $kernel;
