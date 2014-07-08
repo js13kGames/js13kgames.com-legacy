@@ -1,7 +1,10 @@
 <?php namespace js13kgames\data\models;
 
-	// Aliases
+	// External dependencies
 	use nyx\utils;
+
+	// Aliases
+	use Config, Validator;
 
 	/**
 	 * Submission Model
@@ -73,6 +76,32 @@
 				'small_screenshot' => 'mimes:jpeg,gif,png|max:100',
 				'big_screenshot'   => 'mimes:jpeg,gif,png|max:100'
 			];
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+
+		public function getValidator()
+		{
+			static $extended;
+
+			if(null === $extended)
+			{
+				$extended = true;
+
+				Validator::extend('unique_slug', function($attribute, $value, $parameters)
+				{
+					return !Submission::where('slug', '=', utils\Str::slug($value))->first() instanceof Submission;
+				});
+
+				Validator::extend('reserved_slug', function($attribute, $value, $parameters)
+				{
+					return !in_array($value, ['2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012']);
+				});
+			}
+
+			return Validator::make($this->attributes, static::getValidationRules(), static::getValidationMessages());
 		}
 
 		/**
@@ -181,6 +210,10 @@
 
 		public function save(array $options = [])
 		{
+			// If the edition is not set, assume it's the current one.
+			if(null === $this->edition_id) $this->edition_id = Config::get('games.edition');
+
+			// Auto-generate the slug.
 			$this->slug = utils\Str::slug($this->title);
 
 			parent::save($options);

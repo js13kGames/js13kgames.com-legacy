@@ -4,7 +4,7 @@
 	use js13kgames\data\models;
 
 	// Aliases
-	use App, Config, Session, View;
+	use App, Config, Input, Session, Validator, View;
 
 	/**
 	 * Contest Entries Controller
@@ -90,9 +90,7 @@
 
 		public function form()
 		{
-			return View::make('submit.form', array(
-				'form' => $this->prepareForm()
-			));
+			return $this->renderForm();
 		}
 
 
@@ -102,65 +100,45 @@
 
 		public function store()
 		{
-			$submission  = new Submission;
-			$editions    = Edition::all();
-			$reservedSlugs = array();
+			// Reduce some overhead.
+			$input  = Input::all();
+			$errors = null;
 
-			$editions->each(function($edition) use($reservedSlugs) {
-				$reservedSlugs[] = $edition->slug;
-			});
+			// Instantiate a Submission regardless of validation. We will use it to either repopulate the form or
+			// save it if everything was fine.
+			$submission  = new models\Submission;
 
-			$submission->active      = 0;
-			$submission->author      = Input::get('author');
-			$submission->email       = Input::get('email');
-			$submission->twitter     = 0 === strpos(Input::get('twitter'), '@') ? substr(Input::get('twitter'), 1) : Input::get('twitter');
-			$submission->website_url = Input::get('website_url');
-			$submission->github_url  = Input::get('github_url');
-			$submission->server_url  = Input::get('server_url');
-			$submission->title       = Input::get('title');
-			$submission->description = Input::get('description');
-			$submission->slug        = Str::slug($submission->title);
-			$submission->edition_id  = Config::get('games.edition');
+			$submission->author      = $input['author'];
+			$submission->email       = $input['email'];
+			$submission->twitter     = 0 === strpos($input['twitter'], '@') ? substr($input['twitter'], 1) : $input['twitter'];
+			$submission->website_url = $input['website_url'];
+			$submission->github_url  = $input['github_url'];
+			$submission->server_url  = $input['server_url'];
+			$submission->title       = $input['title'];
+			$submission->description = $input['description'];
 
-			Validator::extend('spam', function($attribute, $value, $parameters)
+			// Validate the form submission
+			// Captcha first.
+			if(true !== $validator = $this->validateCaptcha())
 			{
-				return $value == Session::get(Input::get('token'));
-			});
-
-			Validator::extend('unique_slug', function($attribute, $value, $parameters)
-			{
-				return !Submission::where('slug', '=', Str::slug($value))->first() instanceof Submission;
-			});
-
-			Validator::extend('reserved_slug', function($attribute, $value, $parameters) use($reservedSlugs)
-			{
-				return !in_array($value, $reservedSlugs);
-			});
-
-			Validator::extend('if_server', function($attribute, $value, $parameters) use($reservedSlugs)
-			{
-				if(in_array(2, Input::get('categories')))
-				{
-					return !empty($value);
-				}
-
-				return true;
-			});
-
-
-
-
-
-
-
-			if($validator->fails())
-			{
-				return View::make('submit.form', array(
-					'form' => $this->prepareForm(),
-					'errors' => $validator->messages(),
-					'submission' => $submission
-				));
+				$errors = $validator->messages();
 			}
+
+			// Validate the model.
+			if(true !== ($validator = $submission->getValidator() and $validator->passes()))
+			{
+				$errors = null !== $errors ? $errors->merge($validator->messages()) : $validator->messages();
+			}
+
+			// If we ended up with any validation errors, render the form again and re-populate it.
+			if(null !== $errors)
+			{
+				return $this->renderForm([
+					'errors'     => $errors,
+					'submission' => $submission
+				]);
+			}
+
 
 			$imagine = new Imagine\Gd\Imagine();
 			$zippy = Alchemy\Zippy\Zippy::load();
@@ -206,6 +184,46 @@
 			return View::make('submit.success', array(
 				'submission' => $submission
 			));
+		}
+
+		/**
+		 *
+		 */
+
+		protected function validateCaptcha()
+		{
+			// Reduce some overhead.
+			$input = Input::all();
+
+			// Before we do anything else, first ensure the 'captcha' was correct.
+			Validator::extend('spam', function($attribute, $value, $parameters) use($input)
+			{
+				return $value == Session::get($input['token']);
+			});
+
+			$validator = Validator::make($input,
+			[
+				'spam'  => 'required|spam',
+				'token' => 'required',
+			],
+			[
+				'token.required' => 'You seem to be using some hacky way to submit the form. Not cool bro, not cool.',
+				'spam.required'  => 'You didn\'t do the math. Please fill the spam protection field.',
+				'spam.spam'      => 'Your math is off. Please try again. Harder, this time.',
+			]);
+
+			// If validation failed, return the Validator instance so we get access to the messages. Otherwise
+			// just return true.
+			return $validator->fails() ? $validator : true;
+		}
+
+		/**
+		 *
+		 */
+
+		protected function renderForm(array $data = [])
+		{
+			return View::make('submit.form', array_merge(['form' => $this->prepareForm()], $data));
 		}
 
 		/**
