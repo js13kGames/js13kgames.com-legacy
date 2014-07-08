@@ -7,7 +7,7 @@
 	use js13kgames\data\models;
 
 	// Aliases
-	use App, Config, Input, Session, Validator, View;
+	use App, Config, Input, Session, Validator;
 
 	/**
 	 * Contest Entries Controller
@@ -28,7 +28,7 @@
 		public function index($edition = null, $category = null)
 		{
 			// Default index, ie. current edition and no specified category.
-			if(null === $edition) $edition = Config::get('games.edition_slug');
+			if(null === $edition) $edition = $this->getChosenEdition();
 
 			// Grab the Edition by slug.
 			if(!$edition = models\Edition::where('slug', '=', trim($edition, '/'))->first()) {
@@ -52,7 +52,7 @@
 			}
 
 			// Display the index.
-			return View::make('entries.index', [
+			return $this->display('entries.index', [
 				'editions'    => models\Edition::all(),
 				'edition'     => $edition,
 				'categories'  => $edition->categories,
@@ -81,7 +81,7 @@
 			}
 
 			// Display the entry.
-			return View::make('entries.view', [
+			return $this->display('entries.view', [
 				'entry' => $submission,
 				'title' => $submission->title.' | js13kGames'
 			]);
@@ -165,7 +165,7 @@
 			// Assign the categories to the database entry.
 			foreach(Input::get('categories') as $inputCat) $submission->categories()->attach($inputCat);
 
-			return View::make('submit.success', [
+			return $this->display('submit.success', [
 				'submission' => $submission
 			]);
 		}
@@ -225,6 +225,6 @@
 
 		protected function renderForm(array $data = [])
 		{
-			return View::make('submit.form', array_merge(['form' => $this->prepareForm()], $data));
+			return $this->display('submit.form', array_merge(['form' => $this->prepareForm()], $data));
 		}
 	}

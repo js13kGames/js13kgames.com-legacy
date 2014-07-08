@@ -1,8 +1,5 @@
 <?php namespace js13kgames\controllers;
 
-	// Aliases
-	use Config, View;
-
 	/**
 	 * Home Page Controller
 	 *
@@ -22,10 +19,7 @@
 		public function index()
 		{
 			// Which template are we to use?
-			$current = Config::get('games.edition_slug');
-			$chosen  = $this->getChosenEdition();
-
-			return $this->display('home.'.($chosen === $current ? 'current' : $chosen), [
+			return $this->display('home.'.$this->getChosenEdition(), [
 				'form' => (new Entries)->prepareForm()
 			]);
 		}
