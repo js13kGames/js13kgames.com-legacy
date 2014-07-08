@@ -174,6 +174,24 @@
 		 *
 		 */
 
+		public function prepareForm()
+		{
+			$form = [
+				'token'      => md5(mt_rand()),
+				'num'        => [mt_rand(1, 9), mt_rand(1, 9)],
+				'categories' => models\Edition::find(Config::get('games.edition'))->categories
+			];
+
+			Session::flash('token', $form['token']);
+			Session::flash($form['token'], $form['num'][0] + $form['num'][1]);
+
+			return $form;
+		}
+
+		/**
+		 *
+		 */
+
 		protected function validateCaptcha()
 		{
 			// Reduce some overhead.
@@ -208,23 +226,5 @@
 		protected function renderForm(array $data = [])
 		{
 			return View::make('submit.form', array_merge(['form' => $this->prepareForm()], $data));
-		}
-
-		/**
-		 *
-		 */
-
-		protected function prepareForm()
-		{
-			$form = [
-				'token'      => md5(mt_rand()),
-				'num'        => [mt_rand(1, 9), mt_rand(1, 9)],
-				'categories' => models\Edition::find(Config::get('games.edition'))->categories
-			];
-
-			Session::flash('token', $form['token']);
-			Session::flash($form['token'], $form['num'][0] + $form['num'][1]);
-
-			return $form;
 		}
 	}
