@@ -1,5 +1,8 @@
 <?php namespace js13kgames\data\models;
 
+	// Aliases
+	use nyx\utils;
+
 	/**
 	 * Submission Model
 	 *
@@ -125,6 +128,17 @@
 			}
 
 			return 0;
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+
+		public function save(array $options = [])
+		{
+			$this->slug = utils\Str::slug($this->title);
+
+			parent::save($options);
 		}
 
 		/**
