@@ -6,6 +6,7 @@
 	'providers' =>
 	[
 		'nyx\framework\diagnostics\debug\Provider',
+		'Illuminate\Log\LogServiceProvider',
 		'Illuminate\Routing\RoutingServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -22,7 +23,8 @@
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider'
+		'Illuminate\View\ViewServiceProvider',
+		'js13kgames\connect\mail\bridges\laravel\Provider',
 	],
 	'manifest' => storage_path().'/meta',
 	'aliases'  =>
@@ -35,6 +37,7 @@
 		'Cookie'          => 'Illuminate\Support\Facades\Cookie',
 		'DB'              => 'Illuminate\Support\Facades\DB',
 		'Input'           => 'Illuminate\Support\Facades\Input',
+		'Mail'            => 'js13kgames\connect\mail\bridges\laravel\Facade',
 		'Paginator'       => 'Illuminate\Support\Facades\Paginator',
 		'Password'        => 'Illuminate\Support\Facades\Password',
 		'Redirect'        => 'Illuminate\Support\Facades\Redirect',
