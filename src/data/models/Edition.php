@@ -1,22 +1,53 @@
-<?php
+<?php namespace js13kgames\data\models;
 
-class Edition extends Eloquent {
+	/**
+	 * Edition Model
+	 *
+	 * @package     Js13kgames\Data\Models
+	 * @version     0.0.1
+	 * @author      Michal Chojnacki <m.chojnacki@muyo.pl>
+	 * @copyright   2012-2014 js13kGames Team
+	 * @link        http://js13kgames.com
+	 */
 
-	protected $table = 'editions';
-	public $timestamps = false;
-
-	public function uri()
+	class Edition extends Base
 	{
-		return '/entries/'.$this->slug;
-	}
+		/**
+		 * @var bool    Whether the model should be automatically timestamped.
+		 */
 
-	public function categories()
-	{
-		return $this->hasMany('Category');
-	}
+		public $timestamps = false;
 
-	public function submissions()
-	{
-		return $this->hasMany('Submission');
+		/**
+		 * @var array   The name of the table associated with the model.
+		 */
+
+		protected $table = 'editions';
+
+		/**
+		 *
+		 */
+
+		public function uri()
+		{
+			return '/entries/'.$this->slug;
+		}
+
+		/**
+		 *
+		 */
+
+		public function categories()
+		{
+			return $this->hasMany('js13kgames\data\models\Category');
+		}
+
+		/**
+		 *
+		 */
+
+		public function submissions()
+		{
+			return $this->hasMany('js13kgames\data\models\Submission');
+		}
 	}
-}

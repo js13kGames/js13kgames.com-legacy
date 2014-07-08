@@ -1,22 +1,53 @@
-<?php
+<?php namespace js13kgames\data\models;
 
-class Category extends Eloquent {
+	/**
+	 * Category Model
+	 *
+	 * @package     Js13kgames\Data\Models
+	 * @version     0.0.1
+	 * @author      Michal Chojnacki <m.chojnacki@muyo.pl>
+	 * @copyright   2012-2014 js13kGames Team
+	 * @link        http://js13kgames.com
+	 */
 
-	public $table = 'categories';
-	public $timestamps = false;
-
-	public function uri()
+	class Category extends Base
 	{
-		return $this->edition->uri().'/'.$this->id;
-	}
+		/**
+		 * @var bool    Whether the model should be automatically timestamped.
+		 */
 
-	public function edition()
-	{
-		return $this->belongsTo('Edition');
-	}
+		public $timestamps = false;
 
-	public function submissions()
-	{
-		return $this->belongsToMany('Submission');
+		/**
+		 * @var array   The name of the table associated with the model.
+		 */
+
+		protected $table = 'categories';
+
+		/**
+		 *
+		 */
+
+		public function uri()
+		{
+			return $this->edition->uri().'/'.$this->id;
+		}
+
+		/**
+		 *
+		 */
+
+		public function edition()
+		{
+			return $this->belongsTo('js13kgames\data\models\Edition');
+		}
+
+		/**
+		 *
+		 */
+
+		public function submissions()
+		{
+			return $this->belongsToMany('js13kgames\data\models\Submission');
+		}
 	}
-}

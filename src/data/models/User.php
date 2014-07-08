@@ -1,57 +1,92 @@
-<?php
+<?php namespace js13kgames\data\models;
 
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableInterface;
-
-class User extends Eloquent implements UserInterface, RemindableInterface {
+	// External dependencies
+	use Illuminate\Auth\UserInterface;
 
 	/**
-	 * The database table used by the model.
+	 * User Model
 	 *
-	 * @var string
+	 * @package     Js13kgames\Data\Models
+	 * @version     0.0.1
+	 * @author      Michal Chojnacki <m.chojnacki@muyo.pl>
+	 * @copyright   2012-2014 js13kGames Team
+	 * @link        http://js13kgames.com
 	 */
-	protected $table = 'users';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password');
-
-	/**
-	 * Get the unique identifier for the user.
-	 *
-	 * @return mixed
-	 */
-	public function getAuthIdentifier()
+	class User extends Base implements UserInterface
 	{
-		return $this->getKey();
-	}
+		/**
+		 * @var array   The name of the table associated with the model.
+		 */
 
-	public function votes()
-	{
-		return $this->hasMany('Vote');
-	}
+		protected $table = 'users';
 
-	/**
-	 * Get the password for the user.
-	 *
-	 * @return string
-	 */
-	public function getAuthPassword()
-	{
-		return $this->password;
-	}
+		/**
+		 * Returns the column name for the "remember me" token.
+		 *
+		 * @return  string
+		 */
 
-	/**
-	 * Get the e-mail address where password reminders are sent.
-	 *
-	 * @return string
-	 */
-	public function getReminderEmail()
-	{
-		return $this->email;
-	}
+		public function votes()
+		{
+			return $this->hasMany('js13kgames\data\models\Vote');
+		}
 
-}
+		/**
+		 * Returns the unique identifier of the User.
+		 *
+		 * @return mixed
+		 */
+
+		public function getAuthIdentifier()
+		{
+			return $this->getKey();
+		}
+
+		/**
+		 * Returns the User's password.
+		 *
+		 * @return  string
+		 */
+
+		public function getAuthPassword()
+		{
+			return $this->password;
+		}
+
+		/**
+		 * Returns the "remember me" session token.
+		 *
+		 * @return string
+		 */
+
+		public function getRememberToken()
+		{
+			return $this->remember_token;
+		}
+
+		/**
+		 * Sets the "remember me" session token.
+		 *
+		 * @param   string  $value
+		 * @return  $this
+		 */
+
+		public function setRememberToken($value)
+		{
+			$this->remember_token = $value;
+
+			return $this;
+		}
+
+		/**
+		 * Returns the column name for the "remember me" token.
+		 *
+		 * @return  string
+		 */
+
+		public function getRememberTokenName()
+		{
+			return 'remember_token';
+		}
+	}

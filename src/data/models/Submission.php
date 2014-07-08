@@ -1,97 +1,153 @@
-<?php
+<?php namespace js13kgames\data\models;
 
-class Submission extends Eloquent {
+	/**
+	 * Submission Model
+	 *
+	 * @package     Js13kgames\Data\Models
+	 * @version     0.0.1
+	 * @author      Michal Chojnacki <m.chojnacki@muyo.pl>
+	 * @copyright   2012-2014 js13kGames Team
+	 * @link        http://js13kgames.com
+	 */
 
-	public $table = 'submissions';
-
-	public function uri()
+	class Submission extends Base
 	{
-		return '/entries/'.$this->slug;
-	}
+		/**
+		 * @var array   The name of the table associated with the model.
+		 */
 
-	public function path()
-	{
-		return static::storagePath().$this->slug.'/';
-	}
+		protected $table = 'submissions';
 
-	public function categories()
-	{
-		return $this->belongsToMany('Category');
-	}
+		/**
+		 *
+		 */
 
-	public function edition()
-	{
-		return $this->belongsTo('Edition');
-	}
-
-	public function votes()
-	{
-		return $this->hasMany('Vote');
-	}
-
-	public function getScore()
-	{
-		$tempScore = 0;
-
-		if($count = $this->votes->count())
+		public static function storagePath()
 		{
-			foreach($this->votes as $vote)
+			return base_path('public/games/');
+		}
+
+		/**
+		 *
+		 */
+
+		public function uri()
+		{
+			return '/entries/'.$this->slug;
+		}
+
+		/**
+		 *
+		 */
+
+		public function path()
+		{
+			return static::storagePath().$this->slug.'/';
+		}
+
+		/**
+		 *
+		 */
+
+		public function categories()
+		{
+			return $this->belongsToMany('js13kgames\data\models\Category');
+		}
+
+		/**
+		 *
+		 */
+
+		public function edition()
+		{
+			return $this->belongsTo('js13kgames\data\models\Edition');
+		}
+
+		/**
+		 *
+		 */
+
+		public function votes()
+		{
+			return $this->hasMany('js13kgames\data\models\Vote');
+		}
+
+		/**
+		 *
+		 */
+
+		public function getScore()
+		{
+			$score = 0;
+
+			if($count = $this->votes->count())
 			{
-				$tempScore += $vote->value;
+				foreach($this->votes as $vote)
+				{
+					$score += $vote->value;
+				}
+
+				$score = round($score / $count);
 			}
 
-			$tempScore = round($tempScore / $count);
+			return $score;
 		}
 
-		return $tempScore;
-	}
+		/**
+		 *
+		 */
 
-	public function getCategories()
-	{
-		$categories = array();
-
-		foreach($this->categories as $category)
+		public function getCategories()
 		{
-			$categories[] = $category->title;
+			$categories = [];
+
+			foreach($this->categories as $category)
+			{
+				$categories[] = $category->title;
+			}
+
+			return $categories;
 		}
 
-		return $categories;
-	}
+		/**
+		 *
+		 */
 
-	public function getUserVote()
-	{
-		if(!$user = Auth::user()) return 0;
-
-		foreach($this->votes as $vote)
+		public function getUserVote()
 		{
-			if($user->id === $vote->user_id) return $vote->value;
+			if(!$user = \Auth::user()) return 0;
+
+			// Looping here, instead of querying for the user's votes directly, since we're mainly using this on games
+			// lists and thus running into n+1.
+			foreach($this->votes as $vote)
+			{
+				if($user->id === $vote->user_id) return $vote->value;
+			}
+
+			return 0;
 		}
 
-		return 0;
-	}
+		/**
+		 *
+		 */
 
-	public function delete()
-	{
-		$it    = new RecursiveDirectoryIterator($this->path());
-		$files = new RecursiveIteratorIterator($it,	RecursiveIteratorIterator::CHILD_FIRST);
-
-		foreach($files as $file)
+		public function delete()
 		{
-			if($file->getFilename() === '.' || $file->getFilename() === '..') continue;
+			$it    = new \RecursiveDirectoryIterator($this->path());
+			$files = new \RecursiveIteratorIterator($it, \RecursiveIteratorIterator::CHILD_FIRST);
 
-			if($file->isDir())
-				rmdir($file->getRealPath());
-			else
-				unlink($file->getRealPath());
+			foreach($files as $file)
+			{
+				if($file->getFilename() === '.' || $file->getFilename() === '..') continue;
+
+				if($file->isDir())
+					rmdir($file->getRealPath());
+				else
+					unlink($file->getRealPath());
+			}
+
+			rmdir($this->path());
+
+			parent::delete();
 		}
-
-		rmdir($this->path());
-
-		parent::delete();
 	}
-
-	public static function storagePath()
-	{
-		return base_path('public/games/');
-	}
-}
