@@ -81,7 +81,7 @@
 			}
 
 			// Display the entry.
-			return $this->display('entries.view', [
+			return $this->display('entries.show', [
 				'entry' => $submission,
 				'title' => $submission->title.' | js13kGames'
 			]);
