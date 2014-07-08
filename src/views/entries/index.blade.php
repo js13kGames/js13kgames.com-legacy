@@ -3,17 +3,6 @@
 <section id="entries">
 	<h2>Entries ({{ $submissions->count() }} in total)</h2>
 	<ul class="editions">
-@foreach($editions as $entry)
-
-	@if($entry->id === $edition->id)
-		<li><b>{{ $edition->title }}</b></li>
-	@else
-		<li><a href="{{ $entry->uri() }}">{{ $entry->title }}</a></li>
-	@endif
-
-@endforeach
-	</ul>
-	<ul class="editions">
 @foreach($categories as $entry)
 
 		@if($entry->id === $category->id)
