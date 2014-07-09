@@ -1,6 +1,7 @@
 <?php namespace js13kgames\controllers;
 
 	// External dependencies
+	use Carbon\Carbon;
 	use Imagine;
 
 	// Internal dependencies
@@ -70,9 +71,8 @@
 
 		public function form()
 		{
-			return $this->renderForm();
+			return $this->validateEditionTimeframe() ? $this->renderForm() : $this->display('entries.submission.closed');
 		}
-
 
 		/**
 		 *
@@ -80,6 +80,8 @@
 
 		public function store()
 		{
+			if(!$this->validateEditionTimeframe()) App::abort('403', 'Submissions are closed.');
+
 			// Reduce some overhead.
 			$input  = Input::all();
 			$errors = null;
@@ -142,7 +144,7 @@
 			// Assign the categories to the database entry.
 			foreach(Input::get('categories') as $inputCat) $submission->categories()->attach($inputCat);
 
-			return $this->display('submit.success', [
+			return $this->display('entries.submission.success', [
 				'submission' => $submission
 			]);
 		}
@@ -200,8 +202,22 @@
 		 *
 		 */
 
+		protected function validateEditionTimeframe()
+		{
+			$edition = $this->getEdition();
+			$now     = new Carbon;
+			$start   = new Carbon($edition->starts_at);
+			$end     = new Carbon($edition->ends_at);
+
+			return !($now < $start or $now > $end);
+		}
+
+		/**
+		 *
+		 */
+
 		protected function renderForm(array $data = [])
 		{
-			return $this->display('submit.form', array_merge(['form' => $this->prepareForm()], $data));
+			return $this->display('entries.submission.form', array_merge(['form' => $this->prepareForm()], $data));
 		}
 	}
