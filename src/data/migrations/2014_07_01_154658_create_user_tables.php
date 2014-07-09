@@ -27,7 +27,7 @@
 				$table->increments('id');
 				$table->boolean('active')->default(0);
 				$table->string('password', 100)->nullable();
-				$table->string('email', 100)->nullable();
+				$table->string('email', 100);
 				$table->string('name', 30)->nullable();
 				$table->string('surname', 50)->nullable();
 				$table->string('twitter_login', 50)->nullable();
@@ -42,6 +42,7 @@
 				$table->integer('type');                    // Provider type
 				$table->string('uid');                      // Provider UID
 				$table->integer('user_id')->index();
+				$table->string('login', 100)->default('');
 				$table->string('email', 100)->default('');
 				$table->string('avatar', 255)->default('');
 				$table->timestamps();
