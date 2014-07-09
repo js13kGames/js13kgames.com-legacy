@@ -98,4 +98,15 @@
 		{
 			return 'remember_token';
 		}
+
+		/**
+		 *
+		 */
+
+		public function getFullName($fallbackToEmail = false)
+		{
+			if(!$this->name and $fallbackToEmail) return $this->email;
+
+			return $this->name.' '.$this->surname;
+		}
 	}
