@@ -27,6 +27,8 @@
 				$table->increments('id');
 				$table->string('title', 50);
 				$table->string('slug', 50);
+				$table->timestamp('starts_at');
+				$table->timestamp('ends_at');
 			});
 
 			Schema::create('categories', function(Blueprint $table)
