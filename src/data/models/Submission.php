@@ -49,7 +49,7 @@
 				'spam.required' => 'You didn\'t do the math. Please fill the spam protection field.',
 				'spam.spam'     => 'Your math is off. Please try again. Harder, this time.',
 				'unique_slug'   => 'A game with the same name has already been submitted. Please choose a different name.',
-				'reserved_slug' => 'The title of the game must not be one of: desktop, mobile or server.',
+				'reserved_slug' => 'The title of the game must not be one of: submit, desktop, mobile or server.',
 				'if_server'     => 'A valid URL to the deployed game and a .zip with the server code must be provided for a game in the "Server" category.',
 			];
 		}
@@ -97,7 +97,7 @@
 
 				Validator::extend('reserved_slug', function($attribute, $value, $parameters)
 				{
-					return !in_array($value, ['desktop', 'mobile', 'server']);
+					return !in_array($value, ['submit', 'desktop', 'mobile', 'server']);
 				});
 			}
 
