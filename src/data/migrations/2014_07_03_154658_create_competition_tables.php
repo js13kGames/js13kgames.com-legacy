@@ -52,6 +52,7 @@
 				$table->string('website_url', 100);
 				$table->string('server_url', 100);
 				$table->text('description')->nullable();
+				$table->integer('user_id');
 				$table->integer('edition_id');
 				$table->timestamps();
 			});
@@ -59,9 +60,8 @@
 			Schema::create('repositories', function(Blueprint $table)
 			{
 				$table->increments('id');
-				$table->boolean('active')->default(0);
 				$table->integer('type');
-				$table->string('http_url', 255);
+				$table->string('url', 255);
 				$table->integer('user_id');
 				$table->integer('submission_id');
 				$table->timestamps();

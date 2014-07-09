@@ -7,9 +7,6 @@
 	/**
 	 * Migration: Create User Tables
 	 *
-	 * Note: We are not using our own registration system. User accounts are created via oAuth logins only, thus
-	 * no (in)active accounts nor passwords in the database.
-	 *
 	 * @package     Js13kgames\Data\Migrations
 	 * @version     0.1.0
 	 * @author      Michal Chojnacki <m.chojnacki@muyo.pl>
@@ -28,7 +25,9 @@
 			Schema::create('users', function(Blueprint $table)
 			{
 				$table->increments('id');
-				$table->string('email', 100);
+				$table->boolean('active')->default(0);
+				$table->string('password', 100)->nullable();
+				$table->string('email', 100)->nullable();
 				$table->string('name', 30)->nullable();
 				$table->string('surname', 50)->nullable();
 				$table->string('twitter_login', 50)->nullable();
