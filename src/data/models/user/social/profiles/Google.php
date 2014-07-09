@@ -13,7 +13,7 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Facebook extends models\user\social\Profile
+	class Google extends models\user\social\Profile
 	{
 		const TYPE = models\user\social\Profile::TYPE_GOOGLE;
 	}
