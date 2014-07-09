@@ -51,7 +51,7 @@
 
 		public function submissions()
 		{
-			return $this->belongsToMany('js13kgames\data\models\Submission');
+			return $this->belongsToMany('js13kgames\data\models\Submission', 'categories_submissions');
 		}
 
 		/**

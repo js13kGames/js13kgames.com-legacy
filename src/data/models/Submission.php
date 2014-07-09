@@ -128,7 +128,7 @@
 
 		public function categories()
 		{
-			return $this->belongsToMany('js13kgames\data\models\Category');
+			return $this->belongsToMany('js13kgames\data\models\Category', 'categories_submissions');
 		}
 
 		/**
@@ -138,6 +138,24 @@
 		public function edition()
 		{
 			return $this->belongsTo('js13kgames\data\models\Edition');
+		}
+
+		/**
+		 *
+		 */
+
+		public function user()
+		{
+			return $this->belongsTo('js13kgames\data\models\User');
+		}
+
+		/**
+		 *
+		 */
+
+		public function repository()
+		{
+			return $this->hasOne('js13kgames\data\models\Repository');
 		}
 
 		/**
@@ -219,13 +237,15 @@
 			if(!$this->exists())
 			{
 				// Create a directory to keep the Submission's assets in.
-				mkdir($this->path(), 0777);
+				if(!is_dir($this->path())) mkdir($this->path(), 0777);
 
 				// Notify the contest owner.
+				/*
 				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
 				{
 					$message->to(Config::get('games.mail'))->subject('[Js13kgames] New submission.');
 				});
+				*/
 			}
 
 			parent::save($options);
