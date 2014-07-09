@@ -31,6 +31,9 @@
 	},
 
 	"autoload": {
+		"classmap": [
+			"src/data/migrations"
+		],
 		"psr-4": {
 			"js13kgames\\": "src/"
 		}
