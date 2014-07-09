@@ -10,8 +10,14 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Repository extends Base
+	class Repository extends Typable
 	{
+		/**
+		 * The types a Repository can be of.
+		 */
+
+		const TYPE_GITHUB  = 1;
+
 		/**
 		 * @var array   The name of the table associated with the model.
 		 */
