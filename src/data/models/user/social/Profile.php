@@ -22,8 +22,10 @@
 		 * The types a Social Profile can be of.
 		 */
 
-		const TYPE_GITHUB  = 1;
-		const TYPE_TWITTER = 2;
+		const TYPE_GITHUB   = 1;
+		const TYPE_TWITTER  = 2;
+		const TYPE_FACEBOOK = 3;
+		const TYPE_GOOGLE   = 4;
 
 		/**
 		 * @var bool    Whether timestamps should be automatically maintained for this model.
@@ -65,7 +67,8 @@
 			return new static([
 				'uid'      => $profile->identifier,
 				'email'    => $profile->emailVerified ?: $profile->email,
-				'avatar'   => $profile->photoURL
+				'avatar'   => $profile->photoURL,
+				'login'    => $profile->displayName
 			]);
 		}
 
