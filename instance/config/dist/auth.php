@@ -21,6 +21,18 @@
 			'enabled' => true,
 			'keys'    => ['key' => null, 'secret' => null],
 			"display" => "page"
+		],
+		'Facebook' =>
+		[
+			'enabled' => true,
+			'keys'    => ['id' => null, 'secret' => null],
+			"display" => "page"
+		],
+		"Google" =>
+		[
+			"enabled"     => true,
+			"keys"        => [ "id" => null, "secret" => null],
+			"access_type" => "offline"
 		]
 	]
 ];
