@@ -4,7 +4,7 @@
 	<img src="/games/{{ $entry->slug }}/__big.jpg" alt="{{ $entry->title }}" />
 	<div class="info">
 		<h2>{{ $entry->title }}</h2>
-		<h3>{{ $entry->author }}</h3>
+		<h3>{{ $entry->user->getFullName() }}</h3>
 		<ul>
 @if($entry->twitter)
 			<li class="twitter"><a href="http://twitter.com/{{ $entry->twitter }}">@ {{ $entry->twitter }}</a></li>

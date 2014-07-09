@@ -18,7 +18,7 @@
 			<a href="{{ $entry->uri() }}">
 				<img src="/games/{{ $entry->slug }}/__small.jpg" alt="{{ $entry->title }}" />
 				<h3>{{ $entry->title }}</h3>
-				<span>{{ $entry->author }}</span>
+				<span>{{ $entry->user->getFullName() }}</span>
 			</a>
 		</article>
 @endforeach
