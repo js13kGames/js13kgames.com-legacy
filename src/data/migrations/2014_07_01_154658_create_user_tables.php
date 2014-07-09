@@ -31,6 +31,8 @@
 				$table->string('email', 100);
 				$table->string('name', 30)->nullable();
 				$table->string('surname', 50)->nullable();
+				$table->string('twitter_login', 50)->nullable();
+				$table->string('github_login', 50)->nullable();
 				$table->string('remember_token', 255)->nullable();
 				$table->timestamps();
 			});
