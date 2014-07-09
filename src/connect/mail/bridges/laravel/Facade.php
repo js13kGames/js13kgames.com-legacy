@@ -10,7 +10,7 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class Mailer extends \Illuminate\Support\Facades\Facade
+	class Facade extends \Illuminate\Support\Facades\Facade
 	{
 		/**
 		 * {@inheritDoc}
