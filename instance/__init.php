@@ -7,7 +7,10 @@
 		'public'  => $baseDir.'/public',
 		'src'     => $baseDir.'/src',
 		'storage' => $baseDir.'/instance/storage',
-	], isset($_SERVER['JS13K_ENV']) ? $_SERVER['JS13K_ENV'] : 'production');
+	], isset($_SERVER['JS13K_ENV']) ? $_SERVER['JS13K_ENV'] : 'dev');
+
+	// Won't need to log Console errors nor the routing when running via the Console.
+	if(php_sapi_name() === 'cli') return $kernel;
 
 	// Register our routes and additional services no sooner than just before a Request gets handled.
 	$kernel->on(nyx\framework\definitions\Events::REQUEST_RECEIVED, function($event) use($kernel) {
