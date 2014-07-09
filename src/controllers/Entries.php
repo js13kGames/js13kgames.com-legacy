@@ -34,7 +34,7 @@
 			return $this->display('entries.index', [
 				'editions'    => models\Edition::all(),
 				'category'    => $category,
-				'submissions' => $category->submissions()->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(['title', 'slug', 'author']),
+				'submissions' => $category->submissions()->with('user')->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(['title', 'slug', 'user_id']),
 				'title'       => $category->title.' Entries | js13kGames'
 			]);
 		}
@@ -52,7 +52,7 @@
 			}
 
 			// Ensure we've actually got a Submission with the given slug.
-			if(!$submission = models\Submission::where('slug', '=', trim($slug, '/'))->first())
+			if(!$submission = models\Submission::with('user', 'repository')->where('slug', '=', trim($slug, '/'))->first())
 			{
 				App::abort(404, 'The requested game does not exist.');
 			}
