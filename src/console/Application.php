@@ -44,7 +44,6 @@
 			error_reporting(E_ALL ^ E_NOTICE);
 
 			Artisan::add(new commands\Populate);
-			Artisan::add(new commands\Convert);
 
 			if (isset($this->laravel['events']))
 			{
