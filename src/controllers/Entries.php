@@ -206,10 +206,8 @@
 		{
 			$edition = $this->getEdition();
 			$now     = new Carbon;
-			$start   = new Carbon($edition->starts_at);
-			$end     = new Carbon($edition->ends_at);
 
-			return !($now < $start or $now > $end);
+			return !($now < new Carbon($edition->starts_at) or $now > new Carbon($edition->ends_at));
 		}
 
 		/**
