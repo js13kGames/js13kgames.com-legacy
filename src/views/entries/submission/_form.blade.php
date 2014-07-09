@@ -1,8 +1,10 @@
 <section id="submit">
 
+@if(isset($errors))
 	@foreach($errors->all('<p class="message error"><b>Error!</b> :message</p>') as $error)
 		{{ $error }}
 	@endforeach
+@endif
 
 	<h2>Submit Form</h2>
 	<article class="form">
