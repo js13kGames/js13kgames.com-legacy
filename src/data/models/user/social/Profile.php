@@ -28,12 +28,6 @@
 		const TYPE_GOOGLE   = 4;
 
 		/**
-		 * @var bool    Whether timestamps should be automatically maintained for this model.
-		 */
-
-		public $timestamps = false;
-
-		/**
 		 * @var string  The database table this model should be stored in.
 		 */
 
