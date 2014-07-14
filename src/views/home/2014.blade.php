@@ -58,11 +58,11 @@
 
 <section id="prizes">
 	<h2>Prizes</h2>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="playcanvas">
+		<img src="assets/img/prizes/2014/playcanvas.png" alt="Playcanvas" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>10 &times; PlayCanvas Pro account</h3>
+			<p>Ten 12-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro accounts offering cloud-hosted game development and publishing tools.</p>
 		</div>
 	</article>
 	<article class="prize">
