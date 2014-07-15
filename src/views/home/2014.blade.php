@@ -65,11 +65,11 @@
 			<p>Ten 12-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro accounts offering cloud-hosted game development and publishing tools.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="construct2">
+		<img src="assets/img/prizes/2014/construct2.png" alt="Construct 2" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>5 &times; Construct 2 game engine</h3>
+			<p>Five Personal Edition licenses for <a href="https://www.scirra.com/construct2">Construct 2</a> game engine created by <a href="https://www.scirra.com/">Scirra</a>.</p>
 		</div>
 	</article>
 	<article class="prize">
