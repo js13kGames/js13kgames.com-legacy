@@ -72,11 +72,11 @@
 			<p>Five Personal Edition licenses for <a href="https://www.scirra.com/construct2">Construct 2</a> game engine created by <a href="https://www.scirra.com/">Scirra</a>.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="moneywithhtml5">
+		<img src="assets/img/prizes/2014/moneywithhtml5.png" alt="Making money with HTML5" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>10 &times; Making Money with HTML5 ebook</h3>
+			<p>Ten copies of <a href="http://www.truevalhalla.com/blog/ebook/">Making Money with HTML5</a> ebook by <a href="http://www.truevalhalla.com/">Matthew Bowden</a>.</p>
 		</div>
 	</article>
 	<article class="prize">
