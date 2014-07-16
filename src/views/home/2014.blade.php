@@ -39,6 +39,21 @@
 			<p class="judgeContact"><a href="https://twitter.com/end3r">@end3r</a> | <a href="http://dev.end3r.com/">dev.end3r.com</a></p>
 		</div>
 	</article>
+	<article class="judge right" id="robbert">
+		<img src="assets/img/judges/2014/robbert_van_os.png" alt="Robbert van Os" />
+		<div>
+			<h3>Robbert van Os</h3>
+			<p>I am your friendly neighbourhood game developer evangelist from <a href="http://www.spilgames.com/">Spil Games</a>. My goal is to build communities around writing the best games possible, and providing the tools and knowledge to do so. Based in Europe, I’m the founder of <a href="http://www.html5united.com/">html5united.com</a> and active in the global games industry for over 12 years.</p>
+			<p class="judgeContact"><a href="https://twitter.com/gamerhero">@gamerhero</a> | <a href="http://html5united.com/">html5united.com</a></p>
+		</div>
+	</article>
+	<article class="judge">
+		<img src="assets/img/judge.png" alt="Judge" />
+		<div>
+			<h3>Judge</h3>
+			<p>Description of the judge.</p>
+		</div>
+	</article>
 	<article class="judge right">
 		<img src="assets/img/judge.png" alt="Judge" />
 		<div>
@@ -77,6 +92,27 @@
 		<div>
 			<h3>10 &times; Making Money with HTML5 ebook</h3>
 			<p>Ten copies of <a href="http://www.truevalhalla.com/blog/ebook/">Making Money with HTML5</a> ebook by <a href="http://www.truevalhalla.com/">Matthew Bowden</a>.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
 		</div>
 	</article>
 	<article class="prize">
