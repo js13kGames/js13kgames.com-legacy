@@ -62,7 +62,7 @@
 		<img src="assets/img/prizes/2014/playcanvas.png" alt="Playcanvas" />
 		<div>
 			<h3>10 &times; PlayCanvas Pro account</h3>
-			<p>Ten 12-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro accounts offering cloud-hosted game development and publishing tools.</p>
+			<p>Ten 12-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro accounts offering cloud-hosted, collaborative platform for building video games.</p>
 		</div>
 	</article>
 	<article class="prize" id="construct2">
