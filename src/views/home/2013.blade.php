@@ -247,7 +247,7 @@
 <section id="judges">
 	<h2>Judges</h2>
 	<article class="judge" id="andrzej">
-		<img src="assets/img/judges/2013/andrzej_mazur2.png" alt="Andrzej Mazur" />
+		<img src="assets/img/judges/2013/andrzej_mazur.png" alt="Andrzej Mazur" />
 		<div>
 			<h3>Andrzej Mazur</h3>
 			<p>Mobile HTML5 games developer, <a target="_blank" href="http://dev.end3r.com/">blogger</a>, speaker, founder of the Indie Game Development studio <a target="_blank" href="http://enclavegames.com/">Enclave Games</a> (authors of the <a target="_blank" href="http://enclavegames.com/games/captain-rogers/">Captain Rogers</a> game and <a target="_blank" href="http://html5devstarter.enclavegames.com/">HTML5 Gamedev Starter</a> list), creator of the <strong>js13kGames</strong> competition and <a target="_blank" href="http://gamedevjs.com/">Gamedev.js</a> Meetups organizer.</p>
@@ -1377,13 +1377,6 @@
 			<dd>The client side library for Socket.io is required to use it, as Socket.io implements its own protocol inside websocket (or fallback carrier). Alternatively, the "websocket" module does not require any client side library.</dd>
 			<dt>Can I create my own REST APIs on the server to let the user save and load custom game data, as long as it's &lt;13kb? I just persist a JSON created by server.js on a file to preserve user data on crash/reboot. Does it go against rule 3?</dt>
 			<dd>Creating your own REST APIs doesn't count as an external dependency, so it does not conflict with rule 3. However, all server-side code must be included in the 13kb server zip. The data itself does not count for the game size limit, as it is created at run-time (in the same way that procedural graphics can be generated and cached at runtime).</dd>
-		</dl>
-	</article>
-	<article class="rule" id="posts">
-		<h3>Posts</h3>
-		<dl>
-			<dt><a href="http://js13kgames.com/posts/expanded-experiences.html">Giving online casino gaming greater accessibility</a></dt>
-			<dd>&nbsp;</dd>
 		</dl>
 	</article>
 	<a class="up" href="/"></a>

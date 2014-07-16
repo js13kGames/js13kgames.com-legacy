@@ -303,6 +303,7 @@ section p {
 	text-indent: -5000px;
 	display: block;
 	margin-right: 20px;
+	border-radius: 5px;
 }
 .tweetBox li.twitter a.tweetBox-link {
 	background: url(/assets/img/icon_twitter.jpg) no-repeat;
