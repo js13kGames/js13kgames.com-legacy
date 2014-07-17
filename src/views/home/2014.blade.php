@@ -17,7 +17,7 @@
 	</div>
 	<img class="avatar" src="/assets/img/avatar.png" />
 	<div class="intro">
-		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. The main theme for 2014 will be announced soon. Competition will start at <strong>13:00 CEST, 13th August 2014</strong><br /> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the previous years: <a href="http://2013.js13kgames.com/">2013</a>, <a href="http://2012.js13kgames.com/">2012</a> for reference.</p>
+		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. The main theme for 2014 will be announced on August 13th. Competition will start at <strong>13:00 CEST, 13th August 2014</strong><br /> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the previous years: <a href="http://2013.js13kgames.com/">2013</a>, <a href="http://2012.js13kgames.com/">2012</a> for reference.</p>
 		<p>The competition is organized by <a target="_blank" href="http://twitter.com/end3r">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>. See the <a href="#rules">Rules</a> section for detailed info about the official rules of the competition.</p>
 		<p>Good luck to you all and <strong>have fun</strong>!</p>
 	</div>
