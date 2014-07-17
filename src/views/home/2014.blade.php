@@ -104,7 +104,7 @@
 			<p>Thirty paid <a href="https://github.com/">GitHub</a> plans - medium accounts for six months.</p>
 		</div>
 	</article>
-	<article class="prize">
+	<article class="prize" id="blossom">
 		<img src="assets/img/prizes/2014/blossom.png" alt="Blossom.io" />
 		<div>
 			<h3>1 &times; Blossom.io Enterprise account for 12 months</h3>
