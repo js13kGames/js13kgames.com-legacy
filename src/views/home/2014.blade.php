@@ -105,10 +105,10 @@
 		</div>
 	</article>
 	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+		<img src="assets/img/prizes/2014/blossom.png" alt="Blossom.io" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>1 &times; Blossom.io Enterprise account for 12 months</h3>
+			<p>One Enterprise license for <a href="http://www.blossom.io/">Blossom.io</a>, agile project management tool.</p>
 		</div>
 	</article>
 	<article class="prize">
