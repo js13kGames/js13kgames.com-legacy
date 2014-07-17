@@ -95,11 +95,11 @@
 			<p>Ten copies of <a href="http://www.truevalhalla.com/blog/ebook/">Making Money with HTML5</a> ebook by <a href="http://www.truevalhalla.com/">Matthew Bowden</a>.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="github">
+		<img src="assets/img/prizes/2014/github.png" alt="GitHub" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>30 &times; GitHub 6 month medium account</h3>
+			<p>Thirty paid <a href="https://github.com/">GitHub</a> plans - medium accounts for six months.</p>
 		</div>
 	</article>
 	<article class="prize">
