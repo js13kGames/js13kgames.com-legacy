@@ -111,11 +111,11 @@
 			<p>One Enterprise license for <a href="http://www.blossom.io/">Blossom.io</a>, agile project management tool.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="jetbrains">
+		<img src="assets/img/prizes/2014/jetbrains.png" alt="JetBrains" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>7 &times; JetBrains product license</h3>
+			<p>Seven licenses for one of the many various <a href="http://www.jetbrains.com/">JetBrains</a> professional development tools.</p>
 		</div>
 	</article>
 	<article class="prize">
