@@ -50,11 +50,12 @@
 			<p class="judgeContact"><a href="https://twitter.com/gamerhero">@gamerhero</a> | <a href="http://html5united.com/">html5united.com</a></p>
 		</div>
 	</article>
-	<article class="judge">
-		<img src="assets/img/judge.png" alt="Judge" />
+	<article class="judge" id="christer">
+		<img src="assets/img/judges/2014/christer_kaitila.png" alt="Christer Kaitila" />
 		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
+			<h3>Christer Kaitila</h3>
+			<p>Organizer of <a href="http://www.onegameamonth.com/">One Game A Month</a> and the <a href="http://www.charitygamejam.com/">Charity Game Jam</a>, editor at <a href="http://gamedev.tutsplus.com/">Gamedevtuts+</a>, and creator of <a href="http://mcfunkypants.com/">30 games</a>, <a href="http://soundcloud.com/McFunkypants">20 songs</a>, <a href="http://www.amazon.com/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;field-author=Christer%20Kaitila&amp;search-alias=digital-text&amp;sort=relevancerank">2 books</a>, and an HTML5 <a href="https://github.com/Mcfunkypants/Ludus">platformer game starter kit</a>, McFunkypants is an optimist disco viking and child of the arcade era. He has been an indie gamedev for over a decade.</p>
+			<p class="judgeContact"><a href="https://twitter.com/mcfunkypants">@mcfunkypants</a> | <a href="http://mcfunkypants.com/">mcfunkypants.com</a></p>
 		</div>
 	</article>
 	<article class="judge right">
@@ -65,6 +66,13 @@
 		</div>
 	</article>
 	<article class="judge">
+		<img src="assets/img/judge.png" alt="Judge" />
+		<div>
+			<h3>Judge</h3>
+			<p>Description of the judge.</p>
+		</div>
+	</article>
+	<article class="judge right">
 		<img src="assets/img/judge.png" alt="Judge" />
 		<div>
 			<h3>Judge</h3>
