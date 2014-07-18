@@ -72,13 +72,6 @@
 			<p>Description of the judge.</p>
 		</div>
 	</article>
-	<article class="judge right">
-		<img src="assets/img/judge.png" alt="Judge" />
-		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
-		</div>
-	</article>
 	<a class="up" href="/"></a>
 </section>
 
@@ -124,6 +117,27 @@
 		<div>
 			<h3>7 &times; JetBrains product license</h3>
 			<p>Seven licenses for one of the many various <a href="http://www.jetbrains.com/">JetBrains</a> professional development tools.</p>
+		</div>
+	</article>
+	<article class="prize" id="discoverphaser">
+		<img src="assets/img/prizes/2014/discoverphaser.png" alt="Discover Phaser" />
+		<div>
+			<h3>10 &times; Discover Phaser ebook</h3>
+			<p>Learn how to make HTML5 games with <a href="http://discoverphaser.com/">Discover Phaser</a> ebook by <a href="http://lessmilk.com/">Thomas Palef</a>.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
 		</div>
 	</article>
 	<article class="prize">
