@@ -25,7 +25,8 @@
 
 <section id="sponsors">
 	<h2>Sponsors</h2>
-	<a class="partner" href="http://www.spilgames.com/"><img src="assets/img/partners/2014/spilgames.png"></a>
+	<a class="partner" href="http://www.spilgames.com/"><img src="assets/img/partners/2014/spilgames.png" alt="Spil Games"></a>
+	<a class="partner" href="http://www.boostermedia.com/"><img src="assets/img/partners/2014/boostermedia.png" alt="Boostermedia"></a>
 	<h2>Supporters</h2>
 	<a class="partner" href="https://github.com/"><img src="assets/img/partners/2014/github.png"></a>
 	<p>Share the love for HTML5 games and support the js13kGames competition!<br />See the <a href="#contact">Contact</a> section for more details on how to get in touch.</p>
