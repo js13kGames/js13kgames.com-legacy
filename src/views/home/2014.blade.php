@@ -59,6 +59,21 @@
 			<p class="judgeContact"><a href="https://twitter.com/mcfunkypants">@mcfunkypants</a> | <a href="http://mcfunkypants.com/">mcfunkypants.com</a></p>
 		</div>
 	</article>
+	<article class="judge right" id="elle">
+		<img src="assets/img/judges/2014/elle_chen.png" alt="Elle Chen" />
+		<div>
+			<h3>Elle Chen</h3>
+			<p>Elle Chen is the License Manager of <a href="http://www.boostermedia.com/">BoosterMedia Network B.V.</a>, the leading HTML5 game publisher. She has licensed hundreds of HTML5 games and also the initiator of <a href="http://www.doctorhtml5games.com/">DoctorHTML5games.com</a> blog.</p>
+			<p class="judgeContact"><a href="https://twitter.com/elleycchen">@elleycchen</a> | <a href="http://linkedin.com/in/cutedogpie">linkedin.com/in/cutedogpie</a></p>
+		</div>
+	</article>
+	<article class="judge">
+		<img src="assets/img/judge.png" alt="Judge" />
+		<div>
+			<h3>Judge</h3>
+			<p>Description of the judge.</p>
+		</div>
+	</article>
 	<article class="judge right">
 		<img src="assets/img/judge.png" alt="Judge" />
 		<div>
