@@ -23,7 +23,7 @@
 			<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
 			<h4>Weekly newsletter about HTML5 Game Development</h4>
 			<form action="http://gamedevjs.us3.list-manage.com/subscribe/post?u=4ad274b490aa6da8c2d29b775&amp;id=bacab0c8ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required autofocus>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
 				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 				<input id="hidden-input" type="text" name="b_4ad274b490aa6da8c2d29b775_bacab0c8ca" value="">
 			</form>
