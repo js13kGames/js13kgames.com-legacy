@@ -17,9 +17,17 @@
 	</div>
 	<img class="avatar" src="/assets/img/avatar.png" />
 	<div class="intro">
-		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. The main theme for 2014 will be announced on August 13th. Competition will start at <strong>13:00 CEST, 13th August 2014</strong><br /> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the previous years: <a href="http://2013.js13kgames.com/">2013</a>, <a href="http://2012.js13kgames.com/">2012</a> for reference.</p>
-		<p>The competition is organized by <a target="_blank" href="http://twitter.com/end3r">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>. See the <a href="#rules">Rules</a> section for detailed info about the official rules of the competition.</p>
-		<p>Good luck to you all and <strong>have fun</strong>!</p>
+		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme will be announced and the competition will start<br /> at <strong>13:00 CEST, 13th August 2014</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
+		<p>Competition is organized by <a href="http://twitter.com/end3r">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
+		<div id="mc_embed_signup">
+			<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
+			<h4>Weekly newsletter about HTML5 Game Development</h4>
+			<form action="http://gamedevjs.us3.list-manage.com/subscribe/post?u=4ad274b490aa6da8c2d29b775&amp;id=bacab0c8ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required autofocus>
+				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+				<input id="hidden-input" type="text" name="b_4ad274b490aa6da8c2d29b775_bacab0c8ca" value="">
+			</form>
+		</div>
 	</div>
 </section>
 

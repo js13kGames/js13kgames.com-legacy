@@ -1063,3 +1063,78 @@ footer a {
 .message.success b {
 	color: #8aa532;
 }
+
+
+#mc_embed_signup {
+	background: url(/assets/img/bg-blue.png);
+	text-align: center;
+	padding-bottom: 0px;
+	margin: 20px 0 30px;
+	border-radius: 10px;
+}
+#mc_embed_signup h3 {
+	font-family: 'Graduate';
+	font-size: 26px;
+	padding: 20px 0 5px;
+	color: #444;
+}
+#mc_embed_signup h3 a {
+	font-weight: normal;
+	color: #444;
+}
+#mc_embed_signup h3 a:hover {
+	text-decoration: none;
+	border-bottom: none;
+	color: #000;
+}
+#mc_embed_signup h4 {
+	font-family: 'Graduate';
+	font-size: 14px;
+	padding: 0 0 10px;
+	color: #444;
+}
+#mce-EMAIL {
+	font-size: 14px;
+	line-height: 20px;
+	color: #999;
+	font-style: italic;
+	width: 270px;
+	border: 1px solid #d6e2ea;
+	padding: 6px 10px 5px;
+	margin: 0 10px 0 30px;
+	border-radius: 5px;
+	float: left;
+}
+#mc-embedded-subscribe {
+	font-family: "Graduate";
+	border: 1px solid #ffbc1d;
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 18px;
+	color: #fff;
+	text-align: center;
+	box-shadow: inset 0 0 0 1px #ffdc1c;
+	background: #ffdb1c;
+	background: -moz-linear-gradient(top, #ffdb1c 0%, #ffbd1c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffdb1c), color-stop(100%,#ffbd1c));
+	background: -webkit-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
+	background: -o-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
+	background: -ms-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
+	background: linear-gradient(to bottom, #ffdb1c 0%,#ffbd1c 100%);
+	padding: 6px 15px;
+	border-radius: 5px;
+	float: left;
+}
+#mc-embedded-subscribe:hover {
+	background: #ffbd1c;
+	background: -moz-linear-gradient(top, #ffbd1c 0%, #ffdb1c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbd1c), color-stop(100%,#ffdb1c));
+	background: -webkit-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
+	background: -o-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
+	background: -ms-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
+	background: linear-gradient(to bottom, #ffbd1c 0%,#ffdb1c 100%);
+}
+#hidden-input {
+	visibility: hidden;
+	height: 0px;
+}
