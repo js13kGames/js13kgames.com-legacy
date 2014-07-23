@@ -75,11 +75,12 @@
 			<p class="judgeContact"><a href="https://twitter.com/elleycchen">@elleycchen</a> | <a href="http://linkedin.com/in/cutedogpie">linkedin.com/in/cutedogpie</a></p>
 		</div>
 	</article>
-	<article class="judge">
-		<img src="assets/img/judge.png" alt="Judge" />
+	<article class="judge" id="jason">
+		<img src="assets/img/judges/2014/jason_weathersby.png" alt="Jason Weathersby" />
 		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
+			<h3>Jason Weathersby</h3>
+			<p>Jason Weathersby is a Technical Evangelist for <a href="http://hacks.mozilla.org/">Mozilla</a>, evangelizing Firefox OS. He is also a committer on the BIRT project at the Eclipse Foundation. He is a proponent of HTML5, Open Source and all things related to web-based gaming.</p>
+			<p class="judgeContact"><a href="https://twitter.com/JasonWeathersby">@JasonWeathersby</a></p>
 		</div>
 	</article>
 	<article class="judge right">
