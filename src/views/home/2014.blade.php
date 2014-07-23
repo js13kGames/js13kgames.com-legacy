@@ -150,11 +150,11 @@
 			<p>Learn how to make HTML5 games with <a href="http://discoverphaser.com/">Discover Phaser</a> ebook by <a href="http://lessmilk.com/">Thomas Palef</a>.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="impactjs">
+		<img src="assets/img/prizes/2014/impactjs.png" alt="ImpactJS" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>5 &times; ImpactJS game engine</h3>
+			<p>Five licenses for <a href="http://impactjs.com/">ImpactJS</a> game engine created by <a href="http://www.phoboslab.org/">Dominic Szablewski</a>.</p>
 		</div>
 	</article>
 	<article class="prize">
