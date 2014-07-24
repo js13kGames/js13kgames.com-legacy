@@ -165,11 +165,11 @@
 			Eight premium licenses for <a href="http://www.isogenicengine.com/">Isogenic Game Engine</a> created by <a href="http://irrelon.com/">Irrelon Software</a>.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="protoio">
+		<img src="assets/img/prizes/2014/protoio.png" alt="Proto.io" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>1 &times; Proto.io Startup account</h3>
+			<p>One <a href="http://proto.io/">Proto.io</a> account with Startup plan for 12 months.</p>
 		</div>
 	</article>
 	<article class="prize">
