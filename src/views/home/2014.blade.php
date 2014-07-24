@@ -207,6 +207,27 @@
 			<p>Prize description.</p>
 		</div>
 	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
 	<a class="up" href="/"></a>
 </section>
 <section id="categories" style="text-align: center;">
