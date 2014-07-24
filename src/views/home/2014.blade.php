@@ -158,11 +158,11 @@
 			<p>Five licenses for <a href="http://impactjs.com/">ImpactJS</a> game engine created by <a href="http://www.phoboslab.org/">Dominic Szablewski</a>.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="isogenic">
+		<img src="assets/img/prizes/2014/isogenic.png" alt="Isogenic Engine" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>8 &times; Isogenic Engine premium license</h3>
+			Eight premium licenses for <a href="http://www.isogenicengine.com/">Isogenic Game Engine</a> created by <a href="http://irrelon.com/">Irrelon Software</a>.</p>
 		</div>
 	</article>
 	<article class="prize">
