@@ -176,7 +176,7 @@
 		<img src="assets/img/prizes/2014/clayio.png" alt="Clay.io" />
 		<div>
 			<h3>Advertisement on Clay.io</h3>
-			<p>Winner of the Desktop category will be featured on the <a href="http://clay.io/">Clay.io</a> main site homepage and the Mobile winner on the mobile site.</p>
+			<p>Winner of the Desktop category will be featured on the <a href="http://clay.io/">Clay.io</a> homepage and the Mobile winner on the mobile site.</p>
 		</div>
 	</article>
 	<article class="prize">
