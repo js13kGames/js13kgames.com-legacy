@@ -172,11 +172,11 @@
 			<p>One <a href="http://proto.io/">Proto.io</a> account with Startup plan for 12 months.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="clayio">
+		<img src="assets/img/prizes/2014/clayio.png" alt="Clay.io" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>Advertisement on Clay.io</h3>
+			<p>Winner of the Desktop category will be featured on the <a href="http://clay.io/">Clay.io</a> main site homepage and the Mobile winner on the mobile site.</p>
 		</div>
 	</article>
 	<article class="prize">
