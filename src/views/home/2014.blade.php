@@ -47,7 +47,7 @@
 		<img src="assets/img/judges/2014/andrzej_mazur.png" alt="Andrzej Mazur" />
 		<div>
 			<h3>Andrzej Mazur</h3>
-			<p>HTML5 Game Developer and JavaScript programmer, <a href="http://enclavegames.com/">Enclave Games</a> indie studio founder, <a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a> newsletter publisher, <a href="http://js13kgames.com/">js13kGames</a> competition creator and <a href="http://gamedevjs.com/">Gamedev.js Meetups</a> organizer. Firefox OS fan and sushi lover.
+			<p>HTML5 Game Developer and JavaScript programmer, <a href="http://enclavegames.com/">Enclave Games</a> indie studio founder, <a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a> newsletter publisher, <a href="http://js13kgames.com/">js13kGames</a> competition creator and <a href="http://gamedevjs.com/">Gamedev.js Meetups</a> organizer. Developed <a href="http://enclavegames.com/games/captain-rogers/">Captain Rogers</a>, <a href="http://enclavegames.com/games/hungry-fridge/">Hungry Fridge</a>, <a href="http://enclavegames.com/games/full-immersion/">Full Immersion</a> and many other HTML5 games. Firefox OS fan and sushi lover.
 			<p class="judgeContact"><a href="https://twitter.com/end3r">@end3r</a> | <a href="http://dev.end3r.com/">dev.end3r.com</a></p>
 		</div>
 	</article>
