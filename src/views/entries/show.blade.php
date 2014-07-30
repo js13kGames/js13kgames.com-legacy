@@ -6,8 +6,8 @@
 		<h2>{{ $entry->title }}</h2>
 		<h3>{{ $entry->user->getFullName() }}</h3>
 		<ul>
-@if($entry->twitter)
-			<li class="twitter"><a href="http://twitter.com/{{ $entry->twitter }}">@ {{ $entry->twitter }}</a></li>
+@if($entry->user->twitter_login)
+			<li class="twitter"><a href="http://twitter.com/{{ $entry->user->twitter_login }}">@ {{ $entry->user->twitter_login }}</a></li>
 @endif
 @if($entry->website_url)
 			<li class="website"><a href="{{ $entry->website_url }}">{{ str_replace(array('http://', 'https://'), '', $entry->website_url) }}</a></li>
