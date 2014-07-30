@@ -33,4 +33,5 @@
 	</div>
 	<a class="back" href='/entries'>back</a>
 </article>
+<script src="https://apis.google.com/js/plusone.js"></script>
 @stop
