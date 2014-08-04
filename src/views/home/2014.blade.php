@@ -187,11 +187,11 @@
 			<p>Two licenses for <a href="http://www.telerik.com/kendo-ui">Kendo UI Professional</a> for 6 months with upgrades and commercial support.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="thefew">
+		<img src="assets/img/prizes/2014/thefew.png" alt="The Few" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>The Few game</h3>
+			<p>Unlimited copies of <a href="http://thefew.pl/">The Few</a> game by <a href="http://blackmoondev.com/">Blackmoon Design</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
 	<article class="prize">
