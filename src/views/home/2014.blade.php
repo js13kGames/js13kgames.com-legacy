@@ -83,11 +83,12 @@
 			<p class="judgeContact"><a href="https://twitter.com/JasonWeathersby">@JasonWeathersby</a></p>
 		</div>
 	</article>
-	<article class="judge right">
-		<img src="assets/img/judge.png" alt="Judge" />
+	<article class="judge right" id="robert">
+		<img src="assets/img/judges/2014/robert_podgorski.png" alt="Robert Podgórski" />
 		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
+			<h3>Robert Podgórski</h3>
+			<p>Indie games creator. Maker of <a href="http://thefew.pl">The Few</a>, Captain Rogers Chronicles and some others. Addicted to ketchup.</p>
+			<p class="judgeContact"><a href="https://twitter.com/blackmoondev">@blackmoondev</a> | <a href="http://blackmoondev.com/">blackmoondev.com</a></p>
 		</div>
 	</article>
 	<article class="judge">
