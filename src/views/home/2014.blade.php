@@ -180,11 +180,11 @@
 			<p>Winner of the Desktop category will be featured on the <a href="http://clay.io/">Clay.io</a> homepage and the Mobile winner on the mobile site.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="kendoui">
+		<img src="assets/img/prizes/2014/kendoui.png" alt="Kendo UI Professional" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>2 &times; Kendo UI Professional</h3>
+			<p>Two licenses for <a href="http://www.telerik.com/kendo-ui">Kendo UI Professional</a> for 6 months with upgrades and commercial support.</p>
 		</div>
 	</article>
 	<article class="prize">
