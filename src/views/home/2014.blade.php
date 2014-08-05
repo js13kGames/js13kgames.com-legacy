@@ -195,6 +195,27 @@
 			<p>Unlimited copies of <a href="http://thefew.pl/">The Few</a> game by <a href="http://blackmoondev.com/">Blackmoon Design</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
+	<article class="prize" id="mcpixel">
+		<img src="assets/img/prizes/2014/mcpixel.png" alt="McPixel" />
+		<div>
+			<h3>McPixel game</h3>
+			<p>Unlimited copies of the <a href="http://mcpixel.net/">McPixel</a> game by <a href="http://sos.gd/">Sos Sosowski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="assets/img/prize.png" alt="Prize" />
+		<div>
+			<h3>Prize</h3>
+			<p>Prize description.</p>
+		</div>
+	</article>
 	<article class="prize">
 		<img src="assets/img/prize.png" alt="Prize" />
 		<div>
