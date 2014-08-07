@@ -17,7 +17,7 @@
 @endif
 		</ul>
 		<p class="social">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://js13kgames.com{{ $entry->uri() }}/" data-text="Check out {{ $entry->title }} - 13kb entry by @if($entry->twitter)@{{ $entry->twitter }}@else{{ $entry->author }}@endif for the @js13kGames compo!" data-count="horizontal">Tweet</a>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://js13kgames.com{{ $entry->uri() }}/" data-text="Check out {{ $entry->title }} - 13kb entry by @if($entry->user->twitter_login)@{{ $entry->user->twitter_login }}@else{{ $entry->user->getFullName() }}@endif for the @js13kGames compo!" data-count="horizontal">Tweet</a>
 			<iframe src="http://www.facebook.com/plugins/like.php?href=http://js13kgames.com{{ $entry->uri() }}/&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
 			<g:plusone size="medium" href="http://js13kgames.com{{ $entry->uri() }}/"></g:plusone>
 		</p>
