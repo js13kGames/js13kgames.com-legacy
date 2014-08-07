@@ -34,7 +34,8 @@
 <section id="sponsors">
 	<h2>Sponsors</h2>
 	<a class="partner" href="http://www.spilgames.com/"><img src="assets/img/partners/2014/spilgames.png" alt="Spil Games"></a>
-	<a class="partner" href="http://www.boostermedia.com/"><img src="assets/img/partners/2014/boostermedia.png" alt="Boostermedia"></a>
+	<a class="partner" href="http://www.boostermedia.com/"><img src="assets/img/partners/2014/boostermedia.png" alt="Boostermedia"></a><br />
+	<a class="partner" href="http://www.mozilla.org/"><img src="assets/img/partners/2014/mozilla.png" alt="Mozilla"></a>
 	<h2>Supporters</h2>
 	<a class="partner" href="https://github.com/"><img src="assets/img/partners/2014/github.png"></a>
 	<p>Share the love for HTML5 games and support the js13kGames competition!<br />See the <a href="#contact">Contact</a> section for more details on how to get in touch.</p>
@@ -48,7 +49,7 @@
 		<div>
 			<h3>Andrzej Mazur</h3>
 			<p>HTML5 Game Developer and JavaScript programmer, <a href="http://enclavegames.com/">Enclave Games</a> indie studio founder, <a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a> newsletter publisher, <a href="http://js13kgames.com/">js13kGames</a> competition creator and <a href="http://gamedevjs.com/">Gamedev.js Meetups</a> organizer. Developed <a href="http://enclavegames.com/games/captain-rogers/">Captain Rogers</a>, <a href="http://enclavegames.com/games/hungry-fridge/">Hungry Fridge</a>, <a href="http://enclavegames.com/games/full-immersion/">Full Immersion</a> and many other games. Firefox OS fan and sushi lover.
-			<p class="judgeContact"><a href="https://twitter.com/end3r">@end3r</a> | <a href="http://dev.end3r.com/">dev.end3r.com</a></p>
+			<p class="judgeContact"><a href="https://twitter.com/end3r">@end3r</a> | <a href="http://end3r.com/">end3r.com</a></p>
 		</div>
 	</article>
 	<article class="judge right" id="robbert">
@@ -83,11 +84,12 @@
 			<p class="judgeContact"><a href="https://twitter.com/JasonWeathersby">@JasonWeathersby</a></p>
 		</div>
 	</article>
-	<article class="judge right">
-		<img src="assets/img/judge.png" alt="Judge" />
+	<article class="judge right" id="robert">
+		<img src="assets/img/judges/2014/robert_podgorski.png" alt="Robert Podgórski" />
 		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
+			<h3>Robert Podgórski</h3>
+			<p>Indie games creator. Maker of <a href="http://thefew.pl">The Few</a>, Captain Rogers Chronicles and some others. Addicted to ketchup.</p>
+			<p class="judgeContact"><a href="https://twitter.com/blackmoondev">@blackmoondev</a> | <a href="http://blackmoondev.com/">blackmoondev.com</a></p>
 		</div>
 	</article>
 	<article class="judge">
@@ -177,6 +179,27 @@
 		<div>
 			<h3>Advertisement on Clay.io</h3>
 			<p>Winner of the Desktop category will be featured on the <a href="http://clay.io/">Clay.io</a> homepage and the Mobile winner on the mobile site.</p>
+		</div>
+	</article>
+	<article class="prize" id="kendoui">
+		<img src="assets/img/prizes/2014/kendoui.png" alt="Kendo UI Professional" />
+		<div>
+			<h3>2 &times; Kendo UI Professional</h3>
+			<p>Two licenses for <a href="http://www.telerik.com/kendo-ui">Kendo UI Professional</a> for 6 months with upgrades and commercial support.</p>
+		</div>
+	</article>
+	<article class="prize" id="thefew">
+		<img src="assets/img/prizes/2014/thefew.png" alt="The Few" />
+		<div>
+			<h3>The Few game</h3>
+			<p>Unlimited copies of <a href="http://thefew.pl/">The Few</a> game by <a href="http://blackmoondev.com/">Blackmoon Design</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
+		</div>
+	</article>
+	<article class="prize" id="mcpixel">
+		<img src="assets/img/prizes/2014/mcpixel.png" alt="McPixel" />
+		<div>
+			<h3>McPixel game</h3>
+			<p>Unlimited copies of the <a href="http://mcpixel.net/">McPixel</a> game by <a href="http://sos.gd/">Sos Sosowski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
 	<article class="prize">
