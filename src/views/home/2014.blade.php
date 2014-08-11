@@ -18,7 +18,7 @@
 	<img class="avatar" src="/assets/img/avatar.png" />
 	<div class="intro">
 		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme will be announced and the competition will start<br /> at <strong>13:00 CEST, 13th August 2014</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
-		<p>Competition is organized by <a href="http://twitter.com/end3r">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
+		<p>Competition is organized by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
 		<div id="mc_embed_signup">
 			<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
 			<h4>Weekly newsletter about HTML5 Game Development</h4>
@@ -202,32 +202,11 @@
 			<p>Unlimited copies of the <a href="http://mcpixel.net/">McPixel</a> game by <a href="http://sos.gd/">Sos Sosowski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
+	<article class="prize" id="qbqbqb">
+		<img src="assets/img/prizes/2014/qbqbqb.png" alt="QbQbQb" />
 		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
+			<h3>QbQbQb game</h3>
+			<p>Unlimited copies of the <a href="http://qbqbqb.rezoner.net/">QbQbQb</a> game by <a href="http://rezoner.net/">Rezoner Sikorski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
 	<article class="prize">
