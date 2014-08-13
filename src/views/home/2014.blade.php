@@ -17,7 +17,7 @@
 	</div>
 	<img class="avatar" src="/assets/img/avatar.png" />
 	<div class="intro">
-		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme will be announced and the competition will start<br /> at <strong>13:00 CEST, 13th August 2014</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
+		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme for 2014 is <strong>The Elements: Earth, Water, Air and Fire</strong>. The competition started at <strong>13:00 CEST, 13th August 2014</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
 		<p>Competition is organized by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
 		<div id="mc_embed_signup">
 			<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
@@ -90,13 +90,6 @@
 			<h3>Robert Podgórski</h3>
 			<p>Indie games creator. Maker of <a href="http://thefew.pl">The Few</a>, Captain Rogers Chronicles and some others. Addicted to ketchup.</p>
 			<p class="judgeContact"><a href="https://twitter.com/blackmoondev">@blackmoondev</a> | <a href="http://blackmoondev.com/">blackmoondev.com</a></p>
-		</div>
-	</article>
-	<article class="judge">
-		<img src="assets/img/judge.png" alt="Judge" />
-		<div>
-			<h3>Judge</h3>
-			<p>Description of the judge.</p>
 		</div>
 	</article>
 	<a class="up" href="/"></a>
@@ -207,27 +200,6 @@
 		<div>
 			<h3>QbQbQb game</h3>
 			<p>Unlimited copies of the <a href="http://qbqbqb.rezoner.net/">QbQbQb</a> game by <a href="http://rezoner.net/">Rezoner Sikorski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
-		</div>
-	</article>
-	<article class="prize">
-		<img src="assets/img/prize.png" alt="Prize" />
-		<div>
-			<h3>Prize</h3>
-			<p>Prize description.</p>
 		</div>
 	</article>
 	<a class="up" href="/"></a>
