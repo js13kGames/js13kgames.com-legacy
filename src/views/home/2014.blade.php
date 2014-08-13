@@ -239,8 +239,8 @@
 		<p>You can't use any libraries, images or data files hosted on server or services that provide any type of data (for example Google Fonts are not allowed). Your game should work offline (Desktop and Mobile categories, not applicable to Server) and all the game assets should fit in the package(s) size limit. If you manage to shrink your favorite library below 13 kilobytes including the code itself, then you can use whatever you want, just remember about the 13 kB limit.</p>
 	</article>
 	<article class="rule">
-		<h3>Main theme - will be announced soon</h3>
-		<p>The main theme of the competition will be announced on 13th August 2014.</p>
+		<h3>Main theme - The Elements: Earth, Water, Air and Fire</h3>
+		<p>The main theme of the competition in 2014 is The Elements: Earth, Water, Air and Fire. It is optional, so you can use it, use part of it (one Element), or drop it. Remember that there will be bonus points for implementing the theme in your game.</p>
 	</article>
 	<article class="rule">
 		<h3>Deadline - 13th September 2014</h3>
