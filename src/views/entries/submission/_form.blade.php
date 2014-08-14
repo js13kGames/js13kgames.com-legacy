@@ -32,10 +32,6 @@
 				<input id="github" class="text" type="text" name="github_url" maxlength="200" placeholder="http://github.com/" value="{{ isset($submission) ? $submission->github_url : '' }}" required />
 			</p>
 			<p>
-				<label for="server" class="optional">If using server-side JavaScript, provide a link to deployed game:</label>
-				<input id="server" class="text optional" type="text" name="server_url" maxlength="200" value="{{ isset($submission) ? $submission->server_url : '' }}" />
-			</p>
-			<p>
 				<label for="title" class="required">Title of the game:</label>
 				<input id="title" class="text" type="text" name="title" maxlength="100" value="{{ isset($submission) ? $submission->title : '' }}" required />
 			</p>
@@ -54,10 +50,6 @@
 			<p>
 				<label for="file" class="required">Upload the .zip package:</label>
 				<input type="file" name="file" id="file" accept="application/zip" required />
-			</p>
-			<p>
-				<label for="file_server" class="optional">If using server-side JS, upload a .zip package with your server code:</label>
-				<input type="file" name="file_server" id="file_server" accept="application/zip" />
 			</p>
 			<p>
 				<label for="image1" class="required">Small screenshot (160px &times; 160px):</label>
