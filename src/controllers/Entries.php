@@ -8,7 +8,7 @@
 	use js13kgames\data\models;
 
 	// Aliases
-	use App, Config, Input, Session, Validator;
+	use Auth, App, Config, Input, Session, Validator;
 
 	/**
 	 * Contest Entries Controller
@@ -29,11 +29,10 @@
 		public function index(models\Category $category = null)
 		{
 			// Grab the default Category for the given Edition if none was given.
-			if(null === $category) $category = $this->getEdition()->categories()->first();
+			if(!$category->title) $category = $this->getEdition()->categories()->first();
 
 			// Display the index.
 			return $this->display('entries.index', [
-				'editions'    => models\Edition::all(),
 				'category'    => $category,
 				'submissions' => $category->submissions()->with('user')->where('active', '=', 1)->orderBy('created_at', 'DESC')->get(['title', 'slug', 'user_id']),
 				'title'       => $category->title.' Entries | js13kGames'
@@ -71,6 +70,12 @@
 
 		public function form()
 		{
+			// Ensure the user is logged in.
+			if(!Auth::user()) return $this->display('entries.submission.login');
+
+			// Temporary override for testing.
+			if(Input::get('force') == 1) return $this->renderForm();
+
 			return $this->validateEditionTimeframe() ? $this->renderForm() : $this->display('entries.submission.closed');
 		}
 
@@ -122,7 +127,7 @@
 			}
 
 			// Also ensure the images were uploaded correctly.
-			if(!Input::file('small_screenshot')->isValid()or !Input::file('big_screenshot')->isValid())
+			if(!Input::file('small_screenshot')->isValid() or !Input::file('big_screenshot')->isValid())
 			{
 				App::abort(500, 'Invalid/failed image uploads.');
 			}
