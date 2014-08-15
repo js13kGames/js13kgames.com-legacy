@@ -92,6 +92,14 @@
 			<p class="judgeContact"><a href="https://twitter.com/blackmoondev">@blackmoondev</a> | <a href="http://blackmoondev.com/">blackmoondev.com</a></p>
 		</div>
 	</article>
+	<article class="judge" id="michael">
+		<img src="assets/img/judges/2014/michael_wales.png" alt="Michael Wales" />
+		<div>
+			<h3>Michael Wales</h3>
+			<p>Michael Wales is the Web Dev Curriculum Manager at <a href="http://udacity.com/">Udacity</a>, building courses with industry partners like Google, Facebook and Twitter. Before joining Udacity, he developed web applications for the US Air Force, Defense Intelligence Agency and National Security Agency.</p>
+			<p class="judgeContact"><a href="https://twitter.com/walesmd">@walesmd</a> | <a href="http://michaelwales.com/">michaelwales.com</a></p>
+		</div>
+	</article>
 	<a class="up" href="/"></a>
 </section>
 
