@@ -289,6 +289,8 @@
 			<dd>Sent package should be zipped with your usual system archiver, the only allowed extension is .zip. Let's keep it simple - it's a competition for coders and this should be your main focus, the code itself. Thanks to the zipped archive you will easily send your game and we will easily check the file size.</dd>
 			<dt>Can I use Flash?</dt>
 			<dd>No, you can code your game using only the open web technologies like JavaScript, HTML and CSS.</dd>
+			<dt>Can I use WebGL?</dt>
+			<dd>Yes, though it might be hard to fit it into 13 kilobytes if you plan on doing an FPS game.</dd>
 			<dt>Can I use CoffeeScript or TypeScript?</dt>
 			<dd>Yes, you can use it, but you can't submit it. Only pure JavaScript code will be accepted, so remember to have your compiled code within the 13 kB limit.</dd>
 			<dt>Can I use compression through the self-extracting PNGs?</dt>
