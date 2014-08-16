@@ -210,6 +210,13 @@
 			<p>Unlimited copies of the <a href="http://qbqbqb.rezoner.net/">QbQbQb</a> game by <a href="http://rezoner.net/">Rezoner Sikorski</a>, one for <strong>every participant</strong> (or team) in the competition.</p>
 		</div>
 	</article>
+	<article class="prize" id="nodebb">
+		<img src="assets/img/prizes/2014/nodebb.png" alt="NodeBB" />
+		<div>
+			<h3>5 &times; NodeBB hosting</h3>
+			<p>Five Hamlet hosting plans for 12 months each from the <a href="https://nodebb.org/">NodeBB</a> team.</p>
+		</div>
+	</article>
 	<a class="up" href="/"></a>
 </section>
 <section id="categories" style="text-align: center;">
