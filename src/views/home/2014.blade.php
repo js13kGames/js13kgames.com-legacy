@@ -279,7 +279,7 @@
 	</article>
 	<article class="rule">
 		<h3>Sending submissions</h3>
-		<p>There will be a special form to submit your game. Please remember that you have to provide two sources (see the Rule #2 for details) - a link to a public repository on Github and a zipped package.</p>
+		<p>There will be a special form to submit your game. Please remember that you have to provide two sources (see the Rule #2 for details) - a link to a public repository on Github and a zipped package. Participants are allowed to submit more than one game in the competition.</p>
 	</article>
 	<article class="rule">
 		<h3>Accepting submissions</h3>
