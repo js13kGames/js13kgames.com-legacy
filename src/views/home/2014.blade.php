@@ -303,7 +303,7 @@
 			<dt>Can I use compression through the self-extracting PNGs?</dt>
 			<dd>No, this technique is strictly prohibited. Only pure JavaScript minifying is allowed.</dd>
 			<dt>More questions?</dt>
-			<dd>Send them in <a href="#contact">via email or social media</a>, visit <a href="http://webchat.freenode.net/?channels=bbg">#bbg channel</a> on Freenode IRC or post them at the <a href="http://www.html5gamedevs.com/">HTML5GameDevs forums</a>.</dd>
+			<dd>Send them in <a href="#contact">via email or social media</a> or post them in the dedicated topic at the <a href="http://www.html5gamedevs.com/topic/7767-js13kgames-competition-2014/">HTML5GameDevs forums</a>.</dd>
 		</dl>
 	</article>
 	<a class="up" href="/"></a>
