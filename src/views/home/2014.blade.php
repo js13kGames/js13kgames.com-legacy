@@ -221,7 +221,7 @@
 </section>
 <section id="categories" style="text-align: center;">
 	<h2>Categories</h2>
-	<p>There will be <strong>two different categories</strong> with <strong>top 10 games</strong> in every category.<br />You can submit your game to only one or both categories - it's up to you.</p>
+	<p>There will be <strong>three different categories</strong> with <strong>top 10 games</strong> in every category.<br />You can submit your game to any of the categories - it's up to you.</p>
 	<p>There will also be a <strong>Twitter</strong>, <strong>Facebook</strong> and <strong>Google+ Specials</strong> just like a year and two ago.</p>
 	<article class="prize">
 		<img src="assets/img/category-desktop.png" style="width: 150px; height: 150px;" alt="Prize" />
@@ -296,7 +296,7 @@
 		<h3>Server category specific rules</h3>
 		<dl>
 			<dt>Sandbox server</dt>
-			<dd>You can find the official sandbox server files at <a href="https://github.com/aurium/js-game-server">github.com/aurium/js-game-server</a> - it is maintained by Aurélio A. Heckert and Florent Cailhol.</dd>
+			<dd>You can find the official sandbox server at <a href="https://github.com/aurium/js-game-server">github.com/aurium/js-game-server</a> - it is maintained by Aurélio A. Heckert and Florent Cailhol.</dd>
 			<dt>Package size still below 13 kB</dt>
 			<dd>In this year one game package will contain all the game code and assets, for the client and the server.</dd>
 			<dt>Sandboxed environment</dt>
