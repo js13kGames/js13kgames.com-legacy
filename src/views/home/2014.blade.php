@@ -237,6 +237,13 @@
 			<p>Mobile touch devices.</p>
 		</div>
 	</article>
+	<article class="prize">
+		<img src="assets/img/category-server.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<div>
+			<h3>Server</h3>
+			<p>Node.js multiplayer.</p>
+		</div>
+	</article>
 </section>
 
 <section id="rules">
@@ -284,6 +291,31 @@
 	<article class="rule">
 		<h3>Accepting submissions</h3>
 		<p>Submissions will be checked manually and published after positive verification. This may take up to a couple of days, so be patient if your game is not yet online. I claim the right to reject any submission without giving a reason, although I hope I don't have to. I also have the right to update the rules of the competition at any time.</p>
+	</article>
+	<article class="rule" id="server">
+		<h3>Server category specific rules</h3>
+		<dl>
+			<dt>Sandbox server</dt>
+			<dd>You can find the official sandbox server files at <a href="https://github.com/aurium/js-game-server">github.com/aurium/js-game-server</a> - it is maintained by Aurélio A. Heckert and Florent Cailhol.</dd>
+			<dt>Package size still below 13 kB</dt>
+			<dd>In this year one game package will contain all the game code and assets, for the client and the server.</dd>
+			<dt>Sandboxed environment</dt>
+			<dd>Your game will run in a node.js based sandbox environment. That means you will not really use node. You can require a limited collection of modules and your own modules shipped by your 13k pack.</dd>
+			<dt>The allowed modules are:</dt>
+			<dd>Assert, buffer, events, path, querystring, string_decoder, sandbox-io (a shimed version of socket.io already listening your game port) and sandbox-server (a shimed version of http.server already listening on your game port).</dd>
+			<dt>Do not leak the sandbox</dt>
+			<dd>This is not a hacking competition. This is a way to help the competition admins, the site persistence, and you. Trying to directly write files, to read files outside of your package, to use not allowed modules, to change the server port, or any other tries to leak the sandbox will cast you out of the competition.</dd>
+			<dt>Yes, you can persist some data</dt>
+			<dd>The sandbox has a global function "db(key[,value])". That can abstract the read/write json data from the disk for you.</dd>
+			<dt>Socket.io client lib</dt>
+			<dd>You can use it. Simply add &lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt; to your HTML and that will be loaded. No server configuration will be needed. The sandbox already did it.</dd>
+			<dt>Respect your neighbours</dt>
+			<dd>Besides the fact that you can be cast out if you deliberately affect another game by accessing files or it's server, you also have to try to not plunder the host computing resources. That is also needed to preserve the server health.</dd>
+			<dt>Can I test the sandbox before submitting?</dt>
+			<dd>Yes, you can and you must! Installing and getting it running is simple. Visit the project page at <a href="https://github.com/aurium/js-game-server">github.com/aurium/js-game-server</a>.</dd>
+			<dt>Is there any example? How do I develop my game using the sandbox server?</dt>
+			<dd>Read the <a href="https://github.com/aurium/js-game-server/wiki/Writing-a-game">how to</a> and the <a href="https://github.com/aurium/js-game-server/tree/master/examples/pong">example</a> to learn more. Feel free to ask questions if you have any.</dd>
+		</dl>
 	</article>
 	<article class="rule" id="faq">
 		<h3>Frequently Asked Questions</h3>
