@@ -128,6 +128,11 @@
 				App::abort(500, 'Invalid/failed image uploads.');
 			}
 
+			if(!Input::file('file')->isValid())
+			{
+				App::abort(500, 'Invalid/failed zip upload.');
+			}
+
 			// Attempt to assign an existing User.
 			if(!$user = models\User::findByEmail($input['email']))
 			{
@@ -155,6 +160,22 @@
 			$repository->submission_id = $submission->id;
 
 			$repository->save();
+
+			// Move the zip packages.
+			$zippy = \Alchemy\Zippy\Zippy::load();
+
+			// Move the zip to the game directory.
+			Input::file('file')->move($submission->path(), $submission->slug.'.zip');
+
+			// Extract it.
+			$archive = $zippy->open($submission->path().$submission->slug.'.zip');
+			$archive->extract($submission->path());
+
+			// Store the server package as well, if it was provided.
+			if(Input::file('file_server')->isValid())
+			{
+				Input::file('file_server')->move($submission->path(), 'server.zip');
+			}
 
 			// Now push the images to the Submission's assets directory.
 			$imagine = new Imagine\Gd\Imagine();

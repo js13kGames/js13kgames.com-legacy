@@ -250,12 +250,10 @@
 				if(!is_dir($this->path())) mkdir($this->path(), 0777);
 
 				// Notify the contest owner.
-				/*
 				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
 				{
 					$message->to(Config::get('games.mail'))->subject('[Js13kgames] New submission.');
 				});
-				*/
 			}
 
 			parent::save($options);
