@@ -52,6 +52,10 @@
 				<input type="file" name="file" id="file" accept="application/zip" required />
 			</p>
 			<p>
+				<label for="file_server" class="optional">If using server-side JS, upload a .zip package with your server code:</label>
+				<input type="file" name="file_server" id="file_server" accept="application/zip" />
+			</p>
+			<p>
 				<label for="image1" class="required">Small screenshot (160px &times; 160px):</label>
 				<input type="file" name="small_screenshot" id="image1" accept="image/*" required />
 			</p>
