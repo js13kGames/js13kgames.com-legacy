@@ -10,11 +10,9 @@
 			<li class="twitter"><a href="http://twitter.com/{{ $entry->user->twitter_login }}">@ {{ $entry->user->twitter_login }}</a></li>
 @endif
 @if($entry->website_url)
-			<li class="website"><a href="{{ $entry->website_url }}">{{ str_replace(array('http://', 'https://'), '', $entry->website_url) }}</a></li>
+			<li class="website"><a href="{{ $entry->website_url }}">{{ str_replace(['http://', 'https://'], '', $entry->website_url) }}</a></li>
 @endif
-@if($entry->github_url)
-			<li class="github"><a href="{{ $entry->github_url }}">{{ str_replace(array('http://', 'https://'), '', $entry->github_url) }}</a></li>
-@endif
+			<li class="github"><a href="{{ $entry->repository->url }}">{{ str_replace(['http://', 'https://'], '', $entry->repository->url) }}</a></li>
 		</ul>
 		<p class="social">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://js13kgames.com{{ $entry->uri() }}/" data-text="Check out {{ $entry->title }} - 13kb entry by @if($entry->user->twitter_login){{ '@'.$entry->user->twitter_login }}@else{{ $entry->user->getFullName() }}@endif for the @js13kGames compo!" data-count="horizontal">Tweet</a>
