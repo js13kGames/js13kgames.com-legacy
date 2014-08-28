@@ -235,7 +235,7 @@
 				// Notify the contest owner.
 				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
 				{
-					$message->to(Config::get('games.mail'))->subject('[Js13kgames] New submission.');
+					$message->setTo(Config::get('games.mail'))->setSubject('[Js13kgames] New submission.');
 				});
 			}
 
