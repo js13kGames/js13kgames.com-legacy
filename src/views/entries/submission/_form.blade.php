@@ -13,23 +13,23 @@
 			<input type="hidden" name="token" value="{{ $form['token'] }}" />
 			<p>
 				<label for="nick" class="required">Name &frasl; nick:</label>
-				<input id="nick" class="text" type="text" name="author" maxlength="50" value="{{ isset($submission) ? $submission->author : '' }}" required />
+				<input id="nick" class="text" type="text" name="author" maxlength="50" value="{{ isset($submission) ? Input::get('author') : '' }}" required />
 			</p>
 			<p>
 				<label for="twitter">Twitter username:</label>
-				<input id="twitter" class="text" type="text" name="twitter" placeholder="without the @" maxlength="50" value="{{ isset($submission) ? $submission->twitter : '' }}" />
+				<input id="twitter" class="text" type="text" name="twitter" placeholder="without the @" maxlength="50" value="{{ isset($submission) ? Input::get('twitter') : '' }}" />
 			</p>
 			<p>
 				<label for="website">Your website:</label>
-				<input id="website" class="text" type="text" placeholder="http://" name="website_url" maxlength="200" value="{{ isset($submission) ? $submission->website_url : '' }}" />
+				<input id="website" class="text" type="text" placeholder="http://" name="website_url" maxlength="200" value="{{ isset($submission) ? Input::get('website_url') : '' }}" />
 			</p>
 			<p>
 				<label for="email" class="required">E-mail address <span>(won't be published)</span>:</label>
-				<input id="email" class="text" type="email" name="email" maxlength="100" value="{{ isset($submission) ? $submission->email : '' }}" required />
+				<input id="email" class="text" type="email" name="email" maxlength="100" value="{{ isset($submission) ? Input::get('email') : '' }}" required />
 			</p>
 			<p>
 				<label for="github" class="required">Link to the GitHub repository:</label>
-				<input id="github" class="text" type="text" name="github_url" maxlength="200" placeholder="http://github.com/" value="{{ isset($submission) ? $submission->github_url : '' }}" required />
+				<input id="github" class="text" type="text" name="github_url" maxlength="200" placeholder="http://github.com/" value="{{ isset($submission) ? Input::get('github_url') : '' }}" required />
 			</p>
 			<p>
 				<label for="title" class="required">Title of the game:</label>
