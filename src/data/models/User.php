@@ -1,8 +1,5 @@
 <?php namespace js13kgames\data\models;
 
-	// External dependencies
-	use Illuminate\Auth\UserInterface;
-
 	/**
 	 * User Model
 	 *
@@ -13,7 +10,7 @@
 	 * @link        http://js13kgames.com
 	 */
 
-	class User extends Base implements UserInterface
+	class User extends Base implements \Illuminate\Contracts\Auth\User
 	{
 		/**
 		 * @var array   The name of the table associated with the model.
