@@ -57,9 +57,10 @@
 			// Entries
 			$router->group(['prefix' => 'entries'], function() use($router)
 			{
-				$router->get('',       'Entries@index');
-				$router->get('submit', 'Entries@form');
-				$router->get('{slug}', 'Entries@show')->where('slug', ".+");
+				$router->get( '',       'Entries@index');
+				$router->get( 'submit', 'Entries@form');
+				$router->post('submit', 'Entries@store');
+				$router->get( '{slug}', 'Entries@show')->where('slug', ".+");
 			});
 
 			// Account.

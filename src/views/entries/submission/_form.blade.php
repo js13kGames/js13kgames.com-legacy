@@ -9,7 +9,7 @@
 	<h2>Submit Form</h2>
 	<article class="form">
 		<h3>Read the <a href="/#rules">Rules</a> first before submitting your game!</h3>
-		<form action="/submit" method="post" enctype="multipart/form-data">
+		<form method="post" enctype="multipart/form-data">
 			<input type="hidden" name="token" value="{{ $form['token'] }}" />
 			<p>
 				<label for="nick" class="required">Name &frasl; nick:</label>
