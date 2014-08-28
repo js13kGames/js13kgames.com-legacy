@@ -95,11 +95,7 @@
 			// save it if everything was fine.
 			$submission  = new models\Submission;
 
-			$submission->author      = $input['author'];
-			$submission->email       = $input['email'];
-			$submission->twitter     = 0 === strpos($input['twitter'], '@') ? substr($input['twitter'], 1) : $input['twitter'];
 			$submission->website_url = $input['website_url'];
-			$submission->github_url  = $input['github_url'];
 			$submission->server_url  = $input['server_url'];
 			$submission->title       = $input['title'];
 			$submission->description = $input['description'];
@@ -132,8 +128,33 @@
 				App::abort(500, 'Invalid/failed image uploads.');
 			}
 
-			// Save the submission so all directories and other dependencies get properly created.
+			// Attempt to assign an existing User.
+			if(!$user = models\User::findByEmail($input['email']))
+			{
+				// ... or create a new one.
+				$user = new models\User;
+
+				$user->email         = $input['email'];
+				$user->active        = 1;
+				$user->twitter_login = 0 === strpos($input['twitter'], '@') ? substr($input['twitter'], 1) : $input['twitter'];
+
+				$user->save();
+			}
+
+			// Assign the User to the Submission.
+			$submission->user_id = $user->id;
+
+			// Save the Submission so all directories and other dependencies get properly created.
 			$submission->save();
+
+			// Create a Repository entry for the Submission.
+			$repository = new models\repositories\Github;
+
+			$repository->url           = $input['github_url'];
+			$repository->user_id       = $user->id;
+			$repository->submission_id = $submission->id;
+
+			$repository->save();
 
 			// Now push the images to the Submission's assets directory.
 			$imagine = new Imagine\Gd\Imagine();
