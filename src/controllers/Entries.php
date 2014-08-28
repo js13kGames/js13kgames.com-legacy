@@ -8,7 +8,7 @@
 	use js13kgames\data\models;
 
 	// Aliases
-	use Auth, App, Config, Input, Session, Validator;
+	use App, Config, Input, Session, Validator;
 
 	/**
 	 * Contest Entries Controller

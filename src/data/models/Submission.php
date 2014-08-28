@@ -2,6 +2,7 @@
 
 	// Internal dependencies
 	use js13kgames\utils;
+	use js13kgames\connect;
 
 	// Aliases
 	use Config, Mail, Validator;
@@ -232,11 +233,8 @@
 				// Create a directory to keep the Submission's assets in.
 				if(!is_dir($this->path())) mkdir($this->path(), 0777);
 
-				// Notify the contest owner.
-				Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
-				{
-					$message->setTo(Config::get('games.mail'))->setSubject('[Js13kgames] New submission.');
-				});
+				// Properly notify everyone involved about the new Submission.
+				$this->notify();
 			}
 
 			parent::save($options);
@@ -264,5 +262,22 @@
 			rmdir($this->path());
 
 			parent::delete();
+		}
+
+		/**
+		 *
+		 */
+
+		protected function notify()
+		{
+			Mail::send('emails.submit.owner-note', ['submission' => $this], function($message)
+			{
+				$message->setTo(Config::get('games.mail'))->setSubject('[Js13kgames] New submission.');
+			});
+
+			$message = '<http://js13kgames.com'.$this->uri().'|'.$this->title.'>';
+
+			$slack = new connect\api\slack\services\IncomingWebhook(Config::get('connect.api.slack'), Config::get('connect.api.slack.tokens.incoming'));
+			$slack->post('#submissions', $message, '[System] New contest submission');
 		}
 	}
