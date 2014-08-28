@@ -70,12 +70,6 @@
 
 		public function form()
 		{
-			// Ensure the user is logged in.
-			if(!Auth::user()) return $this->display('entries.submission.login');
-
-			// Temporary override for testing.
-			if(Input::get('force') == 1) return $this->renderForm();
-
 			return $this->validateEditionTimeframe() ? $this->renderForm() : $this->display('entries.submission.closed');
 		}
 
