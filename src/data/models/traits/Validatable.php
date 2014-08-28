@@ -19,8 +19,8 @@
 		 * {@see js13kgames\data\models\interfaces\Validatable::getValidator()}
 		 */
 
-		public function getValidator()
+		public static function getValidator(array $data)
 		{
-			return Validator::make($this->attributes, static::getValidationRules(), static::getValidationMessages());
+			return Validator::make($data, static::getValidationRules(), static::getValidationMessages());
 		}
 	}

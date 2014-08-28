@@ -28,5 +28,5 @@
 		 *
 		 */
 
-		public function getValidator();
+		public static function getValidator(array $data);
 	}

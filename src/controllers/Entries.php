@@ -101,7 +101,7 @@
 			}
 
 			// Validate the model.
-			if(true !== ($validator = $submission->getValidator() and $validator->passes()))
+			if(true !== ($validator = $submission->getValidator($input) and $validator->passes()))
 			{
 				$errors = null !== $errors ? $errors->merge($validator->messages()) : $validator->messages();
 			}
@@ -155,14 +155,21 @@
 			$repository->save();
 
 			// Move the zip packages.
-			$zippy = \Alchemy\Zippy\Zippy::load();
+			$zip = new \ZipArchive;
 
 			// Move the zip to the game directory.
 			Input::file('file')->move($submission->path(), $submission->slug.'.zip');
 
 			// Extract it.
-			$archive = $zippy->open($submission->path().$submission->slug.'.zip');
-			$archive->extract($submission->path());
+			if($zip->open($submission->path().$submission->slug.'.zip') === true)
+			{
+				$zip->extractTo($submission->path());
+				$zip->close();
+			}
+			else
+			{
+				App::abort(500, 'Zip extraction failed, please notify the Js13kgames administrator.');
+			}
 
 			// Now push the images to the Submission's assets directory.
 			$imagine = new Imagine\Gd\Imagine();
@@ -211,21 +218,25 @@
 			$input = Input::all();
 
 			// Before we do anything else, first ensure the 'captcha' was correct.
-			Validator::extend('spam', function($attribute, $value, $parameters) use($input)
+			Validator::extend('compare', function($attribute, $value, $parameters) use($input)
 			{
-				return $value == Session::get($input['token']);
+				return ((int) $value === Session::get($input['token']));
 			});
 
 			$validator = Validator::make($input,
 			[
-				'spam'  => 'required|spam',
 				'token' => 'required',
+				'spam'  => 'required|compare',
 			],
 			[
 				'token.required' => 'You seem to be using some hacky way to submit the form. Not cool bro, not cool.',
 				'spam.required'  => 'You didn\'t do the math. Please fill the spam protection field.',
-				'spam.spam'      => 'Your math is off. Please try again. Harder, this time.',
+				'spam.compare'   => 'Your math is off. Please try again. Harder, this time.',
 			]);
+
+			if($validator->fails()) {
+				dd('captcha', $validator->fails(), $validator->messages(), $input, Session::all());
+			}
 
 			// If validation failed, return the Validator instance so we get access to the messages. Otherwise
 			// just return true.

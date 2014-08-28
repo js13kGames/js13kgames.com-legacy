@@ -46,8 +46,6 @@
 		public static function getValidationMessages()
 		{
 			return [
-				'spam.required' => 'You didn\'t do the math. Please fill the spam protection field.',
-				'spam.spam'     => 'Your math is off. Please try again. Harder, this time.',
 				'unique_slug'   => 'A game with the same name has already been submitted. Please choose a different name.',
 				'reserved_slug' => 'The title of the game must not be one of: submit, desktop, mobile or server.'
 			];
@@ -60,8 +58,6 @@
 		public static function getValidationRules()
 		{
 			return [
-				'spam'             => 'required|spam',
-				'token'            => 'required',
 				'author'           => 'required|min:3',
 				'email'            => 'required|email',
 				'categories'       => 'required',
@@ -79,7 +75,7 @@
 		 * {@inheritDoc}
 		 */
 
-		public function getValidator()
+		public static function getValidator(array $data)
 		{
 			static $extended;
 
@@ -98,7 +94,7 @@
 				});
 			}
 
-			return Validator::make($this->attributes, static::getValidationRules(), static::getValidationMessages());
+			return Validator::make($data, static::getValidationRules(), static::getValidationMessages());
 		}
 
 		/**

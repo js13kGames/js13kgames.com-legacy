@@ -7,6 +7,7 @@
 		'public'  => $baseDir.'/public',
 		'src'     => $baseDir.'/src',
 		'storage' => $baseDir.'/instance/storage',
+		'lang'    => $baseDir.'/src/resources/lang',
 	], isset($_SERVER['JS13K_ENV']) ? $_SERVER['JS13K_ENV'] : 'dev');
 
 	// Won't need to log Console errors nor the routing when running via the Console.
