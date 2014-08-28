@@ -99,6 +99,16 @@
 				{
 					return !in_array($value, ['submit', 'desktop', 'mobile', 'server']);
 				});
+
+				Validator::extend('if_server', function($attribute, $value, $parameters)
+				{
+					if(in_array(7, \Input::get('categories')))
+					{
+						return !empty($value);
+					}
+
+					return true;
+				});
 			}
 
 			return Validator::make($this->attributes, static::getValidationRules(), static::getValidationMessages());
