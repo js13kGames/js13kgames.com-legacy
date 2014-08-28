@@ -23,7 +23,8 @@
 		"mailgun/mailgun-php": "*",
 		"iron-io/iron_mq": "*",
 		"raven/raven": "*",
-		"tijsverkoyen/css-to-inline-styles": "*"
+		"tijsverkoyen/css-to-inline-styles": "*",
+		"alchemy/zippy": "*"
 	},
 
 	"require-dev": {
