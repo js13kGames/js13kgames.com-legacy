@@ -619,10 +619,13 @@ form abbr {
 	border-bottom: none;
 }
 
-#media,
-#sponsors {
+#media {
 	text-align: center;
 	border-top: 1px solid #EEE;
+}
+
+#sponsors {
+	text-align: center;
 }
 
 #media .partner,
