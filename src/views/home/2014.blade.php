@@ -123,6 +123,8 @@
 	<a class="up" href="/"></a>
 </section>
 
+@include('entries.submission._form')
+
 <section id="prizes">
 	<h2>Prizes</h2>
 	<article class="prize" id="playcanvas">
