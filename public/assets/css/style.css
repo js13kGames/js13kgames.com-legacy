@@ -1138,3 +1138,129 @@ footer a {
 	visibility: hidden;
 	height: 0px;
 }
+
+#places h2 {
+	padding-bottom: 10px;
+}
+
+#places h4 {
+	font-family: "Graduate", "Times New Roman", Verdana;
+	font-weight: normal;
+    color: #666;
+    font-size: 24px;
+    padding: 20px 0 15px;
+    text-align: center;
+}
+
+section#home:after {
+	display: none;
+}
+
+img.logo {
+	box-shadow: 2px 2px 3px #ccc;
+	float: left;
+	border-radius: 151px;
+	border: 7px solid #fff;
+	margin: -50px 50px 20px -20px;
+}
+
+.description {
+	margin: 0 50px 0 0;
+}
+
+#home .social {
+	margin: 10px 0 40px 195px;
+}
+
+#home .social span {
+	display: block;
+	float: left;
+	line-height: 20px;
+	height: 20px;
+	margin-right: 40px;
+}
+
+.donate {
+	float: right;
+	width: 400px;
+	background: #2d2d2d url(../../assets/img/bg_header.png) repeat;
+	border-radius: 10px;
+	margin-right: 20px;
+	position: relative;
+	color: #ddd;
+}
+
+.donate h3 {
+	font-size: 24px;
+	padding: 30px 0 30px 30px;
+}
+
+.donate p {
+	padding: 0 30px 20px;
+	line-height: 24px;
+}
+
+.donate strong {
+	color: #fff;
+}
+
+.donate img.photo {
+	position: absolute;
+	box-shadow: 0px 0px 2px #ccc;
+	border-radius: 148px;
+	border: 7px solid #fff;
+	top: -100px;
+	right: -30px;
+	background: #fff;
+}
+
+.donate img.diskette {
+	position: absolute;
+	bottom: -60px;
+	right: 40px;
+}
+
+.donate img.tshirt {
+	position: absolute;
+	bottom: -60px;
+	right: -60px;
+}
+
+.donate-paypal {
+	float: left;
+	display: block;
+	margin: 20px 15px 35px 30px;
+}
+
+.donate-gittip {
+	float: left;
+	display: block;
+	margin: 20px 20px 35px 0;
+}
+
+.donate-flattr {
+	float: left;
+	display: block;
+	margin: 20px 0 35px 0;
+}
+
+.content .donate-paypal:hover,
+.content a.donate-gittip:hover,
+.content a.donate-flattr:hover {
+	border: 0;
+	text-decoration: none;
+}
+
+.newsletter#mc_embed_signup {
+	width: 500px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.triska {
+	margin-left: 20px;
+}
+
+.triska a:hover {
+	border: 0;
+}

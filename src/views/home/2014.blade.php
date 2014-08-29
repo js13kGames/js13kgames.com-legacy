@@ -219,6 +219,150 @@
 	</article>
 	<a class="up" href="/"></a>
 </section>
+<section id="places">
+	<h2>Places</h2>
+	<section id="places-desktop">
+		<h4>Desktop category</h4>
+		<article class="place">
+			<h3>1st place desktop</h3>
+			<ul>
+				<li><strong>Advertisement</strong> of the game on Clay.io</li>
+				<li><strong>Software licenses</strong>: JetBrains product license, Construct 2 game engine, Isogenic Engine premium license</li>
+				<li><strong>Accounts licenses</strong>: Kendo UI Complete for 1 year, PlayCanvas Pro account for 1 year, GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Discover Phaser</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>2nd place desktop</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: JetBrains product license, Construct 2 game engine, Isogenic Engine premium license</li>
+				<li><strong>Accounts licenses</strong>: PlayCanvas Pro account for 1 year, GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Discover Phaser</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>3rd place desktop</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: Construct 2 game engine, Isogenic Engine premium license</li>
+				<li><strong>Accounts licenses</strong>: PlayCanvas Pro account for 1 year, GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Discover Phaser</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>4th-5th places desktop</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: Isogenic Engine premium license</li>
+				<li><strong>Accounts licenses</strong>: PlayCanvas Pro account for 1 year, GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Discover Phaser</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>6th-10th places desktop</h3>
+			<ul>
+				<li><strong>Accounts licenses</strong>: GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Discover Phaser</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-mobile">
+		<h4>Mobile category</h4>
+		<article class="place">
+			<h3>1st place mobile</h3>
+			<ul>
+				<li><strong>Advertisement</strong> of the game on Clay.io</li>
+				<li><strong>Software licenses</strong>: ImpactJS game engine, Construct 2 game engine, JetBrains product license</li>
+				<li><strong>Accounts licenses</strong>: PlayCanvas Pro account for 1 year, GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Making money with HTML5</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>2nd place mobile</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: ImpactJS game engine, JetBrains product license</li>
+				<li><strong>Accounts licenses</strong>: GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Making money with HTML5</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>3rd-5th places mobile</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: ImpactJS game engine</li>
+				<li><strong>Accounts licenses</strong>: GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Making money with HTML5</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>6th-10th places mobile</h3>
+			<ul>
+				<li><strong>Accounts licenses</strong>: GitHub 6 month medium account</li>
+				<li><strong>eBook</strong>: Making money with HTML5</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-server">
+		<h4>Server category</h4>
+		<article class="place">
+			<h3>1st place server</h3>
+			<ul>
+				<li><strong>Software licenses</strong>: Construct 2 game engine</li>
+				<li><strong>Accounts licenses</strong>: PlayCanvas Pro account for 1 year</li>
+				<li><strong>Hosting</strong>: NodeBB</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>2nd-5th places server</h3>
+			<ul>
+				<li><strong>Hosting</strong>: NodeBB</li>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-special">
+		<h4>Specials</h4>
+		<article class="place">
+			<h3>Twitter Specials <span>(for the highest number of tweets)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Proto.io Startup account, Isogenic Engine premium license, GitHub 6 month medium account</li>
+				<li><strong>2nd place</strong>: JetBrains product license, GitHub 6 month medium account</li>
+				<li><strong>3rd place</strong>: PlayCanvas Pro account, GitHub 6 month medium account</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>Facebook Specials <span>(for the highest number of likes)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Blossom.io Enterprise account for 12 months, Isogenic Engine premium license, GitHub 6 month medium account</li>
+				<li><strong>2nd place</strong>: JetBrains product license, GitHub 6 month medium account</li>
+				<li><strong>3rd place</strong>: PlayCanvas Pro account, GitHub 6 month medium account</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>Google+ Specials <span>(for the highest number of +1's)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Kendo UI Professional, Isogenic Engine premium license, GitHub 6 month medium account</li>
+				<li><strong>2nd place</strong>: JetBrains product license, GitHub 6 month medium account</li>
+				<li><strong>3rd place</strong>: PlayCanvas Pro account, GitHub 6 month medium account</li>
+			</ul>
+		</article>
+		<article class="place" id="prizes-everybody">
+			<h3>Prizes for every participant</h3>
+			<ul>
+				<li><strong>Games</strong>: The Few, McPixel, QbQbQb</li>
+			</ul>
+		</article>
+	</section>
+	<a class="up" href="/"></a>
+</section>
+
 <section id="categories" style="text-align: center;">
 	<h2>Categories</h2>
 	<p>There will be <strong>three different categories</strong> with <strong>top 10 games</strong> in every category.<br />You can submit your game to any of the categories - it's up to you.</p>
@@ -244,6 +388,7 @@
 			<p>Node.js multiplayer.</p>
 		</div>
 	</article>
+	<a class="up" href="/"></a>
 </section>
 
 <section id="rules">
