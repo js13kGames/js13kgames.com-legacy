@@ -105,7 +105,7 @@ nav ul li a,
 header {
 	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
 	border-top: 5px solid #a52730;
-	border-bottom: 7px solid #fff;
+	border-bottom: 4px solid #fff;
 }
 
 a.logo {
@@ -150,9 +150,10 @@ h1 {
 	width: 960px;
 	height: 56px;
 	line-height: 50px;
-	margin: 15px auto 0px auto;
+	margin: 0px auto;
 	text-align: center;
 	position: relative;
+	border-top: 4px solid #fff;
 }
 
 h1:before {
@@ -193,7 +194,7 @@ h2 {
 	font-size: 32px;
 	color: #acabab;
 	text-align: center;
-	padding: 40px;
+	padding: 40px 0 35px;
 }
 
 h2:before {
@@ -239,10 +240,6 @@ section p {
 
 #home p {
 	padding-bottom: 15px;
-}
-
-#home p:last-child {
-	padding: 20px 0 40px;
 }
 
 .tweetBox {
@@ -538,7 +535,7 @@ form abbr {
 
 
 #places {
-	counter-reset: rule;
+	/*counter-reset: rule;*/
 }
 
 .place {
@@ -552,8 +549,9 @@ form abbr {
 }
 
 .place h3:before {
-    counter-increment: rule;
-    content: counter(rule);
+    /*counter-increment: rule;*/
+    /*content: counter(rule);*/
+    content: "#";
     background: url(/assets/img/ribbon_arrow.png) no-repeat;
     display: inline-block;
     width: 82px;
