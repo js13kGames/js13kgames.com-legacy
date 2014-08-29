@@ -1,33 +1,53 @@
 @extends('layouts.master')
 @section('content')
-<section id="home" class="cf">
+<section id="home">
 	<h2>What is js13kGames?</h2>
-	<div class="tweetBox">
-		<h3>Follow us on</h3>
-		<ul>
-			<li class="twitter">
-				<a class="tweetBox-link" href="https://twitter.com/js13kGames">js13kGames on Twitter</a>
-				<span><a href="http://twitter.com/js13kGames" class="twitter-follow-button" data-button="blue" data-text-color="#FFFFFF" data-link-color="#FFFFFF" data-show-screen-name="false" data-show-count="true">Follow @js13kGames</a></span>
-			</li>
-			<li class="facebook">
-				<a class="tweetBox-link" href="https://www.facebook.com/js13kGames">js13kGames on Facebook</a>
-				<span><iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fjs13kGames&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=32" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:32px;" allowTransparency="true"></iframe></span>
-			</li>
-		</ul>
+	<img class="logo" src="assets/img/logo.png" />
+	<div class="description">
+		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme for 2014 is <strong>The Elements: Earth, Water, Air and Fire</strong>. The&nbsp;competition started at <strong>13:00 CEST, 13th August</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
+		<p>The competition is organized by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
+		<p class="social">
+			<span><strong>Follow us on:</strong></span>
+			<span><a href="http://twitter.com/js13kGames" class="twitter-follow-button" data-button="blue" data-text-color="#FFFFFF" data-link-color="#FFFFFF" data-show-screen-name="false" data-show-count="true">Follow @js13kGames</a></span>
+			<span><iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fjs13kGames&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:20px;" allowTransparency="true"></iframe></span>
+		</p>
 	</div>
-	<img class="avatar" src="/assets/img/avatar.png" />
-	<div class="intro">
-		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 game developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. Theme for 2014 is <strong>The Elements: Earth, Water, Air and Fire</strong>. The competition started at <strong>13:00 CEST, 13th August 2014</strong> and will end at <strong>13:00 CEST, 13th September 2014</strong>. See the <a href="http://js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
-		<p>Competition is organized by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>.</p>
-		<div id="mc_embed_signup">
-			<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
-			<h4>Weekly newsletter about HTML5 Game Development</h4>
-			<form action="http://gamedevjs.us3.list-manage.com/subscribe/post?u=4ad274b490aa6da8c2d29b775&amp;id=bacab0c8ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
-				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-				<input id="hidden-input" type="text" name="b_4ad274b490aa6da8c2d29b775_bacab0c8ca" value="">
+</section>
+
+<section id="promo">
+	<div class="donate">
+		<img class="photo" src="assets/img/photo.png" />
+		<h3>Hi, I'm Andrzej</h3>
+		<p>I'm running this competition on my own in my free time. I acquired prizes worth around 18.000 USD and did get support from the sponsors, but depending on the number of submitted games I might not be able to send the usual <strong>js13k t-shirts to everybody</strong> which I secretly did in 2012 and 2013. If you want to help me sponsor the t-shirts and <strong>3,5 diskettes</strong> with the 2014 games for <strong>all of the participants</strong>, please send a few bucks via services below, thank you!</p>
+		<img class="tshirt" src="assets/img/js13k-tshirt-2014.png" />
+		<img class="diskette" src="assets/img/diskette.png" />
+		<div class="donate-buttons">
+			<form class="donate-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_donations">
+				<input type="hidden" name="business" value="andrzej.mazur@end3r.com">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="item_name" value="js13kGames 2014 t-shirts">
+				<input type="hidden" name="no_note" value="0">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			</form>
+			<a target="_blank" class="donate-gittip" href="https://www.gittip.com/end3r/" title="Gittip"><img src="assets/img/gittip.png" alt="Gittip" /></a>
+			<a class="donate-flattr" href="https://flattr.com/submit/auto?user_id=end3r&url=http%3A%2F%2Fjs13kgames.com&title=js13kGames" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 		</div>
+	</div>
+	<div class="newsletter" id="mc_embed_signup">
+		<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
+		<h4>Weekly newsletter about HTML5 Game Development</h4>
+		<form action="http://gamedevjs.us3.list-manage.com/subscribe/post?u=4ad274b490aa6da8c2d29b775&amp;id=bacab0c8ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
+			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+			<input id="hidden-input" type="text" name="b_4ad274b490aa6da8c2d29b775_bacab0c8ca" value="">
+		</form>
+	</div>
+	<div class="triska">
+		<a target="_blank" href="http://13.enclavegames.com/"><img class="photo" src="assets/img/triska-banner.png" /></a>
 	</div>
 </section>
 

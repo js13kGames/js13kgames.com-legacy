@@ -1183,7 +1183,7 @@ img.logo {
 .donate {
 	float: right;
 	width: 400px;
-	background: #2d2d2d url(../../assets/img/bg_header.png) repeat;
+	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
 	border-radius: 10px;
 	margin-right: 20px;
 	position: relative;
