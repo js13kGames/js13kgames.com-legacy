@@ -234,10 +234,6 @@
 				'spam.compare'   => 'Your math is off. Please try again. Harder, this time.',
 			]);
 
-			if($validator->fails()) {
-				dd('captcha', $validator->fails(), $validator->messages(), $input, Session::all());
-			}
-
 			// If validation failed, return the Validator instance so we get access to the messages. Otherwise
 			// just return true.
 			return $validator->fails() ? $validator : true;
