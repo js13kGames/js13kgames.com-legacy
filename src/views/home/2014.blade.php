@@ -18,7 +18,7 @@
 	<div class="donate">
 		<img class="photo" src="assets/img/photo.png" />
 		<h3>Hi, I'm Andrzej</h3>
-		<p>I'm running this competition on my own in my free time. I acquired prizes worth around 18.000 USD and did get support from the sponsors, but depending on the number of submitted games I might not be able to send the usual <strong>js13k t-shirts to everybody</strong> which I secretly did in 2012 and 2013. If you want to help me sponsor the t-shirts and <strong>3,5 diskettes</strong> with the 2014 games for <strong>all of the participants</strong>, please send a few bucks via services below, thank you!</p>
+		<p>I'm running this competition on my own in my free time. I acquired prizes worth around 18.000 USD and did get support from the sponsors, but depending on the number of submitted games I might not be able to send the usual <strong>js13k t-shirts</strong> which I secretly did for the winners of 2012 and for all in 2013. If you want to help me sponsor the t-shirts and <strong>3.5" diskettes</strong> with the 2014 games for <strong>all of the participants</strong>, please send a few bucks via services below, thank you!</p>
 		<img class="tshirt" src="assets/img/js13k-tshirt-2014.png" />
 		<img class="diskette" src="assets/img/diskette.png" />
 		<div class="donate-buttons">
