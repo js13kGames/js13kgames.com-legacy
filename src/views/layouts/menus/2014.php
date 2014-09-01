@@ -1,5 +1,4 @@
 <ul>
-	<li><a href="/#submit">Submit</a></li>
 	<li><a href="/#judges">Judges</a></li>
 	<li><a href="/#prizes">Prizes</a></li>
 	<li><a href="/#rules">Rules</a></li>
