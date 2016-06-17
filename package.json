@@ -1,0 +1,22 @@
+{
+  "name": "js13kgames.com",
+  "version": "1.0.0",
+  "description": "The js13kgames website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js13kGames/js13kgames.com.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js13kGames/js13kgames.com/issues"
+  },
+  "homepage": "https://github.com/js13kGames/js13kgames.com#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

@@ -1,11 +1,2 @@
-/build/coverage
-/build/logs
-/vendor
-/docs
-/stubs
-.idea
 .DS_Store
-.sass-cache
-composer.phar
-composer.lock
-phpunit.xml
+node_modules/
