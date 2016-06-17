@@ -19,6 +19,7 @@
   "homepage": "https://github.com/js13kGames/js13kgames.com#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "express-hbs": "^1.0.1",
     "sqlite3": "^3.1.4"
   }
 }
