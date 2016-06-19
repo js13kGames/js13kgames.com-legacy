@@ -16,6 +16,7 @@ app.engine('hbs', hbs.express4({
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
+// Routes
 app.get('/', homeController);
 app.get('/:year', homeController);
 
