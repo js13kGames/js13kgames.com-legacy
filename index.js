@@ -2,14 +2,12 @@
 
 var express = require('express');
 var hbs = require('express-hbs');
-var sqlite3 = require('sqlite3').verbose();
 
 // Controllers
 var homeController = require('./controllers/home');
 var entriesController = require('./controllers/entries');
 
 var app = express();
-var db = new sqlite3.Database('production.sqlite');
 
 app.engine('hbs', hbs.express4({
   partialsDir: __dirname + '/views/partials',
