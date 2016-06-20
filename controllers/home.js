@@ -1,10 +1,8 @@
 var HomeController = function(req, res) {
-  // FIXME: Use the current year instead of hardcoding 2016
-  var year = req.params.year || '2016';
   var arg = {
-    is2016: (year === '2016'),
-    is2015: (year === '2015'),
-    is2014: (year === '2014')
+    is2016: (req.params.year === '2016'),
+    is2015: (req.params.year === '2015'),
+    is2014: (req.params.year === '2014')
   };
   res.render('home', arg);
   //db.all('SELECT * FROM editions', function(err, rows) {

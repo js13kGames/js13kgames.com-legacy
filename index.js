@@ -18,6 +18,11 @@ app.engine('hbs', hbs.express4({
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
+var defaultYear = function(req, res, next){
+  req.params.year = req.params.year || '2016';
+  next();
+};
+
 //js13kgames.com/                         -> index for the current year
 //js13kgames.com/submit                   -> form to submit a game. This form must be active active only when the compo is running. It needs authentication
 //js13kgames.com/jugde                    -> panel to judge games. This panel must be active active only when the compo is running. It needs authentication
@@ -32,10 +37,10 @@ app.set('views', __dirname + '/views');
 //js13kgames.com/<year>                   -> index page for the given year
 
 // Routes
-app.get('/', homeController);
-app.get('/:year', homeController);
-app.get('/entries', entriesController);
-app.get('/entries/:year', entriesController);
+app.get('/', defaultYear, homeController);
+app.get('/:year', defaultYear, homeController);
+app.get('/entries', defaultYear, entriesController);
+app.get('/:year/entries', defaultYear, entriesController);
 
 app.listen(3000, function() {
   console.log('Listening on port 3000');
