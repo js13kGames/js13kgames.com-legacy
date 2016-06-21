@@ -1,9 +1,17 @@
+var Sequelize = require('sequelize');
 var Entry = require('../models/entry');
+var Edition = require('../models/edition');
 
 var EntriesController = function(req, res) {
-  var a = Entry.findAllByYear(req.params.year)
-  .then(function(rows) {
-    console.log(rows);
+  var a = Entry.findAll({
+    include: [{
+      model: Edition,
+      where: {
+        slug: req.params.year
+      }
+    }]
+  }).then(function(rows) {
+    //console.log(rows);
     res.render('entries', {entries: rows});
   });
 };
