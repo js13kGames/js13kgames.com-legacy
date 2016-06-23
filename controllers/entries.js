@@ -11,7 +11,6 @@ var EntriesController = function(req, res) {
       }
     }]
   }).then(function(rows) {
-    //console.log(rows);
     res.render('entries', {entries: rows});
   });
 };
