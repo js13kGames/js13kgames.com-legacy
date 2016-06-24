@@ -1,8 +1,6 @@
+var config = require('../config');
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('main', null, null, {
-  dialect: 'sqlite',
-  storage: 'production.sqlite'
-});
+var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 
 var Edition = require('./edition');
 
