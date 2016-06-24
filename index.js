@@ -6,6 +6,7 @@ var hbs = require('express-hbs');
 // Controllers
 var homeController = require('./controllers/home');
 var entriesController = require('./controllers/entries');
+var submitController = require('./controllers/submit');
 
 var app = express();
 
@@ -31,10 +32,11 @@ var defaultYear = function(req, res, next){
 //js13kgames.com/<year>/winners           -> list of winners for the given year
 
 // Routes
-app.get('/', defaultYear, homeController);
+app.get('/submit', defaultYear, submitController);
 app.get('/:year', defaultYear, homeController);
 app.get('/entries', defaultYear, entriesController);
 app.get('/:year/entries', defaultYear, entriesController);
+app.get('/', defaultYear, homeController);
 
 app.listen(3000, function() {
   console.log('Listening on port 3000');
