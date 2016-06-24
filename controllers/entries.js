@@ -1,4 +1,3 @@
-var Sequelize = require('sequelize');
 var Entry = require('../models/entry');
 var Edition = require('../models/edition');
 
