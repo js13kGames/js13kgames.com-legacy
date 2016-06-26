@@ -16,6 +16,7 @@ app.engine('hbs', hbs.express4({
 }));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
+app.use(express.static('public/assets'));
 
 var defaultYear = function(req, res, next){
   req.params.year = req.params.year || '2016';
