@@ -26,5 +26,5 @@ The files are pre-processed SASS files. These are not processed at run time via 
 
 The files are arranged based on recommendations - http://thesassway.com/beginner/how-to-structure-a-sass-project and generate a single main.css file.
 
-The CSS is structured around 12 column grid bootstrap grid. Additional styles use the BEM (block element modifier) methodology. In short this means styles are component based and do not cascade preventing issues around importance.
+The CSS is structured around [12 column grid bootstrap grid](https://getbootstrap.com/examples/grid/). Additional styles use the BEM (block element modifier) methodology. In short this means styles are component based and do not cascade preventing issues around importance.
 See https://en.bem.info/methodology/ for more details.

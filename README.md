@@ -34,4 +34,4 @@ js13kgames.com/<year>/entries           -> list of entries for the given year
 * [Node JS](https://nodejs.org/en/)
 * [Express](http://expressjs.com/)
 * [Handle Bars View Engine](http://handlebarsjs.com/)
-* [SASS](http://sass-lang.com/guide) ([Bootstrap Grid](https://github.com/zirafa/bootstrap-grid-only) + [BEM Methodology](https://en.bem.info/methodology/))
+* [SASS](http://sass-lang.com/guide) ([Bootstrap Grid](https://getbootstrap.com/examples/grid/) + [BEM Methodology](https://en.bem.info/methodology/))
