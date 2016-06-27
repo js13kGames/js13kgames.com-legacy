@@ -2,6 +2,8 @@
 
 var express = require('express');
 var hbs = require('express-hbs');
+var multer = require('multer');
+var upload = multer({dest: 'uploads/'});
 
 // Controllers
 var homeController = require('./controllers/home');
@@ -34,7 +36,7 @@ var defaultYear = function(req, res, next){
 
 // Routes
 app.get('/submit', defaultYear, submitController.get);
-app.post('/submit', defaultYear, submitController.post);
+app.post('/submit', defaultYear, upload.any(), submitController.post);
 app.get('/:year', defaultYear, homeController);
 app.get('/entries', defaultYear, entriesController);
 app.get('/:year/entries', defaultYear, entriesController);
