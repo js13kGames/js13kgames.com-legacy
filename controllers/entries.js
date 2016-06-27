@@ -1,8 +1,8 @@
-var Entry = require('../models/entry');
+var Submission = require('../models/submission');
 var Edition = require('../models/edition');
 
 var EntriesController = function(req, res) {
-  var a = Entry.findAll({
+  var a = Submission.findAll({
     include: [{
       model: Edition,
       where: {
