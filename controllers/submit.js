@@ -39,13 +39,23 @@ SubmitController.post = function(req, res) {
       editionId: config.games.editionId
     })
     .save()
-    .then(function() {
-      console.log('saved');
+    .then(function(obj) {
+      res.render('submit_success', { email: obj.get('email') });
     })
     .catch(function(error) {
       console.log('err', error);
+
+      var a = Category.findAll({
+        include: [{
+          model: Edition,
+          where: {
+            slug: 2015 //req.params.year
+          }
+        }]
+      }).then(function(rows) {
+        res.render('submit', {categories: rows, csrf: '1234567890'});
+      });
     });
-    res.render('submit', {categories: [], csrf: '1234567890'});
   });
 };
 

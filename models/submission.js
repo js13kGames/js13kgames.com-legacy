@@ -6,10 +6,12 @@ var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 var Edition = require('./edition');
 // Remaining Validations
 // 1. Anti spam, required, valid
-// 3. csrf
-// 7. website url
-// 9. server url (if server)
-// 12. file_server zip, max 13kb, if server
+// 2. csrf
+// 3. server url (if server)
+// 4. file_server zip, max 13kb, if server
+// 5. save files
+// 6. validate reserved slugs
+// 7. reload form on errors
 
 var Submission = sequelize.define('submission', {
   id: {
@@ -60,6 +62,7 @@ var Submission = sequelize.define('submission', {
   },
   websiteUrl: {
     type: Sequelize.STRING,
+    allowNull: true,
     field: "website_url",
     validate: { isUrl: true }
   },
@@ -86,6 +89,7 @@ var Submission = sequelize.define('submission', {
   editionId: {
     type: Sequelize.INTEGER,
     allowNull: false,
+    field: "edition_id",
     validate: { isInt: true }
   },
   score: {
@@ -125,7 +129,6 @@ var Submission = sequelize.define('submission', {
 });
 
 Submission.belongsTo(Edition);
-//Submission.sync();
 
 var isImageValid = function(image) {
   var mimeTypes = ['image/png', 'image/jpeg', 'image/gif'];
