@@ -4,21 +4,12 @@ var Sequelize = require('sequelize');
 var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 
 var Edition = require('./edition');
-// Validations
+// Remaining Validations
 // 1. Anti spam, required, valid
-// 2. Unique and not reserved slug
 // 3. csrf
-// 4. author, min-3
-// 5. email, required
-// 6. categories, required
 // 7. website url
-// 8. github url
 // 9. server url (if server)
-// 10. title, required, min 10, max 1000
-// 11. file zip, max 13kb
 // 12. file_server zip, max 13kb, if server
-// 13. small_screenshot jpeg, gif, png, max 100kb
-// 14. big_screenshot jpeg, gif, png, max 100kb
 
 var Submission = sequelize.define('submission', {
   id: {
@@ -51,43 +42,99 @@ var Submission = sequelize.define('submission', {
     type: Sequelize.STRING,
     validate: { min: 3 }
   },
+  categories: {
+    type: Sequelize.VIRTUAL,
+    set: function(val) {
+      this.setDataValue('categories', val);
+    },
+    allowNull: false
+  },
   email: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: { isEmail: true }
   },
   twitter: {
     type: Sequelize.STRING,
     validate: { min: 3 }
   },
-  website_url: {
+  websiteUrl: {
     type: Sequelize.STRING,
+    field: "website_url",
     validate: { isUrl: true }
   },
-  github_url: {
+  githubUrl: {
     type: Sequelize.STRING,
+    field: "github_url",
+    allowNull: false,
     validate: { isUrl: true }
   },
-  server_url: {
+  serverUrl: {
     type: Sequelize.STRING,
+    field: "server_url",
     validate: { isUrl: true }
   },
-  description: Sequelize.TEXT,
+  description: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
   title: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: { min: 10 }
+  },
+  editionId: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: { isInt: true }
   },
   score: {
     type: Sequelize.INTEGER,
     validate: { isInt: true }
+  },
+  fileZip: {
+    type: Sequelize.VIRTUAL,
+    allowNull: false
+  },
+  smallScreenshot: {
+    type: Sequelize.VIRTUAL,
+    allowNull: false
+  },
+  bigScreenshot: {
+    type: Sequelize.VIRTUAL,
+    allowNull: false
   }
 }, {
   timestamps: true,
   createdAt: 'created_at',
   updatedAt: 'updated_at',
-  underscored: true
+  validate: {
+    screenshots: function() {
+      isImageValid(this.smallScreenshot);
+      isImageValid(this.bigScreenshot);
+    },
+    zip: function() {
+      if (this.fileZip.headers['content-type'] !== 'application/zip') {
+        throw new Error(messages.error.invalidZipFormat);
+      }
+      if (this.fileZip.size > config.games.maxSize) {
+        throw new Error(messages.error.invalidZipSize);
+      }
+    }
+  }
 });
 
 Submission.belongsTo(Edition);
 //Submission.sync();
+
+var isImageValid = function(image) {
+  var mimeTypes = ['image/png', 'image/jpeg', 'image/gif'];
+  if (mimeTypes.indexOf(image.headers['content-type']) < 0) {
+    throw new Error(messages.error.invalidImageFormat);
+  }
+  if (image.size > config.images.maxSize) {
+    throw new Error(messages.error.invalidImageSize);
+  }
+};
 
 module.exports = Submission;
