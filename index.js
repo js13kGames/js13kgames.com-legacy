@@ -33,7 +33,8 @@ var defaultYear = function(req, res, next){
 //js13kgames.com/<year>/winners           -> list of winners for the given year
 
 // Routes
-app.get('/submit', defaultYear, submitController);
+app.get('/submit', defaultYear, submitController.get);
+app.post('/submit', defaultYear, submitController.post);
 app.get('/:year', defaultYear, homeController);
 app.get('/entries', defaultYear, entriesController);
 app.get('/:year/entries', defaultYear, entriesController);
