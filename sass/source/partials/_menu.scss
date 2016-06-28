@@ -1,34 +1,86 @@
-nav {
-	margin: 10px auto;
-}
-
-nav ul {
-	position: absolute;
-	top: 18px;
-	right: 0;
-}
-
+ 
 nav ul li {
-	display: inline-block;
-	padding-left: 10px;
+  display: block;
+  text-align: center;
+  padding:10px;
 }
 
+@include media(">=tablet") {
+
+  nav ul {
+    position: absolute;
+    right: 0;
+  }
+ 
+  nav ul li {
+    display: inline-block;
+    padding-left: 10px;
+  }
+
+  
+  nav ul li a {
+    font-size: 18px !important;
+  }
+
+  .years {
+    color: #ccc;
+    float: right;
+    margin-top: -23px;
+  }
+
+  .years a {
+    font-size: 14px;
+    	line-height: 18px;
+  }
+
+}
+
+.years a {
+	display: block;
+}
+ 
 nav ul li a {
 	color: #e2e2e2;
-	font-size: 18px;
+	font-size: 25px;
 }
 
 nav ul li a:hover {
 	color: #b12a34;
 }
+ 
 
-.years {
-	color: #ccc;
-	float: right;
-	margin-top: -23px;
+/*This is the hamburger X code from http://elijahmanor.com/css-animated-hamburger-icon/*/
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
 }
-.years a {
-	display: block;
-	font-size: 14px;
-	line-height: 18px;
+#nav-toggle span:before {
+  top: -10px; 
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
 }

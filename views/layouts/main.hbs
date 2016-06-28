@@ -46,13 +46,16 @@
   <meta property="og:description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes."/>
 </head>
 <body>
-
 <header class="page__header">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-              <nav>
-                <a class="header__logo" href="http://2016.js13kgames.com/">js13kGames</a>
+          <div class="col-xs-11 col-md-4">
+              <a class="header__logo" href="http://2016.js13kgames.com/">js13kGames</a>
+          </div>
+          <div class="hidden-md hidden-lg col-xs-1">  
+            <a id="nav-toggle" href="#"><span></span></a>
+          </div>
+           <nav id="menu" class="hidden-xs hidden-sm col-xs-12 col-md-8">
                 <ul>
                   <li><a href="/#sponsors">Sponsors</a></li>
                   <li><a href="/#judges">Judges</a></li>
@@ -76,5 +79,16 @@
     {{{ body }}}
     </div>
   </main>
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	$('#nav-toggle').click(function(){
+		$(this).toggleClass('active');
+    $("#menu").toggleClass('hidden-xs');
+    $("#menu").toggleClass('hidden-sm');
+	});
+});
+</script>
 </body>
 </html>
