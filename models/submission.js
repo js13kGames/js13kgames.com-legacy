@@ -1,3 +1,6 @@
+var fs = require('fs');
+var path = require('path');
+var im = require('imagemagick');
 var config = require('../config');
 var messages= require('../messages');
 var Sequelize = require('sequelize');
@@ -124,6 +127,34 @@ var Submission = sequelize.define('submission', {
       if (this.fileZip.size > config.games.maxSize) {
         throw new Error(messages.error.invalidZipSize);
       }
+    }
+  },
+  instanceMethods: {
+    getStoragePath: function() {
+      return path.join('public', 'games', this.slug);
+    },
+    getFilePath: function(file, newName) {
+      var name = newName || file.originalFilename;
+      return path.join(this.getStoragePath(), name);
+    },
+      // originalFilename: 'please-die-js13k-2015.zip',
+      // path: '/var/folders/_c/0mgrgr9972q1l_3sqnzwmwm80000gn/T/viC2rMb0oyIj_AHmOW-Kb0N7.zip',
+    saveFiles: function() {
+      // Create directory
+      fs.mkdirSync(this.getStoragePath());
+      // Zip
+      fs.renameSync(this.fileZip.path, this.getFilePath(this.fileZip));
+      // Screenshots
+      im.resize({
+        srcPath: this.smallScreenshot.path,
+        dstPath: this.getFilePath(this.smallScreenshot, '__small.jpg'),
+        width: 160
+      });
+      im.resize({
+        srcPath: this.bigScreenshot.path,
+        dstPath: this.getFilePath(this.bigScreenshot, '__big.jpg'),
+        width: 400
+      });
     }
   }
 });

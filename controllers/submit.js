@@ -1,3 +1,4 @@
+var fs = require('fs');
 var config = require('../config');
 var Edition = require('../models/edition');
 var Category = require('../models/category');
@@ -40,6 +41,7 @@ SubmitController.post = function(req, res) {
     })
     .save()
     .then(function(obj) {
+      obj.saveFiles();
       res.render('submit_success', { email: obj.get('email') });
     })
     .catch(function(error) {
