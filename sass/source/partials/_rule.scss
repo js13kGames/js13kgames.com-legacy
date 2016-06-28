@@ -1,0 +1,29 @@
+.rule {
+	margin-bottom: 0;
+	padding: 10px 20px 0;
+	border-bottom: 1px dotted #F2F2FA;
+}
+
+.rule__heading {
+	font-size: 20px;
+}
+
+.rule h3:before {
+    counter-increment: rule;
+    content: counter(rule);
+    background: url(/img/ribbon_arrow.png) no-repeat;
+    display: inline-block;
+    width: 82px;
+    height: 53px;
+    line-height: 44px;
+    font-size: 28px;
+    text-align: center;
+    padding-right: 15px;
+    margin-left: -31px;
+	text-shadow: 0px 1px 0px #eb6e76;
+	margin-bottom: 5px;
+}
+
+#rules {
+	counter-reset: rule;
+}

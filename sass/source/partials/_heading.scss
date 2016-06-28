@@ -1,0 +1,41 @@
+.heading--level1 {
+	font-size: 20px;
+	color: $brand-dark;
+	text-shadow: 0px 1px 0px #eb6e76;
+	background: url(/img/ribbon_big_bg.png) repeat-x;
+	height: 56px;
+	margin: 0px auto;
+	text-align: center;
+	position: relative;
+	border-top: 4px solid #fff;
+  padding-top: 3px;
+}
+
+@include media(">phone") {
+  .heading--level1{
+    line-height: 45px;
+  }
+
+  .heading--level1:before {
+    content: "";
+    display: block;
+    width: 47px;
+    height: 65px;
+    position: absolute;
+    top: 0;
+    left: -47px;
+    background: url(/img/ribbon_big_left.png) no-repeat;
+  }
+
+  .heading--level1:after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 65px;
+    position: absolute;
+    top: 0;
+    right: -48px;
+    background: url(/img/ribbon_big_right.png) no-repeat;
+  }
+
+}

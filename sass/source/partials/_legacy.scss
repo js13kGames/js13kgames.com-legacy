@@ -1,22 +1,7 @@
 
 /*This is a tempoary file that holds the old css this will be migrated out into SASS files*/
 
-@font-face {
-  font-family: 'Graduate';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Graduate'),
-  	local('Graduate-Regular'),
-  	url(/fonts/graduate.eot) format('embedded-opentype'),
-  	url(/fonts/graduate.ttf) format('truetype'),
-  	url(/fonts/graduate.woff) format('woff');
-}
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
+ 
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -81,11 +66,7 @@ ul {
 	list-style-type: none;
 }
 
-body {
-	background: #efefef url(/img/bg_content.png) fixed repeat;
-	font: normal 15px/22px Helvetica, Arial, sans-serif;
-	color: #333;
-}
+
 
 a {
 	text-decoration: none;
@@ -118,11 +99,7 @@ nav ul li a,
 	font-weight: normal;
 }
 
-header {
-	background: #2d2d2d url(/img/bg_header.png) repeat;
-	border-top: 5px solid #a52730;
-	border-bottom: 4px solid #fff;
-}
+
 
 a.logo {
 	display: block;
@@ -158,41 +135,7 @@ nav ul li a:hover {
 	color: #b12a34;
 }
 
-h1 {
-	font-size: 24px;
-	color: #300000;
-	text-shadow: 0px 1px 0px #eb6e76;
-	background: url(/img/ribbon_big_bg.png) repeat-x;
-	width: 960px;
-	height: 56px;
-	line-height: 50px;
-	margin: 0px auto;
-	text-align: center;
-	position: relative;
-	border-top: 4px solid #fff;
-}
 
-h1:before {
-	content: "";
-	display: block;
-	width: 47px;
-	height: 65px;
-	position: absolute;
-	top: 0;
-	left: -47px;
-	background: url(/img/ribbon_big_left.png) no-repeat;
-}
-
-h1:after {
-	content: "";
-	display: block;
-	width: 48px;
-	height: 65px;
-	position: absolute;
-	top: 0;
-	right: -48px;
-	background: url(/img/ribbon_big_right.png) no-repeat;
-}
 
 .content {
 	width: 960px;
@@ -593,35 +536,9 @@ form abbr {
 	padding-left: 40px;
 }
 
-#rules {
-	counter-reset: rule;
-}
 
-.rule {
-	margin-bottom: 0;
-	padding: 10px 20px 0;
-	border-bottom: 1px dotted #F2F2FA;
-}
 
-.rule h3 {
-	font-size: 20px;
-}
 
-.rule h3:before {
-    counter-increment: rule;
-    content: counter(rule);
-    background: url(/img/ribbon_arrow.png) no-repeat;
-    display: inline-block;
-    width: 82px;
-    height: 53px;
-    line-height: 44px;
-    font-size: 28px;
-    text-align: center;
-    padding-right: 15px;
-    margin-left: -31px;
-	text-shadow: 0px 1px 0px #eb6e76;
-	margin-bottom: 5px;
-}
 
 #faq {
 	border-bottom: none;
