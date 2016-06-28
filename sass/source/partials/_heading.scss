@@ -14,6 +14,7 @@
 @include media(">phone") {
   .heading--level1{
     line-height: 45px;
+    font-size: 25px;
   }
 
   .heading--level1:before {

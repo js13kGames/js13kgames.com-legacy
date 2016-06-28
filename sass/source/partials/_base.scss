@@ -16,6 +16,20 @@ body {
 	color: #333; 
 }
 
+h1,
+h2,
+h3,
+nav ul li a,
+.form label,
+.form input.submit,
+.single-entry .launch,
+.play h1 {
+	font-family: "Graduate", "Times New Roman", Verdana;
+	font-weight: normal;
+}
+
+a{text-decoration: none;}
+
 .row-no-padding {
   [class*="col-"] {
     padding-left: 0 !important;
