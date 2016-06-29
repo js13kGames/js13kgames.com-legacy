@@ -27,8 +27,12 @@ nav ul li a,
 	font-family: "Graduate", "Times New Roman", Verdana;
 	font-weight: normal;
 }
-
-a{text-decoration: none;}
+ 
+a {
+	text-decoration: none;
+	color: #b12a34;
+	outline: none;
+}
 
 .row-no-padding {
   [class*="col-"] {

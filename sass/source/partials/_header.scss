@@ -1,7 +1,22 @@
+
 .header__logo {
-	display: block;
-	width: 295px;
-	height: 62px;
-	background: url(/img/js13kgames.png) no-repeat;
-	text-indent: -5000px;
+		display: block;
+		width: 221px;
+		height: 50px;
+		background: url(/img/js13kgames-sm.png) no-repeat;
+		text-indent: -5000px;
+		margin-top:5px;
+		margin-bottom:5px;
+}
+
+@include media(">=tablet") {
+ 
+	.header__logo {
+		width: 295px;
+		height: 62px;
+		background: url(/img/js13kgames.png) no-repeat;
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+
 }
