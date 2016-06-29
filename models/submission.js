@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var unzip = require('unzip');
 var im = require('imagemagick');
 var config = require('../config');
 var messages= require('../messages');
@@ -144,6 +145,7 @@ var Submission = sequelize.define('submission', {
       fs.mkdirSync(this.getStoragePath());
       // Zip
       fs.renameSync(this.fileZip.path, this.getFilePath(this.fileZip));
+      fs.createReadStream(this.getFilePath(this.fileZip)).pipe(unzip.Extract({ path: this.getStoragePath() }));
       // Screenshots
       im.resize({
         srcPath: this.smallScreenshot.path,
