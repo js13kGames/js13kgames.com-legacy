@@ -2,6 +2,9 @@
 <section id="submit">
   <h2>Submit Form</h2>
 
+  {{#if form.errors}}
+  <h3 class="error">There are some errors below that you need to fix to proceed with your submission:</h3>
+  {{/if}
   <article class="form">
     <h3>Read the <a href="/#rules">Rules</a> first before submitting your game!</h3>
 
@@ -9,27 +12,33 @@
       <input type="hidden" name="csrf" value="{{csrfToken}}" />
       <p>
         <label for="nick" class="required">Name &frasl; nick:</label>
-        <input id="nick" class="text" type="text" name="author" maxlength="50" value="" required />
+        <input id="nick" class="text" type="text" name="author" data-form-id="author" maxlength="50" value="{{form.author}}" required />
+        <span class="error" data-form-id="author">{{form.errors.author}}</span>
       </p>
       <p>
         <label for="twitter">Twitter username:</label>
-        <input id="twitter" class="text" type="text" name="twitter" placeholder="without the @" maxlength="50" value="" />
+        <input id="twitter" class="text" type="text" name="twitter" data-form-id="twitter" placeholder="without the @" maxlength="50" value="{{form.twitter}}" />
+        <span class="error" data-form-id="twitter">{{form.errors.twitter}}</span>
       </p>
       <p>
         <label for="website">Your website:</label>
-        <input id="website" class="text" type="text" placeholder="http://" name="website_url" maxlength="200" value="" />
+        <input id="website" class="text" type="text" name="website_url" data-form-id="websiteUrl" placeholder="http://" maxlength="200" value="{{form.websiteUrl}}" />
+        <span class="error" data-form-id="websiteUrl">{{form.errors.websiteUrl}}</span>
       </p>
       <p>
         <label for="email" class="required">E-mail address <span>(won't be published)</span>:</label>
-        <input id="email" class="text" type="email" name="email" maxlength="100" value="" required />
+        <input id="email" class="text" type="email" name="email" data-form-id="email" maxlength="100" value="{{form.email}}" required />
+        <span class="error" data-form-id="email">{{form.errors.email}}</span>
       </p>
       <p>
         <label for="github" class="required">Link to the GitHub repository:</label>
-        <input id="github" class="text" type="text" name="github_url" maxlength="200" placeholder="http://github.com/" value="" required />
+        <input id="github" class="text" type="text" name="github_url" data-form-id="githubUrl" maxlength="200" placeholder="http://github.com/" value="{{form.githubUrl}}" required />
+        <span class="error" data-form-id="githubUrl">{{form.errors.githubUrl}}</span>
       </p>
       <p>
         <label for="title" class="required">Title of the game:</label>
-        <input id="title" class="text" type="text" name="title" maxlength="100" value="" required />
+        <input id="title" class="text" type="text" name="title" data-form-id="title" maxlength="100" value="{{form.title}}" required />
+        <span class="error" data-form-id="slug">{{form.errors.slug}}</span>
       </p>
       <p>
         <label class="required">Categories:</label>
@@ -39,19 +48,23 @@
       </p>
       <p>
         <label for="description" class="required">Short game description:</label>
-        <textarea id="description" class="text" name="description" cols="1" rows="1" required></textarea>
+        <textarea id="description" class="text" name="description" data-form-id="description" cols="1" rows="1" required>{{form.description}}</textarea>
+        <span class="error" data-form-id="description">{{form.errors.description}}</span>
       </p>
       <p>
         <label for="file" class="required">Upload the .zip package:</label>
-        <input type="file" name="file" id="file" accept="application/zip" required />
+        <input type="file" name="file" id="file" data-form-id="fileZip" accept="application/zip" required />
+        <span class="error" data-form-id="fileZip">{{form.errors.fileZip}}</span>
       </p>
       <p>
         <label for="image1" class="required">Small screenshot (160px &times; 160px):</label>
-        <input type="file" name="small_screenshot" id="image1" accept="image/*" required />
+        <input type="file" name="small_screenshot" id="image1" data-form-id="smallScreenshot" accept="image/*" required />
+        <span class="error" data-form-id="smallScreenshot">{{form.errors.smallScreenshot}}</span>
       </p>
       <p>
         <label for="image2" class="required">Big screenshot (400px &times; 250px):</label>
-        <input type="file" name="big_screenshot" id="image2" accept="image/*" required />
+        <input type="file" name="big_screenshot" id="image2" data-form-id="bigScreenshot" accept="image/*" required />
+        <span class="error" data-form-id="bigScreenshot">{{form.errors.bigScreenshot}}</span>
       </p>
       <!-- p class="bottom">
         <label for="spam" class="required">{ $form['num'][0] } + { $form['num'][1] } = </label>

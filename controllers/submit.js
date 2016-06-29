@@ -1,9 +1,13 @@
+'use strict';
+
 var fs = require('fs');
+var multiparty = require('multiparty');
+
 var config = require('../config');
 var Edition = require('../models/edition');
 var Category = require('../models/category');
 var Submission = require('../models/submission');
-var multiparty = require('multiparty');
+var SubmitForm = require('../models/submit_form');
 
 var SubmitController = {};
 
@@ -16,7 +20,8 @@ SubmitController.get = function(req, res) {
       }
     }]
   }).then(function(rows) {
-    res.render('submit', { categories: rows, csrfToken: req.session.csrf });
+    var sForm = req.session.submitForm;
+    res.render('submit', { categories: rows, csrfToken: req.session.csrf, form: sForm });
   });
 };
 
@@ -24,46 +29,34 @@ SubmitController.post = function(req, res, next) {
   var form = new multiparty.Form({autoFiles: true});
 
   form.parse(req, function(err, fields, files) {
-    // Check csrf
-    var reqCsrf = fields.csrf[0];
-    var sessCsrf = req.session.csrf;
+    var sForm = new SubmitForm(fields, files);
 
-    if (reqCsrf !== sessCsrf) {
+    // Check csrf
+    if (sForm.csrf !== req.session.csrf) {
       res.redirect('/submit/invalid_csrf');
       next();
     }
 
-    Submission.build({
-      title: fields.title[0],
-      slug: stringToSlug(fields.title[0]),
-      author: fields.author[0],
-      twitter: fields.twitter[0],
-      categories: fields['categories[]'],
-      email: fields.email[0],
-      websiteUrl: fields.website_url[0],
-      githubUrl: fields.github_url[0],
-      description: fields.description[0],
-      fileZip: files.file[0],
-      smallScreenshot: files.small_screenshot[0],
-      bigScreenshot: files.big_screenshot[0],
-      editionId: config.games.editionId
-    })
+    delete sForm.csrf;
+    sForm.editionId = config.games.editionId;
+
+    Submission.build(sForm)
     .save()
     .then(function(obj) {
       obj.saveFiles();
       res.render('submit_success', { email: obj.get('email') });
     })
-    .catch(function(error) {
-      console.log('err', error);
+    .catch(function(err) {
+      req.session.submitForm = sForm;
+      if (err.errors.length > 0) {
+        req.session.submitForm.errors = {};
+        err.errors.forEach(function(e) {
+          req.session.submitForm.errors[e.path] = e.message;
+        });
+      }
       res.redirect('/submit');
     });
   });
-};
-
-var stringToSlug = function(value) {
-  value = value.toLowerCase();
-  value = value.replace(' ', '_');
-  return value;
 };
 
 module.exports = SubmitController;

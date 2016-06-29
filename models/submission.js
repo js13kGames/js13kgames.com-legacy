@@ -13,8 +13,9 @@ var Edition = require('./edition');
 // 3. server url (if server)
 // 4. file_server zip, max 13kb, if server
 // 6. validate reserved slugs
-// 7. reload form on errors
 // 8. validate that game folder exists
+// 9. invalid csrf page
+// 10. validate at least one category
 
 var Submission = sequelize.define('submission', {
   id: {
