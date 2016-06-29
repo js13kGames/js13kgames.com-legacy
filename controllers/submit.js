@@ -16,14 +16,23 @@ SubmitController.get = function(req, res) {
       }
     }]
   }).then(function(rows) {
-    res.render('submit', {categories: rows, csrf: '1234567890'});
+    res.render('submit', { categories: rows, csrfToken: req.session.csrf });
   });
 };
 
-SubmitController.post = function(req, res) {
+SubmitController.post = function(req, res, next) {
   var form = new multiparty.Form({autoFiles: true});
 
   form.parse(req, function(err, fields, files) {
+    // Check csrf
+    var reqCsrf = fields.csrf[0];
+    var sessCsrf = req.session.csrf;
+
+    if (reqCsrf !== sessCsrf) {
+      res.redirect('/submit/invalid_csrf');
+      next();
+    }
+
     Submission.build({
       title: fields.title[0],
       slug: stringToSlug(fields.title[0]),
@@ -46,17 +55,7 @@ SubmitController.post = function(req, res) {
     })
     .catch(function(error) {
       console.log('err', error);
-
-      var a = Category.findAll({
-        include: [{
-          model: Edition,
-          where: {
-            slug: 2015 //req.params.year
-          }
-        }]
-      }).then(function(rows) {
-        res.render('submit', {categories: rows, csrf: '1234567890'});
-      });
+      res.redirect('/submit');
     });
   });
 };

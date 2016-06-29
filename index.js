@@ -1,7 +1,9 @@
 'use strict';
 
+var crypto = require('crypto');
 var express = require('express');
 var hbs = require('express-hbs');
+var cookieSession = require('cookie-session');
 
 // Controllers
 var homeController = require('./controllers/home');
@@ -10,6 +12,8 @@ var submitController = require('./controllers/submit');
 
 var app = express();
 
+app.set('trust proxy', 1)
+
 app.engine('hbs', hbs.express4({
   partialsDir: __dirname + '/views/partials',
   layoutsDir: __dirname + '/views/layouts'
@@ -17,6 +21,21 @@ app.engine('hbs', hbs.express4({
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 app.use(express.static('public/assets'));
+app.use(cookieSession({
+  name: 's',
+  keys: ['ding', 'dong']
+}));
+
+var generateRandom = function(len) {
+  return crypto.randomBytes(Math.ceil(len * 3 / 4))
+    .toString('base64')
+    .slice(0, len);
+};
+
+var csrfProtection = function(req, res, next) {
+  req.session.csrf = generateRandom(24);
+  next();
+};
 
 var defaultYear = function(req, res, next){
   req.params.year = req.params.year || '2016';
@@ -33,7 +52,7 @@ var defaultYear = function(req, res, next){
 //js13kgames.com/<year>/winners           -> list of winners for the given year
 
 // Routes
-app.get('/submit', defaultYear, submitController.get);
+app.get('/submit', defaultYear, csrfProtection, submitController.get);
 app.post('/submit', defaultYear, submitController.post);
 app.get('/:year', defaultYear, homeController);
 app.get('/entries', defaultYear, entriesController);

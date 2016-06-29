@@ -10,12 +10,11 @@ var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 var Edition = require('./edition');
 // Remaining Validations
 // 1. Anti spam, required, valid
-// 2. csrf
 // 3. server url (if server)
 // 4. file_server zip, max 13kb, if server
-// 5. save files
 // 6. validate reserved slugs
 // 7. reload form on errors
+// 8. validate that game folder exists
 
 var Submission = sequelize.define('submission', {
   id: {
@@ -138,8 +137,6 @@ var Submission = sequelize.define('submission', {
       var name = newName || file.originalFilename;
       return path.join(this.getStoragePath(), name);
     },
-      // originalFilename: 'please-die-js13k-2015.zip',
-      // path: '/var/folders/_c/0mgrgr9972q1l_3sqnzwmwm80000gn/T/viC2rMb0oyIj_AHmOW-Kb0N7.zip',
     saveFiles: function() {
       // Create directory
       fs.mkdirSync(this.getStoragePath());
