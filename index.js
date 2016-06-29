@@ -42,7 +42,6 @@ var defaultYear = function(req, res, next){
   next();
 };
 
-//js13kgames.com/submit                   -> form to submit a game. This form must be active active only when the compo is running. It needs authentication
 //js13kgames.com/jugde                    -> panel to judge games. This panel must be active active only when the compo is running. It needs authentication
 //js13kgames.com/admin                    -> admin panel. It needs super user authentication
 //js13kgames.com/myprofile                -> page where users can see their profiles. It needs authentication

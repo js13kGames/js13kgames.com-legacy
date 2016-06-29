@@ -8,12 +8,6 @@ var Sequelize = require('sequelize');
 var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 
 var Edition = require('./edition');
-// Remaining Validations
-// 1. Anti spam, required, valid
-// 3. server url (if server)
-// 4. file_server zip, max 13kb, if server
-// 6. validate reserved slugs
-// 9. invalid csrf page
 
 var Submission = sequelize.define('submission', {
   id: {
