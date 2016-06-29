@@ -15,7 +15,6 @@ var Edition = require('./edition');
 // 6. validate reserved slugs
 // 8. validate that game folder exists
 // 9. invalid csrf page
-// 10. validate at least one category
 
 var Submission = sequelize.define('submission', {
   id: {
@@ -53,7 +52,8 @@ var Submission = sequelize.define('submission', {
     set: function(val) {
       this.setDataValue('categories', val);
     },
-    allowNull: false
+    allowNull: false,
+    notEmpty: true
   },
   email: {
     type: Sequelize.STRING,

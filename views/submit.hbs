@@ -4,7 +4,7 @@
 
   {{#if form.errors}}
   <h3 class="error">There are some errors below that you need to fix to proceed with your submission:</h3>
-  {{/if}
+  {{/if}}
   <article class="form">
     <h3>Read the <a href="/#rules">Rules</a> first before submitting your game!</h3>
 
@@ -45,6 +45,7 @@
         {{#each categories}}
         <span class="category"><input class="checkbox" id="cat_{{id}}" type="checkbox" name="categories[]" value="{{id}}"/> {{title}}</span>
         {{/each}}
+        <span class="error" data-form-id="categories">{{form.errors.categories}}</span>
       </p>
       <p>
         <label for="description" class="required">Short game description:</label>

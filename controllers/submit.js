@@ -21,6 +21,7 @@ SubmitController.get = function(req, res) {
     }]
   }).then(function(rows) {
     var sForm = req.session.submitForm;
+    delete req.session.submitForm;
     res.render('submit', { categories: rows, csrfToken: req.session.csrf, form: sForm });
   });
 };
