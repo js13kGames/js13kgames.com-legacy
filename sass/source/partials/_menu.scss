@@ -5,7 +5,21 @@ nav ul li {
   padding:10px;
 }
 
-@include media(">=tablet") {
+
+.years a {
+	display: block;
+}
+ 
+nav ul li a {
+	color: #e2e2e2;
+	font-size: 25px;
+}
+
+nav ul li a:hover {
+	color: #b12a34;
+}
+ 
+ @include media(">=tablet") {
 
   nav ul {
     position: absolute;
@@ -19,7 +33,7 @@ nav ul li {
 
   
   nav ul li a {
-    font-size: 18px !important;
+    font-size: 18px;
   }
 
   .years {
@@ -35,19 +49,6 @@ nav ul li {
 
 }
 
-.years a {
-	display: block;
-}
- 
-nav ul li a {
-	color: #e2e2e2;
-	font-size: 25px;
-}
-
-nav ul li a:hover {
-	color: #b12a34;
-}
- 
 
 /*This is the hamburger X code from http://elijahmanor.com/css-animated-hamburger-icon/*/
 
