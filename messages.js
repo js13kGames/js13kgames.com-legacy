@@ -4,7 +4,8 @@ var messages = {
     invalidZipFormat: 'You have to submit a valid zip.',
     invalidZipSize: 'Your game exceeds the 13.312 bytes limits.',
     invalidImageFormat: 'Invalid format for image. Use jpeg, gif or png.',
-    invalidImageSize: 'Images can not exceed 100kb.'
+    invalidImageSize: 'Images can not exceed 100kb.',
+    gameAlreadyExists: 'A game with that name was already registered.'
   }
 }
 

@@ -13,7 +13,6 @@ var Edition = require('./edition');
 // 3. server url (if server)
 // 4. file_server zip, max 13kb, if server
 // 6. validate reserved slugs
-// 8. validate that game folder exists
 // 9. invalid csrf page
 
 var Submission = sequelize.define('submission', {
@@ -127,6 +126,12 @@ var Submission = sequelize.define('submission', {
       }
       if (this.fileZip.size > config.games.maxSize) {
         throw new Error(messages.error.invalidZipSize);
+      }
+    },
+    files: function() {
+      var stat = fs.statSync(this.getStoragePath());
+      if (stat.isDirectory()) {
+        throw new Error(messages.error.gameAlreadyExists);
       }
     }
   },
