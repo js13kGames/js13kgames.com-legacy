@@ -27,6 +27,7 @@ js13kgames.com/                         -> index page for the current year
 js13kgames.com/<year>                   -> index page for the given year
 js13kgames.com/entries                  -> list of entries for the current year
 js13kgames.com/<year>/entries           -> list of entries for the given year
+js13kgames.com/<year>/entries/<slug>    -> details of the entry for the given year
 js13kgames.com/submit                   -> form to submit a game. This form must be active active only when the compo is running. It needs authentication
 ```
 
