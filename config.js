@@ -6,6 +6,9 @@ var config = {
       storage: 'production.sqlite'
     }
   },
+  app: {
+    domain: 'http://js13kgames.com'
+  },
   games: {
     editionId: 5,
     serverCategoryId: 10,
