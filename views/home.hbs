@@ -1,23 +1,26 @@
-{{!< main }}
 
 {{#if is2016}}
+{{!< main }}
 {{> home2016 }}
 {{/if}}
 
 {{#if is2015}}
+{{!< mainLegacy }}
 {{> home2015 }}
 {{/if}}
 
 {{#if is2014}}
+{{!< mainLegacy }}
 {{> home2014 }}
 {{/if}}
 
-{{> sponsors }}
+{{#if is2013}}
+{{!< mainLegacy }}
+{{> home2013 }}
+{{/if}}
 
-{{> judges }}
+{{#if is2012}}
+{{!< mainLegacy }}
+{{> home2012 }}
+{{/if}}
 
-{{> prizes }}
-
-{{> categories }}
-
-{{> rules }}
