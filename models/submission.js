@@ -104,6 +104,12 @@ var Submission = sequelize.define('submission', {
   bigScreenshot: {
     type: Sequelize.VIRTUAL,
     allowNull: false
+  },
+  uri: {
+    type: Sequelize.VIRTUAL,
+    get: function() {
+      this.setDataValue('uri', config.app.domain + '/' + path.join(this.edition.slug, 'entries', this.slug));
+    },
   }
 }, {
   timestamps: true,
