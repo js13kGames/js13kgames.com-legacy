@@ -4,9 +4,9 @@
   font-weight: 400;
   src: local('Graduate'),
   	local('Graduate-Regular'),
-  	url(/assets/fonts/graduate.eot) format('embedded-opentype'),
-  	url(/assets/fonts/graduate.ttf) format('truetype'),
-  	url(/assets/fonts/graduate.woff) format('woff');
+  	url(/fonts/graduate.eot) format('embedded-opentype'),
+  	url(/fonts/graduate.ttf) format('truetype'),
+  	url(/fonts/graduate.woff) format('woff');
 }
 
 * {
@@ -35,7 +35,7 @@
 	right: -20px;
 	width: 340px;
 	height: 160px;
-	background: url(/assets/img/ongamestart.jpg) no-repeat;
+	background: url(/img/ongamestart.jpg) no-repeat;
 	display: block;
 	text-indent: -5000px;
 	border-radius: 15px;
@@ -50,7 +50,7 @@
 
 .cf .ogs-banner {
 	display: block;
-	background: url(/assets/img/ongamestart-big.jpg) no-repeat;
+	background: url(/img/ongamestart-big.jpg) no-repeat;
 	width: 960px;
 	height: 330px;
 	text-indent: -5000px;
@@ -66,7 +66,7 @@ ul {
 }
 
 body {
-	background: #efefef url(/assets/img/bg_content.png) fixed repeat;
+	background: #efefef url(/img/bg_content.png) fixed repeat;
 	font: normal 15px/22px Helvetica, Arial, sans-serif;
 	color: #333;
 }
@@ -81,8 +81,6 @@ img.avatar {
 	margin: 5px 15px 10px 25px;
 	float: left;
 	border-radius: 10px;
-	width: 110px;
-	height: 110px;
 }
 
 .intro {
@@ -103,34 +101,34 @@ nav ul li a,
 }
 
 header {
-	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
+	background: #2d2d2d url(/img/bg_header.png) repeat;
 	border-top: 5px solid #a52730;
-	border-bottom: 4px solid #fff;
+	border-bottom: 7px solid #fff;
 }
 
 a.logo {
 	display: block;
 	width: 295px;
 	height: 62px;
-	background: url(/assets/img/js13kgames.png) no-repeat;
+	background: url(/img/js13kgames.png) no-repeat;
 	text-indent: -5000px;
 }
 
 nav {
 	width: 960px;
-	margin: 10px auto;
+	margin: 20px auto;
 	position: relative;
 }
 
 nav ul {
 	position: absolute;
-	top: 18px;
+	top: 15px;
 	right: 0;
 }
 
 nav ul li {
 	display: inline-block;
-	padding-left: 15px;
+	padding-left: 10px;
 }
 
 nav ul li a {
@@ -146,14 +144,13 @@ h1 {
 	font-size: 24px;
 	color: #300000;
 	text-shadow: 0px 1px 0px #eb6e76;
-	background: url(/assets/img/ribbon_big_bg.png) repeat-x;
+	background: url(/img/ribbon_big_bg.png) repeat-x;
 	width: 960px;
 	height: 56px;
 	line-height: 50px;
-	margin: 0px auto;
+	margin: 15px auto 0px auto;
 	text-align: center;
 	position: relative;
-	border-top: 4px solid #fff;
 }
 
 h1:before {
@@ -164,7 +161,7 @@ h1:before {
 	position: absolute;
 	top: 0;
 	left: -47px;
-	background: url(/assets/img/ribbon_big_left.png) no-repeat;
+	background: url(/img/ribbon_big_left.png) no-repeat;
 }
 
 h1:after {
@@ -175,7 +172,7 @@ h1:after {
 	position: absolute;
 	top: 0;
 	right: -48px;
-	background: url(/assets/img/ribbon_big_right.png) no-repeat;
+	background: url(/img/ribbon_big_right.png) no-repeat;
 }
 
 .content {
@@ -194,7 +191,7 @@ h2 {
 	font-size: 32px;
 	color: #acabab;
 	text-align: center;
-	padding: 40px 0 35px;
+	padding: 40px;
 }
 
 h2:before {
@@ -215,7 +212,7 @@ section a.up {
 	right: 10px;
 	height: 12px;
 	width: 12px;
-	background: url(/assets/img/icon_arrow.png) no-repeat;
+	background: url(/img/icon_arrow.png) no-repeat;
 }
 
 section a.up:hover {
@@ -242,6 +239,10 @@ section p {
 	padding-bottom: 15px;
 }
 
+#home p:last-child {
+	padding: 20px 0 40px;
+}
+
 .tweetBox {
 	float: right;
 	background: #f1f0f0;
@@ -256,7 +257,7 @@ section p {
 	font-size: 22px;
 	color: #300000;
 	text-shadow: 0px 1px 0px #eb6e76;
-	background: url(/assets/img/ribbon_small_bg.png) repeat-x;
+	background: url(/img/ribbon_small_bg.png) repeat-x;
 	height: 49px;
 	line-height: 44px;
 	text-align: center;
@@ -271,7 +272,7 @@ section p {
 	position: absolute;
 	top: 0;
 	left: -12px;
-	background: url(/assets/img/ribbon_small_left.png) no-repeat;
+	background: url(/img/ribbon_small_left.png) no-repeat;
 }
 
 .tweetBox h3:after {
@@ -282,37 +283,22 @@ section p {
 	position: absolute;
 	top: 0;
 	right: -15px;
-	background: url(/assets/img/ribbon_small_right.png) no-repeat;
+	background: url(/img/ribbon_small_right.png) no-repeat;
 }
 
-.tweetBox li {
+.tweetBox li a {
 	line-height: 32px;
-	height: 32px;
-	padding-left: 0px;
+	padding-left: 50px;
 	margin: 10px 0 0 30px;
 	display: block;
-	padding-top: 7px;
-}
-.tweetBox a.tweetBox-link {
-	width: 32px;
-	height: 32px;
-	float: left;
-	text-indent: -5000px;
-	display: block;
-	margin-right: 20px;
-	border-radius: 5px;
-}
-.tweetBox li.twitter a.tweetBox-link {
-	background: url(/assets/img/icon_twitter.jpg) no-repeat;
-}
-.tweetBox li.facebook a.tweetBox-link {
-	background: url(/assets/img/icon_facebook.jpg) no-repeat;
 }
 
-.tweetBox li.twitter span,
-.tweetBox li.facebook span {
-	display: block;
-	padding-top: 6px;
+.tweetBox li.twitter a {
+	background: url(/img/icon_twitter.jpg) no-repeat;
+}
+
+.tweetBox li.facebook a {
+	background: url(/img/icon_facebook.jpg) no-repeat;
 }
 
 .tweetBox li a:hover {
@@ -362,11 +348,6 @@ section p {
 	font-size: 12px;
 }
 
-.form span.category {
-	display: inline-block;
-	width: 135px;
-}
-
 .form input.text {
 	display: inline-block;
 	width: 400px;
@@ -384,7 +365,7 @@ section p {
 .form input.submit {
 	width: 169px;
 	height: 45px;
-	background: url(/assets/img/submit.png) no-repeat;
+	background: url(/img/submit.png) no-repeat;
 	border: 0;
 	cursor: pointer;
 	text-align: center;
@@ -418,7 +399,6 @@ form abbr {
 }
 
 .form input#file,
-.form input#file_server,
 .form input#image1,
 .form input#image2 {
 	width: 400px;
@@ -450,7 +430,7 @@ form abbr {
 .judge h3 {
 	color: #303030;
 	font-size: 24px;
-	background: url(/assets/img/circle.png) center left no-repeat;
+	background: url(/img/circle.png) center left no-repeat;
 	padding-left: 30px;
 	margin-bottom: 15px;
 	display: inline-block;
@@ -525,7 +505,7 @@ form abbr {
 	display: inline-block;
 	width: 27px;
 	height: 17px;
-	background: url(/assets/img/circle.png) 0 0 no-repeat;
+	background: url(/img/circle.png) 0 0 no-repeat;
 	margin: 0 0 -2px -27px;
 }
 
@@ -535,7 +515,7 @@ form abbr {
 
 
 #places {
-	/*counter-reset: rule;*/
+	counter-reset: rule;
 }
 
 .place {
@@ -549,10 +529,9 @@ form abbr {
 }
 
 .place h3:before {
-    /*counter-increment: rule;*/
-    /*content: counter(rule);*/
-    content: "#";
-    background: url(/assets/img/ribbon_arrow.png) no-repeat;
+    counter-increment: rule;
+    content: counter(rule);
+    background: url(/img/ribbon_arrow.png) no-repeat;
     display: inline-block;
     width: 82px;
     height: 53px;
@@ -602,7 +581,7 @@ form abbr {
 .rule h3:before {
     counter-increment: rule;
     content: counter(rule);
-    background: url(/assets/img/ribbon_arrow.png) no-repeat;
+    background: url(/img/ribbon_arrow.png) no-repeat;
     display: inline-block;
     width: 82px;
     height: 53px;
@@ -621,22 +600,15 @@ form abbr {
 
 #media {
 	text-align: center;
-	border-top: 1px solid #EEE;
 }
 
-#sponsors {
-	text-align: center;
-}
-
-#media .partner,
-#sponsors .partner {
+#media .partner {
 	margin: 0 20px 30px;
 	display: inline-block;
 	border-bottom: 1px solid transparent;
 }
 
-#media .partner:hover,
-#sponsors .partner:hover {
+#media .partner:hover {
 	border-bottom: 1px solid #b12a34;
 }
 
@@ -660,19 +632,13 @@ dd:last-child {
 	text-align: center;
 }
 
-#contact p,
-#media p,
-#sponsors p {
+#contact p, #media p {
 	max-width: 80%;
 	margin: 0 auto;
 }
 
 section#contact:after {
 	background: none;
-}
-
-#contact span {
-	color: #B12A34;
 }
 
 .entry {
@@ -730,19 +696,8 @@ section#contact:after {
 	display: inline-block;
 	width: 27px;
 	height: 17px;
-	background: url(/assets/img/circle.png) 0 0 no-repeat;
+	background: url(/img/circle.png) 0 0 no-repeat;
 	margin: 0 0 -2px -27px;
-}
-
-.editions {
-	text-align: center;
-	padding: 1em;
-	margin-bottom: 1.5em;
-	border-bottom: 1px solid #ddd
-}
-.editions li {
-	display: inline;
-	margin: 0 15px;
 }
 
 .single-entry {
@@ -782,7 +737,7 @@ section#contact:after {
 	display: inline-block;
 	width: 27px;
 	height: 17px;
-	background: url(/assets/img/circle.png) 0 0 no-repeat;
+	background: url(/img/circle.png) 0 0 no-repeat;
 	margin: 0 0 -2px -27px;
 }
 
@@ -790,7 +745,7 @@ section#contact:after {
 	position: absolute;
 	bottom: 5px;
 	right: 10px;
-	background: url(/assets/img/icon_back.png) center left no-repeat;
+	background: url(/img/icon_back.png) center left no-repeat;
 	padding-left: 20px;
 	font-size: 12px;
 	font-weight: bold;
@@ -813,13 +768,9 @@ section#contact:after {
 	padding: 30px 40px 30px;
 }
 
-.single-entry .description p {
-	margin-bottom: 1em
-}
-
 .single-entry ul li {
 	padding-left: 30px;
-	background: url(/assets/img/icons.jpg) 0 0 no-repeat;
+	background: url(/img/icons.jpg) 0 0 no-repeat;
 	height: 20px;
 	line-height: 20px;
 	margin-bottom: 5px;
@@ -841,7 +792,7 @@ section#contact:after {
 	width: 265px;
 	height: 44px;
 	display: block;
-	background: url(/assets/img/play.png) no-repeat;
+	background: url(/img/play.png) no-repeat;
 	border: 0;
 	text-align: center;
 	font-size: 24px;
@@ -860,7 +811,7 @@ html {
 
 .play {
 	height: 100%;
-	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
+	background: #2d2d2d url(/img/bg_header.png) repeat;
 }
 
 iframe {
@@ -905,7 +856,7 @@ iframe {
 .play h1 span {
 	font-size: 12px;
 	display: inline-block;
-	background: url("/assets/img/circle.png") no-repeat;
+	background: url("/img/circle.png") no-repeat;
 	padding-left: 20px;
 	margin-left: 10px;
 }
@@ -958,7 +909,7 @@ iframe {
 .winner h3:before {
     counter-increment: rule;
     content: counter(rule);
-    background: url(/assets/img/trophy.png) no-repeat;
+    background: url(/img/trophy.png) no-repeat;
     display: inline-block;
     width: 85px;
     height: 80px;
@@ -1019,7 +970,7 @@ iframe {
 }
 
 footer {
-	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
+	background: #2d2d2d url(/img/bg_header.png) repeat;
 	border-top: 7px solid #fff;
 	border-bottom: 5px solid #a52730;
 }
@@ -1043,225 +994,13 @@ footer a {
 	color: #fff;
 	font-weight: bold;
 }
-
-.message {
-	padding: 15px;
-	margin: 15px 25px
-}
-
-.message.error {
-	border: 1px dotted #a52730;
-}
-
-.message.error b {
-	color: #a52730;
-}
-
-.message.success {
-	border: 1px dotted #8aa532;
-}
-
-.message.success b {
-	color: #8aa532;
-}
-
-
-#mc_embed_signup {
-	background: url(/assets/img/bg-blue.png);
-	text-align: center;
-	padding-bottom: 0px;
-	margin: 20px 0 30px;
-	border-radius: 10px;
-}
-#mc_embed_signup h3 {
-	font-family: 'Graduate';
-	font-size: 26px;
-	padding: 20px 0 5px;
-	color: #444;
-}
-#mc_embed_signup h3 a {
-	font-weight: normal;
-	color: #444;
-}
-#mc_embed_signup h3 a:hover {
-	text-decoration: none;
-	border-bottom: none;
-	color: #000;
-}
-#mc_embed_signup h4 {
-	font-family: 'Graduate';
-	font-size: 14px;
-	padding: 0 0 10px;
-	color: #444;
-}
-#mce-EMAIL {
-	font-size: 14px;
-	line-height: 20px;
-	color: #999;
-	font-style: italic;
-	width: 270px;
-	border: 1px solid #d6e2ea;
-	padding: 6px 10px 5px;
-	margin: 0 10px 0 30px;
-	border-radius: 5px;
-	float: left;
-}
-#mc-embedded-subscribe {
-	font-family: "Graduate";
-	border: 1px solid #ffbc1d;
-	cursor: pointer;
-	font-size: 18px;
-	line-height: 18px;
-	color: #fff;
-	text-align: center;
-	box-shadow: inset 0 0 0 1px #ffdc1c;
-	background: #ffdb1c;
-	background: -moz-linear-gradient(top, #ffdb1c 0%, #ffbd1c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffdb1c), color-stop(100%,#ffbd1c));
-	background: -webkit-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: -o-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: -ms-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: linear-gradient(to bottom, #ffdb1c 0%,#ffbd1c 100%);
-	padding: 6px 15px;
-	border-radius: 5px;
-	float: left;
-}
-#mc-embedded-subscribe:hover {
-	background: #ffbd1c;
-	background: -moz-linear-gradient(top, #ffbd1c 0%, #ffdb1c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbd1c), color-stop(100%,#ffdb1c));
-	background: -webkit-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: -o-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: -ms-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: linear-gradient(to bottom, #ffbd1c 0%,#ffdb1c 100%);
-}
-#hidden-input {
-	visibility: hidden;
-	height: 0px;
-}
-
-#places h2 {
-	padding-bottom: 10px;
-}
-
-#places h4 {
-	font-family: "Graduate", "Times New Roman", Verdana;
-	font-weight: normal;
-    color: #666;
-    font-size: 24px;
-    padding: 20px 0 15px;
-    text-align: center;
-}
-
-section#home:after {
-	display: none;
-}
-
-img.logo {
-	box-shadow: 2px 2px 3px #ccc;
-	float: left;
-	border-radius: 151px;
-	border: 7px solid #fff;
-	margin: -50px 50px 20px -20px;
-}
-
-.description {
-	margin: 0 50px 0 0;
-}
-
-#home .social {
-	margin: 10px 0 40px 195px;
-}
-
-#home .social span {
-	display: block;
-	float: left;
-	line-height: 20px;
-	height: 20px;
-	margin-right: 40px;
-}
-
-.donate {
+.years {
+	color: #ccc;
 	float: right;
-	width: 400px;
-	background: #2d2d2d url(/assets/img/bg_header.png) repeat;
-	border-radius: 10px;
-	margin-right: 20px;
-	position: relative;
-	color: #ddd;
+	margin-top: -21px;
+	margin-left: 21px;
 }
-
-.donate h3 {
-	font-size: 24px;
-	padding: 30px 0 30px 30px;
-}
-
-.donate p {
-	padding: 0 30px 20px;
-	line-height: 24px;
-}
-
-.donate strong {
-	color: #fff;
-}
-
-.donate img.photo {
-	position: absolute;
-	box-shadow: 0px 0px 2px #ccc;
-	border-radius: 148px;
-	border: 7px solid #fff;
-	top: -100px;
-	right: -30px;
-	background: #fff;
-}
-
-.donate img.diskette {
-	position: absolute;
-	bottom: -60px;
-	right: 40px;
-}
-
-.donate img.tshirt {
-	position: absolute;
-	bottom: -60px;
-	right: -60px;
-}
-
-.donate-paypal {
-	float: left;
+.years a {
 	display: block;
-	margin: 20px 15px 35px 30px;
-}
-
-.donate-gittip {
-	float: left;
-	display: block;
-	margin: 20px 20px 35px 0;
-}
-
-.donate-flattr {
-	float: left;
-	display: block;
-	margin: 20px 0 35px 0;
-}
-
-.content .donate-paypal:hover,
-.content a.donate-gittip:hover,
-.content a.donate-flattr:hover {
-	border: 0;
-	text-decoration: none;
-}
-
-.newsletter#mc_embed_signup {
-	width: 500px;
-	margin-left: 20px;
-	margin-bottom: 20px;
-}
-
-.triska {
-	margin-left: 20px;
-}
-
-.triska a:hover {
-	border: 0;
+	font-size: 14px;
 }

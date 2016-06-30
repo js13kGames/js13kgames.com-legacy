@@ -20,6 +20,7 @@ app.engine('hbs', hbs.express4({
 }));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
+app.use(express.static('public'));
 app.use(express.static('public/assets'));
 app.use(cookieSession({
   name: 's',

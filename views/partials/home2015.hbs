@@ -1,1 +1,866 @@
-<h2>2015</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes</title>
+	<meta name="author" content="end3r">
+	<link rel="shortcut icon" href="/img/favicon.png">
+	<link rel="stylesheet" href="/css/legacy2015.css">
+	<meta name="description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes. The main theme for 2015 was Reversed." />
+	<meta property="og:image" content="http://js13kgames.com/img/avatar.png"/>
+	<meta property="og:url" content="http://js13kgames.com"/>
+	<meta property="og:title" content="js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes"/>
+	<meta property="og:description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes. The main theme for 2015 was Reversed."/>
+</head>
+<body>
+<header>
+	<nav>
+		<a class="logo" href="http://2015.js13kgames.com">js13kGames</a>
+		<ul>
+			<li><a href="/#winners">Winners</a></li>
+			<li><a href="http://js13kgames.com/entries/2015">Entries</a></li>
+			<li><a href="/#sponsors">Sponsors</a></li>
+			<li><a href="/#judges">Judges</a></li>
+			<li><a href="/#prizes">Prizes</a></li>
+			<li><a href="/#rules">Rules</a></li>
+			<li><a href="http://js13kgames.github.io/resources/" target="_blank">Resources</a></li>
+			<li class="years" style="margin-left: 0px; position: absolute; top: 0; right: -50px;"><a href="http://2014.js13kgames.com/">2014</a><a href="http://2013.js13kgames.com/">2013</a><a href="http://2012.js13kgames.com/">2012</a></li>
+		</ul>
+	</nav>
+</header>
+
+<h1>HTML5 and JavaScript Game Development Competition in just 13 kB</h1>
+
+<div class="content">
+<section id="home">
+	<h2>What is js13kGames?</h2>
+	<img class="logo" src="/img/logo.png" />
+	<div class="description">
+		<p><strong>Js13kGames</strong> is a JavaScript coding competition for <strong>HTML5 Game Developers</strong>. The fun part of the compo is the file size limit set to <strong>13&nbsp;kilobytes</strong>. The&nbsp;competition started at <strong>13:00 CEST, 13th August</strong> and ended at <strong>13:00 CEST, 13th September 2015</strong>. Theme for 2015 edition was <strong>Reversed</strong>.<br /> Read <a href="http://gamedevelopment.tutsplus.com/articles/how-to-minify-your-html5-game-for-the-js13kgames-competition--cms-21883">Tuts+ Gamedev intro article</a>, <a href="http://dev.end3r.com/2015/08/the-js13kgames-2015-competition-has-started/">my blog post</a> and see the <a href="http://2015.js13kgames.com/#rules">Rules</a> for details, good luck and <strong>have fun</strong>!</p>
+		<p class="socialz" style="float: right;">
+			<span><a href="http://twitter.com/js13kGames" class="twitter-follow-button" data-button="blue" data-text-color="#FFFFFF" data-link-color="#FFFFFF" data-show-screen-name="false" data-show-count="true">Follow @js13kGames</a></span><br />
+			<span><iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fjs13kGames&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:20px;" allowTransparency="true"></iframe></span>
+		</p>
+		<p>The competition is organized by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com/">Enclave Games</a>,<br />check out promo game <a href="http://13.enclavegames.com/">Triskaidekaphobia</a> and grab the <a href="https://www.stickermule.com/marketplace/2734-js13kgames">stickers</a>.</p>
+	</div>
+</section>
+
+<section id="promo">
+	<div class="donate">
+		<img class="photo" src="/img/photo.png" />
+		<h3>Hi, I'm Andrzej</h3>
+		<p>I'm running this competition on my own<br /> in my free time. I acquired prizes worth more than <strong>20.000 USD</strong> and will send the usual js13kGames <strong>t-shirts to all of the participants</strong> (one t-shirt per entry) for free (with free shipping) just like in the previous years, and add <strong>tiny pendrives</strong> with all 2015 entries on them. To help me keep the competition going please send a few bucks<br /> via the PayPal button below, <strong>thank you</strong>!</p>
+		<img class="tshirt" src="/img/js13k-2015-tshirt.png" />
+		<div class="donate-progress"><span style="width: 227px; color: #fff; text-align: center;">91%</span></div>
+		<div class="donate-buttons">
+			<form class="donate-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_donations">
+				<input type="hidden" name="business" value="andrzej.mazur@end3r.com">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="item_name" value="js13kGames 2015">
+				<input type="hidden" name="no_note" value="0">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+			<div class="donate-info">Collected: <strong>910</strong> USD<br /></div>
+		</div>
+		<div class="donate-charity">*10% of the donations will be transferred to <a href="http://charitygamejam.com/">Charity Game Jam</a>.</div>
+	</div>
+	<div class="newsletter" id="mc_embed_signup">
+		<h3><a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a></h3>
+		<h4>Weekly newsletter about HTML5 Game Development</h4>
+		<form action="http://gamedevjs.us3.list-manage.com/subscribe/post?u=4ad274b490aa6da8c2d29b775&amp;id=bacab0c8ca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
+			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+			<input id="hidden-input" type="text" name="b_4ad274b490aa6da8c2d29b775_bacab0c8ca" value="">
+		</form>
+	</div>
+	<div class="triska">
+		<a target="_blank" href="http://13.enclavegames.com/"><img class="photo" src="/img/triska-banner.png" /></a>
+	</div>
+</section>
+
+<section id="sponsors">
+	<h2>Sponsors</h2>
+	<a class="partner" id="spartez" href="https://spartez.com/"><img src="/img/partners/2015/spartez.png" alt="Spartez"></a>
+	<a class="partner" id="mozilla" href="https://games.mozilla.org/"><img style="padding-bottom: 8px;" src="/img/partners/2015/mozilla.png" alt="Mozilla"></a><br />
+	<a class="partner" id="famobi" href="http://famobi.com/"><img style="padding-bottom: 5px;" alt="Famobi" src="/img/partners/2015/famobi.png"></a>
+	<a class="partner" id="codility" href="http://codility.com/"><img alt="Codility" src="/img/partners/2015/codility.png"></a>
+	<a class="partner" id="jscrambler" href="http://jscrambler.com/"><img alt="JScrambler" src="/img/partners/2015/jscrambler.png"></a>
+	<p>Share the love for HTML5 games and support the js13kGames competition!<br />See the <a href="#contact">Contact</a> section for more details on how to get in touch.</p>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="judges">
+	<h2>Judges</h2>
+	<article class="judge" id="andrzej">
+		<img src="/img/judges/2015/andrzej_mazur.png" alt="Andrzej Mazur" />
+		<div>
+			<h3>Andrzej Mazur</h3>
+			<p>HTML5 Game Developer, JavaScript Programmer and Technical Evangelist. <a href="http://enclavegames.com/">Enclave Games</a> indie studio founder, <a href="http://gamedevjsweekly.com/">Gamedev.js Weekly</a> newsletter publisher, <a href="http://js13kgames.com/">js13kGames</a> competition creator, <a href="http://devicelab.pl/">Warsaw Open Device Lab</a> host and <a href="http://gamedevjs.com/">Gamedev.js&nbsp;Meetups</a> organizer.</p>
+			<p class="judgeContact"><a href="https://twitter.com/end3r">@end3r</a> | <a href="http://end3r.com/">end3r.com</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="richard">
+		<img src="/img/judges/2015/richard_davey.png" alt="Richard Davey" />
+		<div>
+			<h3>Richard Davey</h3>
+			<p>Director of the HTML5 Game Development company <a href="http://www.photonstorm.com/">Photon Storm</a>, who have released just over 100 HTML5 games (and counting!). Developers of the <a href="http://phaser.io/">Phaser</a> game framework, retro game addicts, old skool demosceners and admins of the <a href="http://www.html5gamedevs.com/">HTML5 Game Developers Forum</a>.</p>
+			<p class="judgeContact"><a href="https://twitter.com/photonstorm">@photonstorm</a> | <a href="http://photonstorm.com/">photonstorm.com</a></p>
+		</div>
+	</article>
+	<article class="judge" id="christer">
+		<img src="/img/judges/2015/christer_kaitila.png" alt="Christer Kaitila" />
+		<div>
+			<h3>Christer Kaitila</h3>
+			<p>Organizer of <a href="http://www.onegameamonth.com/">One Game A Month</a>, currently working on <a href="http://gamedevzen.com/">a gamedev book</a> and <a href='http://familiarsguild.com'>a strategy rpg</a>. Creator of <a href="http://mcfunkypants.com/">40 games</a>, <a href="http://soundcloud.com/McFunkypants">60 songs</a>, <a href="http://www.amazon.com/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;field-author=Christer%20Kaitila&amp;search-alias=digital-text&amp;sort=relevancerank">2 books</a>, and an HTML5 <a href="https://github.com/Mcfunkypants/Ludus">platformer game starter kit</a>, McFunkypants is an optimist disco viking and child of the arcade era. He has been an indie gamedev for over a decade.</p>
+            <p class="judgeContact"><a href="https://twitter.com/mcfunkypants">@mcfunkypants</a> | <a href="http://mcfunkypants.com/">mcfunkypants.com</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="will">
+		<img src="/img/judges/2015/will_eastcott.png" alt="Will Eastcott" />
+		<div>
+			<h3>Will Eastcott</h3>
+			<p>CEO of <a href="https://playcanvas.com/">PlayCanvas</a>, the open source WebGL game engine. Former EU Technical Director at Activision. Credited in Call of Duty, Max Payne, DJ Hero and many more.</p>
+			<p class="judgeContact"><a href="https://twitter.com/willeastcott">@willeastcott</a> | <a href="https://playcanvas.com/">playcanvas.com</a></p>
+		</div>
+	</article>
+	<article class="judge" id="jason">
+		<img src="/img/judges/2014/jason_weathersby.png" alt="Jason Weathersby" />
+		<div>
+			<h3>Jason Weathersby</h3>
+			<p>Jason Weathersby is a Technical Evangelist for <a href="http://mozilla.org/">Mozilla</a>, evangelizing Firefox OS. He is also a committer on the BIRT project at the Eclipse Foundation. He is a proponent of HTML5, Open Source and all things related to web-based gaming.</p>
+			<p class="judgeContact"><a href="https://twitter.com/JasonWeathersby">@JasonWeathersby</a> | <a href="http://hacks.mozilla.org/">hacks.mozilla.org</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="robert">
+		<img src="/img/judges/2015/robert_podgorski.png" alt="Robert Podgórski" />
+		<div>
+			<h3>Robert Podgórski</h3>
+			<p>Indie games creator. Maker of <a href="http://thefew.pl">The Few</a>, Captain Rogers Chronicles and some others. Addicted to ketchup.</p>
+			<p class="judgeContact"><a href="https://twitter.com/blackmoondev">@blackmoondev</a> | <a href="http://blackmoondev.com/">blackmoondev.com</a></p>
+		</div>
+	</article>
+	<article class="judge" id="austin">
+		<img src="/img/judges/2015/austin_hallock.png" alt="Austin Hallock" />
+		<div>
+			<h3>Austin Hallock</h3>
+			<p>One of the guys behind <a href="http://clay.io/">Clay.io</a>, an HTML5 game platform.</p>
+			<p class="judgeContact"><a href="https://twitter.com/austinhallock">@austinhallock</a> | <a href="http://clay.io/">clay.io</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="pablo">
+		<img src="/img/judges/2015/pablo_farias.png" alt="Pablo Farías Navarro" />
+		<div>
+			<h3>Pablo Farías Navarro</h3>
+			<p>Founder of <a href="https://zenva.com/">Zenva</a> and author of <a href="https://academy.zenva.com/?zva_src=js13k-bio">over 40 online courses</a> on game, web and mobile app development, including a Kickstarter-funded course on <a href="https://academy.zenva.com/product/the-complete-mobile-game-development-course-platinum-edition/?zva_src=js13k-bio">how to make 15 games with Phaser</a>. Trainer at the <a href="http://html5devconf.com/">HTML5 Developer Conference</a>, avid tutorial writer and massive HTML5 game dev nerd.</p>
+            <p class="judgeContact"><a href="https://twitter.com/zenvatweets">@ZenvaTweets</a> | <a href="https://zenva.com">zenva.com</a></p>
+		</div>
+	</article>
+	<article class="judge" id="ewa">
+		<img src="/img/judges/2015/ewa_mazur.png" alt="Ewa Mazur" />
+		<div>
+			<h3>Ewa Mazur</h3>
+			<p>Graphic Designer passionate about UI and <a href="http://mypoint.13k.pl/portfolio/gry/">Game Design</a>. Creator of <a href="http://tutsy.13k.pl/">Tutsy</a>, a website with freebies, tutorials and inspirations for designers. Wife of her husband.</p>
+			<p class="judgeContact"><a href="https://twitter.com/mypoint13k">@mypoint13k</a> | <a href="http://mypoint.13k.pl/">mypoint.13k.pl</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="wojciech">
+		<img src="/img/judges/2015/wojciech_urbanski.png" alt="Wojciech Urbański" />
+		<div>
+			<h3>Wojciech Urbanski</h3>
+			<p>Senior Front-end Developer at <a href="https://spartez.com/">Spartez</a> where he is working on Atlassian JIRA. Passionate about UX, good design and Open Web. <a href="https://www.facebook.com/meetjspl">Meet.js</a> meetups co-organizer. Casual gaming enthusiast, audio books addict and amateur brewer.</p>
+			<p class="judgeContact"><a href="https://twitter.com/wojtiku">@wojtiku</a> | <a href="https://spartez.com/">spartez.com</a></p>
+		</div>
+	</article>
+	<article class="judge" id="ilker">
+		<img src="/img/judges/2015/ilker_aydin.png" alt="Ilker Aydin" />
+		<div>
+			<h3>Ilker Aydin</h3>
+			<p>Founder and CEO of <a href="http://famobi.com/">Famobi</a>, a cross-platform game service with 300+ HTML5 games and high revenue-shares for developers and publishers. Before Famobi, Ilker founded SpielAffe.de and KralOyun.com, Germany's and Turkey's biggest online gaming portals. Also created Smarty Bubbles, the most successful cross-platform Bubble Shooter worldwide.</p>
+			<p class="judgeContact"><a href="http://famobi.com/">famobi.com</a></p>
+		</div>
+	</article>
+	<article class="judge right" id="pedro">
+		<img src="/img/judges/2015/pedro_fortuna.png" alt="Pedro Fortuna" />
+		<div>
+			<h3>Pedro Fortuna</h3>
+			<p>Co-founder and owner of <a href="http://jscrambler.com/">JScrambler</a> where he co-leads business development, and supervises all R&amp;D and technical activities. Inventor and co-author of three patents in the Computer Security area. Holds a degree and a MSc in Computer Science. Speaker at several IT events, related with Security and JavaScript.</p>
+			<p class="judgeContact"><a href="https://twitter.com/pedrofortuna">@pedrofortuna</a> | <a href="https://pt.linkedin.com/in/pedrofortuna/">linkedin.com/in/pedrofortuna</a></p>
+		</div>
+	</article>
+	<article class="judge" id="tomasz">
+		<img src="/img/judges/2015/tomasz_wesolowski.png" alt="Tomasz Wesołowski" />
+		<div>
+			<h3>Tomasz Wesolowski</h3>
+			<p>Senior Software Developer at <a href="https://codility.com/">Codility</a>. During the day, responsible for frontend code and API; after work a passionate gamer who never really grew out of the 90's titles.</p>
+			<p class="judgeContact"><a href="https://twitter.com/KosGD">@KosGD</a> | <a href="http://kos.gd/">kos.gd</a></p>
+		</div>
+	</article>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="winners" class="winners2014">
+<section id="winners-desktop">
+		<h2>Winners - Desktop</h2>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/behind-asteroids-the-dark-side/__small.jpg" alt="Behind Asteroids — The Dark Side" />
+			<h3><span>1st place</span> <a href="http://js13kgames.com/entries/behind-asteroids-the-dark-side">Behind Asteroids — The Dark Side</a> <span>by</span> Greweb</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/road-blocks/__small.jpg" alt="Road Blocks" />
+			<h3><span>2nd place</span> <a href="http://js13kgames.com/entries/road-blocks">Road Blocks</a> <span>by</span> Ash Kyd</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/chesspursuit/__small.jpg" alt="ChessPursuit" />
+			<h3><span>3rd place</span> <a href="http://js13kgames.com/entries/chesspursuit">ChessPursuit</a> <span>by</span> Saturnyn</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/its-raining-boxes/__small.jpg" alt="It's Raining... Boxes?!" />
+			<h3><span>4th place</span> <a href="http://js13kgames.com/entries/its-raining-boxes">It's Raining... Boxes?!</a> <span>by</span> Rémi Vansteelandt</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/taxi-drift/__small.jpg" alt="Taxi Drift" />
+			<h3><span>5th place</span> <a href="http://js13kgames.com/entries/taxi-drift">Taxi Drift</a> <span>by</span> Rémi Vansteelandt</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/dungeon-advisor/__small.jpg" alt="Dungeon Advisor" />
+			<h3><span>6th place</span> <a href="http://js13kgames.com/entries/dungeon-advisor">Dungeon Advisor</a> <span>by</span> Royletron</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/captain-reverso/__small.jpg" alt="Captain Reverso" />
+			<h3><span>7th place</span> <a href="http://js13kgames.com/entries/captain-reverso">Captain Reverso</a> <span>by</span> GregPabian</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/invertagon/__small.jpg" alt="Invertagon" />
+			<h3><span>8th place</span> <a href="http://js13kgames.com/entries/invertagon">Invertagon</a> <span>by</span> Pixel Jerry</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/sobanko/__small.jpg" alt="Sobanko" />
+			<h3><span>9th place</span> <a href="http://js13kgames.com/entries/sobanko">Sobanko</a> <span>by</span> Fatfisz</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/roboflip/__small.jpg" alt="RoboFlip" />
+			<h3><span>10th place</span> <a href="http://js13kgames.com/entries/roboflip">RoboFlip</a> <span>by</span> Eoinmcg</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/the-cursed-mirror/__small.jpg" alt="The Cursed Mirror" />
+			<h3><span>11th place</span> <a href="http://js13kgames.com/entries/the-cursed-mirror">The Cursed Mirror</a> <span>by</span> Morazor</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/geoquiz/__small.jpg" alt="GeoQuiz" />
+			<h3><span>12th place</span> <a href="http://js13kgames.com/entries/geoquiz">GeoQuiz</a> <span>by</span> Xem</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/trapventure/__small.jpg" alt="Trapventure" />
+			<h3><span>13th place</span> <a href="http://js13kgames.com/entries/trapventure">Trapventure</a> <span>by</span> Timo Hausmann</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/poust/__small.jpg" alt="Poust" />
+			<h3><span>14th place</span> <a href="http://js13kgames.com/entries/poust">Poust</a> <span>by</span> Madmaw</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/relink/__small.jpg" alt="Relink" />
+			<h3><span>15th place</span> <a href="http://js13kgames.com/entries/relink">Relink</a> <span>by</span> Daniel Cohen</h3>
+		</article>
+		<article class="winner-runnerup">
+			<ul>16. <a href="http://js13kgames.com/entries/cargo-72">Cargo-72</a> <span>by</span> ElementalSystems</ul>
+			<ul>17. <a href="http://js13kgames.com/entries/its-a-lovely-day-for-a-drive">It's a Lovely Day for a Drive</a> <span>by</span> Jay Oster</ul>
+			<ul>18. <a href="http://js13kgames.com/entries/word-blast">Word Blast</a> <span>by</span> Kushagra Gour</ul>
+			<ul>19. <a href="http://js13kgames.com/entries/glyph-o-tron">GLYPH-O-TRON</a> <span>by</span> Nathan Blenke</ul>
+			<ul>20. <a href="http://js13kgames.com/entries/zodiac-13">Zodiac 13</a> <span>by</span> Herman Chau</ul>
+			<ul>21. <a href="http://js13kgames.com/entries/time-mit">TIME || ƎMIT</a> <span>by</span> Daniel Johnson</ul>
+			<ul>22. <a href="http://js13kgames.com/entries/battle-of-mages-in-the-unireverse">Battle of Mages in the UniReverse</a> <span>by</span> plissken2013es</ul>
+			<ul>23. <a href="http://js13kgames.com/entries/reverse-the-darkness">Reverse the Darkness</a> <span>by</span> Lhokktyn</ul>
+			<ul>24. <a href="http://js13kgames.com/entries/galactic-backfire">Galactic Backfire</a> <span>by</span> Rene Hangstrup Møller</ul>
+			<ul>25. <a href="http://js13kgames.com/entries/reversed-the-game">Reversed: The Game</a> <span>by</span> Mark Vasilkov</ul>
+			<ul>26. <a href="http://js13kgames.com/entries/ribbit-smash">Ribbit Smash</a> <span>by</span> Loktar</ul>
+			<ul>27. <a href="http://js13kgames.com/entries/rev-emerald-mine">Rev. Emerald Mine</a> <span>by</span> Zutatensuppe</ul>
+			<ul>28. <a href="http://js13kgames.com/entries/reverse-gravity-ninja">Reverse Gravity Ninja</a> <span>by</span> Marcguinea</ul>
+			<ul>29. <a href="http://js13kgames.com/entries/men-in-maze">Men In Maze</a> <span>by</span> Iftah</ul>
+			<ul>30. <a href="http://js13kgames.com/entries/castle-climb">Castle Climb</a> <span>by</span> Rebecca</ul>
+		</article>
+		<article class="winner-runnerup" style="font-size: 16px;">
+			<ul>31-40.  Fruit rev, R3V3RS3 IT, Glitchtris, Please die, rotatris, Grav Bot, Super Dragon Rescue, Riversed, Reverse and Try Again, Reverse Ground Battle</ul>
+			<ul>41-50. Fantastic Monster Chronicles, Dutch Dredge, Anti-Paradox Run, Flappy Box, ParaTec Systems, Shapes Love Numbers, PAPERTRON, Drawbacks, Move my World, Eugor</ul>
+			<ul>51-60. Roulette, Reversed Sandwich Maker, Squared Lines js13k Reversed, desreveR, Drake's quest 🏃, Bridge The Gap, Nova Runner, nbody, WooM, kfish</ul>
+		</article>
+	</section>
+	<section id="winners-mobile">
+		<h2>Winners - Mobile</h2>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/behind-asteroids-the-dark-side/__small.jpg" alt="Behind Asteroids — The Dark Side" />
+			<h3><span>1st place</span> <a href="http://js13kgames.com/entries/behind-asteroids-the-dark-side">Behind Asteroids — The Dark Side</a> <span>by</span> Greweb</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/road-blocks/__small.jpg" alt="Road Blocks" />
+			<h3><span>2nd place</span> <a href="http://js13kgames.com/entries/road-blocks">Road Blocks</a> <span>by</span> Ash Kyd</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/its-raining-boxes/__small.jpg" alt="It's Raining... Boxes?!" />
+			<h3><span>3rd place</span> <a href="http://js13kgames.com/entries/its-raining-boxes">It's Raining... Boxes?!</a> <span>by</span> Rémi Vansteelandt</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/sobanko/__small.jpg" alt="Sobanko" />
+			<h3><span>4th place</span> <a href="http://js13kgames.com/entries/sobanko">Sobanko</a> <span>by</span> Fatfisz</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/roboflip/__small.jpg" alt="RoboFlip" />
+			<h3><span>5th place</span> <a href="http://js13kgames.com/entries/roboflip">RoboFlip</a> <span>by</span> Eoinmcg</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/poust/__small.jpg" alt="Poust" />
+			<h3><span>6th place</span> <a href="http://js13kgames.com/entries/poust">Poust</a> <span>by</span> Madmaw</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/relink/__small.jpg" alt="Relink" />
+			<h3><span>7th place</span> <a href="http://js13kgames.com/entries/relink">Relink</a> <span>by</span> Daniel Cohen</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/cargo-72/__small.jpg" alt="Cargo-72" />
+			<h3><span>8th place</span> <a href="http://js13kgames.com/entries/cargo-72">Cargo-72</a> <span>by</span> ElementalSystems</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/its-a-lovely-day-for-a-drive/__small.jpg" alt="It's a Lovely Day for a Drive" />
+			<h3><span>9th place</span> <a href="http://js13kgames.com/entries/its-a-lovely-day-for-a-drive">It's a Lovely Day for a Drive</a> <span>by</span> Jay Oster</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/glyph-o-tron/__small.jpg" alt="GLYPH-O-TRON" />
+			<h3><span>10th place</span> <a href="http://js13kgames.com/entries/glyph-o-tron">GLYPH-O-TRON</a> <span>by</span> Nathan Blenke</h3>
+		</article>
+		<article class="winner-runnerup">
+			<ul>11. <a href="http://js13kgames.com/entries/galactic-backfire">Galactic Backfire</a> <span>by</span> Rene Hangstrup Møller</ul>
+			<ul>12. <a href="http://js13kgames.com/entries/reversed-the-game">Reversed: The Game</a> <span>by</span> Mark Vasilkov</ul>
+			<ul>13. <a href="http://js13kgames.com/entries/men-in-maze">Men In Maze</a> <span>by</span> Iftah</ul>
+			<ul>14. <a href="http://js13kgames.com/entries/glitchtris">Glitchtris</a> <span>by</span> ViLPy</ul>
+			<ul>15. <a href="http://js13kgames.com/entries/riversed">Riversed</a> <span>by</span> Grzegorz Tańczyk</ul>
+			<ul>16. <a href="http://js13kgames.com/entries/reverse-ground-battle">Reverse Ground Battle</a> <span>by</span> Mattia Fortunati</ul>
+			<ul>17. <a href="http://js13kgames.com/entries/anti-paradox-run">Anti-Paradox Run</a> <span>by</span> Fatfisz</ul>
+			<ul>18. <a href="http://js13kgames.com/entries/flappy-box">Flappy Box</a> <span>by</span> Towc</ul>
+			<ul>19. <a href="http://js13kgames.com/entries/shapes-love-numbers">Shapes Love Numbers</a> <span>by</span> Kakus</ul>
+			<ul>20. <a href="http://js13kgames.com/entries/papertron">PAPERTRON</a> <span>by</span> Csaba Csecskedi</ul>
+		</article>
+	</section>
+	<section id="winners-server">
+		<h2>Winners - Server</h2>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/men-in-maze/__small.jpg" alt="Men In Maze" />
+			<h3><span>1st place</span> <a href="http://js13kgames.com/entries/men-in-maze">Men In Maze</a> <span>by</span> Iftah</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/papertron/__small.jpg" alt="PAPERTRON" />
+			<h3><span>2nd place</span> <a href="http://js13kgames.com/entries/papertron">PAPERTRON</a> <span>by</span> Csaba Csecskedi</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/captain-nicebeard-the-reverse-pirate/__small.jpg" alt="Captain Nicebeard, The Reverse Pirate" />
+			<h3><span>3rd place</span> <a href="http://js13kgames.com/entries/captain-nicebeard-the-reverse-pirate">Captain Nicebeard</a> <span>by</span> Patrick Woodcock</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/mud-bowl-derby/__small.jpg" alt="Mud Bowl Derby" />
+			<h3><span>4th place</span> <a href="http://js13kgames.com/entries/mud-bowl-derby">Mud Bowl Derby</a> <span>by</span> Jonas Olmstead</h3>
+		</article>
+		<article class="winner">
+			<img src="http://js13kgames.com/games/raw-space/__small.jpg" alt="raw | space" />
+			<h3><span>5th place</span> <a href="http://js13kgames.com/entries/raw-space">raw | space</a> <span>by</span> Bitowl</h3>
+		</article>
+		<article class="winner-runnerup">
+			<ul>6. <a href="http://js13kgames.com/entries/bokosan">Bokosan</a> <span>by</span> Gabor and Zsolt Heja</ul>
+			<ul>7. <a href="http://js13kgames.com/entries/ant-realm">Ant Realm</a> <span>by</span> Aurium</ul>
+			<ul>8. <a href="http://js13kgames.com/entries/shapewars">Shapewars</a> <span>by</span> Claim</ul>
+			<ul>9. <a href="http://js13kgames.com/entries/alivenloaded">Alive'n'Loaded</a> <span>by</span> Siorki</ul>
+			<ul>10. <a href="http://js13kgames.com/entries/nommon-brothers">Nommon Brothers</a> <span>by</span> Carson Barlow</ul>
+		</article>
+	</section>
+	<article id="winners-community" class="winner-runnerup">
+		<h2>Community Awards winners</h2>
+		<p style="font-size: 14px;">Voted among the developers themselves.</p>
+		<ul>
+			<li>1. <a href="http://js13kgames.com/entries/behind-asteroids-the-dark-side">Behind Asteroids — The Dark Side</a> <span>by</span> greweb - 79 points</li>
+			<li>2. <a href="http://js13kgames.com/entries/its-raining-boxes">It's Raining... Boxes?!</a> <span>by</span> Rémi Vansteelandt - 47</li>
+			<li>3. <a href="http://js13kgames.com/entries/road-blocks">Road Blocks</a> <span>by</span> Ash Kyd - 39</li>
+			<li>4. <a href="http://js13kgames.com/entries/chesspursuit">ChessPursuit</a> <span>by</span> Saturnyn - 31</li>
+			<li>5. <a href="http://js13kgames.com/entries/captain-reverso">Captain Reverso</a> <span>by</span> GregPabian - 28</li>
+			<li>6. <a href="http://js13kgames.com/entries/cargo-72">cargo-72</a> <span>by</span> ElementalSystems - 17</li>
+			<li>7. <a href="http://js13kgames.com/entries/roulette">Roulette</a> <span>by</span> razh - 16</li>
+			<li>7. <a href="http://js13kgames.com/entries/time-mit">TIME || ƎMIT</a> <span>by</span> Daniel Johnson - 16</li>
+			<li>9. <a href="http://js13kgames.com/entries/the-cursed-mirror">The Cursed Mirror</a> <span>by</span> morazor - 15</li>
+			<li>10. <a href="http://js13kgames.com/entries/roboflip">RoboFlip</a> <span>by</span> eoinmcg - 13</li>
+			<li>11. <a href="http://js13kgames.com/entries/taxi-drift">Taxi Drift</a> <span>by</span> Rémi Vansteelandt - 12</li>
+			<li>11. <a href="http://js13kgames.com/entries/its-a-lovely-day-for-a-drive">It's a Lovely Day for a Drive</a> <span>by</span> Jay Oster (Parasyte) - 12</li>
+			<li>13. <a href="http://js13kgames.com/entries/dungeon-advisor">Dungeon Advisor</a> <span>by</span> royletron - 10</li>
+			<li>13. <a href="http://js13kgames.com/entries/dutch-dredge">Dutch Dredge</a> <span>by</span> Rick van Mook - 10</li>
+			<li>15. <a href="http://js13kgames.com/entries/tetris">TetRis</a> <span>by</span> Chang Cheng-Hao - 9</li>
+			<li>16. <a href="http://js13kgames.com/entries/super-dragon-rescue">Super Dragon Rescue</a> <span>by</span> madmarcel - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/castle-climb">Castle Climb</a> <span>by</span> Rebecca - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/reverse-and-try-again">Reverse and Try Again</a> <span>by</span> halfnelson - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/flappy-box">Flappy Box</a> <span>by</span> towc - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/geoquiz">GeoQuiz</a> <span>by</span> xem - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/reverse-the-darkness">Reverse the Darkness</a> <span>by</span> lhokktyn - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/paratec-systems">ParaTec Systems</a> <span>by</span> Logan Franken - 8</li>
+			<li>16. <a href="http://js13kgames.com/entries/poust">Poust</a> <span>by</span> madmaw - 8</li>
+			<li>24. <a href="http://js13kgames.com/entries/void">Void</a> <span>by</span> Peter Bienek - 7</li>
+			<li>24. <a href="http://js13kgames.com/entries/papertron">PAPERTRON</a> <span>by</span> Csaba Csecskedi - 7</li>
+			<li style="font-size: 16px; line-height: 32px;">26-28. Reversed, Squared Lines js13k Reversed, Rotatris - 6</li>
+			<li style="font-size: 14px; line-height: 30px;">29. Ribbit Smash - 5</li>
+			<li style="font-size: 12px; line-height: 28px;">30-38. Sobanko, Driftversed, Please Die, GLYPH-O-TRON, Anti-Paradox Run, Galactic Backfire, Gravity Golf, Eugor, Nova Runner - 4</li>
+			<li style="font-size: 10px; line-height: 26px;">39-44. Bombs Away, Raw | Space, I Am Geoffrey, Bridge The Gap, Turnometry, R3V3RS3 IT - 3</li>
+		</ul>
+	</article>
+	<article id="winners-social" class="winner-runnerup">
+		<h2>Social Special winners</h2>
+		<p style="font-size: 14px;">For the most popular games on the social networks.</p>
+		<h3 id="winners-twitter">Twitter Special</h3>
+		<ul>
+			<li>1. <a href="http://js13kgames.com/entries/super-dragon-rescue">Super Dragon Rescue</a> <span>by</span> madmarcel - 131 tweets</li>
+			<li>2. <a href="http://js13kgames.com/entries/flappy-box">Flappy Box</a> <span>by</span> towc - 105 tweets</li>
+			<li>3. <a href="http://js13kgames.com/entries/road-blocks">Road Blocks</a> <span>by</span> Ash Kyd - 52 tweets</li>
+			<li>4. <a href="http://js13kgames.com/entries/its-raining-boxes">It's Raining... Boxes?!</a> <span>by</span> Rémi Vansteelandt - 49 tweets</li>
+			<li>5. <a href="http://js13kgames.com/entries/behind-asteroids-the-dark-side">Behind Asteroids — The Dark Side</a> <span>by</span> greweb - 48 tweets</li>
+		</ul>
+		<h3 id="winners-facebook">Facebook Special</h3>
+		<ul>
+			<li>1. <a href="http://js13kgames.com/entries/rev-emerald-mine">Rev. Emerald Mine</a> <span>by</span> Zutatensuppe - 127 likes</li>
+			<li>2. <a href="http://js13kgames.com/entries/bridge-the-gap">Bridge The Gap</a> <span>by</span> Varun Malhotra - 94 likes</li>
+			<li>3. <a href="http://js13kgames.com/entries/bokosan">Bokosan</a> <span>by</span> Gabor and Zsolt Heja - 80 likes</li>
+			<li>4. <a href="http://js13kgames.com/entries/changing-world">Changing World</a> <span>by</span> adi - 79 likes</li>
+			<li>5. <a href="http://js13kgames.com/entries/flappy-box">Flappy Box</a> <span>by</span> towc - 44 likes</li>
+		</ul>
+		<h3 id="winners-google">Google+ Special</h3>
+		<ul>
+			<li>1. <a href="http://js13kgames.com/entries/reversed-the-game">Reversed: The Game</a> <span>by</span> Mark Vasilkov - 66 +1's</li>
+			<li>2. <a href="http://js13kgames.com/entries/flappy-box">Flappy Box</a> <span>by</span> towc - 16 +1's</li>
+			<li>3. <a href="http://js13kgames.com/entries/ribbit-smash">Ribbit Smash</a> <span>by</span> Loktar - 12 +1's</li>
+			<li>4. <a href="http://js13kgames.com/entries/galactic-backfire">Galactic Backfire</a> <span>by</span> Rene Hangstrup Møller - 11 +1's</li>
+			<li>4. <a href="http://js13kgames.com/entries/drakes-quest">Drake's quest 🏃</a> <span>by</span> Herman Starikov - 11 +1's</li>
+		</ul>
+	</article>
+	<article id="winners-firefoxos" class="winner-runnerup">
+		<h2>Firefox OS Special</h2>
+		<p style="font-size: 14px;">Firefox OS Flames for the best mobile games handpicked by Mozilla staff.</p>
+		<ul>
+			<li>1. <a href="http://js13kgames.com/entries/behind-asteroids-the-dark-side">Behind Asteroids — The Dark Side</a> <span>by</span> Greweb</li>
+			<li>2. <a href="http://js13kgames.com/entries/road-blocks">Road Blocks</a> <span>by</span> Ash Kyd</li>
+			<li>3. <a href="http://js13kgames.com/entries/roboflip">RoboFlip</a> <span>by</span> Eoinmcg</li>
+		</ul>
+	</article>
+</section>
+
+<section id="prizes">
+	<h2>Prizes</h2>
+	<article class="prize" id="phaserbox2d">
+		<img src="/img/prizes/2015/phaser-box2d.png" alt="Phaser Box2D premium plugin" />
+		<div>
+			<h3>2 &times; Phaser Box2D premium plugin</h3>
+			<p>Two licenses for <a href="http://phaser.io/shop/plugins/box2d">Phaser Box2D</a> premium plugin from <a href="http://photonstorm.com/">Photonstorm</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="isogenic">
+		<img src="/img/prizes/2015/isogenic.png" alt="Isogenic Engine" />
+		<div>
+			<h3>8 &times; Isogenic game engine premium license</h3>
+			<p>Eight premium licenses for <a href="http://www.isogenicengine.com/">Isogenic Game Engine</a> created by <a href="http://irrelon.com/">Irrelon Software</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="construct2">
+		<img src="/img/prizes/2015/construct2.png" alt="Construct 2" />
+		<div>
+			<h3>1 &times; Construct 2 game engine business license</h3>
+			<p>One Business license for <a href="https://www.scirra.com/construct2">Construct 2</a> game engine created by <a href="https://www.scirra.com/">Scirra</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="moneywithhtml5">
+		<img src="/img/prizes/2015/moneywithhtml5.png" alt="Making money with HTML5" />
+		<div>
+			<h3>5 &times; Making Money with HTML5 ebook</h3>
+			<p>Five copies of <a href="http://www.truevalhalla.com/blog/ebook/">Making Money with HTML5</a> ebook by <a href="http://www.truevalhalla.com/">Matthew Bowden</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="playcanvas">
+		<img src="/img/prizes/2015/playcanvas.png" alt="Playcanvas" />
+		<div>
+			<h3>10 &times; PlayCanvas Pro-5 account</h3>
+			<p>Ten 6-month <a href="http://playcanvas.com/">PlayCanvas</a> Pro-5 accounts offering cloud-hosted, collaborative platform for building video games.</p>
+		</div>
+	</article>
+	<article class="prize" id="impactjs">
+		<img src="/img/prizes/2015/impactjs.png" alt="ImpactJS" />
+		<div>
+			<h3>5 &times; ImpactJS game engine</h3>
+			<p>Five licenses for <a href="http://impactjs.com/">ImpactJS</a> game engine created by <a href="http://www.phoboslab.org/">Dominic Szablewski</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="gamedevcourse">
+		<img src="/img/prizes/2015/gamedevcourse.png" alt="Complete Mobile Game Development Course" />
+		<div>
+			<h3>5 &times; Complete Mobile Game Development Course</h3>
+			<p>Five coupons for the online <a href="https://academy.zenva.com/product/the-complete-mobile-game-development-course-platinum-edition/?zva_src=js13k2015">Complete Mobile Game Development Course</a> platinum edition from <a href="https://academy.zenva.com/">Zenva Academy</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="protoio">
+		<img src="/img/prizes/2015/protoio.png" alt="Proto.io" />
+		<div>
+			<h3>1 &times; Proto.io Startup account</h3>
+			<p>One <a href="http://proto.io/">Proto.io</a> account with Startup plan for 12 months.</p>
+		</div>
+	</article>
+	<article class="prize" id="webstorm">
+		<img src="/img/prizes/2015/webstorm.png" alt="WebStorm" />
+		<div>
+			<h3>7 &times; WebStorm personal license</h3>
+			<p>Seven personal licenses for the <a href="https://www.jetbrains.com/webstorm/">WebStorm</a> JavaScript IDE created by the <a href="http://www.jetbrains.com/">JetBrains</a> team.</p>
+		</div>
+	</article>
+	<article class="prize" id="fromnull">
+		<img src="/img/prizes/2015/fromnulltofull.png" alt="From null to full HTML5 cross platform game" />
+		<div>
+			<h3>10 &times; From null to full HTML5 game minibook</h3>
+			<p>Ten copies of the minibook <a href="http://www.emanueleferonato.com/2015/06/08/get-my-first-indie-minibook-from-null-to-full-html5-cross-platform-game/">From null to full HTML5 cross platform game</a> by <a href="http://www.emanueleferonato.com/">Emanuele Feronato</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="kendoui">
+		<img src="/img/prizes/2015/kendoui.png" alt="Kendo UI Professional" />
+		<div>
+			<h3>3 &times; Kendo UI Professional</h3>
+			<p>Three licenses for <a href="http://www.telerik.com/kendo-ui">Kendo UI Professional</a> from <a href="http://telerik.com/">Telerik</a> for 12 months with updates and standard support.</p>
+		</div>
+	</article>
+	<article class="prize" id="codepen">
+		<img src="/img/prizes/2015/codepen.png" alt="CodePen" />
+		<div>
+			<h3>3 &times; CodePen Pro account</h3>
+			<p>Three <a href="http://codepen.io/pro/">CodePen Pro</a> accounts with lots of cool features for 12 months.</p>
+		</div>
+	</article>
+	<article class="prize" id="nodebb">
+		<img src="/img/prizes/2015/nodebb.png" alt="NodeBB" />
+		<div>
+			<h3>5 &times; NodeBB hosting</h3>
+			<p>Five Hamlet hosting plans for 12 months each from the <a href="https://nodebb.org/">NodeBB</a> team.</p>
+		</div>
+	</article>
+	<article class="prize" id="blossom">
+		<img src="/img/prizes/2015/blossom.png" alt="Blossom.io" />
+		<div>
+			<h3>1 &times; Blossom.io Enterprise account for 12 months</h3>
+			<p>One Enterprise license for <a href="http://www.blossom.io/">Blossom.io</a>, agile project management tool.</p>
+		</div>
+	</article>
+	<article class="prize" id="orangepixel">
+		<img src="/img/prizes/2015/orangepixel.png" alt="OrangePixel" />
+		<div>
+			<h3>45 &times; Gunslugs, Gunslugs 2 and Heroes of Loot games</h3>
+			<p>Three <a href="http://orangepixel.net/">OrangePixel</a> games: <a href="http://www.orangepixel.net/2013/02/18/gunslugs/">Gunslugs</a>, <a href="http://www.orangepixel.net/2015/01/09/gunslugs2/">Gunslugs 2</a> and <a href="http://www.orangepixel.net/2013/09/19/heroesofloot/">Heroes of Loot</a> for <strong>every team member</strong> for top5 entries in every category.</p>
+		</div>
+	</article>
+	<article class="prize" id="elliotquest">
+		<img src="/img/prizes/2015/elliotquest.png" alt="Elliot Quest" />
+		<div>
+			<h3>10 &times; Elliot Quest game</h3>
+			<p>Ten licenses for <a href="http://elliotquest.com/">Elliot Quest</a> game by <a href="http://luiszuno.com/">Luis Zuno</a> from <a href="http://ansimuz.com/">Ansimuz Games</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="pusher">
+		<img src="/img/prizes/2015/pusher.png" alt="Pusher" />
+		<div>
+			<h3>3 &times; Pusher $300 credit</h3>
+			<p>Three promo codes worth $300 each for the <a href="https://pusher.com/">Pusher</a> services.</p>
+		</div>
+	</article>
+	<article class="prize" id="buildanhtml5game">
+		<img src="/img/prizes/2015/buildanhtml5game.png" alt="Build an HTML5 Game" />
+		<div>
+			<h3>3 &times; Build an HTML5 Game printed book</h3>
+			<p>Three printed copies of the book <a href="http://buildanhtml5game.com/">Build an HTML5 Game</a> by <a href="http://www.karlbunyan.com/">Karl Bunyan</a> from <a href="https://www.nostarch.com/">No Starch Press</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="jsbin">
+		<img src="/img/prizes/2015/jsbin.png" alt="JSBin" />
+		<div>
+			<h3>JSBin Pro accounts, t-shirts and stickers</h3>
+			<p>Two <a href="http://jsbin.com/">JSBin</a> Pro accounts <strong>for life</strong> with t-shirt and stickers, six JSBin Pro for 6 months with stickers and ten stickers, all from <a href="http://remysharp.com/">Remy Sharp</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="wizardslizard">
+		<img src="/img/prizes/2015/wizardslizard.png" alt="A Wizard's Lizard" />
+		<div>
+			<h3>25 &times; A Wizard's Lizard game</h3>
+			<p>Twenty five licenses for <a href="http://www.wizardslizard.com/">A Wizard's Lizard</a> game by <a href="http://www.lostdecadegames.com/">Lost Decade Games</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="curiousexped">
+		<img src="/img/prizes/2015/curiousexpedition.png" alt="The Curious Expedition" />
+		<div>
+			<h3>10 &times; The Curious Expedition game</h3>
+			<p>Ten licenses for <a href="http://curious-expedition.com/">The Curious Expedition</a> game by <a href="http://maschinen-mensch.com/">Maschinen-Mensch</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="firefoxos">
+		<img src="/img/prizes/2015/flame.png" alt="Firefox OS Flame" />
+		<div>
+			<h3>3 &times; Firefox OS Flame</h3>
+			<p>Three <a href="https://developer.mozilla.org/en-US/Firefox_OS/Developer_phone_guide/Flame">Firefox OS Flame</a> devices from <a href="https://games.mozilla.org/">Mozilla</a> for the best mobile games, and three special custom Mozilla t-shirts.</p>
+		</div>
+	</article>
+	<article class="prize" id="misstake">
+		<img src="/img/prizes/2015/misstake.png" alt="The Marvellous Miss Take" />
+		<div>
+			<h3>10 &times; The Marvellous Miss Take game</h3>
+			<p>Ten licenses for <a href="http://misstakegame.com/">The Marvellous Miss Take</a> game by <a href="http://wonderstruckgames.com/">Wonderstruck</a>.</p>
+		</div>
+	</article>
+	<article class="prize" id="jscrambler">
+		<img src="/img/prizes/2015/jscrambler.png" alt="JScrambler" />
+		<div>
+			<h3>3 &times; JScrambler license</h3>
+			<p>Three <a href="http://jscrambler.com/">JScrambler</a> Starter Plan licenses for three months each.</p>
+		</div>
+	</article>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="categories" style="text-align: center;">
+	<h2>Categories</h2>
+	<p>There will be <strong>three different categories</strong>, <br />you can submit your game to any of them - it's up to you.</p>
+	<article class="prize">
+		<img src="/img/category-desktop.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<div>
+			<h3>Desktop</h3>
+			<p>Full power of the hardware.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="/img/category-mobile.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<div>
+			<h3>Mobile</h3>
+			<p>Mobile touch devices.</p>
+		</div>
+	</article>
+	<article class="prize">
+		<img src="/img/category-server.png" style="width: 150px; height: 150px;" alt="Prize" />
+		<div>
+			<h3>Server</h3>
+			<p>Node.js multiplayer.</p>
+		</div>
+	</article>
+	<p>There will also be a <strong>Twitter</strong>, <strong>Facebook</strong> and <strong>Google+ Specials</strong> just like before, <br />and something new: <strong>Community Awards</strong> voted among all the participants.</p>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="places">
+	<h2>Places</h2>
+	<section id="places-desktop">
+		<h4>Desktop category</h4>
+		<article class="place">
+			<h3>Top 15 games</h3>
+			<ul>
+				<li><strong>1st-3rd places</strong>: Isogenic Premium, Kendo UI Professional, WebStorm, PlayCanvas Pro-5, Gunslugs 1&amp;2 and Heroes of Loot</li>
+				<li><strong>4th-7th places</strong>: Isogenic Premium, WebStorm parsonal, PlayCanvas Pro-5, Gunslugs, Gunslugs 2 and Heroes of Loot</li>
+				<li><strong>8th place</strong>: Isogenic Premium, PlayCanvas Pro-5, Gunslugs, Gunslugs 2 and Heroes of Loot</li>
+				<li><strong>9th-10th places</strong>: PlayCanvas Pro-5, Gunslugs, Gunslugs 2 and Heroes of Loot</li>
+				<li><strong>11th-15th places</strong>: Gunslugs, Gunslugs 2 and Heroes of Loot</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-mobile">
+		<h4>Mobile category</h4>
+		<article class="place">
+			<h3>Top 10 games</h3>
+			<ul>
+				<li><strong>1st-2nd places</strong>: Phaser Box2D Premium, CodePen Pro, Build an HTML5 Game, From Null to Full, The&nbsp;Curious Expedition, The&nbsp;Marvellous Miss Take</li>
+				<li><strong>3rd place</strong>: CodePen Pro, Build an HTML5 Game, From Null to Full, The Curious Expedition, The Marvellous Miss Take</li>
+				<li><strong>4th-5th places</strong>: From Null to Full HTML5 Game, The Curious Expedition, The Marvellous Miss Take</li>
+				<li><strong>6th-10th places</strong>: From Null to Full HTML5 Game, The Marvellous Miss Take</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-server">
+		<h4>Server category</h4>
+		<article class="place">
+			<h3>Top 5 games</h3>
+			<ul>
+				<li><strong>1st-3rd places</strong>: Pusher $300 credit, NodeBB hosting, The Curious Expedition</li>
+				<li><strong>4th-5th places</strong>: NodeBB hosting, The Curious Expedition</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-social">
+		<h4>Social Specials</h4>
+		<article class="place">
+			<h3>Twitter Specials <span>(for the highest number of tweets)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Construct 2 game engine business license, Making Money with HTML5 ebook</li>
+				<li><strong>2nd-5th places</strong>: Making Money with HTML5 ebook</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>Facebook Specials <span>(for the highest number of likes)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Proto.io Startup account, ImpactJS game engine</li>
+				<li><strong>2nd-5th places</strong>: ImpactJS game engine</li>
+			</ul>
+		</article>
+		<article class="place">
+			<h3>Google+ Specials <span>(for the highest number of +1's)</span></h3>
+			<ul>
+				<li><strong>1st place</strong>: Blossom.io Enterprise account for 12 months, Complete Mobile Game Development Course</li>
+				<li><strong>2nd-5th places</strong>: Complete Mobile Game Development Course</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-community">
+		<h4>Community Awards</h4>
+		<article class="place">
+			<h3>Top 25 entries <span>(voted among developers themselves)</span></h3>
+			<ul>
+				<li><strong>1st-2nd places</strong>: JScrambler license, Elliot Quest game, A Wizard's Lizard game, JSBin Pro for life with t-shirt and stickers</li>
+				<li><strong>3rd place</strong>: JScrambler license, Elliot Quest game, A Wizard's Lizard game, JSBin Pro for 6 months with stickers</li>
+				<li><strong>4th-6th places</strong>: Elliot Quest game, A Wizard's Lizard game, JSBin Pro for 6 months with stickers</li>
+				<li><strong>7th-10th places</strong>: Elliot Quest game, A Wizard's Lizard game, JSBin Pro stickers</li>
+				<li><strong>11th-25th places</strong>: A Wizard's Lizard game</li>
+			</ul>
+		</article>
+	</section>
+	<section id="places-firefoxos">
+		<h4>Firefox OS Special</h4>
+		<article class="place">
+			<h3>Top 3 mobile entries <span>(handpicked by Mozilla staff)</span></h3>
+			<ul>
+				<li><strong>1st-3rd places</strong>: Firefox OS Flame device plus special Mozilla Games t-shirt</li>
+			</ul>
+		</article>
+	</section>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="rules">
+	<h2>Rules</h2>
+	<article class="rule">
+		<h3>Package size below 13 kB</h3>
+		<p>All your code and game assets should be smaller than or equal to 13 kilobytes (that's exactly 13,312 bytes, because of 13 x 1024) when zipped. Your .zip package should contain index.html file and when unzipped should work in the browser. Don't overcomplicate building the zip package, it should unpack on any platform without problems. You can use tools that minify JavaScript source code like <a href="https://jscrambler.com/">JScrambler</a>.</p>
+	</article>
+	<article class="rule">
+		<h3>Two sources - readable and compressed</h3>
+		<p>The competition is focusing on the package size, but learning from others is also very important. Please provide two sources of your game - first one should be minified and zipped to fit in the 13 kB limit (sent via the form) and the second one should be in a readable form with descriptive variable names and comments (hosted on GitHub).</p>
+	</article>
+	<article class="rule">
+		<h3>No external libraries or services</h3>
+		<p>You can't use any libraries, images or data files hosted on server or services that provide any type of data - for example Google Fonts are not allowed. Your game should work offline by launching the index.html file in the browser (Desktop and Mobile categories, not applicable to Server) and all the game assets should fit in the package size limit. If you manage to shrink your favorite library below 13 kilobytes including the code itself, then you can use whatever you want, just remember about the 13 kB limit.</p>
+	</article>
+	<article class="rule">
+		<h3>Main theme - Reversed</h3>
+		<p>The main theme of the competition in 2015 is the word 'Reversed'. It's highly advised to follow it in your game, because the judges will pay attention to that, but you can freely interpret the theme and implement it however you feel would be the best.</p>
+	</article>
+	<article class="rule">
+		<h3>Deadline - 13th September 2015</h3>
+		<p>The competition starts at 13:00 CEST, 13th August 2015 and ends at 13:00 CEST, 13th September 2015. No submissions will be accepted after the end of the competition.</p>
+	</article>
+	<article class="rule">
+		<h3>Licensing</h3>
+		<p>You have to have the rights for every asset used in your game. Remember that the submitted games will be published and made available for everybody to see.</p>
+	</article>
+	<article class="rule">
+		<h3>New content only</h3>
+		<p>Do not submit any old games or demos - you have a whole month to work on something new and fresh, this should be more than enough.</p>
+	</article>
+	<article class="rule">
+		<h3>Errors and browser support</h3>
+		<p>Your game must work and be playable in at least two browsers: Firefox and Chrome. The more supported browsers, the better - you can get more points for that. There should be no errors - you can lose some points if your game is showing any errors in the console. If we cannot play your game, it won't be accepted.</p>
+	</article>
+	<article class="rule">
+		<h3>Teams</h3>
+		<p>It doesn't matter if you're working alone or with your friends, just remember that the number of prizes is fixed, so you'll have to share your trophies with your teammates.</p>
+	</article>
+	<article class="rule">
+		<h3>Sending submissions</h3>
+		<p>There's a special form to submit your game. Please remember that you have to provide two sources (see the Rule #2 for details) - a link to a public repository on Github and a zipped package. Participants are allowed to submit more than one game in the competition, though sending the same game as independent submissions targeting different platforms (for example separate builds for desktop and mobile) is forbidden.</p>
+	</article>
+	<article class="rule">
+		<h3>Accepting submissions</h3>
+		<p>Submissions will be checked manually and published after positive verification. This may take up to a couple of days, so be patient if your game is not yet online. I claim the right to reject any submission without giving a reason, although I hope I don't have to. I also have the right to update the rules of the competition at any time.</p>
+	</article>
+	<article class="rule">
+		<h3>Time frames for voting, judging and announcing winners</h3>
+		<p>The Social Specials contest will be held from the start of the compo on August 13th till the end of the judging on September 27th, winners will be announced on the same day right after it ends. The Community Awards voting among the participants will last for a week between September 13th and 20th, winners will be announced on September 21st. Judges will vote for the games during the two week period after the submission time ends: from September 13th till 27th, winners will be announced on September 28th.</p>
+	</article>
+	<article class="rule" id="server">
+		<h3>Server category specific rules</h3>
+		<dl>
+			<dt>Sandbox server</dt>
+			<dd>You can find the official sandbox server at <a href="http://js13kgames.github.io/js-game-server/">js13kgames.github.io/js-game-server</a> - it is maintained by Aurélio A. Heckert and Florent Cailhol.</dd>
+			<dt>Package size still below 13 kB</dt>
+			<dd>In this year one game package will contain all the game code and assets, for the client and the server.</dd>
+			<dt>Sandboxed environment</dt>
+			<dd>Your game will run in a node.js based sandbox environment. That means you will not really use node. You can require a limited collection of modules and your own modules shipped by your 13k pack.</dd>
+			<dt>The allowed modules are:</dt>
+			<dd>Assert, buffer, events, path, querystring, string_decoder, sandbox-io (a shimed version of socket.io already listening your game port) and sandbox-server (a shimed version of http.server already listening on your game port).</dd>
+			<dt>Do not leak the sandbox</dt>
+			<dd>This is not a hacking competition. This is a way to help the competition admins, the site persistence, and you. Trying to directly write files, to read files outside of your package, to use not allowed modules, to change the server port, or any other tries to leak the sandbox will cast you out of the competition.</dd>
+			<dt>Yes, you can persist some data</dt>
+			<dd>The sandbox has a global function "db(key[,value])". That can abstract the read/write json data from the disk for you. You must <strong>not</strong> use this feature to <strong>store assets</strong>, like essential game methods, images, or other data. <u>Use</u> it to <u>game history</u> or <u>user related data</u>. If you cheat the 13k limit using this feature you will be disqualified.</dd>
+			<dt>Socket.io client lib</dt>
+			<dd>You can use it. Simply add &lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt; to your HTML and that will be loaded. No server configuration will be needed. The sandbox already did it.</dd>
+			<dt>Respect your neighbours</dt>
+			<dd>Besides the fact that you can be cast out if you deliberately affect another game by accessing files or it's server, you also have to try to not plunder the host computing resources. That is also needed to preserve the server health.</dd>
+			<dt>Can I test the sandbox before submitting?</dt>
+			<dd>Yes, you can and you must! Installing and getting it running is simple. Visit the project page at <a href="http://js13kgames.github.io/js-game-server/">js13kgames.github.io/js-game-server</a>.</dd>
+			<dt>Is there any example? How do I develop my game using the sandbox server?</dt>
+			<dd>There's an <a href="https://github.com/js13kGames/js-game-server/tree/master/examples">examples folder</a> with the Pong game. You can also check out the <a href="https://github.com/js13kGames/js-game-server/blob/master/README.md">Readme</a> for details on running the server.</dd>
+			<dt>I have more questions!</dt>
+			<dd>Feel free to send them to <a href="mailto:server@js13kgames.com">server@js13kgames.com</a>.</dd>
+		</dl>
+	</article>
+	<article class="rule" id="faq">
+		<h3>Frequently Asked Questions</h3>
+		<dl>
+			<dt>Why exactly 13 kB?</dt>
+			<dd>Well... why not? :)</dd>
+			<dt>What's in it for you? Are you getting paid?</dt>
+			<dd>Nope, it's just my own idea and it's made for pure fun. I'd love to get a sponsorship though as I spent my own private money on the first edition to cover shipping of the prizes worldwide, making t-shirts etc.</dd>
+			<dt>What does the "zipped" term exactly mean?</dt>
+			<dd>Sent package should be zipped with your usual system archiver, the only allowed extension is .zip. Let's keep it simple - it's a competition for coders and this should be your main focus, the code itself. Thanks to the zipped archive you will easily send your game and we will easily check the file size.</dd>
+			<dt>Can I use Flash?</dt>
+			<dd>No, you can code your game using only the open web technologies like JavaScript, HTML and CSS.</dd>
+			<dt>Can I use WebGL?</dt>
+			<dd>Yes, though it might be hard to fit it into 13 kilobytes if you plan on doing an FPS game.</dd>
+			<dt>Can I use CoffeeScript or TypeScript?</dt>
+			<dd>Yes, you can use it, but you can't submit it. Only pure JavaScript code will be accepted, so remember to have your compiled code within the 13 kB limit.</dd>
+			<dt>Can I use compression through the self-extracting PNGs?</dt>
+			<dd>No, this technique is strictly prohibited. Only pure JavaScript minifying is allowed.</dd>
+			<dt>More questions?</dt>
+			<dd>Send them in <a href="#contact">via email or social media</a> or post them in the dedicated topic at the <a href="http://www.html5gamedevs.com/topic/15586-js13kgames-2015/">HTML5GameDevs forums</a>.</dd>
+		</dl>
+	</article>
+	<a class="up" href="/"></a>
+</section>
+
+<section id="contact">
+	<h2>Contact</h2>
+	<p>If You have any questions or propositions please feel free to contact us via e-mail: <span>contact@js13kgames.com</span>.<br />The other options include visiting our profiles on <a href="http://twitter.com/js13kgames">Twitter</a> or <a href="http://facebook.com/js13kgames">Facebook</a> and sending us the private message.</p>
+	<a class="up" href="/"></a>
+</section>
+</div>
+
+<footer>
+	<div>
+		&copy; js13kGames 2012-2016.
+		<p>Created and maintained by <a target="_blank" href="http://end3r.com/">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>.</p>
+	</div>
+</footer>
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-33368200-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+</body>
+</html>

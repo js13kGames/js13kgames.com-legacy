@@ -16,7 +16,7 @@
         style: 'compressed' 
     };
     
-    var input = 'source/main.scss';
+    var input = 'source/responsive.scss';
     var output = '../public/assets/css/';
 
     gulp.task('sass', function () {
