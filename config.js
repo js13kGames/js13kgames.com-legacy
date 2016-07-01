@@ -7,7 +7,8 @@ var config = {
     }
   },
   app: {
-    domain: 'http://js13kgames.com'
+    //domain: 'http://js13kgames.com'
+    domain: 'http://localhost:3000'
   },
   games: {
     editionId: 5,
