@@ -53,6 +53,7 @@ var defaultYear = function(req, res, next){
 // Routes
 app.get('/submit', defaultYear, csrfProtection, submitController.get);
 app.post('/submit', defaultYear, submitController.post);
+app.get('/submit/invalid_csrf', submitController.invalid);
 app.get('/entries', defaultYear, entriesController.list);
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);

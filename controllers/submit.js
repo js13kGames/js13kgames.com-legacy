@@ -64,4 +64,9 @@ SubmitController.post = function(req, res, next) {
   });
 };
 
+
+SubmitController.invalid = function(req, res, next) {
+  res.render('submit_invalid');
+};
+
 module.exports = SubmitController;
