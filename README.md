@@ -29,6 +29,9 @@ js13kgames.com/entries                  -> list of entries for the current year
 js13kgames.com/<year>/entries           -> list of entries for the given year
 js13kgames.com/<year>/entries/<slug>    -> details of the entry for the given year
 js13kgames.com/submit                   -> form to submit a game. This form must be active active only when the compo is running. It needs authentication
+js13kgames.com/admin                    -> admin panel. It needs super user authentication
+js13kgames.com/admin/login              -> admin login interface
+js13kgames.com/admin/submissions        -> list of submissions for the current competition
 ```
 
 ## Tech Stack

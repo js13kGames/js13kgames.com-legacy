@@ -58,7 +58,6 @@ var ensureAuthentication = function(req, res, next) {
 }
 
 //js13kgames.com/jugde                    -> panel to judge games. This panel must be active active only when the compo is running. It needs authentication
-//js13kgames.com/admin                    -> admin panel. It needs super user authentication
 //js13kgames.com/myprofile                -> page where users can see their profiles. It needs authentication
 //js13kgames.com/users/<id>               -> page where everyone can see a user profile with his/her participation through the years.
 //js13kgames.com/winners                  -> list of winners for the current year
