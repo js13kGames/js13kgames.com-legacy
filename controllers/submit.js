@@ -37,6 +37,10 @@ SubmitController.post = function(req, res, next) {
       res.redirect('/submit/invalid_csrf');
       next();
     }
+    // Remove @s from twitter handler
+    if (sForm.twitter.indexOf('@') >= 0) {
+      sForm.twitter.replace('@', '');
+    }
 
     delete sForm.csrf;
     sForm.editionId = config.games.editionId;
