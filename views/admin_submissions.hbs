@@ -1,0 +1,29 @@
+{{!< main }}
+
+<h3>All submissions ({{count}}) for the {{year}} edition.</h3>
+
+{{#gt count 0}}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{#each entries}}
+    <tr>
+      <td>{{title}}</td>
+      <td>{{score}}</td>
+      {{#unless active}}
+      <td>Accept - Reject - Show</td>
+      {{else}}
+      <td>Show</td>
+      {{/unless}}
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+{{/gt}}
