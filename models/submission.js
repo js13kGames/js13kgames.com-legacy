@@ -16,7 +16,7 @@ var Submission = sequelize.define('submission', {
   },
   active: {
     type: Sequelize.BOOLEAN,
-    defaultValue: 1
+    defaultValue: 0
   },
   slug: {
     type: Sequelize.STRING,
