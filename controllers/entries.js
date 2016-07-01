@@ -32,14 +32,15 @@ EntriesController.show = function(req, res) {
     }]
   }).then(function(entry) {
     sequelize.query("SELECT cs.category_id, c.title FROM category_submission cs, categories c WHERE cs.submission_id = ? AND cs.category_id = c.id", {
-        replacements: [entry.id],
-        type: sequelize.QueryTypes.SELECT
-      }).then(function(cats) {
-        entry.categories = cats.map(function(c) {
-          return c.title;
-        }).join(', ');
-        res.render('entry', { entry: entry });
-      });
+      replacements: [entry.id],
+      type: sequelize.QueryTypes.SELECT
+    }).then(function(cats) {
+      entry.categories = cats.map(function(c) {
+        return c.title;
+      }).join(', ');
+      entry.description = entry.description.split("\r\n").filter(function(x) { return x !== "" }).map(function(x) { return "<p>" + x + "</p>" }).reduce(function(x, y) { return x + y });
+      res.render('entry', { entry: entry });
+    });
   });
 };
 
