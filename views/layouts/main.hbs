@@ -75,19 +75,24 @@
       </div>
     </div>
   </header>
-  <main>
+  
+  <main> 
     <div class="container page__content">
     {{{ body }}}
     </div>
   </main>
 
-<footer>
-	<div>
-		&copy; js13kGames 2012-2016.
-		<p>Created and maintained by <a target="_blank" href="http://end3r.com/">Andrzej Mazur</a> from <a target="_blank" href="http://enclavegames.com/">Enclave Games</a>.</p>
-	</div>
-</footer>
-
+  <footer class="footer">
+   <div class="container">
+        <div class="col-xs-12 col-sm-4">
+      <p class="footer__text">&copy; js13kGames 2012-2016. </p>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+       <p class="footer__text footer__text--right">Created and maintained by <a target="_blank" class="footer__link" class= href="http://end3r.com/">Andrzej Mazur</a> from <a target="_blank" class="footer__link" href="http://enclavegames.com/">Enclave Games</a>.</p>
+    </div>
+    </div>
+  </footer>
+  
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33368200-1']);
@@ -100,7 +105,7 @@
 </script>
 <script src="/js/jquery.countdown.min.js" async defer></script>
 <script src="/js/moment-with-locales.min.js" async defer></script>
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
 	$('#nav-toggle').click(function(){
 		$(this).toggleClass('active');

@@ -15,6 +15,7 @@ h2 {
 	font-size: 32px;
 	color: #acabab;
 	text-align: center;
+ 
 }
 
 h2::before {
@@ -27,9 +28,7 @@ h2::after {
 
 @include media(">phone") {
 
-  h2{
-      padding: 40px 0 35px;
-  }
+  
 
   .heading--level1{
     line-height: 45px;

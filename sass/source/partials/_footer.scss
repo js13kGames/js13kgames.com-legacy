@@ -1,0 +1,32 @@
+.footer {
+	background: #2d2d2d url(/img/bg_header.png) repeat;
+	border-bottom: 5px solid #a52730;
+  margin-top: 40px;
+  padding: 50px;
+}
+
+.footer__text {
+  text-align: center;
+	margin: 0 auto;
+	color: #e2e2e2;
+	font-size: 12px;
+}
+
+.footer__link {
+	color: #fff;
+	font-weight: bold;
+}
+
+
+@include media(">phone") {
+
+  .footer__text {
+    text-align: initial;
+  }
+
+  .footer__text--right {
+    position: absolute;
+    right: 0;
+    padding:0;
+  }
+}
