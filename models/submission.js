@@ -16,7 +16,7 @@ var Submission = sequelize.define('submission', {
   },
   active: {
     type: Sequelize.BOOLEAN,
-    defaultValue: 1
+    defaultValue: 0
   },
   slug: {
     type: Sequelize.STRING,
@@ -107,9 +107,12 @@ var Submission = sequelize.define('submission', {
   },
   uri: {
     type: Sequelize.VIRTUAL,
-    get: function() {
+    set: function(val) {
       this.setDataValue('uri', config.app.domain + '/' + path.join(this.edition.slug, 'entries', this.slug));
     },
+    get: function() {
+      return this.getDataValue('uri');
+    }
   }
 }, {
   timestamps: true,

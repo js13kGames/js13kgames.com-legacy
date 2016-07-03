@@ -11,10 +11,13 @@ var EntriesController = {};
 EntriesController.list = function(req, res) {
   var a = Submission.findAll({
     include: [{
-      all: true,
-      nested: true
+      model: Edition,
+      where: {
+        slug: req.params.year
+      }
     }]
   }).then(function(rows) {
+    rows = rows.map(function(x) { x.uri = null; return x })
     res.render('entries', { entries: rows });
   });
 };
