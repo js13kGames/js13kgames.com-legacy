@@ -5,5 +5,14 @@
 
 section{
   border-bottom:1px solid #efefef ;
-  padding-bottom: 50px;
+  padding-bottom: 5px;
+}
+
+section a.up {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	height: 12px;
+	width: 12px;
+	background: url(/img/icon_arrow.png) no-repeat;
 }
