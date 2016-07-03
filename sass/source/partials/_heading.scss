@@ -17,6 +17,14 @@ h2 {
 	text-align: center;
 }
 
+h2::before {
+    content: " • ";
+}
+ 
+h2::after {
+    content: " • ";
+}
+
 @include media(">phone") {
 
   h2{
