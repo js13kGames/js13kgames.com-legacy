@@ -3,14 +3,8 @@
 	margin-bottom: 50px;
 }
 
-/*
-.judge:before {
-	content: "";
-	display: block;
-	height: 1px;
-	background: #f2f2f2;
-}
-*/
+
+
 
 .judge h3 {
 	color: #303030;
@@ -22,17 +16,22 @@
 }
 
 .judge img {
-	border-radius: 150px;
-	border: 7px solid #fff;
-	box-shadow: 2px 2px 3px #ccc;
-	position: absolute;
-	top: -30px;
-	left: -20px;
+    border-radius: 150px;
+    border: 7px solid #fff;
+    box-shadow: 2px 2px 3px #ccc;
+    top: 5px;
+    left: 5px;
+    width: 90px;
 }
 
-.right.judge{
-  text-align: right;
-}
+@include media(">=tablet") {
+.judge img {
+    box-shadow: 2px 2px 3px #ccc;
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 150px;
+  }
 
 .right.judge img {
 	top: -30px;
@@ -40,6 +39,14 @@
 	right: -20px;
 }
  
+
+}
+
+.right.judge{
+  text-align: right;
+}
+
+
 .judgeContact {
 	padding-bottom: 0;
 }
