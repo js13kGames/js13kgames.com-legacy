@@ -44,6 +44,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="js13kGames - HTML5 and JavaScript Game Development Competition in just 13 kilobytes"/>
   <meta property="og:description" content="Js13kGames is a JavaScript coding competition for HTML5 game developers. The fun part of the compo is the file size limit set to 13 kilobytes."/>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="page__header">
@@ -97,8 +98,8 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-
-<script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+<script src="/js/jquery.countdown.min.js" async defer></script>
+<script src="/js/moment-with-locales.min.js" async defer></script>
 <script>
 $(document).ready(function(){
 	$('#nav-toggle').click(function(){

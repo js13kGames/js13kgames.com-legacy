@@ -233,103 +233,7 @@ section p {
 	text-align: center;
 }
 
-.judge {
-	position: relative;
-	margin-bottom: 50px;
-}
 
-.judge:before {
-	content: "";
-	display: block;
-	height: 1px;
-	background: #f2f2f2;
-}
-
-.judge h3 {
-	color: #303030;
-	font-size: 24px;
-	background: url(/img/circle.png) center left no-repeat;
-	padding-left: 30px;
-	margin-bottom: 15px;
-	display: inline-block;
-}
-
-.judge img {
-	border-radius: 150px;
-	border: 7px solid #fff;
-	box-shadow: 2px 2px 3px #ccc;
-	position: absolute;
-	top: -30px;
-	left: -20px;
-}
-
-.right.judge img {
-	top: -30px;
-	left: auto;
-	right: -20px;
-}
-
-.right.judge div {
-	text-align: right;
-}
-
-.judge div {
-	margin: 20px 0 20px 200px;
-	width: 560px;
-}
-
-.judgeContact {
-	padding-bottom: 0;
-}
-
-#prizes {
-	text-align: center;
-}
-
-.prize {
-	width: 310px;
-	display: inline-block;
-	vertical-align: top;
-	margin-bottom: 20px;
-
-}
-
-.specialPrize {
-	background: #f1f0f0;
-	border-radius: 5px;
-}
-
-.prize img {
-	text-align: center;
-	display: block;
-	margin: 0 auto;
-	width: 100px;
-	height: 100px;
-	border-radius: 100px;
-	border: 5px solid #fff;
-	box-shadow: 2px 2px 3px #ccc;
-}
-
-.prize h3 {
-	color: #303030;
-	font-size: 16px;
-	padding-left: 25px;
-	margin: 15px 0 5px;
-	display: inline-block;
-}
-
-.prize h3:before {
-	content: "";
-	display: inline-block;
-	width: 27px;
-	height: 17px;
-	background: url(/img/circle.png) 0 0 no-repeat;
-	margin: 0 0 -2px -27px;
-}
-
-.prize div {
-	padding: 0 15px;
-}
 
 
 #places {
@@ -842,79 +746,8 @@ footer a {
 }
 
 
-#mc_embed_signup {
-	background: url(/img/bg-blue.png);
-	text-align: center;
-	padding-bottom: 0px;
-	margin: 20px 0 30px;
-	border-radius: 10px;
-}
-#mc_embed_signup h3 {
-	font-family: 'Graduate';
-	font-size: 26px;
-	padding: 20px 0 5px;
-	color: #444;
-}
-#mc_embed_signup h3 a {
-	font-weight: normal;
-	color: #444;
-}
-#mc_embed_signup h3 a:hover {
-	text-decoration: none;
-	border-bottom: none;
-	color: #000;
-}
-#mc_embed_signup h4 {
-	font-family: 'Graduate';
-	font-size: 14px;
-	padding: 0 0 10px;
-	color: #444;
-}
-#mce-EMAIL {
-	font-size: 14px;
-	line-height: 20px;
-	color: #999;
-	font-style: italic;
-	width: 270px;
-	border: 1px solid #d6e2ea;
-	padding: 6px 10px 5px;
-	margin: 0 10px 0 30px;
-	border-radius: 5px;
-	float: left;
-}
-#mc-embedded-subscribe {
-	font-family: "Graduate";
-	border: 1px solid #ffbc1d;
-	cursor: pointer;
-	font-size: 18px;
-	line-height: 18px;
-	color: #fff;
-	text-align: center;
-	box-shadow: inset 0 0 0 1px #ffdc1c;
-	background: #ffdb1c;
-	background: -moz-linear-gradient(top, #ffdb1c 0%, #ffbd1c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffdb1c), color-stop(100%,#ffbd1c));
-	background: -webkit-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: -o-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: -ms-linear-gradient(top, #ffdb1c 0%,#ffbd1c 100%);
-	background: linear-gradient(to bottom, #ffdb1c 0%,#ffbd1c 100%);
-	padding: 6px 15px;
-	border-radius: 5px;
-	float: left;
-}
-#mc-embedded-subscribe:hover {
-	background: #ffbd1c;
-	background: -moz-linear-gradient(top, #ffbd1c 0%, #ffdb1c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbd1c), color-stop(100%,#ffdb1c));
-	background: -webkit-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: -o-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: -ms-linear-gradient(top, #ffbd1c 0%,#ffdb1c 100%);
-	background: linear-gradient(to bottom, #ffbd1c 0%,#ffdb1c 100%);
-}
-#hidden-input {
-	visibility: hidden;
-	height: 0px;
-}
+
+
 
 #places h2 {
 	padding-bottom: 10px;
@@ -1070,20 +903,7 @@ img.logo {
 	border: 0;
 	text-decoration: none;
 }
-
-.countdown h3 {
-	padding: 15px 0 15px 30px;
-}
-.countdown h3#start {
-	padding: 14px 0 15px 30px;
-}
-
-.newsletter#mc_embed_signup {
-	width: 500px;
-	margin-left: 20px;
-	margin-bottom: 20px;
-}
-
+ 
 .triska {
 	margin-left: 20px;
 }

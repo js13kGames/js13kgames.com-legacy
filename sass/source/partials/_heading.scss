@@ -11,7 +11,18 @@
   padding-top: 3px;
 }
 
+h2 {
+	font-size: 32px;
+	color: #acabab;
+	text-align: center;
+}
+
 @include media(">phone") {
+
+  h2{
+      padding: 40px 0 35px;
+  }
+
   .heading--level1{
     line-height: 45px;
     font-size: 25px;
@@ -40,11 +51,6 @@
   }
 
 
-h2 {
-	font-size: 32px;
-	color: #acabab;
-	text-align: center;
-	padding: 40px 0 35px;
-}
+
 }
 
