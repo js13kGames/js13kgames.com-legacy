@@ -27,15 +27,13 @@ h2::after {
 }
 
 @include media(">phone") {
-
-  
-
+ 
   .heading--level1{
     line-height: 45px;
-    font-size: 25px;
+    font-size: 18px;
   }
-
-  .heading--level1:before {
+  
+ .heading--level1:before {
     content: "";
     display: block;
     width: 47px;
@@ -56,8 +54,13 @@ h2::after {
     right: -48px;
     background: url(/img/ribbon_big_right.png) no-repeat;
   }
+}
 
+@include media(">tablet") {
 
-
+  .heading--level1{
+    line-height: 45px;
+    font-size: 25px;
+  }
 }
 
