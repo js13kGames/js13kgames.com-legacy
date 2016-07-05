@@ -1,7 +1,14 @@
-img.logo {
+.logo {
 	box-shadow: 2px 2px 3px #ccc;
 	float: left;
 	border-radius: 151px;
 	border: 7px solid #fff;
 	margin: -50px 50px 20px -20px;
+  width:120px;
+}
+
+@include media(">tablet") {
+  .logo {
+    width: initial;
+  }
 }
