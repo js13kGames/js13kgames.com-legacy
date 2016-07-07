@@ -1,35 +1,33 @@
 
 
-#mc_embed_signup {
+.newsletter {
 	background: url(/img/bg-blue.png);
 	text-align: center;
 	border-radius: 10px; 
 }
 
-#mc_embed_signup h3 {
+.newsletter__heading {
 	font-family: 'Graduate';
 	font-size: 26px;
 	padding: 20px 0 0 0;
 	margin: 0;
 	color: #444;
 }
-#mc_embed_signup h3 a {
+
+.newsletter__headinglink {
 	font-weight: normal;
 	color: #444;
 }
-#mc_embed_signup h3 a:hover {
-	text-decoration: none;
-	border-bottom: none;
-	color: #000;
-}
-#mc_embed_signup h4 {
+ 
+.newsletter__subheading {
 	font-family: 'Graduate';
 	font-size: 14px;
 	padding: 0 0 10px;
 	color: #444;
 }
-#mce-EMAIL {
+.newsletter__emailinput {
 	font-size: 14px;
+	display: inline-block;
 	line-height: 20px;
 	color: #999;
 	font-style: italic;
@@ -38,9 +36,9 @@
 	padding: 6px 10px 5px;
 	margin: 0 10px 0 30px;
 	border-radius: 5px;
-	float: left;
 }
-#mc-embedded-subscribe {
+.newsletter__subscribebtn {
+	display: inline-block;
 	font-family: "Graduate";
 	border: 1px solid #ffbc1d;
 	cursor: pointer;
@@ -58,9 +56,9 @@
 	background: linear-gradient(to bottom, #ffdb1c 0%,#ffbd1c 100%);
 	padding: 6px 15px;
 	border-radius: 5px;
-	float: left;
 }
-#mc-embedded-subscribe:hover {
+
+.newsletter__subscribebtn:hover {
 	background: #ffbd1c;
 	background: -moz-linear-gradient(top, #ffbd1c 0%, #ffdb1c 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbd1c), color-stop(100%,#ffdb1c));
@@ -70,7 +68,7 @@
 	background: linear-gradient(to bottom, #ffbd1c 0%,#ffdb1c 100%);
 }
 
-#hidden-input {
+.newsletter__hiddeninput {
 	visibility: hidden;
 	height: 0px;
 }
