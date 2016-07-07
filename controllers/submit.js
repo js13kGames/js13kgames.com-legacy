@@ -54,16 +54,19 @@ SubmitController.post = function(req, res, next) {
     .catch(function(err) {
       req.session.submitForm = sForm;
       if (err.errors.length > 0) {
-        req.session.submitForm.errors = {};
+        req.session.submitForm.errors = [];
         err.errors.forEach(function(e) {
-          req.session.submitForm.errors[e.path] = e.message;
+          req.session.submitForm.errors.push({
+            'field': e.path,
+            'message': e.message
+          });
         });
       }
+      console.log('err submit', req.session.submitForm);
       res.redirect('/submit');
     });
   });
 };
-
 
 SubmitController.invalid = function(req, res, next) {
   res.render('submit_invalid');

@@ -3,7 +3,12 @@
   <h2>Submit Form</h2>
 
   {{#if form.errors}}
-  <h3 class="error">There are some errors below that you need to fix to proceed with your submission:</h3>
+  <p class="error">There are some errors below that you need to fix to proceed with your submission:</p>
+  <ul>
+    {{#each form.errors}}
+    <li><strong>{{field}}</strong>: {{message}}</li>
+    {{/each}}
+  </ul>
   {{/if}}
   <article class="form">
     <h3>Read the <a href="/#rules">Rules</a> first before submitting your game!</h3>
