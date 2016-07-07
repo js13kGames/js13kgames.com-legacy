@@ -57,4 +57,52 @@ AdminController.submissions = function(req, res) {
   });
 };
 
+AdminController.accept = function(req, res, next) {
+  var a = Submission.find({
+    where: {
+      id: req.params.id,
+      active: 0
+    }
+  }).then(function(result) {
+    if (result) {
+      result.active = 1;
+      result
+      .save()
+      .then(function(result) {
+        // TODO: send emails
+        res.json({ status: 'ok' });
+      });
+    } else {
+      res.status(404).send(messages.error.submissionNotFoundOrAccepted);
+    }
+  })
+  .catch(function(err) {
+    res.status(500).send(err);
+  });
+};
+
+AdminController.reject = function(req, res, next) {
+  var a = Submission.find({
+    where: {
+      id: req.params.id,
+      active: 0
+    }
+  }).then(function(result) {
+    if (result) {
+      result
+      .destroy({ force: true })
+      .then(function(result) {
+        // TODO: send emails
+        res.json({ status: 'ok' });
+      });
+    } else {
+      res.status(404).send(messages.error.submissionNotFoundOrRejected);
+    }
+  })
+  .catch(function(err) {
+    console.log('err', err);
+    res.status(500).send(err);
+  });
+};
+
 module.exports = AdminController;

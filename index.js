@@ -12,6 +12,8 @@ var entriesController = require('./controllers/entries');
 var submitController = require('./controllers/submit');
 var adminController = require('./controllers/admin');
 
+var config = require('./config');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var app = express();
@@ -57,6 +59,14 @@ var ensureAuthentication = function(req, res, next) {
   }
 }
 
+var ensureAdminLevel = function(req, res, next) {
+  if (req.session.user.level < config.admin.minLevel) {
+    res.status(401).send('Admin level required');
+  } else {
+    next();
+  }
+}
+
 //js13kgames.com/jugde                    -> panel to judge games. This panel must be active active only when the compo is running. It needs authentication
 //js13kgames.com/myprofile                -> page where users can see their profiles. It needs authentication
 //js13kgames.com/users/<id>               -> page where everyone can see a user profile with his/her participation through the years.
@@ -72,6 +82,8 @@ app.get('/admin', ensureAuthentication, adminController.panel);
 app.get('/admin/login', csrfProtection, adminController.form);
 app.post('/admin/login', urlencodedParser, adminController.login);
 app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController.submissions);
+app.put('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.accept);
+app.delete('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.reject);
 
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);

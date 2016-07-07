@@ -14,16 +14,60 @@
 
   <tbody>
   {{#each entries}}
-    <tr>
+  <tr class="submission-{{id}}">
       <td>{{title}}</td>
       <td>{{score}}</td>
-      {{#unless active}}
-      <td>Accept - Reject - Show</td>
-      {{else}}
-      <td>Show</td>
-      {{/unless}}
+      <td>
+        {{#unless active}}
+        <a data-id="{{id}}" data-title="{{title}}" class="submission-action accept">Accept</a>
+        <a data-id="{{id}}" data-title="{{title}}" class="submission-action reject">Reject</a>
+        {{/unless}}
+        <a>Show
+      </td>
     </tr>
   {{/each}}
   </tbody>
 </table>
 {{/gt}}
+
+{{#contentFor "pageScripts"}}
+$('a.submission-action.accept').on('click', function(ev) {
+  ev.preventDefault();
+  var id = $(this).attr('data-id');
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'put'
+  })
+  .done(function(data) {
+    hideSubmissionControls(id);
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+});
+
+$('a.submission-action.reject').on('click', function(ev) {
+  ev.preventDefault();
+  var cont = confirm('Are you sure you want to reject the entry "' + $(this).attr('data-title') + '"?');
+  if (!cont) return;
+
+  var id = $(this).attr('data-id');
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'delete'
+  })
+  .done(function(data) {
+    removeSubmission(id);
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+});
+
+function hideSubmissionControls(id) {
+  $('a.submission-action[data-id="' + id + '"]').hide();
+}
+function removeSubmission(id) {
+  $('.submission-' + id).remove();
+}
+{{/contentFor}}
