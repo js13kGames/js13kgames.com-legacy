@@ -120,10 +120,12 @@ var Submission = sequelize.define('submission', {
   updatedAt: 'updated_at',
   validate: {
     screenshots: function() {
+      if (!this.isNewRecord) return true;
       isImageValid(this.smallScreenshot);
       isImageValid(this.bigScreenshot);
     },
     zip: function() {
+      if (!this.isNewRecord) return true;
       if (this.fileZip.headers['content-type'] !== 'application/zip') {
         throw new Error(messages.error.invalidZipFormat);
       }
@@ -132,9 +134,17 @@ var Submission = sequelize.define('submission', {
       }
     },
     files: function() {
-      var stat = fs.statSync(this.getStoragePath());
-      if (stat.isDirectory()) {
-        throw new Error(messages.error.gameAlreadyExists);
+      if (!this.isNewRecord) return true;
+      // if the directory doesn't exist everything is OK
+      try {
+        var stat = fs.statSync(this.getStoragePath());
+        if (stat.isDirectory()) {
+          throw new Error(messages.error.gameAlreadyExists);
+        }
+      } catch(err) {
+        if (err.errno !== -2 && err.code !== 'ENOENT') {
+          throw new Error(err);
+        }
       }
     }
   },
