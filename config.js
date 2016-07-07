@@ -17,6 +17,9 @@ var config = {
   },
   images: {
     maxSize: 102400 // 100kb
+  },
+  admin: {
+    minLevel: 10
   }
 };
 
