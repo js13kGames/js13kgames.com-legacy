@@ -105,4 +105,20 @@ AdminController.reject = function(req, res, next) {
   });
 };
 
+AdminController.show = function(req, res) {
+  var a = Submission.find({
+    where: {
+      id: req.params.id,
+      active: 1
+    }
+  }).then(function(result) {
+    res.render('admin_show', { entry: result });
+  })
+  .catch(function(err) {
+    console.log('err', err);
+    // FIXME: Show a graceful error
+    res.status(500).send(err);
+  });
+};
+
 module.exports = AdminController;

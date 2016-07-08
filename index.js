@@ -83,6 +83,7 @@ app.get('/admin/login', csrfProtection, adminController.form);
 app.post('/admin/login', urlencodedParser, adminController.login);
 app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController.submissions);
 app.put('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.accept);
+app.get('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.show);
 app.delete('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.reject);
 
 app.get('/:year', defaultYear, homeController);

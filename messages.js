@@ -6,6 +6,7 @@ var messages = {
     invalidImageFormat: 'Invalid format for image. Use jpeg, gif or png.',
     invalidImageSize: 'Images can not exceed 100kb.',
     gameAlreadyExists: 'A game with that name was already registered.',
+    submissionNotFound: 'Submission not found.',
     submissionNotFoundOrAccepted: 'Submission not found or already accepted.',
     submissionNotFoundOrRejected: 'Submission not found or already rejected.'
 
