@@ -1,6 +1,7 @@
 var User = require('../models/user');
 var Edition = require('../models/edition');
 var Submission = require('../models/submission');
+var Criterion = require('../models/criterion');
 
 var AdminController = {};
 
@@ -106,13 +107,28 @@ AdminController.reject = function(req, res, next) {
 };
 
 AdminController.show = function(req, res) {
-  var a = Submission.find({
-    where: {
-      id: req.params.id,
-      active: 1
-    }
-  }).then(function(result) {
-    res.render('admin_show', { entry: result });
+  var result = Promise.all([
+    Submission.find({
+      where: {
+        id: req.params.id,
+        active: 1
+      }
+    }),
+    Criterion.findAll({
+      where: {
+        active: 1
+      }
+    })
+  ]).then(function(results) {
+    res.render('admin_show', {
+      entry: results[0],
+      criteria: results[1].map(function(x) {
+        return {
+          obj: x,
+          scores: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+      })
+    });
   })
   .catch(function(err) {
     console.log('err', err);
@@ -120,5 +136,7 @@ AdminController.show = function(req, res) {
     res.status(500).send(err);
   });
 };
+
+AdminController.vote = function(req, res, next) {
 
 module.exports = AdminController;

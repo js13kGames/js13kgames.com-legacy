@@ -1,0 +1,6 @@
+<div>
+<label>{{obj.title}}</label>
+{{#each scores}}
+  <label>{{this}}</label><input type="radio" value="{{this}}" name="{{../obj.slug}}-{{../obj.id}}" title="{{this}}" {{#eq this 5}}checked{{/eq}} style="margin-right: 20px;"/>
+{{/each}}
+</div>
