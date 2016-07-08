@@ -4,15 +4,29 @@ The source of the js13kgames.com website.
 
 ## Installation
 
-Ensure [Node JS](https://nodejs.org/en/) is installed, go to the project folder and execute on a shell:
+1. Ensure [Node JS](https://nodejs.org/en/) is installed, go to the project folder and execute on a shell:
 
 ```
 npm install
 ```
 
+2. Copy the .sqlite database in the root folder of the project
+
+3. Edit the migrations table (just one) in the .sqlite file:
+
+```
+ALTER TABLE migrations ADD COLUMN name varchar;
+```
+
 ## Running
 
-After installing, execute:
+After installing, run all the migrations executing:
+
+```
+./node_modules/.bin/sequelize db:migrate
+```
+
+Then start the app with:
 
 ```
 npm start

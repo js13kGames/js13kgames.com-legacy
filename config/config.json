@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": null,
+    "password": null,
+    "database": "main",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "production.sqlite",
+    "migrationStorageTableName": "sequelize_migrations"
+  },
+  "test": {
+    "username": null,
+    "password": null,
+    "database": "main",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "test.sqlite",
+    "migrationStorageTableName": "sequelize_migrations"
+  },
+  "production": {
+    "username": null,
+    "password": null,
+    "database": "main",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "production.sqlite",
+    "migrationStorageTableName": "sequelize_migrations"
+  }
+}
