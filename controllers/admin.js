@@ -2,6 +2,7 @@ var User = require('../models/user');
 var Edition = require('../models/edition');
 var Submission = require('../models/submission');
 var Criterion = require('../models/criterion');
+var CriterionEdition = require('../models/criterion_edition');
 
 var AdminController = {};
 
@@ -114,10 +115,15 @@ AdminController.show = function(req, res) {
         active: 1
       }
     }),
-    Criterion.findAll({
-      where: {
-        active: 1
-      }
+    CriterionEdition.findAll({
+      include: [{
+        model: Edition,
+        where: {
+          id: 4
+        }
+      }, {
+        model: Criterion
+      }]
     })
   ]).then(function(results) {
     res.render('admin_show', {
@@ -138,5 +144,6 @@ AdminController.show = function(req, res) {
 };
 
 AdminController.vote = function(req, res, next) {
+};
 
 module.exports = AdminController;
