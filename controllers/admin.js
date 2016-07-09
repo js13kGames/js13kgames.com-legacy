@@ -129,9 +129,12 @@ AdminController.show = function(req, res) {
     res.render('admin_show', {
       entry: results[0],
       criteria: results[1].map(function(x) {
+        var scores = [];
+        for (var i=0; i<=x.score; i++) scores.push(i);
+
         return {
           obj: x,
-          scores: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          scores: scores
         }
       })
     });
