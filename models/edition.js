@@ -8,7 +8,8 @@ var Edition = sequelize.define('edition', {
     primaryKey: true
   },
   title: Sequelize.STRING,
-  slug: Sequelize.STRING
+  slug: Sequelize.STRING,
+  theme: Sequelize.STRING
 }, {
   timestamps: false
 });
