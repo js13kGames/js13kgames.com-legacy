@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var Vote = require('../models/vote');
 var Edition = require('../models/edition');
 var Submission = require('../models/submission');
 var Criterion = require('../models/criterion');
@@ -127,6 +128,7 @@ AdminController.show = function(req, res) {
     })
   ]).then(function(results) {
     res.render('admin_show', {
+      user: req.session.user,
       entry: results[0],
       criteria: results[1].map(function(x) {
         var scores = [];
@@ -147,6 +149,37 @@ AdminController.show = function(req, res) {
 };
 
 AdminController.vote = function(req, res, next) {
+  //Vote
+  console.log('req', req.body);
+
+  var criterion = [];
+  Object.keys(req.body).forEach(function(x) {
+    if (x.indexOf('criterion') >= 0) {
+      var parts = x.split('-');
+      criterion.push({
+        id: parts[parts.length - 1],
+        score: req.body[x]
+      });
+    }
+  });
+
+  Vote.findOrInitialize({
+    where: {
+      user_id: req.body.user_id,
+      submission_id: req.body.submission_id,
+      criterion_edition_id: criterion[0].id
+    }
+  })
+  .spread(function(vote, created) {
+    return vote;
+  })
+  .then(function(vote) {
+    vote.value = criterion[0].score;
+    return vote.save();
+  })
+  .then(function(vote) {
+    res.json({status: 'ok'});
+  });
 };
 
 module.exports = AdminController;

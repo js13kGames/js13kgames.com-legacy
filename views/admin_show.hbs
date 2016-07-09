@@ -16,10 +16,12 @@
 
 <h3>Cast your vote</h3>
 <form id="voting-widgets">
-{{#each criteria}}
-  {{> criterion}}
-{{/each}}
-<button id="vote" class="btn-primary">Vote</button>
+  <input type="hidden" name="submission_id" value="{{entry.id}}" />
+  <input type="hidden" name="user_id" value="{{user.id}}" />
+  {{#each criteria}}
+    {{> criterion}}
+  {{/each}}
+  <button id="vote" class="btn-primary">Vote</button>
 </form>
 <div id="voting-results">
 </div>
@@ -28,8 +30,17 @@
 {{#contentFor "pageScripts"}}
 $('#vote').on('click', function(ev) {
   ev.preventDefault();
+  var id = $('input[name="id"]').val();
   $('#voting-widgets').hide();
-  console.log($('#voting-widgets').serialize());
+  $.ajax({
+    url: '/admin/submissions/' + id + '/vote',
+    method: 'post',
+    data: $('#voting-widgets').serialize()
+  }).done(function(result) {
+    console.log('status', result);
+  }).fail(function(err) {
+    alert(err);
+  });
   $('#voting-results').html('voto listo');
 });
 {{/contentFor}}

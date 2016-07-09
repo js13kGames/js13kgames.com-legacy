@@ -85,7 +85,7 @@ app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController
 app.put('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.accept);
 app.get('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.show);
 app.delete('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.reject);
-app.post('/admin/submissions/:id/vote', ensureAuthentication, ensureAdminLevel, adminController.vote);
+app.post('/admin/submissions/:id/vote', ensureAuthentication, ensureAdminLevel, urlencodedParser, adminController.vote);
 
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);
