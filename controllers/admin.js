@@ -149,36 +149,44 @@ AdminController.show = function(req, res) {
 };
 
 AdminController.vote = function(req, res, next) {
-  //Vote
-  console.log('req', req.body);
+  var criteria = getCriteriaData(req.body);
 
-  var criterion = [];
-  Object.keys(req.body).forEach(function(x) {
+  Promise.all(criteria.map(function(c) {
+    return castVote(req, c);
+  }))
+  .then(function(votes) {
+    res.json({status: 'ok'});
+  });
+};
+
+var getCriteriaData = function(body) {
+  return Object.keys(body).map(function(x) {
     if (x.indexOf('criterion') >= 0) {
       var parts = x.split('-');
-      criterion.push({
+      return {
         id: parts[parts.length - 1],
-        score: req.body[x]
-      });
+        score: body[x]
+      };
     }
+  }).filter(function(x) {
+    return x !== undefined;
   });
+};
 
-  Vote.findOrInitialize({
+var castVote = function(req, criterion) {
+  return Vote.findOrInitialize({
     where: {
       user_id: req.body.user_id,
       submission_id: req.body.submission_id,
-      criterion_edition_id: criterion[0].id
+      criterion_edition_id: criterion.id
     }
   })
   .spread(function(vote, created) {
     return vote;
   })
   .then(function(vote) {
-    vote.value = criterion[0].score;
+    vote.value = criterion.score;
     return vote.save();
-  })
-  .then(function(vote) {
-    res.json({status: 'ok'});
   });
 };
 
