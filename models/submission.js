@@ -93,6 +93,9 @@ var Submission = sequelize.define('submission', {
     type: Sequelize.INTEGER,
     validate: { isInt: true }
   },
+  file_size: {
+    type: Sequelize.INTEGER,
+  },
   fileZip: {
     type: Sequelize.VIRTUAL,
     allowNull: false
@@ -132,6 +135,7 @@ var Submission = sequelize.define('submission', {
       if (this.fileZip.size > config.games.maxSize) {
         throw new Error(messages.error.invalidZipSize);
       }
+      this.file_size = this.fileZip.size;
     },
     files: function() {
       if (!this.isNewRecord) return true;
