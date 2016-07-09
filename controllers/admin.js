@@ -119,7 +119,7 @@ AdminController.show = function(req, res) {
       include: [{
         model: Edition,
         where: {
-          id: 4
+          active: true
         }
       }, {
         model: Criterion
