@@ -18,7 +18,8 @@ EntriesController.list = function(req, res) {
     }]
   }).then(function(rows) {
     rows = rows.map(function(x) { x.uri = null; return x })
-    res.render('entries', { entries: rows });
+    //todo add category to the title
+    res.render('entries', { entries: rows , title: req.params.year + " Entries | js13kGames"  });
   });
 };
 
@@ -42,7 +43,7 @@ EntriesController.show = function(req, res) {
         return c.title;
       }).join(', ');
       entry.description = entry.description.split("\r\n").filter(function(x) { return x !== "" }).map(function(x) { return "<p>" + x + "</p>" }).reduce(function(x, y) { return x + y });
-      res.render('entry', { entry: entry });
+      res.render('entry', { entry: entry, title: entry.title + " | js13kGames" });
     });
   });
 };
