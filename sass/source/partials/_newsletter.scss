@@ -3,7 +3,8 @@
 .newsletter {
 	background: url(/img/bg-blue.png);
 	text-align: center;
-	border-radius: 10px; 
+	border-radius: 10px;
+	margin-bottom: 40px;
 }
 
 .newsletter__heading {
@@ -31,10 +32,9 @@
 	line-height: 20px;
 	color: #999;
 	font-style: italic;
-	width: 270px;
 	border: 1px solid #d6e2ea;
 	padding: 6px 10px 5px;
-	margin: 0 10px 0 30px;
+	margin-bottom:20px;
 	border-radius: 5px;
 }
 .newsletter__subscribebtn {
