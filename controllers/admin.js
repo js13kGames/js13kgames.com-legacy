@@ -1,5 +1,6 @@
 var User = require('../models/user');
 var Vote = require('../models/vote');
+var Comment = require('../models/comment');
 var Edition = require('../models/edition');
 var Submission = require('../models/submission');
 var Criterion = require('../models/criterion');
@@ -125,11 +126,18 @@ AdminController.show = function(req, res) {
       }, {
         model: Criterion
       }]
+    }),
+    Comment.findAll({
+      where: {
+        user_id: req.session.user.id,
+        submission_id: req.params.id
+      }
     })
   ]).then(function(results) {
     res.render('admin_show', {
       user: req.session.user,
       entry: results[0],
+      comments: results[2],
       criteria: results[1].map(function(x) {
         var scores = [];
         for (var i=0; i<=x.score; i++) scores.push(i);
@@ -157,6 +165,9 @@ AdminController.vote = function(req, res, next) {
   .then(function(votes) {
     res.json({status: 'ok'});
   });
+};
+
+AdminController.comment = function(req, res, next) {
 };
 
 var getCriteriaData = function(body) {

@@ -23,10 +23,23 @@
   {{#each criteria}}
     {{> criterion}}
   {{/each}}
-  <button id="vote" class="btn-primary">Vote</button>
+  <div style="margin-top: 20px">Comments:</div>
+  <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
+  <div>
+    <button id="vote" class="btn-primary">Vote</button>
+  </div>
 </form>
 <div id="voting-results">
 </div>
+
+{{#if comments}}
+<h3>Comments</h3>
+<ul>
+{{#each comments}}
+<li>{{created_at}}: {{text}}</li>
+{{/each}}
+</ul>
+{{/if}}
 {{/unless}}
 
 {{#contentFor "pageScripts"}}
