@@ -1,36 +1,46 @@
 {{!< main }}
 <div class="content">
   <article class="single-entry">
-    <img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" />
-    <div class="info">
+    <div class="row">
       <h2>{{entry.title}}</h2>
-      <h3>{{entry.author}}</h3>
-      <h3>File size: {{entry.file_size}}</h3>
-      <ul style="max-width: 460px;">
-        {{#if entry.twitter}}
-        <li class="twitter"><a href="http://twitter.com/{{entry.twitter}}">@{{entry.twitter}}</a></li>
-        {{/if}}
-        {{#if entry.websiteUrl}}
-        <li class="website"><a href="{{entry.websiteUrl}}">{{entry.websiteUrl}}</a></li>
-        {{/if}}
-        {{#if entry.githubUrl}}
-        <li class="github"><a href="{{entry.githubUrl}}">{{entry.githubUrl}}</a></li>
-        {{/if}}
-      </ul>
-      <p class="social">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{entry.uri}}/" data-text="Check out {{entry.title}} - 13kb entry by {{#if entry.twitter}}@{{entry.twitter}}{{else}}{{entry.author}}{{/if}} for the @js13kGames compo!" data-count="horizontal">Tweet</a>
-        <iframe src="http://www.facebook.com/plugins/like.php?href={{entry.uri}}/&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
-        <g:plusone size="medium" href="{{entry.uri}}/"></g:plusone>
-      </p>
-      <!-- if server -->
-      <!-- a href="{$entry->server_url }" target="_blank" class="launch">Play the game</a -->
-      <!-- else -->
-      <a href="/games/{{entry.slug}}/index.html" target="_blank" class="launch">Play the game</a>
+      <div class="col-md-6 col-xs-12 single-entry__image-container">
+        <img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" />
+      </div>
+        <div class="info col-md-6 col-xs-12">
+          <h3>{{entry.author}}</h3>
+            {{#if entry.file_size}}
+          <h3>File size: {{entry.file_size}}</h3>
+            {{/if}}
+          <ul class="single-entry__socialmedia">
+            {{#if entry.twitter}}
+            <li class="single-entry__twitter"><a href="http://twitter.com/{{entry.twitter}}">@{{entry.twitter}}</a></li>
+            {{/if}}
+            {{#if entry.websiteUrl}}
+            <li class="single-entry__website"><a href="{{entry.websiteUrl}}">{{entry.websiteUrl}}</a></li>
+            {{/if}}
+            {{#if entry.githubUrl}}
+            <li class="single-entry__github"><a href="{{entry.githubUrl}}">{{entry.githubUrl}}</a></li>
+            {{/if}}
+          </ul>
+          <p class="single-entry__socialshare">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{entry.uri}}/" data-text="Check out {{entry.title}} - 13kb entry by {{#if entry.twitter}}@{{entry.twitter}}{{else}}{{entry.author}}{{/if}} for the @js13kGames compo!" data-count="horizontal">Tweet</a>
+              <iframe src="http://www.facebook.com/plugins/like.php?href={{entry.uri}}/&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
+              <g:plusone size="medium" href="{{entry.uri}}/"></g:plusone>
+          </p>
+            <div class="section--center">
+          <!-- if server -->
+          <!-- a href="{$entry->server_url }" target="_blank" class="launch">Play the game</a -->
+          <!-- else -->
+                <a href="/games/{{entry.slug}}/index.html" target="_blank" class="single-entry__launch">Play the game</a>
+            </div>
+        </div>
     </div>
-    <div class="description">
-      <p>{{{entry.description}}}</p>
-      <strong>Categories: {{entry.categories}}</strong>
+    <div class="row">
+      <div class="description col-xs-12">
+        <p>{{{entry.description}}}</p>
+        <strong>Categories: {{entry.categories}}</strong>
+        <a class="back" href='/entries'>back</a>
+      </div>
     </div>
-    <a class="back" href='/entries'>back</a>
   </article>
 </div>
