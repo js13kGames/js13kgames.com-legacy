@@ -1,8 +1,30 @@
 {{!< main }}
-<h1>Entries</h1>
 
-<ul>
-{{#each entries}}
-<li><a href="{{uri}}">{{title}}</a> ({{file_size}}KB) – {{description}}</li>
-{{/each}}
+<h2>Entries ({{entries.length}} in total)</h2>
+
+ 
+<ul class="editions">
+    <li><a href="/entries/2012">2012</a></li>
+    <li><a href="/entries/2013">2013</a></li>
+    <li><a href="/entries/2014">2014</a></li>
+    <li><a href="/entries/2015">2015</a></li>
 </ul>
+
+<ul class="editions">
+    <li><a href="/entries/2015/8">Desktop</a></li>
+    <li><a href="/entries/2015/9">Mobile</a></li>
+    <li><a href="/entries/2015/10">Server</a></li>
+	</ul>
+
+<section id="entries" class="row">
+{{#each entries}}
+<article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 entry">
+			<a href="{{uri}}">
+				<img src="/games/{{slug}}/__small.jpg" alt="{{title}}">
+				<h3>{{title}}</h3>
+				<span>{{author}}</span>
+			</a>
+ </article>
+{{/each}}
+</div>
+
