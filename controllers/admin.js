@@ -159,15 +159,21 @@ AdminController.show = function(req, res) {
 AdminController.vote = function(req, res, next) {
   var criteria = getCriteriaData(req.body);
 
-  Promise.all(criteria.map(function(c) {
+  var requests = criteria.map(function(c) {
     return castVote(req, c);
-  }))
+  });
+  if (req.body.comment && req.body.comment !== '') {
+    requests.push(Comment.create({
+      text: req.body.comment,
+      user_id: req.session.user.id,
+      submission_id: req.body.submission_id
+    }));
+  }
+
+  Promise.all(requests)
   .then(function(votes) {
     res.json({status: 'ok'});
   });
-};
-
-AdminController.comment = function(req, res, next) {
 };
 
 var getCriteriaData = function(body) {
