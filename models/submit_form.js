@@ -22,7 +22,7 @@ SubmitForm.prototype.constructor = SubmitForm;
 
 var stringToSlug = function(value) {
   value = value.toLowerCase();
-  value = value.replace(' ', '_');
+  value = value.replace(' ', '-');
   return value;
 };
 
