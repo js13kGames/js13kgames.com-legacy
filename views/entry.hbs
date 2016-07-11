@@ -42,5 +42,14 @@
         <a class="back" href='/entries'>back</a>
       </div>
     </div>
+
+    {{#if comments}}
+    <h3>Comments</h3>
+    <ul>
+    {{#each comments}}
+    <li>By {{user.name}} {{user.surname}}: {{text}}</li>
+    {{/each}}
+    </ul>
+    {{/if}}
   </article>
 </div>

@@ -7,6 +7,7 @@ var config = {
     }
   },
   app: {
+    name: "js13kgames",
     //domain: 'http://js13kgames.com'
     domain: 'http://localhost:3000'
   },
