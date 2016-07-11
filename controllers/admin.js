@@ -171,8 +171,12 @@ AdminController.vote = function(req, res, next) {
   }
 
   Promise.all(requests)
-  .then(function(votes) {
-    res.json({status: 'ok'});
+  .then(function(results) {
+    var score = 0;
+    results.forEach(function(v) {
+      if (v.value) score += v.value;
+    });
+    res.json({ status: 'ok', score: score });
   });
 };
 
@@ -191,18 +195,29 @@ var getCriteriaData = function(body) {
 };
 
 var castVote = function(req, criterion) {
-  return Vote.findOrInitialize({
+  var multiplier = 1;
+
+  return CriterionEdition.find({
     where: {
-      user_id: req.body.user_id,
-      submission_id: req.body.submission_id,
-      criterion_edition_id: criterion.id
+      id: criterion.id
     }
+  })
+  .then(function(c) {
+    multiplier = c.multiplier;
+
+    return Vote.findOrInitialize({
+      where: {
+        user_id: req.body.user_id,
+        submission_id: req.body.submission_id,
+        criterion_edition_id: criterion.id
+      }
+    })
   })
   .spread(function(vote, created) {
     return vote;
   })
   .then(function(vote) {
-    vote.value = criterion.score;
+    vote.value = criterion.score * multiplier;
     return vote.save();
   });
 };

@@ -24,7 +24,8 @@ var CriterionEdition = sequelize.define('criterion_editions', {
       key: 'id'
     }
   },
-  score: Sequelize.INTEGER
+  score: Sequelize.INTEGER,
+  multiplier: Sequelize.INTEGER
 }, {
   timestamps: false,
   underscored: true
