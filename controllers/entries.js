@@ -7,6 +7,8 @@ var Edition = require('../models/edition');
 var Category = require('../models/category');
 var Comment = require('../models/comment');
 var User = require('../models/user');
+var Vote = require('../models/vote');
+var CriterionEdition = require('../models/criterion_edition');
 
 var EntriesController = {};
 
@@ -51,15 +53,21 @@ EntriesController.show = function(req, res) {
     sequelize.query("SELECT cs.category_id, c.title FROM category_submission cs, categories c, submissions s WHERE cs.submission_id = s.id AND cs.category_id = c.id AND s.slug = ?", {
       replacements: [req.params.slug],
       type: sequelize.QueryTypes.SELECT
+    }),
+    sequelize.query("SELECT v.id, v.user_id, u.name, u.surname, SUM(v.value) as score FROM votes AS v  INNER JOIN submissions AS s ON v.submission_id = s.id LEFT OUTER JOIN users AS u ON v.user_id = u.id WHERE s.slug = ? GROUP BY v.user_id ORDER BY score DESC", {
+      replacements: [req.params.slug],
+      type: sequelize.QueryTypes.SELECT
     })
   ]).then(function(results) {
     var entry = results[0];
     var title = entry.title + " | " + config.app.name;
+
     entry.categories = results[2].map(function(c) {
       return c.title;
     }).join(', ');
     entry.description = entry.description.split("\r\n").filter(function(x) { return x !== "" }).map(function(x) { return "<p>" + x + "</p>" }).reduce(function(x, y) { return x + y });
-    res.render('entry', { entry: entry, comments: results[1], title: title });
+
+    res.render('entry', { entry: entry, comments: results[1], title: title, votes: results[3] });
   });
 };
 
