@@ -12,7 +12,15 @@ var Category = sequelize.define('category', {
   title: Sequelize.STRING,
 }, {
   timestamps: false,
-  underscored: true
+  underscored: true,
+  classMethods: {
+    getBySubmission: function(submissionSlug) {
+      return sequelize.query("SELECT cs.category_id, c.title FROM category_submission cs, categories c, submissions s WHERE cs.submission_id = s.id AND cs.category_id = c.id AND s.slug = ?", {
+        replacements: [submissionSlug],
+        type: sequelize.QueryTypes.SELECT
+      })
+    }
+  }
 });
 
 Category.belongsTo(Edition);

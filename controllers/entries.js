@@ -50,11 +50,8 @@ EntriesController.show = function(req, res) {
         model: User
       }]
     }),
-    sequelize.query("SELECT cs.category_id, c.title FROM category_submission cs, categories c, submissions s WHERE cs.submission_id = s.id AND cs.category_id = c.id AND s.slug = ?", {
-      replacements: [req.params.slug],
-      type: sequelize.QueryTypes.SELECT
-    }),
-    Vote.getVotesByUser(req.params.slug)
+    Category.getBySubmission(req.params.slug),
+    Vote.getByUser(req.params.slug)
   ]).then(function(results) {
     var entry = results[0];
     var title = entry.title + " | " + config.app.name;
