@@ -132,6 +132,15 @@ AdminController.show = function(req, res) {
         user_id: req.session.user.id,
         submission_id: req.params.id
       }
+    }),
+    Vote.findAll({
+      where: {
+        user_id: req.session.user.id,
+        submission_id: req.params.id
+      },
+      include: [{
+        model: CriterionEdition
+      }]
     })
   ]).then(function(results) {
     res.render('admin_show', {
@@ -139,12 +148,15 @@ AdminController.show = function(req, res) {
       entry: results[0],
       comments: results[2],
       criteria: results[1].map(function(x) {
+        var item = results[3].find(function(z) { return z.criterion_edition_id === x.id });
+        var current = (item) ? item.value / item.criterion_edition.multiplier : 5;
         var scores = [];
         for (var i=0; i<=x.score; i++) scores.push(i);
 
         return {
           obj: x,
-          scores: scores
+          scores: scores,
+          default: current
         }
       })
     });
