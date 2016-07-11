@@ -35,7 +35,15 @@ var Vote = sequelize.define('votes', {
   value: Sequelize.INTEGER
 }, {
   timestamps: true,
-  underscored: true
+  underscored: true,
+  classMethods: {
+    getVotesByUser: function(submissionSlug) {
+      return sequelize.query("SELECT v.id, v.user_id, u.name, u.surname, SUM(v.value) as score FROM votes AS v  INNER JOIN submissions AS s ON v.submission_id = s.id LEFT OUTER JOIN users AS u ON v.user_id = u.id WHERE s.slug = ? GROUP BY v.user_id ORDER BY score DESC", {
+        replacements: [submissionSlug],
+        type: sequelize.QueryTypes.SELECT
+      })
+    }
+  }
 });
 
 Vote.belongsTo(User);

@@ -54,10 +54,7 @@ EntriesController.show = function(req, res) {
       replacements: [req.params.slug],
       type: sequelize.QueryTypes.SELECT
     }),
-    sequelize.query("SELECT v.id, v.user_id, u.name, u.surname, SUM(v.value) as score FROM votes AS v  INNER JOIN submissions AS s ON v.submission_id = s.id LEFT OUTER JOIN users AS u ON v.user_id = u.id WHERE s.slug = ? GROUP BY v.user_id ORDER BY score DESC", {
-      replacements: [req.params.slug],
-      type: sequelize.QueryTypes.SELECT
-    })
+    Vote.getVotesByUser(req.params.slug)
   ]).then(function(results) {
     var entry = results[0];
     var title = entry.title + " | " + config.app.name;
