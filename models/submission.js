@@ -177,8 +177,18 @@ var Submission = sequelize.define('submission', {
         dstPath: this.getFilePath(this.bigScreenshot, '__big.jpg'),
         width: 400
       });
+    },
+    recalculateAvgScore: function() {
+      sequelize.query("SELECT SUM(score)/COUNT(*) as avg_score FROM (SELECT v.id, v.user_id, u.name, u.surname, SUM(v.value) as score FROM votes AS v  INNER JOIN submissions AS s ON v.submission_id = s.id LEFT OUTER JOIN users AS u ON v.user_id = u.id WHERE s.id = ? GROUP BY v.user_id ORDER BY score DESC)", {
+        replacements: [this.id],
+        type: sequelize.QueryTypes.SELECT
+      })
+      .then(function(avg) {
+        this.score = avg[0].avg_score;
+        return this.save();
+      }.bind(this))
     }
-  }
+  },
 });
 
 Submission.belongsTo(Edition);

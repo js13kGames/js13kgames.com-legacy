@@ -188,7 +188,20 @@ AdminController.vote = function(req, res, next) {
     results.forEach(function(v) {
       if (v.value) score += v.value;
     });
-    res.json({ status: 'ok', score: score });
+    return score;
+  })
+  .then(function(score) {
+    return Submission.find({
+      where: {
+        id: req.body.submission_id
+      }
+    })
+  })
+  .then(function(submission) {
+    return submission.recalculateAvgScore();
+  })
+  .then(function(submission) {
+    res.json({ status: 'ok', score: submission.score });
   });
 };
 
