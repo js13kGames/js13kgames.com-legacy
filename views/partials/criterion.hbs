@@ -1,7 +1,11 @@
-<div>
-<label alt="{{obj.criterion.description}}" title="{{obj.criterion.description}}">{{obj.criterion.title}}</label>
-{{#each scores}}
-  <label>{{this}}</label>
-  <input type="radio" value="{{this}}" name="criterion_{{../obj.criterion.slug}}-{{../obj.id}}" title="{{this}}" {{#eq this 5}}checked{{/eq}} style="margin-right: 20px;"/>
-{{/each}}
-</div>
+<tr>
+  <td>
+    <label alt="{{obj.criterion.description}}" title="{{obj.criterion.description}}">{{obj.criterion.title}}</label>
+  </td>
+  {{#each scores}}
+  <td>
+    <label>{{this}}</label>
+    <input type="radio" value="{{this}}" name="criterion_{{../obj.criterion.slug}}-{{../obj.id}}" title="{{this}}" {{#eq this 5}}checked{{/eq}} style="margin-right: 20px;"/>
+  </td>
+  {{/each}}
+</tr>

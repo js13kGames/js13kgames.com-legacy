@@ -29,9 +29,11 @@
 <form id="voting-widgets">
   <input type="hidden" name="submission_id" value="{{entry.id}}" />
   <input type="hidden" name="user_id" value="{{user.id}}" />
-  {{#each criteria}}
-    {{> criterion}}
-  {{/each}}
+  <table>
+    {{#each criteria}}
+      {{> criterion}}
+    {{/each}}
+  </table>
   <div style="margin-top: 20px">Comments:</div>
   <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
   <div>
@@ -45,17 +47,18 @@
 {{#contentFor "pageScripts"}}
 $('#vote').on('click', function(ev) {
   ev.preventDefault();
-  var id = $('input[name="id"]').val();
+  var id = $('input[name="submission_id"]').val();
   $('#voting-widgets').hide();
+  $('#voting-results').html('Voting in progress. Please, wait...');
   $.ajax({
     url: '/admin/submissions/' + id + '/vote',
     method: 'post',
     data: $('#voting-widgets').serialize()
   }).done(function(result) {
     console.log('status', result);
+    $('#voting-results').html('Voting done. Your score: ' + result.score);
   }).fail(function(err) {
     alert(err);
   });
-  $('#voting-results').html('voto listo');
 });
 {{/contentFor}}
