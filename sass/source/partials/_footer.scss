@@ -30,3 +30,23 @@
     padding:0;
   }
 }
+
+/*Sticky footer see http://ryanfait.com/resources/footer-stick-to-bottom-of-page/*/
+.page_wrapper {
+  min-height: 100%;
+  margin: 0 auto -211px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer_push {
+  height: 211px; /* '.push' must be the same height as 'footer' */
+}
+
+@include media(">phone") {
+
+  .page_wrapper {
+    min-height: 100%;
+    margin: 0 auto -170px; /* the bottom margin is the negative value of the footer's height */
+  }
+  .footer_push {
+    height: 170px; /* '.push' must be the same height as 'footer' */
+  }
+}

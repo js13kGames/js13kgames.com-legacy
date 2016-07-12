@@ -10,6 +10,10 @@
   	url(/fonts/graduate.woff) format('woff');
 }
 
+html, body {
+	height: 100%;//Needed to push the footer down
+}
+
 body {
 	background: #efefef url(/img/bg_content.png) fixed repeat;
 	font: normal 15px/22px Helvetica, Arial, sans-serif;

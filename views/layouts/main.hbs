@@ -47,45 +47,47 @@
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="page__header">
-    <div class="container">
-        <div class="row">
-          <div class="col-xs-10 col-sm-11 col-md-4">
-              <a class="header__logo" href="http://2016.js13kgames.com/">js13kGames</a>
+<div class="page_wrapper">
+    <header class="page__header">
+        <div class="container">
+            <div class="row">
+              <div class="col-xs-10 col-sm-11 col-md-4">
+                  <a class="header__logo" href="http://2016.js13kgames.com/">js13kGames</a>
+              </div>
+              <div class="hidden-md hidden-lg col-xs-2 col-sm-1">
+                <a id="nav-toggle" href="#"><span></span></a>
+              </div>
+               <nav id="menu" class="hidden-xs hidden-sm col-xs-12 col-md-8">
+                    <ul>
+                      <li><a href="/#sponsors">Sponsors</a></li>
+                      <li><a href="/#judges">Judges</a></li>
+                      <li><a href="/#prizes">Prizes</a></li>
+                      <li><a href="/#rules">Rules</a></li>
+                      <li><a href="http://js13kgames.github.io/resources/" target="_blank">Resources</a></li>
+                      <li class="years">
+                        <a href="http://2015.js13kgames.com/">2015</a>
+                        <a href="http://2014.js13kgames.com/">2014</a>
+                        <a href="http://2013.js13kgames.com/">2013</a>
+                        <a href="http://2012.js13kgames.com/">2012</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
           </div>
-          <div class="hidden-md hidden-lg col-xs-2 col-sm-1">  
-            <a id="nav-toggle" href="#"><span></span></a>
-          </div>
-           <nav id="menu" class="hidden-xs hidden-sm col-xs-12 col-md-8">
-                <ul>
-                  <li><a href="/#sponsors">Sponsors</a></li>
-                  <li><a href="/#judges">Judges</a></li>
-                  <li><a href="/#prizes">Prizes</a></li>
-                  <li><a href="/#rules">Rules</a></li>
-                  <li><a href="http://js13kgames.github.io/resources/" target="_blank">Resources</a></li>
-                  <li class="years">
-                    <a href="http://2015.js13kgames.com/">2015</a>
-                    <a href="http://2014.js13kgames.com/">2014</a>
-                    <a href="http://2013.js13kgames.com/">2013</a>
-                    <a href="http://2012.js13kgames.com/">2012</a>
-                  </li>
-                </ul>
-              </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+      </header>
   
-  <main> 
-    <div class="container page__content">
-      <div class="row row-no-padding">
-        <h1 class="heading heading--level1 hidden-xs">HTML5 and JavaScript Game Development Competition in just 13 kB</h1>
-      </div>
-      {{{ body }}}
-    </div>
-  </main>
+      <main>
+        <div class="container page__content">
+          <div class="row row-no-padding">
+            <h1 class="heading heading--level1 hidden-xs">HTML5 and JavaScript Game Development Competition in just 13 kB</h1>
+          </div>
+          {{{ body }}}
+        </div>
+      </main>
+    <div class="footer_push"></div>
+</div>
 
-  <footer class="footer">
+<footer class="footer">
    <div class="container">
         <div class="col-xs-12 col-sm-4">
       <p class="footer__text">&copy; js13kGames 2012-2016. </p>
@@ -94,7 +96,8 @@
        <p class="footer__text footer__text--right">Created and maintained by <a target="_blank" class="footer__link" class= href="http://end3r.com/">Andrzej Mazur</a> from <a target="_blank" class="footer__link" href="http://enclavegames.com/">Enclave Games</a>.</p>
     </div>
     </div>
-  </footer>
+</footer>
+
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
