@@ -96,7 +96,7 @@ app.post('/admin/submissions/:id/vote', ensureAuthentication, ensureAdminLevel, 
 app.put('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.accept);
 app.delete('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.reject);
 app.get('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.editions);
-//app.get('/admin/editions/new', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.editionForm);
+app.get('/admin/editions/new', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.newEdition);
 //app.put('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.openEdition);
 //app.delete('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.closeEdition);
 

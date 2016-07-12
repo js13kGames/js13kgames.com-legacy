@@ -1,0 +1,93 @@
+{{!< main }}
+
+<h3>Open new edition</h3>
+
+<form id="new-edition">
+<div>
+  <label>Year: </label>
+  <input type="text" id="year" name="year" placeholder="Year" value="{{year}}" />
+</div>
+<div>
+  <label>Slug: </label>
+  <input type="text" id="theme" name="theme" placeholder="Slug" value="{{year}}" />
+</div>
+<div>
+  <label>Theme: </label>
+  <input type="text" id="theme" name="theme" placeholder="Theme of this compo" value="" />
+</div>
+<h4>Voting categories</h4>
+<table>
+  <thead>
+    <th>Enabled</th>
+    <th>Name/Description</th>
+    <th title="Voting will go from 0 to this value">Range</th>
+    <th title="Value assigned by the judges will be multiplied by this in order to get the score">Multiplier</th>
+    <th title="Maximum score that can be casted in this criteria">Score</th>
+  </thead>
+  <tbody>
+  {{#each criteria}}
+    <tr class="criterion" data-id="{{id}}">
+      <td><input type="checkbox" id="enable-{{id}}" name="enable-{{id}}" checked /></td>
+      <td><strong>{{title}}</strong>: {{description}}</td>
+      <td><input data-id="{{id}}" type="text" id="range-{{id}}" name="range-{{id}}" value="10"/></td>
+      <td><input data-id="{{id}}" type="text" id="multiplier-{{id}}" name="multiplier-{{id}}" value="{{suggested_multiplier}}"/></td>
+      <td class="score" id="score-{{id}}"></td>
+    <tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<p>Max. score per entry: <span id="total-score">0</span></p>
+
+<button id="submit" type="submit">Open edition</button>
+</form>
+{{#contentFor "pageScripts"}}
+$(document).ready(function() {
+  $('tr.criterion').each(function(x) {
+    updateScore($(this).attr('data-id'));
+  });
+  updateTotalScore();
+});
+
+$('.criterion input').on('change', function(ev) {
+  updateScore($(this).attr('data-id'));
+  updateTotalScore();
+});
+
+function updateScore(id) {
+  var range = parseInt($('#range-' + id).val());
+  var mult = parseInt($('#multiplier-' + id).val());
+  $('td#score-' + id).html(range * mult);
+}
+
+function updateTotalScore() {
+  var total = 0;
+  $('td.score').each(function(x) {
+    total += parseInt($(this).html());
+  });
+  $('#total-score').html(total);
+  return total;
+}
+
+$('#submit').on('click', function(ev) {
+  ev.preventDefault();
+  var total = updateTotalScore();
+  if (total !== 100) {
+    alert('You can not open a new edition with a maximum score != 100');
+    return false;
+  }
+
+  //var id = $(this).attr('data-id');
+  //$.ajax({
+  //  url: '/admin/submissions/' + id,
+  //  type: 'delete'
+  //})
+  //.done(function(data) {
+  //  removeSubmission(id);
+  //})
+  //.fail(function(err) {
+  //  alert(err.responseText);
+  //});
+});
+
+{{/contentFor}}

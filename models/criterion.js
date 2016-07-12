@@ -11,6 +11,7 @@ var Criterion = sequelize.define('criteria', {
   slug: Sequelize.STRING,
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
+  suggested_multiplier: Sequelize.INTEGER,
   active: Sequelize.BOOLEAN,
 }, {
   timestamps: true,
