@@ -1,6 +1,6 @@
 {{!< main }}
 
-<h2>Entries ({{entries.length}} in total)</h2>
+<h2>{{year}} Entries ({{entries.length}} in total)</h2>
 
 <ul class="editions">
     {{#each editions}}
@@ -9,9 +9,9 @@
 </ul>
 
 <ul class="editions">
-    <li><a href="/{{year}}/entries/8">Desktop</a></li>
-    <li><a href="/{{year}}/entries/9">Mobile</a></li>
-    <li><a href="/{{year}}/entries/10">Server</a></li>
+    {{#each categories}}
+        <li><a href="/{{year}}/entries/{{id}}" data-filter="{{id}}">{{name}}</a></li>
+    {{/each}}
 </ul>
 
 <section id="entries" class="row">
@@ -24,5 +24,4 @@
     </a>
  </article>
 {{/each}}
-</div>
-
+</section>

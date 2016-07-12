@@ -23,10 +23,12 @@ EntriesController.list = function(req, res) {
   }).then(function(rows) {
     rows = rows.map(function(x) { x.uri = null; return x })
     //todo add category to the title
+    //todo set default year if empty
     //todo: load editions from db
     res.render('entries', {
       entries: rows ,
       year: req.params.year,
+      categories: [{name:'Desktop',id:8},{name:'Mobile',id:9},{name:'Server',id:10}],
       editions: [{year:2012},{year:2013},{year:2014},{year:2015}],
       title: req.params.year + " Entries | js13kGames"  });
   });
