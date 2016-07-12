@@ -211,8 +211,15 @@ AdminController.editions = function(req, res, next) {
     res.render('editions', { editions: editions, count: editions.length });
   });
 }
-AdminController.editionForm = function(req, res, next) {
-  res.render('edition_form');
+AdminController.newEdition = function(req, res, next) {
+  Criterion.findAll({
+    where: {
+      active: 1
+    }
+  })
+  .then(function(criteria) {
+    res.render('new_edition', { year: new Date().getFullYear(), criteria: criteria });
+  });
 }
 
 AdminController.openEdition = function(req, res, next) {
