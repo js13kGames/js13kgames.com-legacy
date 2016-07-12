@@ -23,7 +23,12 @@ EntriesController.list = function(req, res) {
   }).then(function(rows) {
     rows = rows.map(function(x) { x.uri = null; return x })
     //todo add category to the title
-    res.render('entries', { entries: rows , title: req.params.year + " Entries | js13kGames"  });
+    //todo: load editions from db
+    res.render('entries', {
+      entries: rows ,
+      year: req.params.year,
+      editions: [{year:2012},{year:2013},{year:2014},{year:2015}],
+      title: req.params.year + " Entries | js13kGames"  });
   });
 };
 

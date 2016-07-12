@@ -2,28 +2,26 @@
 
 <h2>Entries ({{entries.length}} in total)</h2>
 
- 
 <ul class="editions">
-    <li><a href="/entries/2012">2012</a></li>
-    <li><a href="/entries/2013">2013</a></li>
-    <li><a href="/entries/2014">2014</a></li>
-    <li><a href="/entries/2015">2015</a></li>
+    {{#each editions}}
+        <li><a href="/{{year}}/entries">{{year}}</a></li>
+    {{/each}}
 </ul>
 
 <ul class="editions">
-    <li><a href="/entries/2015/8">Desktop</a></li>
-    <li><a href="/entries/2015/9">Mobile</a></li>
-    <li><a href="/entries/2015/10">Server</a></li>
-	</ul>
+    <li><a href="/{{year}}/entries/8">Desktop</a></li>
+    <li><a href="/{{year}}/entries/9">Mobile</a></li>
+    <li><a href="/{{year}}/entries/10">Server</a></li>
+</ul>
 
 <section id="entries" class="row">
 {{#each entries}}
 <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 entry">
-			<a href="{{uri}}">
-				<img src="/games/{{slug}}/__small.jpg" alt="{{title}}">
-				<h3>{{title}}</h3>
-				<span>{{author}}</span>
-			</a>
+    <a href="{{uri}}">
+        <img src="/games/{{slug}}/__small.jpg" alt="{{title}}">
+        <h3>{{title}}</h3>
+        <span>{{author}}</span>
+    </a>
  </article>
 {{/each}}
 </div>
