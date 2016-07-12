@@ -30,9 +30,15 @@ nav ul li a,
 .play h1 {
 	font-family: "Graduate", "Times New Roman", Verdana;
 	font-weight: normal;
-      line-height: normal;
+	line-height: normal;
+	list-style: none;
+	list-style-type: none;
 }
- 
+
+ul{
+	padding:0;
+}
+
 a {
 	text-decoration: none;
 	color: #b12a34;

@@ -20,7 +20,7 @@
     content: counter(rule);
     background: url(/img/trophy.png) no-repeat;
     display: inline-block;
-    width: 85px;
+    width: 100px;
     height: 80px;
     line-height: 44px;
     font-size: 28px;
@@ -51,7 +51,6 @@
 
 .winner.special h3 span:first-child {
 	display: inline-block;
-	width: 170px;
 }
 
 .winner h3 span {
@@ -60,7 +59,6 @@
 
 .winner h3 span:first-child {
 	display: inline-block;
-	width: 130px;
 }
 
 .winner h3 a {
@@ -76,4 +74,26 @@
 	border-radius: 10px;
 	border: 5px solid #fff;
 	box-shadow: 2px 2px 5px #ccc;
+}
+
+
+.winners h4 {
+	color: #666;
+	font-size: 24px;
+	font-weight: normal;
+	padding: 20px 0 15px;
+	text-align: center;
+}
+
+.winner__runnerup {
+	font-family: "Graduate","Times New Roman",Verdana;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 50px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.winner__runnerup--small{
+	font-size: 15px;
 }
