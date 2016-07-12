@@ -60,8 +60,16 @@ var ensureAuthentication = function(req, res, next) {
 }
 
 var ensureAdminLevel = function(req, res, next) {
-  if (req.session.user.level < config.admin.minLevel) {
+  if (req.session.user.level < config.admin.judgeLevel) {
     res.status(401).send('Admin level required');
+  } else {
+    next();
+  }
+}
+
+var ensureSuperUserLevel = function(req, res, next) {
+  if (req.session.user.level < config.admin.superUserLevel) {
+    res.status(401).send('Super user level required');
   } else {
     next();
   }
@@ -82,10 +90,15 @@ app.get('/admin', ensureAuthentication, adminController.panel);
 app.get('/admin/login', csrfProtection, adminController.form);
 app.post('/admin/login', urlencodedParser, adminController.login);
 app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController.submissions);
-app.put('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.accept);
 app.get('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.show);
-app.delete('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.reject);
 app.post('/admin/submissions/:id/vote', ensureAuthentication, ensureAdminLevel, urlencodedParser, adminController.vote);
+
+app.put('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.accept);
+app.delete('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.reject);
+app.get('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.editions);
+//app.get('/admin/editions/new', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.editionForm);
+//app.put('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.openEdition);
+//app.delete('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.closeEdition);
 
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);

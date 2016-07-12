@@ -1,0 +1,78 @@
+{{!< main }}
+
+<h3>Editions</h3>
+
+{{#gt count 0}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Slug</th>
+      <th>Theme</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{#each editions}}
+  <tr class="edition-{{id}}">
+      <td>{{title}}</td>
+      <td>{{slug}}</td>
+      <td>{{theme}}</td>
+      <td>{{#if active}}<span class="open">Open</span>{{else}}<span class="closed">Closed</span>{{/if}}</td>
+      <td>
+        {{#if active}}
+        <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action close">Close</a>
+        {{/if}}
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+{{else}}
+<h4>Not editions were found</h4>
+{{/gt}}
+<a href="/admin/editions/new">Open new edition</a>
+
+{{#contentFor "pageScripts"}}
+$('a.submission-action.accept').on('click', function(ev) {
+  ev.preventDefault();
+  var id = $(this).attr('data-id');
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'put'
+  })
+  .done(function(data) {
+    hideSubmissionControls(id);
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+});
+
+$('a.submission-action.reject').on('click', function(ev) {
+  ev.preventDefault();
+  var cont = confirm('Are you sure you want to reject the entry "' + $(this).attr('data-title') + '"?');
+  if (!cont) return;
+
+  var id = $(this).attr('data-id');
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'delete'
+  })
+  .done(function(data) {
+    removeSubmission(id);
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+});
+
+function hideSubmissionControls(id) {
+  $('a.submission-action[data-id="' + id + '"]').hide();
+}
+function removeSubmission(id) {
+  $('.submission-' + id).remove();
+}
+{{/contentFor}}

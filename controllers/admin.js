@@ -205,6 +205,23 @@ AdminController.vote = function(req, res, next) {
   });
 };
 
+AdminController.editions = function(req, res, next) {
+  Edition.findAll()
+  .then(function(editions) {
+    res.render('editions', { editions: editions, count: editions.length });
+  });
+}
+AdminController.editionForm = function(req, res, next) {
+  res.render('edition_form');
+}
+
+AdminController.openEdition = function(req, res, next) {
+  res.send({status: 'ok'});
+}
+AdminController.closeEdition = function(req, res, next) {
+  res.send({status: 'ok'});
+}
+
 var getCriteriaData = function(body) {
   return Object.keys(body).map(function(x) {
     if (x.indexOf('criterion') >= 0) {
