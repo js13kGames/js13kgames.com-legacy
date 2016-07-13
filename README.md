@@ -47,6 +47,8 @@ js13kgames.com/admin                    -> admin panel. It needs super user auth
 js13kgames.com/admin/login              -> admin login interface
 js13kgames.com/admin/submissions        -> list of submissions for the current competition
 js13kgames.com/admin/submissions/<id>   -> interface to interact with the submission (comment, vote, etc)
+js13kgames.com/admin/editions           -> list of editions and options to close and delete the active edition
+js13kgames.com/admin/editions/new       -> open a new edition
 ```
 
 ## Tech Stack
