@@ -9,7 +9,7 @@
 </div>
 <div>
   <label>Slug: </label>
-  <input type="text" id="theme" name="theme" placeholder="Slug" value="{{year}}" />
+  <input type="text" id="slug" name="slug" placeholder="Slug" value="{{year}}" />
 </div>
 <div>
   <label>Theme: </label>
@@ -27,17 +27,21 @@
   <tbody>
   {{#each criteria}}
     <tr class="criterion" data-id="{{id}}">
-      <td><input type="checkbox" id="enable-{{id}}" name="enable-{{id}}" checked /></td>
+      <td><input data-id="{{id}}" type="checkbox" id="criterion-enable-{{id}}" name="criterion-enable-{{id}}" checked /></td>
       <td><strong>{{title}}</strong>: {{description}}</td>
-      <td><input data-id="{{id}}" type="text" id="range-{{id}}" name="range-{{id}}" value="10"/></td>
-      <td><input data-id="{{id}}" type="text" id="multiplier-{{id}}" name="multiplier-{{id}}" value="{{suggested_multiplier}}"/></td>
+      <td><input data-id="{{id}}" type="text" id="criterion-range-{{id}}" name="criterion-range-{{id}}" value="10"/></td>
+      <td><input data-id="{{id}}" type="text" id="criterion-multiplier-{{id}}" name="criterion-multiplier-{{id}}" value="{{suggested_multiplier}}"/></td>
       <td class="score" id="score-{{id}}"></td>
     <tr>
   {{/each}}
+  <tr>
+    <td colspan="3"></td>
+    <td>Max. score per entry:</td>
+    <td><span id="total-score">0</span></td>
+  </tr>
   </tbody>
 </table>
 
-<p>Max. score per entry: <span id="total-score">0</span></p>
 
 <button id="submit" type="submit">Open edition</button>
 </form>
@@ -55,8 +59,8 @@ $('.criterion input').on('change', function(ev) {
 });
 
 function updateScore(id) {
-  var range = parseInt($('#range-' + id).val());
-  var mult = parseInt($('#multiplier-' + id).val());
+  var range = $('#criterion-enable-' + id).is(':checked') ? parseInt($('#criterion-range-' + id).val()) : 0;
+  var mult = parseInt($('#criterion-multiplier-' + id).val());
   $('td#score-' + id).html(range * mult);
 }
 
@@ -77,17 +81,19 @@ $('#submit').on('click', function(ev) {
     return false;
   }
 
-  //var id = $(this).attr('data-id');
-  //$.ajax({
-  //  url: '/admin/submissions/' + id,
-  //  type: 'delete'
-  //})
-  //.done(function(data) {
-  //  removeSubmission(id);
-  //})
-  //.fail(function(err) {
-  //  alert(err.responseText);
-  //});
+  $.ajax({
+    url: '/admin/editions',
+    type: 'put',
+    data: $('#new-edition').serialize()
+  })
+  .done(function(data) {
+    if (data.status === 'ok') {
+      window.location.replace('/admin/editions');
+    }
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
 });
 
 {{/contentFor}}

@@ -223,7 +223,55 @@ AdminController.newEdition = function(req, res, next) {
 }
 
 AdminController.openEdition = function(req, res, next) {
-  res.send({status: 'ok'});
+  var objCriteria = {};
+  var arrCriteria = [];
+
+  for (var key in req.body) {
+    if (key.indexOf('criterion') >= 0) {
+      var param = key.split('-')[1];
+      var index = key.split('-')[2];
+      if (!objCriteria[index]) {
+        objCriteria[index] = {
+          id: index,
+          enabled: false,
+          range: null,
+          multiplier: null
+        }
+      }
+
+      if (param === 'enable') objCriteria[index].enabled = (req.body[key] === 'on') ? true : false;
+      if (param === 'range' || param === 'multiplier') objCriteria[index][param] = req.body[key];
+    }
+  }
+  for (var key in objCriteria) arrCriteria.push(objCriteria[key]);
+  arrCriteria = arrCriteria.filter(function(x) { return x.enabled });
+
+  Edition.update({ active: false }, { where: {} })
+  .then(function() {
+    return Edition.create({
+      title: req.body.year,
+      slug: req.body.slug,
+      theme: req.body.theme,
+      active: true
+    })
+  })
+  .then(function(edition) {
+    return Promise.all(arrCriteria.map(function(c) {
+      return CriterionEdition.create({
+        edition_id: edition.get('id'),
+        criterion_id: c.id,
+        score: c.range,
+        multiplier: c.multiplier
+      })
+    }));
+  })
+  .then(function(results) {
+    res.send({status: 'ok'});
+  })
+  .catch(function(err) {
+    console.log('err', err);
+    res.status(500).send(err);
+  });
 }
 AdminController.closeEdition = function(req, res, next) {
   res.send({status: 'ok'});
