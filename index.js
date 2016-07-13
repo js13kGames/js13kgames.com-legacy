@@ -85,6 +85,7 @@ var ensureSuperUserLevel = function(req, res, next) {
 app.get('/submit', defaultYear, csrfProtection, submitController.get);
 app.post('/submit', defaultYear, submitController.post);
 app.get('/submit/invalid_csrf', submitController.invalid);
+app.get('/submit/no_open', submitController.noOpen);
 app.get('/entries', defaultYear, entriesController.list);
 app.get('/admin', ensureAuthentication, adminController.panel);
 app.get('/admin/login', csrfProtection, adminController.form);

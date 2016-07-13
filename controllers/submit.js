@@ -12,17 +12,33 @@ var SubmitForm = require('../models/submit_form');
 var SubmitController = {};
 
 SubmitController.get = function(req, res) {
-  var a = Category.findAll({
-    include: [{
-      model: Edition,
-      where: {
-        slug: 2015 //req.params.year
-      }
-    }]
-  }).then(function(rows) {
+  Edition.find({
+    where: {
+      active: 1
+    }
+  })
+  .then(function(edition) {
+    if (edition === null) {
+      throw new Error('no_open_editions');
+    }
+    return Category.findAll({
+      include: [{
+        model: Edition,
+        where: {
+          id: edition.get('id')
+        }
+      }]
+    });
+  })
+  .then(function(rows) {
     var sForm = req.session.submitForm;
     delete req.session.submitForm;
     res.render('submit', { categories: rows, csrfToken: req.session.csrf, form: sForm });
+  })
+  .catch(function(err) {
+    if (err.message === 'no_open_editions') {
+      res.redirect('/submit/no_open');
+    }
   });
 };
 
@@ -70,6 +86,10 @@ SubmitController.post = function(req, res, next) {
 
 SubmitController.invalid = function(req, res, next) {
   res.render('submit_invalid');
+};
+
+SubmitController.noOpen = function(req, res, next) {
+  res.render('submit_no_open');
 };
 
 module.exports = SubmitController;
