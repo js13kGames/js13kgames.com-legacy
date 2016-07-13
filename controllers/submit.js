@@ -12,6 +12,8 @@ var SubmitForm = require('../models/submit_form');
 var SubmitController = {};
 
 SubmitController.get = function(req, res) {
+  var currentEdition;
+
   Edition.find({
     where: {
       active: 1
@@ -21,6 +23,8 @@ SubmitController.get = function(req, res) {
     if (edition === null) {
       throw new Error('no_open_editions');
     }
+    currentEdition = edition.get('id');
+
     return Category.findAll({
       include: [{
         model: Edition,
@@ -33,7 +37,7 @@ SubmitController.get = function(req, res) {
   .then(function(rows) {
     var sForm = req.session.submitForm;
     delete req.session.submitForm;
-    res.render('submit', { categories: rows, csrfToken: req.session.csrf, form: sForm });
+    res.render('submit', { categories: rows, csrfToken: req.session.csrf, form: sForm, editionId: currentEdition });
   })
   .catch(function(err) {
     if (err.message === 'no_open_editions') {
@@ -59,7 +63,6 @@ SubmitController.post = function(req, res, next) {
     }
 
     delete sForm.csrf;
-    sForm.editionId = config.games.editionId;
 
     Submission.build(sForm)
     .save()

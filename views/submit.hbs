@@ -16,6 +16,7 @@
 
     <form action="/submit" method="post" enctype="multipart/form-data">
       <input type="hidden" name="csrf" value="{{csrfToken}}" />
+      <input type="hidden" name="editionId" value="{{editionId}}" />
       <p>
         <label for="nick" class="required">Name &frasl; nick:</label>
         <input id="nick" class="text" type="text" name="author" data-form-id="author" maxlength="50" value="{{form.author}}" required />

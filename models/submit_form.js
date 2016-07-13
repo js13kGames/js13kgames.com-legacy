@@ -7,6 +7,7 @@ var SubmitForm = function(fields, files) {
     author: fields.author[0],
     twitter: fields.twitter[0],
     categories: fields['categories[]'],
+    editionId: fields.editionId[0],
     email: fields.email[0],
     websiteUrl: fields.website_url[0],
     githubUrl: fields.github_url[0],

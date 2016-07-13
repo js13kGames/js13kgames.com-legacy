@@ -12,6 +12,8 @@ var entriesController = require('./controllers/entries');
 var submitController = require('./controllers/submit');
 var adminController = require('./controllers/admin');
 
+var Edition = require('./models/edition');
+
 var config = require('./config');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -47,8 +49,28 @@ var csrfProtection = function(req, res, next) {
 };
 
 var defaultYear = function(req, res, next) {
-  req.params.year = req.params.year || '2015';
-  next();
+  Edition.findOne({
+    where: {
+      active: true
+    }
+  })
+  .then(function(edition) {
+    if (edition === null) {
+      Edition.findOne({
+        order: 'id DESC'
+      })
+      .then(function(edition) {
+        console.log('searching closed editions', edition.id);
+        if (edition !== null) {
+          req.params.year = req.params.year || edition.slug;
+        }
+        next();
+      })
+    } else {
+      req.params.year = req.params.year || edition.slug;
+      next();
+    }
+  })
 };
 
 var ensureAuthentication = function(req, res, next) {
