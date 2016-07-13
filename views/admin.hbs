@@ -3,5 +3,10 @@
 
 <p>Select an option below</p>
 
-<a href="/admin/submissions">Pending submissions</a>
+<ul>
+  <li><a href="/admin/submissions">Pending submissions</a></li>
+  {{#if isSuperUser}}
+  <li><a href="/admin/editions">Editions</a></li>
+  {{/if}}
+</ul>
 

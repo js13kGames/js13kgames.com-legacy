@@ -1,3 +1,4 @@
+var config = require('../config');
 var User = require('../models/user');
 var Vote = require('../models/vote');
 var Comment = require('../models/comment');
@@ -38,14 +39,20 @@ AdminController.login = function(req, res) {
 };
 
 AdminController.panel = function(req, res) {
-  res.render('admin');
+  res.render('admin', { isSuperUser: isSuperUser(req) });
 };
 
 AdminController.submissions = function(req, res) {
+  var whereClausule = {};
+
+  if (req.session.user.level < config.admin.superUserLevel) {
+    whereClausule = {
+      active: 1
+    }
+  }
+
   var a = Submission.findAll({
-    //where: {
-    //  active: 0
-    //},
+    where: whereClausule,
     include: [{
       model: Edition,
       where: {
@@ -57,7 +64,12 @@ AdminController.submissions = function(req, res) {
       ['created_at', 'DESC']
     ]
   }).then(function(results) {
-    res.render('admin_submissions', { entries: results, year: req.params.year, count: results.length });
+    res.render('admin_submissions', {
+      entries: results,
+      year: req.params.year,
+      count: results.length,
+      isSuperUser: isSuperUser(req)
+    });
   });
 };
 
@@ -321,6 +333,10 @@ AdminController.removeEdition = function(req, res, next) {
   .then(function(results) {
     res.send({status: 'ok', id: req.params.id});
   });
+};
+
+var isSuperUser = function(req) {
+  return req.session.user.level >= config.admin.superUserLevel
 };
 
 var getCriteriaData = function(body) {

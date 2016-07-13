@@ -20,7 +20,7 @@ var config = {
     maxSize: 102400 // 100kb
   },
   admin: {
-    judgeLevel: 10,
+    judgeLevel: 1,
     superUserLevel: 100
   }
 };
