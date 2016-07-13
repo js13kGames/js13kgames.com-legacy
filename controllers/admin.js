@@ -276,7 +276,24 @@ AdminController.openEdition = function(req, res, next) {
 };
 
 AdminController.closeEdition = function(req, res, next) {
-  res.send({status: 'ok'});
+  Edition.find({
+    where: {
+      id: req.params.id,
+      active: 1
+    }
+  }).then(function(edition) {
+    if (edition === null) {
+      throw new Error(messages.error.editionNotFoundOrNoLongerActive);
+    }
+    edition.active = 0;
+    return edition.save();
+  })
+  .catch(function(err) {
+    res.status(500).send(err);
+  })
+  .then(function(edition) {
+    res.send({ status: 'ok', id: req.params.id });
+  });
 };
 
 AdminController.removeEdition = function(req, res, next) {
@@ -287,7 +304,7 @@ AdminController.removeEdition = function(req, res, next) {
     }
   }).then(function(edition) {
     if (edition === null) {
-      throw new Error(messages.error.editionNotFound);
+      throw new Error(messages.error.editionNotFoundOrNoLongerActive);
     }
     return Promise.all([
       CriterionEdition.destroy({

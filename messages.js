@@ -9,7 +9,8 @@ var messages = {
     submissionNotFound: 'Submission not found.',
     submissionNotFoundOrAccepted: 'Submission not found or already accepted.',
     submissionNotFoundOrRejected: 'Submission not found or already rejected.',
-    editionNotFound: 'Edition not found.'
+    editionNotFound: 'Edition not found.',
+    editionNotFoundOrNoLongerActive: 'Edition not found or no longer active.'
   }
 }
 

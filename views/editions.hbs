@@ -20,8 +20,8 @@
       <td>{{title}}</td>
       <td>{{slug}}</td>
       <td>{{theme}}</td>
-      <td>{{#if active}}<span class="open">Open</span>{{else}}<span class="closed">Closed</span>{{/if}}</td>
-      <td>
+      <td class="status">{{#if active}}<span class="open">Open</span>{{else}}<span class="closed">Closed</span>{{/if}}</td>
+      <td class="actions">
         {{#if active}}
         <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action close">Close</a>
         <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action delete">Delete</a>
@@ -39,7 +39,6 @@
 {{#contentFor "pageScripts"}}
 $('.edition-action.delete').on('click', function(ev) {
   ev.preventDefault();
-  console.log('asdasdad');
 
   $.ajax({
     url: '/admin/editions/' + $(this).attr('data-id'),
@@ -54,6 +53,24 @@ $('.edition-action.delete').on('click', function(ev) {
   .fail(function(err) {
     alert(err.responseText);
   });
+});
 
+$('.edition-action.close').on('click', function(ev) {
+  ev.preventDefault();
+
+  $.ajax({
+    url: '/admin/editions/' + $(this).attr('data-id') + '/close',
+    type: 'post'
+  })
+  .done(function(data) {
+    if (data.status === 'ok') {
+      // TODO: Flash message
+      $('.edition-' + data.id + ' > .actions').remove();
+      $('.edition-' + data.id + ' > .status').html('<span class="closed">Closed</span>');
+    }
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
 });
 {{/contentFor}}
