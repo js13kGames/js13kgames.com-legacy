@@ -5,6 +5,7 @@ var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 var User = sequelize.define('user', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   email: {

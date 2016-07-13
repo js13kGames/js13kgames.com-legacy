@@ -9,6 +9,7 @@ var CriterionEdition = require('./criterion_edition');
 var Vote = sequelize.define('votes', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   user_id: {

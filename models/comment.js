@@ -8,6 +8,7 @@ var Submission = require('./submission');
 var Comment = sequelize.define('comments', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   text: Sequelize.TEXT,

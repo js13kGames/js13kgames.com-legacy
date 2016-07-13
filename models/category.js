@@ -7,6 +7,7 @@ var Edition = require('./edition');
 var Category = sequelize.define('category', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   title: Sequelize.STRING,

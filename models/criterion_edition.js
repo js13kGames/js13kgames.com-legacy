@@ -8,6 +8,7 @@ var Criterion = require('./criterion');
 var CriterionEdition = sequelize.define('criterion_editions', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   edition_id: {

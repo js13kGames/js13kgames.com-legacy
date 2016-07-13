@@ -12,6 +12,7 @@ var Edition = require('./edition');
 var Submission = sequelize.define('submission', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   active: {

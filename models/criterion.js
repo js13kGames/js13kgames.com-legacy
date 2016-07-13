@@ -5,6 +5,7 @@ var sequelize = new Sequelize(config.db.name, null, null, config.db.connection);
 var Criterion = sequelize.define('criteria', {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   title: Sequelize.STRING,
