@@ -235,7 +235,7 @@ AdminController.newEdition = function(req, res, next) {
   });
 };
 
-AdminController.openEdition = function(req, res, next) {
+AdminController.createEdition = function(req, res, next) {
   var objCriteria = {};
   var arrCriteria = [];
 
@@ -265,7 +265,7 @@ AdminController.openEdition = function(req, res, next) {
       title: req.body.year,
       slug: req.body.slug,
       theme: req.body.theme,
-      active: true
+      active: false
     })
   })
   .then(function(edition) {
@@ -287,24 +287,24 @@ AdminController.openEdition = function(req, res, next) {
   });
 };
 
-AdminController.closeEdition = function(req, res, next) {
+AdminController.updateEdition = function(req, res, next) {
   Edition.find({
     where: {
       id: req.params.id,
-      active: 1
+      active: (req.body.action === 'open') ? 0 : 1
     }
   }).then(function(edition) {
     if (edition === null) {
       throw new Error(messages.error.editionNotFoundOrNoLongerActive);
     }
-    edition.active = 0;
+    edition.active = (req.body.action === 'open') ? 1 : 0;
     return edition.save();
   })
   .catch(function(err) {
     res.status(500).send(err);
   })
   .then(function(edition) {
-    res.send({ status: 'ok', id: req.params.id });
+    res.send({ status: 'ok', id: req.params.id, action: req.body.action });
   });
 };
 

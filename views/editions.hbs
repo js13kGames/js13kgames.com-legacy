@@ -20,12 +20,14 @@
       <td>{{title}}</td>
       <td>{{slug}}</td>
       <td>{{theme}}</td>
-      <td class="status">{{#if active}}<span class="open">Open</span>{{else}}<span class="closed">Closed</span>{{/if}}</td>
+      <td class="statuses">
+        <span class="status open" {{#unless active}}style="display: none"{{/unless}}>Open</span>
+        <span class="status closed" {{#if active}}style="display: none"{{/if}}>Closed</span>
+      </td>
       <td class="actions">
-        {{#if active}}
-        <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action close">Close</a>
-        <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action delete">Delete</a>
-        {{/if}}
+        <a href="#" data-id="{{id}}" data-action="open" class="action open" {{#if active}}style="display: none"{{/if}}>Activate</a>
+        <a href="#" data-id="{{id}}" data-action="close" class="action close" {{#unless active}}style="display:none"{{/unless}}>Close</a>
+        <a href="#" data-id="{{id}}" data-action="delete" class="delete"{{#unless active}}style="display:none"{{/unless}}>Delete</a>
       </td>
     </tr>
   {{/each}}
@@ -37,7 +39,7 @@
 <a href="/admin/editions/new">Open new edition</a>
 
 {{#contentFor "pageScripts"}}
-$('.edition-action.delete').on('click', function(ev) {
+$('a.delete').on('click', function(ev) {
   ev.preventDefault();
 
   $.ajax({
@@ -55,18 +57,32 @@ $('.edition-action.delete').on('click', function(ev) {
   });
 });
 
-$('.edition-action.close').on('click', function(ev) {
+$('a.action').on('click', function(ev) {
   ev.preventDefault();
 
+  var action = $(this).attr('data-action');
+
   $.ajax({
-    url: '/admin/editions/' + $(this).attr('data-id') + '/close',
-    type: 'post'
+    url: '/admin/editions/' + $(this).attr('data-id'),
+    type: 'put',
+    data: { action: action }
   })
   .done(function(data) {
     if (data.status === 'ok') {
       // TODO: Flash message
-      $('.edition-' + data.id + ' > .actions').remove();
-      $('.edition-' + data.id + ' > .status').html('<span class="closed">Closed</span>');
+      if (data.action === 'close') {
+        $('.edition-' + data.id + ' > .actions > .action.close').hide();
+        $('.edition-' + data.id + ' > .actions > .delete').hide();
+        $('.edition-' + data.id + ' > .actions > .action.open').show();
+        $('.edition-' + data.id + ' > .statuses > .status.open').hide();
+        $('.edition-' + data.id + ' > .statuses > .status.closed').show();
+      } else if (data.action === 'open') {
+        $('.edition-' + data.id + ' > .actions > .action.close').show();
+        $('.edition-' + data.id + ' > .actions > .delete').show();
+        $('.edition-' + data.id + ' > .actions > .action.open').hide();
+        $('.edition-' + data.id + ' > .statuses > .status.open').show();
+        $('.edition-' + data.id + ' > .statuses > .status.closed').hide();
+      }
     }
   })
   .fail(function(err) {
