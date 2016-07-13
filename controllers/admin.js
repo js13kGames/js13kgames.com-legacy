@@ -3,6 +3,7 @@ var User = require('../models/user');
 var Vote = require('../models/vote');
 var Comment = require('../models/comment');
 var Edition = require('../models/edition');
+var Category = require('../models/category');
 var Submission = require('../models/submission');
 var Criterion = require('../models/criterion');
 var CriterionEdition = require('../models/criterion_edition');
@@ -238,6 +239,7 @@ AdminController.newEdition = function(req, res, next) {
 AdminController.createEdition = function(req, res, next) {
   var objCriteria = {};
   var arrCriteria = [];
+  var currentEdition;
 
   for (var key in req.body) {
     if (key.indexOf('criterion') >= 0) {
@@ -269,6 +271,8 @@ AdminController.createEdition = function(req, res, next) {
     })
   })
   .then(function(edition) {
+    currentEdition = edition.get('id');
+
     return Promise.all(arrCriteria.map(function(c) {
       return CriterionEdition.create({
         edition_id: edition.get('id'),
@@ -277,6 +281,13 @@ AdminController.createEdition = function(req, res, next) {
         multiplier: c.multiplier
       })
     }));
+  })
+  .then(function(results) {
+    return Promise.all([
+      Category.create({ title: 'Desktop', edition_id: currentEdition }),
+      Category.create({ title: 'Mobile', edition_id: currentEdition }),
+      Category.create({ title: 'Server', edition_id: currentEdition }),
+    ]);
   })
   .then(function(results) {
     res.send({status: 'ok'});
@@ -320,6 +331,11 @@ AdminController.removeEdition = function(req, res, next) {
     }
     return Promise.all([
       CriterionEdition.destroy({
+        where: {
+          edition_id: edition.id
+        }
+      }),
+      Category.destroy({
         where: {
           edition_id: edition.id
         }
