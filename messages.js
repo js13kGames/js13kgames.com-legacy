@@ -8,8 +8,8 @@ var messages = {
     gameAlreadyExists: 'A game with that name was already registered.',
     submissionNotFound: 'Submission not found.',
     submissionNotFoundOrAccepted: 'Submission not found or already accepted.',
-    submissionNotFoundOrRejected: 'Submission not found or already rejected.'
-
+    submissionNotFoundOrRejected: 'Submission not found or already rejected.',
+    editionNotFound: 'Edition not found.'
   }
 }
 

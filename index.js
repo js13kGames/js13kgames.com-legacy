@@ -92,13 +92,14 @@ app.post('/admin/login', urlencodedParser, adminController.login);
 app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController.submissions);
 app.get('/admin/submissions/:id', ensureAuthentication, ensureAdminLevel, adminController.show);
 app.post('/admin/submissions/:id/vote', ensureAuthentication, ensureAdminLevel, urlencodedParser, adminController.vote);
-
 app.put('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.accept);
 app.delete('/admin/submissions/:id', ensureAuthentication, ensureSuperUserLevel, adminController.reject);
 app.get('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.editions);
 app.get('/admin/editions/new', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.newEdition);
-app.put('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.openEdition);
-//app.delete('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.closeEdition);
+app.post('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.openEdition);
+//app.get('/admin/editions/:id', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.showEdition);
+//app.put('/admin/editions/:id', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.closeEdition);
+app.delete('/admin/editions/:id', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.removeEdition);
 
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);

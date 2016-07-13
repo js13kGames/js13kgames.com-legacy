@@ -210,7 +210,8 @@ AdminController.editions = function(req, res, next) {
   .then(function(editions) {
     res.render('editions', { editions: editions, count: editions.length });
   });
-}
+};
+
 AdminController.newEdition = function(req, res, next) {
   Criterion.findAll({
     where: {
@@ -220,7 +221,7 @@ AdminController.newEdition = function(req, res, next) {
   .then(function(criteria) {
     res.render('new_edition', { year: new Date().getFullYear(), criteria: criteria });
   });
-}
+};
 
 AdminController.openEdition = function(req, res, next) {
   var objCriteria = {};
@@ -272,10 +273,38 @@ AdminController.openEdition = function(req, res, next) {
     console.log('err', err);
     res.status(500).send(err);
   });
-}
+};
+
 AdminController.closeEdition = function(req, res, next) {
   res.send({status: 'ok'});
-}
+};
+
+AdminController.removeEdition = function(req, res, next) {
+  Edition.find({
+    where: {
+      id: req.params.id,
+      active: 1
+    }
+  }).then(function(edition) {
+    if (edition === null) {
+      throw new Error(messages.error.editionNotFound);
+    }
+    return Promise.all([
+      CriterionEdition.destroy({
+        where: {
+          edition_id: edition.id
+        }
+      }),
+      edition.destroy()
+    ]);
+  })
+  .catch(function(err) {
+    res.status(500).send(err);
+  })
+  .then(function(results) {
+    res.send({status: 'ok', id: req.params.id});
+  });
+};
 
 var getCriteriaData = function(body) {
   return Object.keys(body).map(function(x) {

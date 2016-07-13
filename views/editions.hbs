@@ -24,6 +24,7 @@
       <td>
         {{#if active}}
         <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action close">Close</a>
+        <a href="" data-id="{{id}}" data-title="{{title}}" class="edition-action delete">Delete</a>
         {{/if}}
       </td>
     </tr>
@@ -34,3 +35,25 @@
 <h4>Not editions were found</h4>
 {{/gt}}
 <a href="/admin/editions/new">Open new edition</a>
+
+{{#contentFor "pageScripts"}}
+$('.edition-action.delete').on('click', function(ev) {
+  ev.preventDefault();
+  console.log('asdasdad');
+
+  $.ajax({
+    url: '/admin/editions/' + $(this).attr('data-id'),
+    type: 'delete'
+  })
+  .done(function(data) {
+    if (data.status === 'ok') {
+      // TODO: Flash message
+      $('.edition-' + data.id).remove();
+    }
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+
+});
+{{/contentFor}}

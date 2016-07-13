@@ -83,7 +83,7 @@ $('#submit').on('click', function(ev) {
 
   $.ajax({
     url: '/admin/editions',
-    type: 'put',
+    type: 'post',
     data: $('#new-edition').serialize()
   })
   .done(function(data) {
