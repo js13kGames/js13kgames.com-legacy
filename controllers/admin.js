@@ -140,7 +140,7 @@ AdminController.show = function(req, res) {
         model: Criterion
       }]
     }),
-    Comment.findAll({
+    Comment.findOne({
       where: {
         user_id: req.session.user.id,
         submission_id: req.params.id
@@ -159,7 +159,7 @@ AdminController.show = function(req, res) {
     res.render('admin_show', {
       user: req.session.user,
       entry: results[0],
-      comments: results[2],
+      comment: results[2],
       criteria: results[1].map(function(x) {
         var item = results[3].find(function(z) { return z.criterion_edition_id === x.id });
         var current = (item) ? item.value / item.criterion_edition.multiplier : 5;
@@ -188,11 +188,20 @@ AdminController.vote = function(req, res, next) {
     return castVote(req, c);
   });
   if (req.body.comment && req.body.comment !== '') {
-    requests.push(Comment.create({
-      text: req.body.comment,
-      user_id: req.session.user.id,
-      submission_id: req.body.submission_id
-    }));
+    var promise = Comment.findOrInitialize({
+      where: {
+        user_id: req.session.user.id,
+        submission_id: req.body.submission_id
+      }
+    })
+    .spread(function(comment, created) {
+      return comment;
+    })
+    .then(function(comment) {
+      comment.text = req.body.comment;
+      return comment.save();
+    });
+    requests.push(promise);
   }
 
   Promise.all(requests)

@@ -15,15 +15,6 @@
 <!-- else -->
 <a href="/games/{{entry.slug}}/index.html" target="_blank" class="launch">Play the game</a>
 
-{{#if comments}}
-<h3>Comments</h3>
-<ul>
-{{#each comments}}
-<li>{{created_at}}: {{text}}</li>
-{{/each}}
-</ul>
-{{/if}}
-
 <h3>Cast your vote</h3>
 <p>Remember that this year's theme is <strong>{{criteria.0.obj.edition.theme}}</strong></p>
 <form id="voting-widgets">
@@ -35,7 +26,9 @@
     {{/each}}
   </table>
   <div style="margin-top: 20px">Comments:</div>
-  <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
+
+  <h3>Comments</h3>
+  <textarea id="comment" class="text" name="comment" cols="40" rows="5">{{comment.text}}</textarea>
   <div>
     <button id="vote" class="btn-primary">Vote</button>
   </div>

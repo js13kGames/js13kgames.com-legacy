@@ -60,7 +60,6 @@ var defaultYear = function(req, res, next) {
         order: 'id DESC'
       })
       .then(function(edition) {
-        console.log('searching closed editions', edition.id);
         if (edition !== null) {
           req.params.year = req.params.year || edition.slug;
         }
@@ -109,6 +108,7 @@ app.post('/submit', defaultYear, submitController.post);
 app.get('/submit/invalid_csrf', submitController.invalid);
 app.get('/submit/no_open', submitController.noOpen);
 app.get('/entries', defaultYear, entriesController.list);
+app.get('/entries/:slug', defaultYear, entriesController.show);
 app.get('/admin', ensureAuthentication, adminController.panel);
 app.get('/admin/login', csrfProtection, adminController.form);
 app.post('/admin/login', urlencodedParser, adminController.login);
