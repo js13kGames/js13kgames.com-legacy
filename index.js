@@ -109,7 +109,7 @@ app.get('/submit/invalid_csrf', submitController.invalid);
 app.get('/submit/no_open', submitController.noOpen);
 app.get('/entries', defaultYear, entriesController.list);
 app.get('/entries/:slug', defaultYear, entriesController.show);
-app.get('/admin', ensureAuthentication, adminController.panel);
+app.get('/admin', ensureAuthentication, ensureAdminLevel, adminController.panel);
 app.get('/admin/login', csrfProtection, adminController.form);
 app.post('/admin/login', urlencodedParser, adminController.login);
 app.get('/admin/submissions', defaultYear, ensureAuthentication, adminController.submissions);
