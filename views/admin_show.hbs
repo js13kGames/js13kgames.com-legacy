@@ -3,13 +3,14 @@
 {{#unless entry}}
 <h3>Submission not found!</h3>
 
-<p>The game you are looking for couldn't be found. Go back to the <a href="/admin/submissions">admin panel</a> and try again.</p>
+<p>The game you are looking for doesn't exist or hasn't been approved yet. Go back to the <a href="/admin/submissions">admin panel</a> and try again.</p>
 {{else}}
 <h3>{{entry.title}}</h3>
-<p><strong>Author:</strong> {{entry.author}}</p>
-<p><strong>File size:</strong> {{entry.file_size}} KB</p>
 <div><img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" /></div>
-<p>{{entry.description}}</p>
+
+<p><strong>File size:</strong> {{entry.file_size}} KB</p>
+<p><strong>Author:</strong> {{entry.author}}</p>
+<p><strong>Description:</strong> {{entry.description}}</p>
 <!-- if server -->
 <!-- a href="{$entry->server_url }" target="_blank" class="launch">Play the game</a -->
 <!-- else -->

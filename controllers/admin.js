@@ -162,7 +162,7 @@ AdminController.show = function(req, res) {
       comment: results[2],
       criteria: results[1].map(function(x) {
         var item = results[3].find(function(z) { return z.criterion_edition_id === x.id });
-        var current = (item) ? item.value / item.criterion_edition.multiplier : 5;
+        var current = (item) ? item.value / item.criterion_edition.multiplier : -1;
         var scores = [];
         for (var i=0; i<=x.score; i++) scores.push(i);
 

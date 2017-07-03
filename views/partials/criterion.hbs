@@ -2,10 +2,12 @@
   <td>
     <label alt="{{obj.criterion.description}}" title="{{obj.criterion.description}}">{{obj.criterion.title}}</label>
   </td>
-  {{#each scores}}
   <td>
-    <label>{{this}}</label>
-    <input type="radio" value="{{this}}" name="criterion_{{../obj.criterion.slug}}-{{../obj.id}}" title="{{this}}" {{#eq this ../default}}checked{{/eq}} style="margin-right: 20px;"/>
+  <select>
+    <option value="" disabled selected>-</option>
+    {{#each scores}}
+      <option {{#eq this ../default}}selected{{/eq}} value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
   </td>
-  {{/each}}
 </tr>
