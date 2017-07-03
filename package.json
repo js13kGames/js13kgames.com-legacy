@@ -4,7 +4,8 @@
   "description": "The js13kgames website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "gulp sass && node index.js",
+    "sass": "gulp sass",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,11 @@
     "unzip": "^0.1.11"
   },
   "devDependencies": {
-    "sequelize-cli": "^2.4.0"
+    "sequelize-cli": "^2.4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.1"
   }
 }
