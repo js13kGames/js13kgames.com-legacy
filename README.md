@@ -26,15 +26,19 @@ After installing, run all the migrations executing:
 ./node_modules/.bin/sequelize db:migrate
 ```
 
-Then start the app with:
+Then precompile the assets with:
+```
+gulp sass
+```
 
+And finally, start the app with:
 ```
 npm start
 ```
 
 Then go to http://localhost:3000 and enjoy.
 
-## Assets
+## Development
 
 To precompile your assets during development run:
 ```
@@ -42,11 +46,6 @@ gulp watch
 ```
 This will process the SASS files in the source folder and write them to the public/assets folder of the site ready to
 be used. Each change to the SASS file will trigger a new build.
-
-To precompile the assets only once:
-```
-gulp sass
-```
 
 To clean the assets:
 ```

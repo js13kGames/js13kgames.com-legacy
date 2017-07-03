@@ -4,7 +4,7 @@
   "description": "The js13kgames website",
   "main": "index.js",
   "scripts": {
-    "start": "gulp sass && node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,5 +35,6 @@
     "gulp-clean": "^0.3.2",
     "gulp-minify-css": "^1.2.4",
     "gulp-sass": "^2.3.1"
-  }
+  },
+  "engines" : { "node" : ">=5.0 <6.0" }
 }
