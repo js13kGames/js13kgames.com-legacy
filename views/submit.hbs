@@ -11,7 +11,7 @@
     {{/each}}
   </ul>
   {{/if}}
-  <article class="form">
+  <article class="form submit">
     <h3>Read the <a href="/#rules">Rules</a> first before submitting your game!</h3>
 
     <form action="/submit" method="post" enctype="multipart/form-data">
@@ -80,10 +80,19 @@
         <abbr title="Spam protection">(?)</abbr>
       </p -->
       <p class="bottom">
-        <label for="submit" class="send">Let's do it!</label>
         <input type="submit" id="submit" name="formSubmit" class="submit" value="Submit" />
       </p>
     </form>
   </article>
   </div>
 </section>
+{{#contentFor "pageScripts"}}
+$('#submit').click(function() {
+  var checked = $('input[type="checkbox"]:checked').length;
+
+  if (checked <= 0) {
+    alert('You must select at least one category');
+    return false;
+  }
+});
+{{/contentFor}}

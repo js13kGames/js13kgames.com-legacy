@@ -172,11 +172,15 @@ var Submission = sequelize.define('submission', {
         srcPath: this.smallScreenshot.path,
         dstPath: this.getFilePath(this.smallScreenshot, '__small.jpg'),
         width: 160
+      }, function(err, stdout, stderr) {
+        if (err) throw err;
       });
       im.resize({
         srcPath: this.bigScreenshot.path,
         dstPath: this.getFilePath(this.bigScreenshot, '__big.jpg'),
         width: 400
+      }, function(err, stdout, stderr) {
+        if (err) throw err;
       });
     },
     recalculateAvgScore: function() {
