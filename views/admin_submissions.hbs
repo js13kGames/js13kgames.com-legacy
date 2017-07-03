@@ -21,10 +21,19 @@
       <td>{{score}}</td>
       <td>
         {{#unless active}}
-        <a href="" data-id="{{id}}" data-title="{{title}}" class="submission-action accept">Accept</a>
-        <a href="" data-id="{{id}}" data-title="{{title}}" class="submission-action reject">Reject</a>
+        <a class="btn btn-success" href="" data-id="{{id}}" data-title="{{title}}" class="submission-action accept">
+          <i class="fa fa-check-circle fa-lg"></i>
+          Accept
+        </a>
+        <a class="btn btn-danger" href="" data-id="{{id}}" data-title="{{title}}" class="submission-action reject">
+          <i class="fa fa-times-circle fa-lg"></i>
+          Reject
+        </a>
         {{/unless}}
-        <a href="/admin/submissions/{{id}}">Check & Vote</a>
+        <a class="btn btn-primary" href="/admin/submissions/{{id}}">
+          <i class="fa fa-envelope-open fa-lg"></i>
+          Check & Vote
+        </a>
       </td>
     </tr>
   {{/each}}
