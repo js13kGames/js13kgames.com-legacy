@@ -19,8 +19,8 @@
 {{#voteCasted}}
 <h3>This is what you voted:</h3>
 {{else}}
-<h3>Cast your vote</h3>
-<p>Remember that this year's theme is <strong>{{theme}}</strong></p>
+<h3 class="cast-title">Cast your vote</h3>
+<p class="theme">Remember that this year's theme is <strong>{{theme}}</strong></p>
 {{/voteCasted}}
 <form id="voting-widgets">
   <input type="hidden" name="submission_id" value="{{entry.id}}" />
@@ -34,18 +34,17 @@
       <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
     </tr>
   </table>
-  {{#voteCasted}}
-  <div style="margin-top: 20px"><strong>Comments:</strong> {{comment.text}}</div>
-  {{else}}
-  <h3>Add comment:</h3>
-  <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
-  <div>
-    <button id="vote" class="btn-primary">Vote</button>
+  <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px"><strong>Comments:</strong> <span id="comment-posted">{{comment.text}}</span></div>
+  {{^voteCasted}}
+  <div id="comment-widget">
+    <h3>Add comment:</h3>
+    <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
+    <div>
+      <button id="vote" class="btn-primary">Vote</button>
+    </div>
   </div>
   {{/voteCasted}}
 </form>
-<div id="voting-results">
-</div>
 {{/unless}}
 
 {{#contentFor "pageScripts"}}
@@ -64,17 +63,27 @@ $('.criterion').on('change', function(e) {
 $('#vote').on('click', function(ev) {
   ev.preventDefault();
   var id = $('input[name="submission_id"]').val();
-  $('#voting-widgets').hide();
   $('#voting-results').html('Voting in progress. Please, wait...');
+  disableVotingWidgets();
   $.ajax({
     url: '/admin/submissions/' + id + '/vote',
     method: 'post',
     data: $('#voting-widgets').serialize()
   }).done(function(result) {
     console.log('status', result);
-    $('#voting-results').html('Voting done. Your score: ' + result.score);
+    alert('Voting done. Your score was ' + result.score);
   }).fail(function(err) {
-    alert(err);
+    alert('Ops, an error occurred while trying to save your score: ' + err + '.\n\nTry reloading the page and if the ' + 
+      'error persist, please send an email to contact@js13kgames.com');
   });
 });
+
+function disableVotingWidgets() {
+  $('.criterion').attr('disabled', true);
+  $('#comment-widget').addClass('hide');
+  $('#comment-posted-container').removeClass('hide');
+  $('#comment-posted').html($('#comment').val());
+  $('.theme').addClass('hide');
+  $('.cast-title').html('This is what you voted:');
+}
 {{/contentFor}}
