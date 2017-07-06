@@ -4,8 +4,9 @@
 <p>Select an option below</p>
 
 <ul>
-  <li><a href="/admin/submissions">Pending submissions</a></li>
+  <li><a href="/admin/submissions">Approved Submissions</a></li>
   {{#if isSuperUser}}
+  <li><a href="/admin/submissions/?filter=pending">Pending Submissions</a></li>
   <li><a href="/admin/editions">Editions</a></li>
   {{/if}}
 </ul>

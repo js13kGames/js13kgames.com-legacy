@@ -1,7 +1,6 @@
 {{!< main }}
 
-<h3>All submissions ({{count}}) for the {{year}} edition.</h3>
-
+<h3>{{#showPending}}Pending{{else}}Approved{{/showPending}} submissions ({{count}}) for the {{year}} edition.</h3>
 {{#gt count 0}}
 <table class="table table-striped">
   <thead>
@@ -34,13 +33,19 @@
         {{/unless}}
         <a class="btn btn-primary" href="/admin/submissions/{{id}}">
           <i class="fa fa-envelope-open fa-lg"></i>
-          Check & Vote
+          View
         </a>
       </td>
     </tr>
   {{/each}}
   </tbody>
 </table>
+{{else}}
+  {{#showPending}}
+  <p>Yay! You don't have pending submissions.</p>
+  {{else}}
+  <p>There are no approved submissions yet. Please, come back later.</p>
+  {{/showPending}}
 {{/gt}}
 
 {{#contentFor "pageScripts"}}

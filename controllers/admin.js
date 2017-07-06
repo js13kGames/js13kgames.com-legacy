@@ -1,4 +1,5 @@
 var config = require('../config');
+var messages = require('../messages');
 var User = require('../models/user');
 var Vote = require('../models/vote');
 var Comment = require('../models/comment');
@@ -44,16 +45,22 @@ AdminController.panel = function(req, res) {
 };
 
 AdminController.submissions = function(req, res) {
-  var whereClausule = {};
+  var active = 1;
+  var showPending = req.query.filter === 'pending';
+  var isSu = isSuperUser(req);
 
-  if (req.session.user.level < config.admin.superUserLevel) {
-    whereClausule = {
-      active: 1
+  if (showPending) {
+    if (isSu) {
+      active = 0;
+    } else {
+      return res.render('admin_no_permissions');
     }
   }
 
   var a = Submission.findAll({
-    where: whereClausule,
+    where: {
+      active: active
+    },
     include: [{
       model: Edition,
       where: {
@@ -69,6 +76,7 @@ AdminController.submissions = function(req, res) {
       entries: results,
       year: req.params.year,
       count: results.length,
+      showPending: showPending,
       isSuperUser: isSuperUser(req)
     });
   });
