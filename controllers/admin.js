@@ -164,22 +164,31 @@ AdminController.show = function(req, res) {
       }]
     })
   ]).then(function(results) {
-    res.render('admin_show', {
+    var voteCasted = (results[3].length > 0);
+    var totalScore = 0;
+
+    res.render('admin_submission_show', {
       user: req.session.user,
       entry: results[0],
       comment: results[2],
+      voteCasted: voteCasted,
+      theme: results[1][0].edition.theme,
       criteria: results[1].map(function(x) {
         var item = results[3].find(function(z) { return z.criterion_edition_id === x.id });
         var current = (item) ? item.value / item.criterion_edition.multiplier : -1;
         var scores = [];
         for (var i=0; i<=x.score; i++) scores.push(i);
+        if (voteCasted) totalScore += current;
 
         return {
-          obj: x,
-          scores: scores,
-          default: current
+          criterion: x.criterion,
+          options: scores,
+          value: current,
+          multiplier: x.multiplier,
+          casted: voteCasted
         }
-      })
+      }),
+      score: totalScore,
     });
   })
   .catch(function(err) {
@@ -190,6 +199,11 @@ AdminController.show = function(req, res) {
 };
 
 AdminController.vote = function(req, res, next) {
+  //[
+  // { id: '1', value: '4' },
+  // ...
+  // { id: '8', value: '9' }
+  // ]
   var criteria = getCriteriaData(req.body);
 
   var requests = criteria.map(function(c) {
@@ -212,26 +226,30 @@ AdminController.vote = function(req, res, next) {
     requests.push(promise);
   }
 
+  var score = 0;
   Promise.all(requests)
   .then(function(results) {
-    var score = 0;
     results.forEach(function(v) {
       if (v.value) score += v.value;
     });
-    return score;
+    return Promise.resolve(score);
   })
-  .then(function(score) {
+  .then(function() {
     return Submission.find({
       where: {
         id: req.body.submission_id
       }
-    })
+    });
   })
   .then(function(submission) {
     return submission.recalculateAvgScore();
   })
   .then(function(submission) {
-    res.json({ status: 'ok', score: submission.score });
+    res.json({ status: 'ok', score: score });
+  })
+  .catch(function(err) {
+    console.log('err', err);
+    res.status(500).send(err);
   });
 };
 
@@ -378,7 +396,7 @@ var getCriteriaData = function(body) {
       var parts = x.split('-');
       return {
         id: parts[parts.length - 1],
-        score: body[x]
+        value: body[x]
       };
     }
   }).filter(function(x) {
@@ -388,6 +406,7 @@ var getCriteriaData = function(body) {
 
 var castVote = function(req, criterion) {
   var multiplier = 1;
+  var maxScore = 0;
 
   return CriterionEdition.find({
     where: {
@@ -396,6 +415,7 @@ var castVote = function(req, criterion) {
   })
   .then(function(c) {
     multiplier = c.multiplier;
+    maxScore = multiplier * c.score;
 
     return Vote.findOrInitialize({
       where: {
@@ -403,13 +423,16 @@ var castVote = function(req, criterion) {
         submission_id: req.body.submission_id,
         criterion_edition_id: criterion.id
       }
-    })
+    });
   })
   .spread(function(vote, created) {
     return vote;
   })
   .then(function(vote) {
-    vote.value = criterion.score * multiplier;
+    // Validations
+    value = (criterion.value > maxScore) ? maxScore : criterion.value;
+    vote.value =  value * multiplier;
+    multiplier = maxScore = null;
     return vote.save();
   });
 };

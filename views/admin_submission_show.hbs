@@ -16,29 +16,51 @@
 <!-- else -->
 <a href="/games/{{entry.slug}}/index.html" target="_blank" class="launch">Play the game</a>
 
+{{#voteCasted}}
+<h3>This is what you voted:</h3>
+{{else}}
 <h3>Cast your vote</h3>
-<p>Remember that this year's theme is <strong>{{criteria.0.obj.edition.theme}}</strong></p>
+<p>Remember that this year's theme is <strong>{{theme}}</strong></p>
+{{/voteCasted}}
 <form id="voting-widgets">
   <input type="hidden" name="submission_id" value="{{entry.id}}" />
   <input type="hidden" name="user_id" value="{{user.id}}" />
-  <table>
+  <table class="table">
     {{#each criteria}}
       {{> criterion}}
     {{/each}}
+    <tr>
+      <td colspan="2" class="total-title">Total</td>
+      <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
+    </tr>
   </table>
-  <div style="margin-top: 20px">Comments:</div>
-
-  <h3>Comments</h3>
-  <textarea id="comment" class="text" name="comment" cols="40" rows="5">{{comment.text}}</textarea>
+  {{#voteCasted}}
+  <div style="margin-top: 20px"><strong>Comments:</strong> {{comment.text}}</div>
+  {{else}}
+  <h3>Add comment:</h3>
+  <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
   <div>
     <button id="vote" class="btn-primary">Vote</button>
   </div>
+  {{/voteCasted}}
 </form>
 <div id="voting-results">
 </div>
 {{/unless}}
 
 {{#contentFor "pageScripts"}}
+$('.criterion').on('change', function(e) {
+  var total = 0;
+  $('select option:selected').each(function() {
+    var value = $(this).val();
+    var multiplier = $(this).parent().attr('data-multiplier');
+    if (value) {
+      total += parseInt(value) * parseInt(multiplier);
+    }
+  });
+  $('.total-value').text(total);
+});
+
 $('#vote').on('click', function(ev) {
   ev.preventDefault();
   var id = $('input[name="submission_id"]').val();

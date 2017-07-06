@@ -92,7 +92,8 @@ var Submission = sequelize.define('submission', {
   },
   score: {
     type: Sequelize.INTEGER,
-    validate: { isInt: true }
+    validate: { isInt: true },
+    defaultValue: 0
   },
   file_size: {
     type: Sequelize.INTEGER,

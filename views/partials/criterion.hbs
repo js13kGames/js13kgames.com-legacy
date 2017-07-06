@@ -1,13 +1,17 @@
 <tr>
   <td>
-    <label alt="{{obj.criterion.description}}" title="{{obj.criterion.description}}">{{obj.criterion.title}}</label>
+    <label alt="{{criterion.description}}" title="{{criterion.description}}">{{criterion.title}}</label>
   </td>
   <td>
-  <select>
-    <option value="" disabled selected>-</option>
-    {{#each scores}}
-      <option {{#eq this ../default}}selected{{/eq}} value="{{this}}">{{this}}</option>
-    {{/each}}
-  </select>
+    <p>{{criterion.description}}</p>
+  </td>
+  <td>
+    <select class="criterion" data-multiplier="{{multiplier}}" name="criterion_{{criterion.slug}}-{{criterion.id}}" {{#casted}}disabled{{/casted}} required>
+      <option value="" disabled selected>-</option>
+      {{#each options}}
+        <option {{#eq this ../value}}selected{{/eq}} value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+    <label>x {{multiplier}}</label>
   </td>
 </tr>
