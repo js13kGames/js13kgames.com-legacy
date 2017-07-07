@@ -336,19 +336,30 @@ AdminController.createEdition = function(req, res, next) {
 };
 
 AdminController.updateEdition = function(req, res, next) {
-  Edition.find({
-    where: {
-      id: req.params.id,
-      active: (req.body.action === 'open') ? 0 : 1
+  var shouldOpen = (req.body.action === 'open');
+
+  Edition.closeAll()
+  .then(function() {
+    return Edition.find({
+      where: {
+        id: req.params.id,
+        active: (req.body.action === 'open') ? 0 : 1
+      }
+    });
+  })
+  .then(function(edition) {
+    if (shouldOpen) {
+      if (edition === null) {
+        throw new Error(messages.error.editionNotFoundOrNoLongerActive);
+      }
+      edition.active = (req.body.action === 'open') ? 1 : 0;
+      return edition.save();
+    } else {
+      return Promise.resolve(true);
     }
-  }).then(function(edition) {
-    if (edition === null) {
-      throw new Error(messages.error.editionNotFoundOrNoLongerActive);
-    }
-    edition.active = (req.body.action === 'open') ? 1 : 0;
-    return edition.save();
   })
   .catch(function(err) {
+    console.log(err);
     res.status(500).send(err);
   })
   .then(function(edition) {

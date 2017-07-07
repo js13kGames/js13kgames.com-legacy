@@ -5,6 +5,7 @@
 
 <p>The game you are looking for doesn't exist or hasn't been approved yet. Go back to the <a href="/admin/submissions">admin panel</a> and try again.</p>
 {{else}}
+<a href="/admin/submissions">Go Back</a>
 <h3>{{entry.title}}</h3>
 <div><img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" /></div>
 
@@ -26,11 +27,19 @@
   <input type="hidden" name="submission_id" value="{{entry.id}}" />
   <input type="hidden" name="user_id" value="{{user.id}}" />
   <table class="table">
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th>Description</th>
+        <th>Score</th>
+        <th>Multiplier</th>
+      <tr>
+    </thead>
     {{#each criteria}}
       {{> criterion}}
     {{/each}}
     <tr>
-      <td colspan="2" class="total-title">Total</td>
+      <td colspan="3" class="total-title">Total</td>
       <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
     </tr>
   </table>
@@ -40,11 +49,12 @@
     <h3>Add comment:</h3>
     <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
     <div>
-      <button id="vote" class="btn-primary">Vote</button>
+      <button id="vote" class="btn btn-primary">Vote</button>
     </div>
   </div>
   {{/voteCasted}}
 </form>
+<a href="/admin/submissions">Go Back</a>
 {{/unless}}
 
 {{#contentFor "pageScripts"}}

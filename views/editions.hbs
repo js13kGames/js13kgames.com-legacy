@@ -3,7 +3,7 @@
 <h3>Editions</h3>
 
 {{#gt count 0}}
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -21,22 +21,31 @@
       <td>{{slug}}</td>
       <td>{{theme}}</td>
       <td class="statuses">
-        <span class="status open" {{#unless active}}style="display: none"{{/unless}}>Open</span>
-        <span class="status closed" {{#if active}}style="display: none"{{/if}}>Closed</span>
+        <span class="status open" {{^active}}style="display: none;"{{/active}}>Open</span>
+        <span class="status closed" {{#active}}style="display: none;"{{/active}}>Closed</span>
       </td>
       <td class="actions">
-        <a href="#" data-id="{{id}}" data-action="open" class="action open" {{#if active}}style="display: none"{{/if}}>Activate</a>
-        <a href="#" data-id="{{id}}" data-action="close" class="action close" {{#unless active}}style="display:none"{{/unless}}>Close</a>
-        <a href="#" data-id="{{id}}" data-action="delete" class="delete"{{#unless active}}style="display:none"{{/unless}}>Delete</a>
+        <a href="#" data-id="{{id}}" data-action="open" class="action btn-open btn btn-success" {{#active}}style="display: none;"{{/active}}>
+          <i class="fa fa-check-circle fa-lg"></i>
+          Activate
+        </a>
+        <a href="#" data-id="{{id}}" data-action="close" class="action btn-close btn btn-warning" {{^active}}style="display: none;"{{/active}}>
+          <i class="fa fa-check-circle fa-lg"></i>
+          Close
+        </a>
+        <a href="#" data-id="{{id}}" data-action="delete" class="action btn-delete btn btn-danger" {{^active}}style="display: none;"{{/active}}>
+          <i class="fa fa-trash-o fa-lg"></i>
+          Delete
+        </a>
       </td>
     </tr>
   {{/each}}
   </tbody>
 </table>
 {{else}}
-<h4>Not editions were found</h4>
+<h4>No editions found</h4>
 {{/gt}}
-<a href="/admin/editions/new">Open new edition</a> | 
+<a href="/admin/editions/new" class="btn btn-primary">Open new edition</a> | 
 <a href="/admin">Back</a>
 
 {{#contentFor "pageScripts"}}
@@ -72,15 +81,18 @@ $('a.action').on('click', function(ev) {
     if (data.status === 'ok') {
       // TODO: Flash message
       if (data.action === 'close') {
-        $('.edition-' + data.id + ' > .actions > .action.close').hide();
-        $('.edition-' + data.id + ' > .actions > .delete').hide();
-        $('.edition-' + data.id + ' > .actions > .action.open').show();
+        $('.edition-' + data.id + ' > .actions > .action.btn-close').hide();
+        $('.edition-' + data.id + ' > .actions > .action.btn-delete').hide();
+        $('.edition-' + data.id + ' > .actions > .action.btn-open').show();
         $('.edition-' + data.id + ' > .statuses > .status.open').hide();
         $('.edition-' + data.id + ' > .statuses > .status.closed').show();
       } else if (data.action === 'open') {
-        $('.edition-' + data.id + ' > .actions > .action.close').show();
-        $('.edition-' + data.id + ' > .actions > .delete').show();
-        $('.edition-' + data.id + ' > .actions > .action.open').hide();
+        $('.action.btn-close').hide();
+        $('.action.btn-delete').hide();
+        $('.action.btn-open').show();
+        $('.edition-' + data.id + ' > .actions > .action.btn-close').show();
+        $('.edition-' + data.id + ' > .actions > .action.btn-delete').show();
+        $('.edition-' + data.id + ' > .actions > .action.btn-open').hide();
         $('.edition-' + data.id + ' > .statuses > .status.open').show();
         $('.edition-' + data.id + ' > .statuses > .status.closed').hide();
       }

@@ -13,7 +13,17 @@ var Edition = sequelize.define('edition', {
   theme: Sequelize.STRING,
   active: Sequelize.BOOLEAN
 }, {
-  timestamps: false
+  timestamps: false,
+  classMethods: {
+    closeAll: function() {
+      return sequelize.query("UPDATE editions SET active = 0")
+      .spread(function() {
+        return Promise.resolve(true);
+      })
+    }
+  }
 });
+
+
 
 module.exports = Edition;
