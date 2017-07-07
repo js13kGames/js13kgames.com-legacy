@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var config = require('../config');
 var messages = require('../messages');
 var User = require('../models/user');
@@ -73,7 +75,7 @@ AdminController.submissions = function(req, res) {
     ]
   }).then(function(results) {
     res.render('admin_submissions', {
-      entries: results,
+      entries: _.shuffle(results),
       year: req.params.year,
       count: results.length,
       showPending: showPending,
