@@ -8,16 +8,18 @@ The source of the js13kgames.com website.
 ```
 npm install
 ```
+2. Install [Imagemagick](http://www.imagemagick.org)
 
-2. Copy the .sqlite database in the root folder of the project
+3. Copy the .sqlite database in the root folder of the project
 
-3. Edit the migrations table (just once) in the .sqlite file:
+4. Copy `config.js.example` as `config.js` and update fields as needed (for example: domain and the mailing section)
+
+5. Edit the migrations table (just once) in the .sqlite file:
 
 ```
 ALTER TABLE migrations ADD COLUMN name varchar;
 ```
 
-4. Install [Imagemagick](http://www.imagemagick.org)
 
 ## Running
 
