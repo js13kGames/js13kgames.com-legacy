@@ -24,11 +24,11 @@ var config = {
     superUserLevel: 100
   },
   mailing: {
-    service: 'Gmail',
-    auth: {
-      user: 'example@gmail.com',
-      pass: 'password'
-    }
+    host: 'smtp.yourprovider.org',
+    port: 25,
+    secure: true,
+    user: 'example@gmail.com',
+    pass: 'password'
   }
 };
 

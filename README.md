@@ -20,6 +20,7 @@ npm install
 ALTER TABLE migrations ADD COLUMN name varchar;
 ```
 
+Note: Node 5 is used because of sqlite. To upgrade node, a new package for sqlite needs to be used.
 
 ## Running
 

@@ -4,6 +4,7 @@ var config = require('../config');
 var messages = require('../messages');
 var User = require('../models/user');
 var Vote = require('../models/vote');
+var Email = require('../models/email');
 var Comment = require('../models/comment');
 var Edition = require('../models/edition');
 var Category = require('../models/category');
@@ -93,11 +94,16 @@ AdminController.accept = function(req, res, next) {
   }).then(function(result) {
     if (result) {
       result.active = 1;
-      result
-      .save()
-      .then(function(result) {
-        // TODO: send emails
+      return result.save()
+      .then(function(entry) {
+        return Email.sendAcceptanceMessage(entry)
+      })
+      .then(function(mail) {
         res.json({ status: 'ok' });
+      })
+      .catch(function(err) {
+        console.log(err);
+        throw err;
       });
     } else {
       res.status(404).send(messages.error.submissionNotFoundOrAccepted);
@@ -118,9 +124,15 @@ AdminController.reject = function(req, res, next) {
     if (result) {
       result
       .destroy({ force: true })
-      .then(function(result) {
-        // TODO: send emails
+      .then(function(entry) {
+        return Email.sendRejectionMessage(entry)
+      })
+      .then(function(mail) {
         res.json({ status: 'ok' });
+      })
+      .catch(function(err) {
+        console.log(err);
+        throw err;
       });
     } else {
       res.status(404).send(messages.error.submissionNotFoundOrRejected);
