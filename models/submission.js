@@ -166,8 +166,9 @@ var Submission = sequelize.define('submission', {
       // Create directory
       fs.mkdirSync(this.getStoragePath());
       // Zip
-      fs.renameSync(this.fileZip.path, this.getFilePath(this.fileZip));
-      fs.createReadStream(this.getFilePath(this.fileZip)).pipe(unzip.Extract({ path: this.getStoragePath() }));
+      newFilePath = this.getFilePath(this.fileZip, this.slug + '.zip');
+      fs.renameSync(this.fileZip.path, newFilePath);
+      fs.createReadStream(newFilePath).pipe(unzip.Extract({ path: this.getStoragePath() }));
       // Screenshots
       im.resize({
         srcPath: this.smallScreenshot.path,
