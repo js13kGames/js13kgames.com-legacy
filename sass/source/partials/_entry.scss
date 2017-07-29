@@ -66,3 +66,34 @@
 	background: url(/img/circle.png) 0 0 no-repeat;
 	margin: 0 0 -2px -27px;
 }
+
+.submission-details {
+  .image {
+    margin-top: 20px;
+  }
+}
+
+.theme {
+  color: red;
+}
+
+.play {
+  &.btn {
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+.total-title {
+  text-align: right;
+}
+
+.total-title, .total-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#comment-widget {
+  margin-bottom: 40px;
+}

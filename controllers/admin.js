@@ -18,7 +18,7 @@ AdminController.form = function(req, res) {
   if (req.session.user) {
     res.redirect('/admin');
   } else {
-    res.render('login', {csrfToken: req.session.csrf });
+    res.render('admin/login', {csrfToken: req.session.csrf });
   }
 };
 
@@ -75,7 +75,7 @@ AdminController.submissions = function(req, res) {
       ['created_at', 'DESC']
     ]
   }).then(function(results) {
-    res.render('admin_submissions', {
+    res.render('admin/submissions', {
       entries: _.shuffle(results),
       year: req.params.year,
       count: results.length,
@@ -181,7 +181,7 @@ AdminController.show = function(req, res) {
     var voteCasted = (results[3].length > 0);
     var totalScore = 0;
 
-    res.render('admin_submission_show', {
+    res.render('admin/submission', {
       user: req.session.user,
       entry: results[0],
       comment: results[2],
@@ -270,7 +270,7 @@ AdminController.vote = function(req, res, next) {
 AdminController.editions = function(req, res, next) {
   Edition.findAll()
   .then(function(editions) {
-    res.render('editions', { editions: editions, count: editions.length });
+    res.render('admin/editions', { editions: editions, count: editions.length });
   });
 };
 
@@ -281,7 +281,7 @@ AdminController.newEdition = function(req, res, next) {
     }
   })
   .then(function(criteria) {
-    res.render('new_edition', { year: new Date().getFullYear(), criteria: criteria });
+    res.render('admin/new_edition', { year: new Date().getFullYear(), criteria: criteria });
   });
 };
 

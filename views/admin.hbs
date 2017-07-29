@@ -1,13 +1,19 @@
 {{!< main }}
 <h2>Admin Panel</h2>
 
-<p>Select an option below</p>
-
-<ul>
-  <li><a href="/admin/submissions">Approved Submissions</a></li>
+<div class="admin panel row">
+  <a href="/admin/submissions" class="item columns col-xs-2 bg-success">
+    <span class="row icon"><i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
+    <span class="row caption">Approved Submissions</span>
+  </a>
   {{#if isSuperUser}}
-  <li><a href="/admin/submissions/?filter=pending">Pending Submissions</a></li>
-  <li><a href="/admin/editions">Editions</a></li>
+  <a href="/admin/submissions/?filter=pending" class="item columns col-xs-2 bg-info">
+    <span class="row icon"><i class="fa fa-hourglass-half" aria-hidden="true"></i></span>
+    <span class="row caption">Pending Submissions</span>
+  </a>
+  <a href="/admin/editions" class="item columns col-xs-2 bg-danger">
+    <span class="row icon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+    <span class="row caption">Editions</span>
+  </a>
   {{/if}}
-</ul>
-
+</div>

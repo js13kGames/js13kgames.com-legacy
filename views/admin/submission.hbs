@@ -5,22 +5,32 @@
 
 <p>The game you are looking for doesn't exist or hasn't been approved yet. Go back to the <a href="/admin/submissions">admin panel</a> and try again.</p>
 {{else}}
-<a href="/admin/submissions">Go Back</a>
-<h3>{{entry.title}}</h3>
-<div><img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" /></div>
-
-<p><strong>File size:</strong> {{entry.file_size}} KB</p>
-<p><strong>Author:</strong> {{entry.author}}</p>
-<p><strong>Description:</strong> {{entry.description}}</p>
+<h2>Vote</h2>
+<div class="row submission-details">
+  <div class="columns col-xs-5 image">
+    <img src="/games/{{entry.slug}}/__big.jpg" alt="{{entry.title}}" />
+  </div>
+  <div class="columns col-xs-7">
+    <h3>{{entry.title}}</h3>
+    <p><strong>Author:</strong> {{entry.author}}</p>
+    <p><strong>Twitter:</strong> @{{entry.twitter}}</p>
+    <p><strong>File size:</strong> {{entry.file_size}} KB</p>
+    <p><strong>Github URL:</strong> <a href="{{entry.githubUrl}}">{{entry.githubUrl}}</a></p>
+    <p><strong>Description:</strong> {{entry.description}}</p>
+  </div>
+</div>
 <!-- if server -->
 <!-- a href="{$entry->server_url }" target="_blank" class="launch">Play the game</a -->
 <!-- else -->
-<a href="/games/{{entry.slug}}/index.html" target="_blank" class="launch">Play the game</a>
+<h3>1. Play the game</h3>
+<a href="/games/{{entry.slug}}/index.html" target="_blank" class="play launch btn btn-primary">
+  <i class="fa fa-gamepad" aria-hidden="true"></i>Play the game
+</a>
 
 {{#voteCasted}}
 <h3>This is what you voted:</h3>
 {{else}}
-<h3 class="cast-title">Cast your vote</h3>
+<h3 class="cast-title">2. Cast your vote</h3>
 <p class="theme">Remember that this year's theme is <strong>{{theme}}</strong></p>
 {{/voteCasted}}
 <form id="voting-widgets">
@@ -39,22 +49,23 @@
       {{> criterion}}
     {{/each}}
     <tr>
-      <td colspan="3" class="total-title">Total</td>
+      <td colspan="3" class="total-title">Total Score</td>
       <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
     </tr>
   </table>
   <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px"><strong>Comments:</strong> <span id="comment-posted">{{comment.text}}</span></div>
   {{^voteCasted}}
   <div id="comment-widget">
-    <h3>Add comment:</h3>
-    <textarea id="comment" class="text" name="comment" cols="40" rows="5"></textarea>
+    <h3>3. Add comment (optional)</h3>
+    <textarea id="comment" class="text form-control" name="comment" cols="40" rows="3"></textarea>
     <div>
-      <button id="vote" class="btn btn-primary">Vote</button>
+      <h3>4. Submit your vote</h3>
+      <a class="btn btn-danger back-link">Back</a>
+      <button id="vote" class="btn btn-primary">Submit</button>
     </div>
   </div>
   {{/voteCasted}}
 </form>
-<a href="/admin/submissions">Go Back</a>
 {{/unless}}
 
 {{#contentFor "pageScripts"}}
@@ -96,4 +107,16 @@ function disableVotingWidgets() {
   $('.theme').addClass('hide');
   $('.cast-title').html('This is what you voted:');
 }
+
+$('.back-link').on('click', function(e) {
+  e.preventDefault();
+  var total = $('.total-value').text();
+  if (total !== "0") {
+    cont = confirm("Are you sure you want to go back? All current changes will be lost.");
+    if (!cont) {
+      return;
+    }
+  }
+  window.location = "/admin/submissions";
+});
 {{/contentFor}}
