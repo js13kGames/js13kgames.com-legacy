@@ -30,9 +30,9 @@ After installing, run all the migrations executing:
 ./node_modules/.bin/sequelize db:migrate
 ```
 
-Then precompile the assets with:
+Then compile the assets with:
 ```
-gulp sass
+npm run compile
 ```
 
 And finally, start the app with:
