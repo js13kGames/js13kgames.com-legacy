@@ -9,7 +9,6 @@
 .form label {
 	display: inline-block;
 	font-size: 14px;
-	width: 300px;
 	text-align: right;
 	padding-right: 10px;
 	vertical-align: top;
@@ -108,4 +107,9 @@ form abbr {
 
 .form h3.error {
 	color: #B12A34;
+}
+
+.form-horizontal .checkbox {
+  display: inline;
+  padding: 0 10px;
 }
