@@ -1,0 +1,9 @@
+<ol class="breadcrumb">
+  {{#each this}}
+    {{#active}}
+      <li class="active">{{name}}</li>
+    {{else}}
+      <li><a href="{{url}}">{{name}}</a></li>
+    {{/active}}
+  {{/each}}
+</ol>

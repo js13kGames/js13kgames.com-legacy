@@ -1,4 +1,5 @@
 {{!< main }}
+{{> breadcrumbs breadcrumbs }}
 
 {{#unless entry}}
 <h3>Submission not found!</h3>
@@ -22,59 +23,72 @@
 <!-- if server -->
 <!-- a href="{$entry->server_url }" target="_blank" class="launch">Play the game</a -->
 <!-- else -->
-<h3>1. Play the game</h3>
-<a href="/games/{{entry.slug}}/index.html" target="_blank" class="play launch btn btn-primary">
-  <i class="fa fa-gamepad" aria-hidden="true"></i>Play the game
-</a>
+  {{#if entry.active}}
+  <h3>1. Play the game</h3>
+  <a href="/games/{{entry.slug}}/index.html" target="_blank" class="play launch btn btn-primary">
+    <i class="fa fa-gamepad" aria-hidden="true"></i>Play the game
+  </a>
 
-{{#voteCasted}}
-<h3>2. This is what you voted:</h3>
-{{else}}
-<h3 class="cast-title">2. Cast your vote</h3>
-<p class="theme">Remember that this year's theme is <strong>{{theme}}</strong></p>
-{{/voteCasted}}
-<form id="voting-widgets">
-  <input type="hidden" name="submission_id" value="{{entry.id}}" />
-  <input type="hidden" name="user_id" value="{{user.id}}" />
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Criterion</th>
-        <th>Description</th>
-        <th>Score</th>
-        <th>Multiplier</th>
-      <tr>
-    </thead>
-    {{#each criteria}}
-      {{> criterion}}
-    {{/each}}
-    {{^criteria}}
-    <tr>
-      <td colspan="4">There were no criteria defined for this entry, so the score is global</td>
-    </tr>
-    {{/criteria}}
-    <tr>
-      <td colspan="3" class="total-title">Total Score</td>
-      <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
-    </tr>
-  </table>
-  <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px">
-    <h3>3. Your comments</h3>
-    <div id="comment-posted">{{#comment}}{{text}}{{else}}No comments{{/comment}}</div>
-  </div>
-  <a class="btn btn-danger back-link">Back</a>
-  {{^voteCasted}}
-  <div id="comment-widget">
-    <h3>3. Add comment (optional)</h3>
-    <textarea id="comment" class="text form-control" name="comment" cols="40" rows="3"></textarea>
-    <div>
-      <h3>4. Submit your vote</h3>
-      <a class="btn btn-danger back-link">Back</a>
-      <button id="vote" class="btn btn-primary">Submit</button>
-    </div>
-  </div>
+  {{#voteCasted}}
+  <h3>2. This is what you voted:</h3>
+  {{else}}
+  <h3 class="cast-title">2. Cast your vote</h3>
+  <p class="theme">Remember that this year's theme is <strong>{{theme}}</strong></p>
   {{/voteCasted}}
-</form>
+  <form id="voting-widgets">
+    <input type="hidden" name="submission_id" value="{{entry.id}}" />
+    <input type="hidden" name="user_id" value="{{user.id}}" />
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Description</th>
+          <th>Score</th>
+          <th>Multiplier</th>
+        <tr>
+      </thead>
+      {{#each criteria}}
+        {{> criterion}}
+      {{/each}}
+      {{^criteria}}
+      <tr>
+        <td colspan="4">There were no criteria defined for this entry, so the score is global</td>
+      </tr>
+      {{/criteria}}
+      <tr>
+        <td colspan="3" class="total-title">Total Score</td>
+        <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
+      </tr>
+    </table>
+    <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px">
+      <h3>3. Your comments</h3>
+      <div id="comment-posted">{{#comment}}{{text}}{{else}}No comments{{/comment}}</div>
+    </div>
+    <a class="btn btn-danger back-link">Back</a>
+    {{^voteCasted}}
+    <div id="comment-widget">
+      <h3>3. Add comment (optional)</h3>
+      <textarea id="comment" class="text form-control" name="comment" cols="40" rows="3"></textarea>
+      <div>
+        <h3>4. Submit your vote</h3>
+        <a class="btn btn-danger back-link">Back</a>
+        <button id="vote" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    {{/voteCasted}}
+  </form>
+  {{else}}
+  <h3>This entry is pending of approval</h3>
+  <a class="btn btn-primary back-link">Back</a>
+  <a data-id="{{id}}" data-title="{{title}}" data-author="{{author}}" class="submission-action reject btn btn-danger">
+    <i class="fa fa-times-circle fa-lg"></i>
+    Reject
+  </a>
+  <a data-id="{{id}}" data-title="{{title}}" data-author="{{author}}" class="submission-action accept btn btn-success">
+    <i class="fa fa-check-circle fa-lg"></i>
+    Accept
+  </a>
+  {{/if}}
 {{/unless}}
 
 {{#contentFor "pageScripts"}}
@@ -106,6 +120,42 @@ $('#vote').on('click', function(ev) {
     disableVotingWidgets();
     alert('Ops, an error occurred while trying to save your score: ' + err + '.\n\nTry reloading the page and if the ' + 
       'error persist, please send an email to contact@js13kgames.com');
+  });
+});
+
+$('a.submission-action.accept').click(function(ev) {
+  ev.preventDefault();
+  var cont = confirm('Are you sure you want to accept the entry "{{entry.title}}" from {{entry.author}}?');
+  if (!cont) return;
+
+  var id = {{entry.id}};
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'put'
+  })
+  .done(function(data) {
+    window.location = "/admin/submissions?filter=pending";
+  })
+  .fail(function(err) {
+    alert(err.responseText);
+  });
+});
+
+$('a.submission-action.reject').click(function(ev) {
+  ev.preventDefault();
+  var cont = confirm('Are you sure you want to reject the entry "{{entry.title}}" from {{entry.author}}?');
+  if (!cont) return;
+
+  var id = {{entry.id}};
+  $.ajax({
+    url: '/admin/submissions/' + id,
+    type: 'delete'
+  })
+  .done(function(data) {
+    window.location = "/admin/submissions?filter=pending";
+  })
+  .fail(function(err) {
+    alert(err.responseText);
   });
 });
 

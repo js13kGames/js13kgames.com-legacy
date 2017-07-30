@@ -1,10 +1,10 @@
 {{!< main }}
+{{> breadcrumbs breadcrumbs }}
 
 <h2>{{#showPending}}Pending{{else}}Approved{{/showPending}} submissions ({{count}}) for the {{year}} edition.</h2>
 <p>Submissions will be ordered randomly every time you load the page to give all participants the opportunity to appear
 in the top positions of the table.</p>
 {{#gt count 0}}
-<a href="/admin">Go Back</a>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -50,7 +50,7 @@ in the top positions of the table.</p>
   <p>There are no approved submissions yet. Please, come back later.</p>
   {{/showPending}}
 {{/gt}}
-<a href="/admin">Go Back</a>
+<a class="btn btn-danger" href="/admin">Go Back</a>
 
 {{#contentFor "pageScripts"}}
 $('a.submission-action.accept').click(function(ev) {

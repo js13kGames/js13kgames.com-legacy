@@ -75,12 +75,25 @@ AdminController.submissions = function(req, res) {
       ['created_at', 'DESC']
     ]
   }).then(function(results) {
+    var breadcrumbs = [{
+      name: "Admin Panel", url: "/admin", active: false
+    }];
+    if (showPending) {
+      breadcrumbs.push({
+        name:"Pending Submissions", url: "#", active: true
+      });
+    } else {
+      breadcrumbs.push({
+        name:"Approved Submissions", url: "#", active: true
+      });
+    }
     res.render('admin/submissions', {
       entries: _.shuffle(results),
       year: req.params.year,
       count: results.length,
       showPending: showPending,
-      isSuperUser: isSuperUser(req)
+      isSuperUser: isSuperUser(req),
+      breadcrumbs: breadcrumbs
     });
   });
 };
@@ -96,7 +109,11 @@ AdminController.accept = function(req, res, next) {
       result.active = 1;
       return result.save()
       .then(function(entry) {
-        return Email.sendAcceptanceMessage(entry)
+        if (config.mailing.enabled) {
+          return Email.sendAcceptanceMessage(entry);
+        } else {
+          return Promise.resolve();
+        }
       })
       .then(function(mail) {
         res.json({ status: 'ok' });
@@ -125,7 +142,11 @@ AdminController.reject = function(req, res, next) {
       result
       .destroy({ force: true })
       .then(function(entry) {
-        return Email.sendRejectionMessage(entry)
+        if (config.mailing.enabled) {
+          return Email.sendRejectionMessage(entry);
+        } else {
+          return Promise.resolve();
+        }
       })
       .then(function(mail) {
         res.json({ status: 'ok' });
@@ -145,11 +166,16 @@ AdminController.reject = function(req, res, next) {
 };
 
 AdminController.show = function(req, res) {
+  var isSu = isSuperUser(req);
+
+  if (!isSu) {
+    return res.render('admin_no_permissions');
+  }
+
   var result = Promise.all([
     Submission.find({
       where: {
-        id: req.params.id,
-        active: 1
+        id: req.params.id
       },
       include: [{
         model: Edition
@@ -210,6 +236,13 @@ AdminController.show = function(req, res) {
       }),
       score: (oldSubmission) ? oldScore : totalScore,
       oldSubmission: oldSubmission,
+      breadcrumbs: [{
+        name: "Admin Panel", url: "/admin", active: false
+      }, {
+        name:"Approved Submissions", url: "/admin/submissions", active: false
+      }, {
+        name:"Submission", url: "#", active: true
+      }]
     });
   })
   .catch(function(err) {
@@ -277,7 +310,15 @@ AdminController.vote = function(req, res, next) {
 AdminController.editions = function(req, res, next) {
   Edition.findAll()
   .then(function(editions) {
-    res.render('admin/editions', { editions: editions, count: editions.length });
+    res.render('admin/editions', {
+      editions: editions,
+      count: editions.length,
+      breadcrumbs: [{
+        name: "Admin Panel", url: "/admin", active: false
+      }, {
+        name:"Editions", url: "#", active: true
+      }]
+    });
   });
 };
 
@@ -288,7 +329,17 @@ AdminController.newEdition = function(req, res, next) {
     }
   })
   .then(function(criteria) {
-    res.render('admin/new_edition', { year: new Date().getFullYear(), criteria: criteria });
+    res.render('admin/new_edition', {
+      year: new Date().getFullYear(),
+      criteria: criteria,
+      breadcrumbs: [{
+        name: "Admin Panel", url: "/admin", active: false
+      }, {
+        name:"Editions", url: "/admin/editions", active: false
+      }, {
+        name:"New Edition", url: "#", active: true
+      }]
+    });
   });
 };
 
