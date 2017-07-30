@@ -469,6 +469,32 @@ AdminController.removeEdition = function(req, res, next) {
   });
 };
 
+AdminController.emailTestForm = function(req, res) {
+  res.render('admin/email_test', {
+    csrfToken: req.session.csrf,
+    breadcrumbs: [{
+      name: "Admin Panel", url: "/admin", active: false
+    }, {
+      name:"Email Test", url: "#", active: true
+    }]
+  });
+};
+
+AdminController.sendTestEmail = function(req, res) {
+  // Check csrf
+  if (req.body.csrf !== req.session.csrf) {
+    return res.render('admin_no_permissions');
+  }
+
+  Email.sendAcceptanceMessage({email: req.body.email})
+  .then(function() {
+    res.redirect('/admin/email/test');
+  })
+  .catch(function(err) {
+    res.render('admin/email_error', {error: err});
+  });
+};
+
 var isSuperUser = function(req) {
   return req.session.user.level >= config.admin.superUserLevel
 };

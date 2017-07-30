@@ -2,18 +2,22 @@
 <h2>Admin Panel</h2>
 
 <div class="admin panel row">
-  <a href="/admin/submissions" class="item columns col-xs-2 bg-success">
+  <a href="/admin/submissions" class="item columns col-xs-2">
     <span class="row icon"><i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
     <span class="row caption">Approved Submissions</span>
   </a>
   {{#if isSuperUser}}
-  <a href="/admin/submissions/?filter=pending" class="item columns col-xs-2 bg-info">
+  <a href="/admin/submissions/?filter=pending" class="item columns col-xs-2 bg-primary">
     <span class="row icon"><i class="fa fa-hourglass-half" aria-hidden="true"></i></span>
     <span class="row caption">Pending Submissions</span>
   </a>
-  <a href="/admin/editions" class="item columns col-xs-2 bg-danger">
+  <a href="/admin/editions" class="item columns col-xs-2 bg-primary">
     <span class="row icon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
     <span class="row caption">Editions</span>
+  </a>
+  <a href="/admin/email/test" class="item columns col-xs-2 bg-primary">
+    <span class="row icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+    <span class="row caption">Test Emails</span>
   </a>
   {{/if}}
 </div>

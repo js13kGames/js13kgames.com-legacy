@@ -18,7 +18,8 @@ var transporter = nodemailer.createTransport({
 var Email = (function() {
   var templates = {
     acceptance: handlebars.compile(fs.readFileSync('./views/emails/submission_accepted.hbs').toString()),
-    rejection: handlebars.compile(fs.readFileSync('./views/emails/submission_rejected.hbs').toString())
+    rejection: handlebars.compile(fs.readFileSync('./views/emails/submission_rejected.hbs').toString()),
+    test: handlebars.compile(fs.readFileSync('./views/emails/test.hbs').toString())
   };
 
   var sendMessage = function(title, template, entry) {
@@ -47,9 +48,11 @@ var Email = (function() {
     sendAcceptanceMessage: function(entry) {
       return sendMessage('[js13kgames] Your submission has been accepted', templates.acceptance, entry);
     },
-
     sendRejectionMessage: function(entry) {
       return sendMessage('[js13kgames] Your submission has been rejected', templates.rejection, entry);
+    },
+    testMessage: function(entry) {
+      return sendMessage('[js13kgames] This is a test', templates.test, entry);
     }
   }
 })();

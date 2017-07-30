@@ -122,6 +122,8 @@ app.get('/admin/editions/new', defaultYear, ensureAuthentication, ensureSuperUse
 app.post('/admin/editions', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.createEdition);
 app.put('/admin/editions/:id', defaultYear, ensureAuthentication, ensureSuperUserLevel, urlencodedParser, adminController.updateEdition);
 app.delete('/admin/editions/:id', defaultYear, ensureAuthentication, ensureSuperUserLevel, adminController.removeEdition);
+app.get('/admin/email/test', csrfProtection, ensureAuthentication, ensureSuperUserLevel, adminController.emailTestForm);
+app.post('/admin/email/test', urlencodedParser, ensureAuthentication, ensureSuperUserLevel, adminController.sendTestEmail);
 
 app.get('/:year', defaultYear, homeController);
 app.get('/:year/entries', defaultYear, entriesController.list);
