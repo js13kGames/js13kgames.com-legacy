@@ -28,7 +28,7 @@
 </a>
 
 {{#voteCasted}}
-<h3>This is what you voted:</h3>
+<h3>2. This is what you voted:</h3>
 {{else}}
 <h3 class="cast-title">2. Cast your vote</h3>
 <p class="theme">Remember that this year's theme is <strong>{{theme}}</strong></p>
@@ -48,12 +48,21 @@
     {{#each criteria}}
       {{> criterion}}
     {{/each}}
+    {{^criteria}}
+    <tr>
+      <td colspan="4">There were no criteria defined for this entry, so the score is global</td>
+    </tr>
+    {{/criteria}}
     <tr>
       <td colspan="3" class="total-title">Total Score</td>
       <td class="total-value">{{#voteCasted}} {{score}} {{else}}0{{/voteCasted}}</td>
     </tr>
   </table>
-  <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px"><strong>Comments:</strong> <span id="comment-posted">{{comment.text}}</span></div>
+  <div id="comment-posted-container" class="{{^voteCasted}}hide{{/voteCasted}}" style="margin-top: 20px">
+    <h3>3. Your comments</h3>
+    <div id="comment-posted">{{#comment}}{{text}}{{else}}No comments{{/comment}}</div>
+  </div>
+  <a class="btn btn-danger back-link">Back</a>
   {{^voteCasted}}
   <div id="comment-widget">
     <h3>3. Add comment (optional)</h3>
@@ -85,15 +94,16 @@ $('#vote').on('click', function(ev) {
   ev.preventDefault();
   var id = $('input[name="submission_id"]').val();
   $('#voting-results').html('Voting in progress. Please, wait...');
-  disableVotingWidgets();
   $.ajax({
     url: '/admin/submissions/' + id + '/vote',
     method: 'post',
     data: $('#voting-widgets').serialize()
   }).done(function(result) {
     console.log('status', result);
+    disableVotingWidgets();
     alert('Voting done. Your score was ' + result.score);
   }).fail(function(err) {
+    disableVotingWidgets();
     alert('Ops, an error occurred while trying to save your score: ' + err + '.\n\nTry reloading the page and if the ' + 
       'error persist, please send an email to contact@js13kgames.com');
   });
@@ -110,8 +120,9 @@ function disableVotingWidgets() {
 
 $('.back-link').on('click', function(e) {
   e.preventDefault();
+  var voteCasted = {{voteCasted}};
   var total = $('.total-value').text();
-  if (total !== "0") {
+  if (total !== "0" && !voteCasted) {
     cont = confirm("Are you sure you want to go back? All current changes will be lost.");
     if (!cont) {
       return;

@@ -56,6 +56,16 @@ To clean the assets:
 gulp clean
 ```
 
+### Create new database migration
+
+```
+./node_modules/.bin/sequelize migration:create --name <name-of-your-migration>
+```
+Where `<name-of-your-migration>` is the name you want for your new migration file. Sequelize will create a new file at
+the `migrations` folder with a name similar to `20170729220958-name-of-your-migration.js`. Open that file and edit the
+`up` and `down` sections accordingly.
+
+
 ## CSS Methodology
 
 The files are pre-processed SASS files. These are not processed at run time via express for performance reasons.

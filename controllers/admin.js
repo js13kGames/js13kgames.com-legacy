@@ -150,7 +150,10 @@ AdminController.show = function(req, res) {
       where: {
         id: req.params.id,
         active: 1
-      }
+      },
+      include: [{
+        model: Edition
+      }]
     }),
     CriterionEdition.findAll({
       include: [{
@@ -179,14 +182,17 @@ AdminController.show = function(req, res) {
     })
   ]).then(function(results) {
     var voteCasted = (results[3].length > 0);
-    var totalScore = 0;
+    var oldSubmission = (results[1].length === 0); // No criterion edition for old entries
+    var totalScore = oldScore = 0;
+
+    oldScore = (voteCasted) ? results[3][0].value : null;
 
     res.render('admin/submission', {
       user: req.session.user,
       entry: results[0],
       comment: results[2],
       voteCasted: voteCasted,
-      theme: results[1][0].edition.theme,
+      theme: results[0].edition.theme,
       criteria: results[1].map(function(x) {
         var item = results[3].find(function(z) { return z.criterion_edition_id === x.id });
         var current = (item) ? item.value / item.criterion_edition.multiplier : -1;
@@ -202,7 +208,8 @@ AdminController.show = function(req, res) {
           casted: voteCasted
         }
       }),
-      score: totalScore,
+      score: (oldSubmission) ? oldScore : totalScore,
+      oldSubmission: oldSubmission,
     });
   })
   .catch(function(err) {
